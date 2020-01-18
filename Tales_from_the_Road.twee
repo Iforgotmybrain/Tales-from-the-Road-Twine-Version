@@ -1,0 +1,1064 @@
+:: StoryTitle
+Tales from the Road
+
+
+:: StoryData
+{
+	"ifid": "ECFB80AD-377B-45D7-81E1-792F8A1F9AD1",
+	"format": "SugarCube",
+	"format-version": "2.30.0",
+	"start": "Great Days",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+/*! <<replacelink>> macro set for SugarCube 2.x */
+.revision-span-in {
+	opacity: 0;
+}
+.revision-span:not(.revision-span-out) {
+	-webkit-transition: 1s;
+	transition: 1s;
+}
+.revision-span-out {
+	position: absolute;
+	opacity: 0;
+}
+
+
+:: Story JavaScript [script]
+/*! <<replacelink>> macro set for SugarCube 2.x */
+!function(){"use strict";function showVer(n,notrans){n&&(n.innerHTML="",new Wikifier(n,n.tweecode),n.setAttribute("data-enabled","true"),n.style.display="inline",n.classList.remove("revision-span-out"),notrans||(n.classList.add("revision-span-in"),n.timeout&&clearTimeout(n.timeout),n.timeout=setTimeout(function(){n.classList.remove("revision-span-in"),n=null},20)))}function hideVer(n,notrans){n&&(n.setAttribute("data-enabled","false"),n.classList.remove("revision-span-in"),n.timeout&&clearTimeout(n.timeout),notrans?(n.style.display="none",n.innerHTML="",n=null):(n.classList.add("revision-span-out"),n.timeout=setTimeout(function(){"false"===n.getAttribute("data-enabled")&&(n.classList.remove("revision-span-out"),n.style.display="none",n.innerHTML=""),n=null},1e3)))}function tagcontents(b,starttags,desttags,endtags,k){function tagfound(i,e,endtag){for(var j=0;j<e.length;j++)if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)===i)return e[j]}for(var tg,l=0,c="",a=b.source.slice(k),i=0;i<a.length;i++){if(tg=tagfound(i,starttags))l++;else{if((tg=tagfound(i,desttags,!0))&&0===l)return b.nextMatch=k+i+tg.length+4,[c,tg];if((tg=tagfound(i,endtags,!0))&&(l--,l<0))return null}c+=a.charAt(i)}return null}function revisionSpanHandler(g,e,f,b){function mkspan(vtype){return h=insertElement(m,"span",null,"revision-span "+vtype),h.setAttribute("data-enabled",!1),h.style.display="none",h.tweecode="",h}var becomes,c,cn,m,h,vsn,k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length;if(this.shorthand&&flen)for(;f.length>0;)vsns.push([f.shift(),"insert"===this.flavour?"gains":"becomes"]);else("insert"===this.flavour||"continue"===this.flavour&&"time"===this.trigger)&&vsns.push(["","becomes"]);if("continue"===this.flavour&&flen)b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),vtype]);else{if(becomes=["becomes","gains"],c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k),c&&endtags.indexOf(c[1])===-1){for(;c;)vsns.push(c),c=tagcontents(b,begintags,becomes,endtags,b.nextMatch);c=tagcontents(b,begintags,["/"+e,"end"+e],endtags,b.nextMatch)}if(!c)return void throwError(g,"<<"+e+">>: cannot find a matching close tag");vsns.push(c),"continue"===this.flavour&&(k=b.nextMatch,b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),""]))}for("remove"===this.flavour&&vsns.push(["","becomes"]),cn=0,m=insertElement(g,"span",null,e),m.setAttribute("data-flavour",this.flavour),h=mkspan("initial"),vsn=vsns.shift(),h.tweecode=vsn[0],showVer(h,!0);vsns.length>0;)vsn&&(vtype=vsn[1]),vsn=vsns.shift(),h=mkspan(vtype),h.tweecode=vsn[0];"function"==typeof this.setup&&this.setup(m,g,e,f)}function revisionSetup(m,g,e,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,e,f){f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);done&&m.removeEventListener("keydown",l)})}function timeSetup(m,g,e,f){function cssTimeUnit(s){if("string"==typeof s){if("ms"===s.slice(-2).toLowerCase())return Number(s.slice(0,-2))||0;if("s"===s.slice(-1).toLowerCase())return 1e3*Number(s.slice(0,-1))||0}return throwError(g,"<<"+e+'>>: "'+s+'" is not a valid CSS time unit'),0}var tm=cssTimeUnit(f[0]),s=passage();setTimeout(function timefn(){if(passage()===s){var done=!revise("revise",m);done||setTimeout(timefn,tm)}},tm)}function hoverSetup(m){var fn,noMouseEnter=null!==document.head.onmouseenter,m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;m1&&m2&&(m1.onmouseenter=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp&&"false"!==this.getAttribute("data-enabled")&&revise("revise",this.parentNode)},m2.onmouseleave=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp||"false"!==this.getAttribute("data-enabled")&&revise("revert",this.parentNode)},gains&&(m1.onmouseleave=m2.onmouseleave),noMouseEnter&&(fn=function(n){return function(e){event.relatedTarget&&(event.relatedTarget===this||this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY)||this[n]()}},m1.onmouseover=fn("onmouseenter"),m2.onmouseout=fn("onmouseleave"),gains&&(m1.onmouseout=m2.onmouseout)),m=null)}function mouseSetup(m){var evt=null===document.head.onmouseenter?"onmouseenter":"onmouseover";m[evt]=function(){var done=!revise("revise",this);done&&(this[evt]=null)},m=null}function linkSetup(m,g,e,f){var l=document.createElement("a"),p=m.parentNode;l.className="link-internal replaceLink",p.insertBefore(l,m),l.insertBefore(m,null),jQuery(l).ariaClick(function(){var done=!1;m&&m.parentNode===this&&(done=!revise("revise",m),scrollWindowTo(m)),done&&(this.parentNode.insertBefore(m,this),this.parentNode.removeChild(this))}),l=null}function visitedSetup(m,g,e,f){var done,sav=State.variables,os="once seen",d=m.firstChild&&("insert"===this.flavour?m.firstChild.nextSibling:m.firstChild).tweecode;if(sav[os]=sav[os]||{},d&&!sav[os].hasOwnProperty(d))sav[os][d]=1;else{for(var i=sav[os][d];i>0&&!done;i--)done=!revise("revise",m,!0);sav[os].hasOwnProperty(d)&&(sav[os][d]+=1)}}function insideDepartingSpan(elem){for(var r=elem.parentNode;!r.classList.contains("passage");){if(r.classList.contains("revision-span-out"))return!0;r=r.parentNode}}function reviseAll(rt,rname){for(var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=!1,i=0;i<rall.length;i++)insideDepartingSpan(rall[i])||(ret=revise(rt,rall[i])||ret);return ret}function revise(rt,r,notrans){function doToGainerSpans(n,fn){for(var k=n-1;k>=0&&rc[k+1].classList.contains("gains");k--)fn(rc[k],notrans)}for(var ind2,curr,next,ind=-1,rev="revert"===rt,rnd=rt.indexOf("random")>-1,fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc="cycle"===fl,rcl=rc.length-1,k=0;k<=rcl;k++)"true"===rc[k].getAttribute("data-enabled")&&(ind=k);rev&&(ind-=1),curr=ind>=0?rc[ind]:cyc?rc[rcl]:null,ind2=ind,rnd&&(ind2=(ind+Math.floor(Math.random()*rcl))%rcl),next=ind2<rcl?rc[ind2+1]:cyc?rc[0]:null;var docurr=rev?showVer:hideVer,donext=rev?hideVer:showVer,currfn=function(){next&&next.classList.contains("gains")&&!rnd||(docurr(curr,notrans),doToGainerSpans(ind,docurr,notrans))},nextfn=function(){donext(next,notrans),rnd&&doToGainerSpans(ind2+1,donext,notrans)};return rev?(nextfn(),currfn()):(currfn(),nextfn()),!!cyc||(rev?ind>0:ind2<rcl-1)}if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<replacelink>> macro set requires SugarCube 2.0.0 or greater, aborting load");version.extensions.replacelinkMacroSet={major:1,minor:1,revision:7};var begintags=[],endtags=[];[{name:"insertlink",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replacelink",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continuelink",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler,e.shorthand=["link","mouse","hover"].indexOf(e.trigger)>-1,macros[e.name]=e,Macro.tags.register(e.name),begintags.push(e.name),endtags.push("/"+e.name,"end"+e.name)}),macros.revertlink=macros.reviselink=macros.randomiselink=macros.randomizelink={handler:function(a,b,c){function disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1)return void enableLink(l);for(var cannext,canprev,r,fl,rall=document.querySelectorAll(".passage [data-flavour]."+rname),i=0;i<rall.length;i++)r=rall[i],fl=r.getAttribute("data-flavour"),insideDepartingSpan(r)||("cycle"===fl?cannext=canprev=!0:("false"===r.firstChild.getAttribute("data-enabled")&&(canprev=!0),"false"===r.lastChild.getAttribute("data-enabled")&&(cannext=!0)));var can=l.classList.contains("revert")?canprev:cannext;(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}if(c.length<2)return void throwError(a,"<<"+b+">>: insufficient arguments (requires at least 2)");var l,rname,actName=b.slice(0,-4),rl="reviseLink",v="",end=!1,out=!1;switch(rname=c.shift().replace(" ","_"),l=insertElement(a,"a"),l.className="link-internal "+rl+" "+rl+"_"+rname+" "+actName,c.length>1&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift()),c[c.length-1]){case"end":end=!0,c.pop();break;case"out":out=!0,c.pop()}for(var h=State.variables,i=0;i<c.length;i++){var on=i===Math.max(c.indexOf(h[v]),0),d=insertElement(null,"span",null,rl+(on?"En":"Dis")+"abled");on?(h[v]=c[i],l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),l.appendChild(d)}jQuery(l).ariaClick(function(){reviseAll(actName,rname);var lall,t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if((end||out)&&u>=m-(end?2:1)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End",n.style.display="inline",this.parentNode.replaceChild(n,this)}else toggleText(t[u]),u=(u+1)%m,v&&(h[v]=c[u]),toggleText(t[u]),this.setAttribute("data-cycle",u);lall=document.getElementsByClassName(rl+"_"+rname);for(var i=0;i<lall.length;i++)updateLink(lall[i])}),disableLink(l),setTimeout(function(l){return function(){updateLink(l)}}(l),1),l=null}},macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["/"+b,"end"+b],evt=null===window.onmouseenter?"onmouseenter":"onmouseover",t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);if(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);"hoverrevise"!=b&&done&&(this[evt]=null)};new Wikifier(h,t[0]),"hoverrevise"===b?(h.onmouseover=f,h.onmouseout=function(){reviseAll("revert",rname)}):h[evt]=f,h=null}}},Macro.tags.register("mouserevise"),Macro.tags.register("hoverrevise"),macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}}}();
+
+
+:: Great Days {"position":"405,171","size":"100,200"}
+<<set $ending_points to 0>>
+What is your name? <<textbox "$name" "">>
+
+What is your gender? <<listbox "$gender" autoselect>>
+<<option "Male">>
+<<option "Female">>
+<</listbox>>
+
+What is your race? <<listbox "$race" autoselect>>
+<<option "Wolf">>
+<<option "Lion">>
+<<option "Fox">>
+<<option "Dragon">>
+<</listbox>>
+
+[[Submit|Intro]]
+
+
+:: Intro {"position":"404,411","size":"100,100"}
+Your name is $name. You are $gender and you are a $race. Is this correct?
+
+[[Yes|Your Bedroom]]
+[[No|Great Days]]
+
+
+:: Your Bedroom {"position":"408,547","size":"100,100"}
+<<if $sasha_living_room_talked is not true>> 
+After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You see [[the door to the hallway in front of you|Hallway]] and [[the door to the bathroom to your east.|Bathroom]] You could also use your [[computer.|Computer]]
+<<endif>>
+
+<<if $sasha_living_room_talked is true>>
+You wake up around your usual time of 11 AM. You get a notification on your phone stating that the yearly festival is going on today, you feel like Sasha might have mentioned that last night but you're not sure. Either way it might be worth checking out, you've gone to it every other year so why stop now?
+
+<<continuelink "Get out of bed">>
+
+You get out of bed and see [[the door to the hallway in front of you|Hallway]] and [[the door to the bathroom to your east.|Bathroom]] You could also use your [[computer.|Computer]]
+
+
+:: Hallway {"position":"401,699","size":"100,100"}
+You enter the hallway of your apartment which you share with 2 of your friends. Your bedroom is to the south, Sasha's bedroom is to the west, the stairs leading down are to the east, and Jacob's bedroom is to the north.
+
+You head towards [[Your Bedroom]], [[Sasha's Bedroom]], [[Downstairs]], [[Jacob's Bedroom]]
+
+
+:: Bathroom {"position":"547,545","size":"100,100"}
+You enter the bathroom but don't see anything of note. Just the usual collection of bathroom related items. You showered last night so there's no reason to do so right now.
+
+Head back to [[Your Bedroom]]
+
+
+:: Sasha's Bedroom [Formatting-Help] {"position":"193,697","size":"100,100"}
+<<if $sasha_talked_1 is true>>
+You knock on Sasha's door again but she doesn't answer.
+<<return>>
+<<else>>
+
+You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at the desk.
+
+<<continuelink "Continue">>
+
+The first anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
+	
+	<<timed 5s>>
+	"Hey $name, what's going on?" She says wondering what brings you to her room.
+    <</timed>>
+
+    <<timed 5s>>
+	You tell her you just wanted to check in, see how things are going.
+    <</timed>>
+
+<<continuelink "Continue">>
+	
+"Honestly, not much has been going on. Just going through the daily routine, ya know? Haven't been having the greatest time at work, but with Geology it's not like there's a bunch of other options out there. Especially in this town."
+
+<<continuelink "Continue">>
+		
+You sympathize with Sasha, thinking back to the job you had before your current one. Although luckily your career field is a bit more in demand than Sasha's is.
+		
+		<<timed 5s>>
+		"Oh, by the way, I think Jacob wanted to ask you something. He mentioned something about football earlier today."
+        <</timed>>
+		
+
+<<set $sasha_talked_1 to true>>
+
+<<continuelink "Continue">>
+		
+You thank Sasha for letting you know, you say goodbye and head out to the [[Hallway]].
+<<endif>>
+
+
+:: Downstairs {"position":"577,702","size":"100,100"}
+You head downstairs and see nothing out of the oridnary. The entrance way where you're currently standing connects directly to the living room and the kitchen. There's also the front door right by the stairs, you could also head back up the stairs to the hallway.
+
+After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Door]], [[Hallway]].
+
+
+:: Jacob's Bedroom {"position":"401,839","size":"100,100"}
+<<if $jacob_bedroom_talked_1 is not true>>
+You knock on the door but no one answers. Maybe you should come back later. 
+
+Head back to the [[Hallway]] 
+
+<<endif>>
+
+
+:: Kitchen {"position":"577,872","size":"100,100"}
+<<if $jacob_talked_1 is true>>
+You enter the kitchen but see nothing of interest.
+<<return>>
+<<else>>
+
+You enter the kitchen and see that it's about as lackluster as ever. Outdated appliances from the early 00s hum along, running off of shoddy repairs and determination. The tiles on the floor are even more dated. Given the peach-like color and styling you imagine they were installed sometime in the 80s.
+
+<<linkreplace "Continue" t8n>>\
+You see Jacob standing by the microwave waiting for his lunch to get done cooking. <<if $sasha_talked_1 is true>> Guess you should see what he wanted to talk to you about. <<else>> Suppose you should see what he's been up to. <<endif>>
+
+	<<linkreplace "Continue" t8n>>\
+	As you approach Jacob it's hard to miss his most predominant feature, his antlers. A feature shared amongst all Deer like him. He also has a fairly fit build, though you wouldn't be able to tell that with the baggy sweats and jacket he's wearing today.
+	
+	"Hey bud, what's going on?" He says as you walk up to talk to him.
+		
+		<<linkreplace "Continue" t8n>>\
+		"Been wanting to talk to you about something. 
+		"Dunno if you've been keeping up with the Blues' Head Coach search but it seems like they've narrowed down their choices to two people, Karl Kowalski and Robert Indah. Kowalski is the OC for the Norsemen, not a ton of expiernece but I feel like his scheme would be a perfect fit for the Blues. And than Indah is the DC for the number one defense in the leauge on the 99ers. Although you have to wonder how much of that success can be attributed to his coaching verus the insane amount of talent they have."
+
+		
+		    <<linkreplace "Continue" t8n>>\
+			"Anyway, I was wondering who you think the Blues should pick. I'm leaning more towards Kowalski myself but I wouldn't be upset at Indah either."
+			<<set $jacob_talked_1 to true>>
+			[[Kowalski|Kitchen Jacob Kowalski]] 
+			[[Indah|Kitchen Jacob Indah]] 
+			[["You know I don't follow Sports, Jacob"|Kitchen Jacob None]]
+					
+		    <</linkreplace>>\
+	    <</linkreplace>>\
+    <</linkreplace>>\
+<</linkreplace>>\
+<<endif>>
+
+
+:: Living Room {"position":"727,637","size":"100,100"}
+<<if $sasha_talked_1 && $jacob_talked_1 && $park_completed && $cafe_completed is true && $sasha_living_room_talked is not true>>
+
+You return to the living room once again, Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
+
+It seems Sasha's watching a superhero movie involving some sort of pink titan.
+
+"You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven't got to watch the final one yet but I've heard it's killer."
+
+<<continuelink "Continue">>
+
+"Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven't got to watch it yet."
+
+<<timed 5s>>
+You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
+<</timed>>
+
+<<continuelink "Continue">>
+
+"Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I'd love to rewatch them with you."
+
+"Anyway, you want something or just here to chat?"
+
+[[Just wanna chat for a bit|Sasha Living Room Chat]] 
+[[Actually I wanted to ask you for some advice|Sasha Living Room Purpose Chat]]
+
+<<else>>
+You enter the living room but see nothing except empty chairs and a dead TV. Maybe you should come back later.
+
+<<return>>
+
+<<endif>>
+
+
+:: Front Door {"position":"899,938","size":"100,100"}
+<<set $travel_locals = ["Home", "Sycamore Park", "Torie's Cafe"]>>
+You head out the front door and stand on your front porch ready for adventure! You think of the following places to check out: 
+[[Home|Downstairs]] 
+<<if not visited ("Sycamore Park")>> [[Sycamore Park]]
+<<endif>><<if not visited ("Torie's Cafe")>> [[Torie's Cafe]]
+<<endif>> <<if $sasha_living_room_talked and $jacob_talked_bedroom_1 is true>> [[Festival|Festival Start]] <<endif>>
+
+
+:: Kitchen Jacob Kowalski [Could-be-condensed] {"position":"457,1013","size":"100,100"}
+You tell Jacob that you think Kowalski would make the best head coach. He lacks experience, but you don't think that will be a huge issue.
+
+<<continuelink "Continue">>
+
+"Interesting choice, and I'm inclinded to agree. I suppose I could see his lack of time coaching to be an issue, but the way he runs his offense with the Norsemen is just perfect for this team."
+	
+<<continuelink "Continue">>
+
+"Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I'll stop bugging you."
+		
+<<timed 4s>>
+
+You say goodbye to Jacob and head back to the You say goodbye to 
+Jacob and head back to the [[entrance way.|Downstairs]]
+		
+<</timed>>
+
+
+:: Kitchen Jacob Indah {"position":"687,1013","size":"100,100"}
+You state that Indah seems to be the most qualifed for the job. Mentioning his many years spent on the 99ers as DC.
+
+<<continuelink "Continue">>
+"That's fair. I definitely feel like he's the safer pick. Though you have to wonder how he'd handle the offensive side of the ball. Not too many great offensive coordinators on the market this year."
+
+<<continuelink "Continue">>
+"Well the microwave is beeping and my lunch is done so I'll be on my way. See ya."
+	
+<<timed 4s>>
+
+You say goodbye to Jacob and head back to thec[[entrance way.|Downstairs]]
+		
+<</timed>>
+
+
+:: Kitchen Jacob None {"position":"573,1012","size":"100,100"}
+You remind Jacob that you aren't really much for sports. With how often he talks to you about football it seems to escape his mind quite often.
+
+<<continuelink "Continue">>
+"Shit, that's right. Guess I just wasted a whole bunch of your time
+talking about something you couldn't give a damn about. Sorry about
+that."
+	
+<<continuelink "Continue">>
+	
+"Well the microwave is beeping and my lunch is done so I guess I'll stop wasting your time,
+see ya."
+		
+<<timed 4s>>
+		
+You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
+		
+		
+<</timed>>
+
+
+:: Torie's Cafe {"position":"1142,846","size":"100,100"}
+You catch a ride on the bus and end up at Tories Place, your all-time favorite place to grab lunch.
+
+The place has a modern aesthetic with colorful furniture and ample natural lighting giving the place an overall cheery vibe. They’re mainly known for their fantastic wraps, but also have some pretty good soups.
+
+<<continuelink "Continue">>
+
+Looking around you see the line to order, it’s a bit after lunch so there isn’t much of a wait. While walking to the line you see someone you think you know, they're sitting at a table towards the back and it seems as though they haven't noticed you yet.
+
+You could leave the line and go over and say hi to your friend, or you could just stay in line, get your food, and leave.
+
+<<choice [[Go say hi to your friend|Cafe Holly]]>>
+
+<<continuelink "Just stay in line">>
+
+You decide to just do your own thing and order some food, the line moves quick and before you know it’s your turn to order.
+
+You decide to order your usual combo; a tuna wrap with a bag of chips and a drink. Not a bad deal for $4!
+
+<<continuelink "Continue">>
+
+You sit down at a table after grabbing your food, nothing much happens while eating. The friend you saw across the building leaves soon after you get your food, having seemingly no idea you were here.
+
+<<set $cafe_no_holly to true>>
+<<set $cafe_completed to true>>
+<<set $ending_points -= 4>>
+You finish up your meal and throw your trash away before hopping on the bus to go [[back home for the day.|Your Bedroom]]
+
+
+:: Cafe Holly {"position":"1296,846","size":"100,100"}
+You decide to leave the line and go over and say hi to your friend, Holly.
+
+/* Provide more details about Holly's apperance? also add in ending points. */
+
+Holly is a vixen. No, not like that; in the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
+
+<<continuelink "Continue">>
+
+You exchange greetings with Holly and start conversing. There’s a lot of catching up to do, you follow each other on social media but of course that isn’t a replacement for a proper conversation.
+
+<<continuelink "Continue">>
+
+"Wow, Hey $name! It's been awhile.Last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before you went off to college in like 2013!"
+
+<<continuelink "Continue">>
+
+You fill in some details about what you’ve been up too since that amusement park trip. Detailing your current living situation with Sasha and Jacob, as well as talking about some of your antics in college.
+
+You also ask what Holly’s been up to since you last met, a faint look of disappointment fills her face as she goes on to detail her life post-college.
+
+<<continuelink "Continue">>
+
+"Yeah, so, I dropped out of college at the end of 2016. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying "the college life". I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. I also hated my major, I quickly realized that marketing was not for me."
+
+<<continuelink "Continue">>
+
+You can find yourself agreeing with Holly, remembering how many times you second guessed your choice to attend college.
+
+<<continuelink "Continuie">>
+
+"I knew after I started my first marketing internship that I would have hated that kind job and the corporate culture that surrounds it. Having to stick up to execs, deliver presentations on ideas that would ultimately be ignored by the project managers and higher-ups. Dealing with the petty workplace drama... and not to mention the monotony of it all... That just wasn’t for me You know I've never been one to suck up and deal with other people’s bullshit."
+
+<<continuelink "Continue">>
+
+You can definitely see yourself understanding Holly’s decision, thinking back to all the workplace drama and rejected proposals you’ve dealt with...
+
+You then ask Holly what she’s doing for work since she dropped out of college, she offers a surprising answer.
+
+<<continuelink "Continue">>
+
+"I draw art for a living now! I was always interested in it, I’m sure you remember some of my drawings from back in high school. I never really thought of it as a legitimate career path, but I’ve managed to build a decent enough profile that I can get by on commissions. And you know, I really enjoy it. The customer tells me what they want, I draw it, and we go on our way. There’s (typically) no bullshit, and no one else telling me what to do."
+
+"So, what have you been doing since graduating college? I know you finished with a couple of internships and a great GPA, those internships lead anywhere?"
+
+<<continuelink "Continue">>
+
+You explain that you used to work for Spherion, but eventually quit for various reasons, including reasons she stated, like project managers ignoring ideas. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. Detailing how you now do freelance work off and on, not unlike what Holly does. It helps keep a steady flow of money coming into your bank account. And with living expenses being split between three people, you really don’t need much money to support your lifestyle.
+
+<<continuelink "Continue">>
+
+"Wow, that’s fantastic. Hearing stuff like that almost makes me wish I would have stayed in college. I couldn’t imagine having a savings large enough to live on for 2 years. Let alone being able to amass that much money by only working for a year and a half! Still, like I said, I enjoy my work and I'm pretty happy with where I am in life. Though having that kind of money never hurts."
+
+<<continuelink "Continue">>
+
+"Well $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go. Maybe I’ll see you around some other time."
+
+<<set $cafe_holly_talked to true>>
+<<set $cafe_completed to true>>
+<<set $ending_points += 2>>
+
+You say goodbye to Holly and decide to [[head home for the day.|Your Bedroom]]
+
+
+:: Sycamore Park {"position":"902,1084","size":"100,100"}
+You arrive at Sycamore Lakeview Park after a short walk down the street. You’ve never been to this park despite it being close to home. You were always preoccupied by something else, or just didn't feel like going.
+
+The park itself is pretty nice, it features various walking paths and is situated right on the lake, giving it some fantastic views. Most of the paths go through heavily wooded areas, providing amble shade and making it so you can stay relatively comfortable while walking.
+
+<<continuelink "Continue">>
+
+You’re here and ready to make the most it. As you enter the park you see two separate walking paths you'd like to take. One to the west, the other to the east. Which one will you take first?
+
+<<if $path_lake is not true>> [[West Path]] <<endif>> <<if $path_roommate is not true>> [[East Path]] <<endif>> <<if $path_lake is true>> <<set $park_completed to true>> [[Head back home for the day|Your Bedroom]] <<endif>>
+
+
+:: West Path {"position":"839,1233","size":"100,100"}
+You head down the west path and start your walk. 
+
+After walking for 15 minutes you come across a familiar sight, the Great Sycamore Lake. Hence the park’s name. You can see the Sun starting to set over the lake, with the sky starting to turn an orange color with the Sun being reflected off the water.
+
+Not wanting to miss such a beautiful scene, You decide to sit down at a bench overlooking the lake and take a moment to just take everything in.
+
+<<continuelink "Continue">>
+
+While sitting down you decide to reflect a bit on your life. Recently you’ve been having some trouble finding purpose in your life. Your current career brings in money, sure, but you just don't find it very fulfilling. It was fun at first but 1 year into living this kind of life and you’re finding yourself uncertain and a bit depressed. You feel like you lack purpose and direction, your freelance style of work lacks a direct career path. You just hop from job to job.
+
+There are a few things you’ve thought of to try and remedy this issue. Including doing volunteer work, getting a part time job doing something you actually enjoy, or even taking on the dating scene again. One recent thing that’s come to mind is a cross-country road trip. While the road trip itself wouldn’t permanently fix your lack of passion, you could end up discoveing something that reinvigorates you.
+
+It’s an interesting idea, but that’s all it is for right now. An idea.
+
+<<continuelink "Continue">>
+
+<<set $path_lake to true>>
+
+You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]
+
+
+:: East Path {"position":"984,1233","size":"100,100"}
+\* Are either of these paths needed for the overall story? Or are they just filler? */
+
+you head down the path to the east. This path is slightly shorter than the other one, as it doesn't go past the lake. 
+
+As you walk across the park you see someone with a Redding University shirt on. The same university you attended! It reminds you of your days in college, and how you met your roommates. 
+
+<<continuelink "Continue">>
+
+You met Jacob in one of your upper-division elective courses, the one about environmental ethics or something like that. Very fitting considering Jacob has been a very outdoorsy type of guy ever since you’ve known him. You ended up starting a study group with him since you weren’t exactly having a great time in that class. Mainly because it was taught by a not so great professor.
+
+It started off as a pretty standard study group, consisting of you, Jacob, and a couple other students. About half way into the semester you started to get to know Jacob a bit better, and you started to hang out with him a bit more outside of the study group.
+
+After that the rest is history, you’ve been good friends with him ever since. To the point that you decided to roommate up with him starting your 3rd year at college.
+
+<<continuelink "Continue">>
+
+You ended up meeting Sasha in a similar way. You ran into her at one of the one of the recitation sessions for your Sociology classes. You started off with the usual college small talk, ‘Hey, what’s your major?’ ‘What dorm do you live in?’ She ended up living in one of the nearby dorm complexes, which shared a dining hall with your building. This led to you and her getting lunch together on a fairly regular basis.
+
+<<continuelink "Continue">>
+
+You talked quite a bit during lunch, and you eventually ended up hanging out with her outside of lunch quite a bit. You didn’t have as much in common with her as Jacob, but you still appreciated her company. You always kept in touch with her throughout the year, often attending various on-campus events together, and helping each other out with classes.
+
+She’s been a really great friend to you, though she can be a bit forgetful and snarky at times. You’re really glad you met her and Jacob during your time at college, who knows how different your current life would be if you didn’t!
+
+<<continuelink "Continue">>
+
+<<set $path_roommate to true>>
+
+Caught up in your thoughts you find yourself at [[the end of your walk before you know it.|Sycamore Park]]
+
+
+:: Sasha Living Room Chat {"position":"837,453","size":"100,100"}
+<<set $sasha_living_room_talked to true>>
+
+You tell Sasha you just wanted to chat with her for a bit.
+
+<<timed 3s>>
+“Alright, just like old times! It's been awhile since we've just sat down and talked”
+<</timed>>
+
+<<timed 7s>>
+“So, what kind of movies do you like? Can’t remember ever talking about moives with you, and I know we haven’t gone to see any together.”
+<</timed>>
+
+<<timed 12s>>
+You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
+<</timed>>
+
+<<continuelink "Continue">>
+
+“And that’s why I think the prequel movies are underrated. I’m telling you that they would have had a better inital release if the audiences' expectations weren’t set sky high.”
+
+As Sasha finishes her rant on the prequel movies you start to plan your exit.
+
+“Anyway, I really enjoyed talking about movies with you. We really need to watch the LM movies sometime, I know you’ll love them.”
+
+<<continuelink "Continue">>
+
+You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
+
+<<timed 5s>>
+“Alright, see you tomorrow. We’ve really gotta talk more often!”
+<</timed>>
+
+<<set $ending_points += 2>>
+
+You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]
+
+
+:: Sasha Living Room Purpose Chat {"position":"713,368","size":"100,100"}
+<<set $sasha_living_room_talked to true>>
+/* I really like this scene. Think it was pretty well written  */
+
+You tell Sasha you want to ask her for some advice, that you wanted to ask her for help on finding 'purpose'.
+
+<<timed 6s>>
+Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn't be long before you got sick of your current work style.
+<</timed>>
+
+“Well I’m assuming your issue is that you don't really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don't even work. You've got the money to just sit on your ass for a year if you wanted."
+
+<<continuelink "Continue">>
+
+“I have a little bit of experience with this myself, which of course makes me an expert on the topic. Back when I graduated high school, I was a mess. I had zero idea what I wanted to do. My parents wanted me to go to college, but I didn’t feel like I would be cut out for it. And I didn’t want to go straight to working either, since in my hometown there was really no viable career path for me. Factory jobs were long gone, and if you needed an entry level job the only options you had were retail jobs. And those weren't going to take me anywhere.
+
+So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I just worked my part time job and didn’t do jack shit else. Worked my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end.
+
+I started to feel lost after those few months, I had no long-term goals, no real ambition, I'd say I wasn't too far off from becoming a dead beat. Didn't help that I surrounded myself with people just as lost as I was.”
+
+<<continuelink "Continue">>
+
+“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though; I’d go to community college and then transfer if I ended up enjoying it. This way I'd be out less money if I ended up hating it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, “fuck it” and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
+
+"Point is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say 'fuck it' and try some weird shit, you never know what might happen. You could end up finding your 'purpose', or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don't know, just do //something.//"
+
+<<click "Thanks Sasha.">>
+
+“Of course, anything for my best friend. If you wanna talk about anything else, you just let me know."
+
+"You say good night to Sasha and head up to your [[bedroom for the night|Your Bedroom]]
+
+<</click>>
+
+<<click "Ask Sasha if she as any ideas that are more specific.">>
+
+“I don’t know. There’s that festival thing coming up tomorrow. Maybe you could there go there and see what's going on. Jacob might have an idea too. Couldn’t hurt to ask him.”
+<<set $ending_points += 4>>
+You thank Sasha and [[head up for the night.|Your Bedroom]] You'll have to ask Jacob some questions tomorrow.
+
+<</click>>
+
+
+:: Festival Start {"position":"259,1432","size":"100,100"}
+You hop on a bus headed to the festival. The Lake Festival, to be exact. You've gone to this event just about every year you've lived here, it's nothing special and you mostly just go out of tradition. 
+
+While on the bus you sit next to a man with an ‘I heart NY shirt’ on. He’s carrying a sizable backpack, and based off his apperance he seems to be a tourist.
+
+The man looks to you and asks if you’re going to Lake Fest. You say yes, and that you’ve gone to it almost every year you’ve lived here.
+
+"So you’re a local! I’m Chris.” The Tiger says as <<continuelink "he reaches out to shake your hand.">>he reaches out to shake your hand.
+
+
+You shake the Tiger’s hand and introduce yourself as Dylan.
+
+<<timed 1s t8n>>
+“Nice to meet you Dylan. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
+<</timed>>
+<<continuelink "Continue">>
+You can’t really think of anything else remarkable here. The town is actually quite boring. You offer a few eating recommendations, including Tories Café, stating that there really isn’t much to do here except check out the local restaurants.
+<<continuelink "Continue">>
+
+"Yeah, I kind of figured that. This is my second time going to this event and I can't say I've seen much else to do around here.” The Tiger says with a friendly tone. "Anyway, I bet you’re probably wondering why someone would come here just for one event.”
+
+You can’t say you were really racking your brain trying to figure that out, <<continuelink "but you’ll humor him.">>
+
+“Well, I’m actually on a trip across the country! I do it every year, in some shape or form. Last year I went by train but now I’m doing it by car.” He says with an enthusiastic tone. Clearly he’s quite interested in traveling the country.”
+
+You ask Chris for some more details, you’ve always been fascinated by the idea of traveling the country, but you’ve just never had the time or money to do so. <<continuelink "Ask Chris">>
+
+“Well, I start off my trip on the east coast, in New York city as you might’ve guessed by my shirt.” He says while pointing to his 'I heart NY' shirt. 
+
+"I spend a varying amount of time in each place I stop at. Just depends on what that city has to offer, ya know? The end destination changes every year too. Last year I stopped at San Francisco, and this time around I’ll be heading to Seattle."
+
+You tell Chris that you’ve been interested in doing something similar, you find the idea of traveling the country and seeing all it has to offer to be exciting! 
+<<continuelink "Continue">>
+
+"If I could offer one tip, it's to plan ahead of time and check out what’s going to be going in the towns you’re passing by. Try to find the best possible time to leave so you can maximize the events you can go too."
+
+You thank Chris for adviceif you ever do decide to take on such an endeavor, you’ll definitely make sure too have a plan. 
+<<continuelink "Continue">>
+
+"Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his hand out for a <<continuelink "farewell handshake.">>
+
+You shake his hands and say goodbye, he offers one last piece of advice before departing.
+
+<<timed 7s>>
+"Hey, if you ever decide to go for it, hit me up on Pawbook. I’ve got a list of my favorite places to stop at it, I’d be glad to share"
+<</timed>>
+
+You thank the Tiger as he goes on his way.
+
+You have arrived at the [[festival.|Festival Vendors]]
+
+
+:: Computer {"position":"113,442","size":"100,100"}
+<<if $placeholder_var_remove is not true>>
+You sit down at your desk and turn on your monitor. Right now the only you can think of doing is [[checking your bank account|Bank]].
+
+[[Log off|Your Bedroom]]
+
+<<endif>>
+
+
+:: Bank {"position":"110,315","size":"100,100"}
+You login to your bank account and check your balance. You currently have $1500 in your checking and $8500 in your savings.
+
+<<return>>
+
+
+:: Festival Vendors {"position":"262,1589","size":"100,100"}
+/* Cut all the vendor related dialogue. Felt like it didn't really add much to the story, just served as filler.*/
+You arrive at the festival and see crowds of people on the streets. Vendors as far as the eye can see.
+The day is perfect for a festival, a light overcast keeps temperatures in the sun bearable, and a slight breeze keeps you cool.
+<<continuelink "You see rows of vendors directly ahead to your north.">>
+You can see stands for everything from spices to graphic tees. The quaint downtown streets filled with people from every part of the state, and country for that matter. Despite the wide assortment of merchants you don't really see anything that catches your eye. Instead you opt to get some classic fair food from one of the food trucks.
+<<continuelink "Go grab some food">>
+You decided to get a beef gyro, a slushy, and a funnel cake. All together this meal cost you $15. Pretty expensive, but you guess it's worth it given the occasion.
+
+<<continuelink "After getting your food">> After getting your food you decide to check out one of the events being held today. This specfic event is a concert featuring various local bands and musicians. 
+
+It seems you've come right as the bands are changing. As you see the next act getting setup. You decide look up the next band playing, Lioness Untamed, to see if you'll even like their music. 
+
+<<continuelink "You put in your ear buds">>You put in your ear buds and listen to one of their songs real quick. Based off of that quick listen they seem to be a lo-fi indie band. Not your favorite kind of music, but the one song you listened to was pretty good, so you'll give them a shot.
+
+<<continuelink "As you wait for the band to start their set...">> As you wait for the band to start their set you feel someone tap the back of your shoulder. You turn around and to your surprise you see your friend, Holly.
+
+<<if $cafe_holly_talked is true>>
+
+"Didn't think I'd be running into you again so soon. What are you doing out here all by yourself?"
+
+<<else>>
+
+"I thought it was you, $name! It's been awhile, hasn't it?"
+
+You were surprised to see Holly, since it had been 5 years since you last talked to her. The last time you talked to her in person was during that trip to the local amusement park with her and some other friends.
+
+"So, what are you doing out here all by yourself?"
+<<endif>>
+
+You tell Holly that you were just fufilling a tradtion. You state that you've gone to it almost every year so why stop now?
+
+<<continuelink '"Alright, that makes sense."'>>"Alright, that makes sense. Can't really give you too much shit for being on your own if I am too, huh? I had come here with one of my friends, //but// she pretty much ditched me for her other group of friends she saw walking about. Guess that tells me how she really feels about me, huh?"
+
+You give Holly your condolences about her friend ditching her. Stating that you’ve dealt with similar situations yourself. 
+<<continuelink "You also ask Holly if she knows much about the band about to play.">>You also ask Holly if she knows much about the band about to play.
+
+“Not a whole lot. I know they have a more lo-fi sound and that’s about it. With my friend Jessica ditching me I figured I might as well come over and check them out. It’s free, after all.”
+
+<<continuelink '“Well,"'>> "Well, since we’re both here by ourselves at this point, guess we might as well hang out for a bit and check out this band, yeah?”
+
+
+<<continuelink "It's been a long time since...">> It’s been a long time since you’ve actually hung out and talked with Holly. And you are a bit tired of wandering here alone, so her offer is definitely enticing. You can’t really think of a good reason not to hang out with her, at least until the concert ends.
+
+<<timed 7s>>
+You tell Holly you’d be fine with hanging out for a bit.
+<</timed>>
+<<timed 9s>>
+<<continuelink '"Alright!"'>> “Alright! Hopefully hanging out with you will be a better experience than coming here with Jessica.”
+<</timed>>
+
+[[The band seems to be starting their set|Festival Holly Concert]], as they go out on stage and introduce themselves.
+
+
+:: Festival Holly Concert {"position":"262,1739","size":"100,100"}
+The band starts playing, they sound about as you expected, with a lo-fi sound reminiscent of Mac Demarco. Not you’re choice of music if you were paying to be here, but it is a free concert so you can’t complain too much.
+
+Holly doesn't seem overly impressed by the band either, judging by her face.
+
+<<continuelink '"Not exactly my idea of good music..."'>>"Not exactly my idea of good music, //but// it is free, and it gives me an excuse to hangout with you for a bit so, guess I'll bear with it."
+
+Neither of you seem that intrested in the actual band playing, you're also quite a ways away from the actual stage so the music isn't playing that loudly. Sensing an oppertunity, you decide to take this time to get to know Holly a bit better.
+
+<<if $cafe_holly_talked is true>>
+[[Thinking back to the conversation at Torie’s, you decide to ask Holly how she ended up becoming an artist.|Holly Concert Dialogue]]
+
+<<else>>
+It’s been awhile since you talked to Holly, so you decide to ask her what she’s been up to since you last talked 5 years ago.
+
+<<continuelink '"What I’ve been up to?"'>>"What I’ve been up to?" 
+
+"Honestly, not a whole lot given the time frame. Probably the biggest change in my life has been career,since I actually ended up dropping out of college my Sophomore year. Some stuff happened after that, but right now I’m doing art for a living. Pretty big jump going from a marketing major to an artist.”
+
+[[You tell Holly that is a pretty big jump, you also ask her what exactly lead up to her becoming an artist.|Holly Concert Dialogue]]
+<<endif>>
+
+
+:: Holly Concert Dialogue {"position":"262,1889","size":"100,100"}
+“Oh boy, where do I start? Hmm… Guess I’ll go over what I did after I dropped out of college. So, I’ve been drawing since… eh, around middle school I’d say. Back then it was just a hobby, of course. Just something to channel my creative ideas, and maybe show off a bit, ~~heh.~~ Now, when I went to college I ended up making a social media account dedicated to posting my art, I plugged it a bit, ya know, posted my art on a few forums to try and get a following. Ended up working pretty well since I had 5000 followers by the time I dropped out. At this point though, it was still just a hobby, but I was definitely thinking about the money potential. After I dropped out I got a full-time retail job and just kept working on my art and expanding my following as best I could.”
+
+<<continuelink "About what you expected to hear. You ask Holly when she started to see art as an actual career path instead of just a hobby.">> About what you expected to hear. You ask Holly when she started to see art as an actual career path instead of just a hobby.
+
+
+"Ehh, I started taking commissions shortly after leaving college. I felt like at that point I was good enough to have people actually interested in paying me to draw for them. It wasn’t a ton of money, just like beer money really. But it was something! And it was first time I’d been paid for doing art, which definitely helped motivate me."
+
+"About half a year into my retail job I expanded the amount of commissions I took and also opened up a donation page. At this point, the income from my art was actually starting to rack up. Wasn’t as much as my ‘real job’ but it was enough to pay some of my bills every month. I was really starting to see art as a legitimate career path at this point, it took a lot of time and effort to get to this point though. I’d been working on my art since Middle School and I was just now getting enough of a following to sustain myself.”
+
+"From there I just sort of kept expanding my work, I started making merch, I raised the prices of my commissions a bit and set up an account on one of those monthly subscription type of sites. The income from my art eventually took over my retail job’s income. I still ended up working at the retail job for another 2 months just so I could save up some money before I fully committed. And now, here I am. I started doing art full-time 9 months ago, and it’s been surprisingly smooth sailing since."
+
+<<continuelink “You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.”>> You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.
+
+"For sure. I definitely got lucky being able to get such a huge following in a fairly short amount of time.”
+
+<<if cafe_holly_talked is true>>
+
+<<continuelink ‘“How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up”’>>“How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up”
+<<else>>
+
+<<continuelink ‘“Now, what have //you// been doing these last 5 years?”’>>“Now, what have //you// been doing these last 5 years?”
+
+You explain that you used to work for Spherion, but eventually quit for various reasons. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. Detailing that you now do freelance work off and on to provide some extra income.
+
+<<continuelink ‘”Interesting, what made you leave Spherion?”’>>”Interesting, what made you leave Spherion?”
+<<endif>>
+
+You explain to Holly how it all started. Initially, it all went pretty well. The job paid exceptionally well, had good benefits, and looked really good on a resume if you ever decided to go somewhere else. About 5 months into the job though you started to notice some of the dysfunction abound. You grew tired of the petty office politics, your ‘superiors’ never really valued your work or your feedback, and the work you were doing just wasn’t very fulfilling.
+
+Most workplaces will have elements of all those things, this is true, but here they were overwhelming. You knew you weren’t long for that place and started saving up a decent chunk of your paycheck each month. You put a significant amount into an investment account, as well as some straight into your savings. You stayed for about 7 months after that, and by the time you put in your 2-weeks, you had saved around $40,000 total. Enough to live modestly by yourself for 1 year. Or in your case, more than enough to live with your roommates for 2+ years.
+
+<<continuelink ‘”Wow, that’s just crazy to me…”’>>”Wow, that just crazy to me. Saving 40k in only one year is just insane. That’s almost how much I make in a year. I’m assuming you started your freelance contract work shortly after that, right?”
+
+<<continuelink “Yes, you started working contracts shortly after being fired.”>> Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
+
+“I can totally understand quitting a job because you don’t like the culture, that’s pretty much why I took up art as my career.”
+
+<<timed 7s>>
+You bring out your smartphone and look at the time, seems your conversation with Holly was a bit longer than you thought. You both talked for almost an hour, and at this point the band is on their last song. The evening is approaching, with only a few more hours left for the festival.
+
+You could ask Holly to accompany you for the rest of the day here at the festival, or you could go your separate ways.
+
+You think about it for a while, eventually deciding too: 
+
+<<choice [[Ask Holly to tag along for the rest of the day.|Holly Festival Hub]]>>
+<<choice [[Part ways with Holly.|Festival Non-Holly Hub]]>>
+<</timed>>
+
+
+:: Holly Festival Hub {"position":"122,2092","size":"100,100"}
+<<set $holly_festival_stay to true>>
+<<set $ending_points -= 4>>
+<<set $race to "Wolf">> /* remove me */
+As the band finishes their set you leave the concert and head back towards the main festival area.
+
+You could go check out the rest of [[the festival over to the east,|Festival East Path]] or you could go check out the [[festival games over to the north.|Festival Games]]
+
+
+:: Festival Non-Holly Hub {"position":"428,2065","size":"100,100"}
+<<set $holly_festival_stay to false>>
+<<set $ending_points -= 2>>
+There's not much left to do here. The only other thing you could think to do is check out the bits of [[the festival over to the east.|Festival East Path]]
+
+
+:: Festival Games {"position":"118,2222","size":"100,100"}
+You and Holly head towards the many fair games set up at the festival.
+
+As you arrive at the games Holly offers a quick remark about them
+
+"I used to always bug the hell out of my parents about playing these games. They’d always say ‘no, you’re not playing those games, they’re a rip-off. I could go to the store and buy you whatever toy it is you want for less money than it would take to win one of those games. Well guess what Dad, it wasn’t about the toy, it was about the experience. I don’t think the supermarket has you throwing a ball into a bowl in order to get a toy, do they Dad?"
+
+<<continuelink '"They are terribly unfair though,"'>>They are terribly unfair though, of course I didn’t really understand that as a kid. I think I’ve won a grand total of once. And that was on the basketball one, pure luck was the reason for that win.”
+
+As a kid, you had a similar experience to Holly. Though your parents would occasionally give in and let you play a few.
+
+As you continue walking you see all the games. There’s the basketball game, which is rigged by setting the hoop higher than an official one. The ‘throw this ping pong ball into the water’ game. Which is difficult because the little ball is so light it just bounces off everything. And the BB gun game, which has you shooting a fragile paper target with inaccurate an inaccurate BB gun. This whole place is full of shady business practices.
+
+<<continuelink "Well, you and Holly came here for a reason,">>Well, you and Holly came here for a reason, might as well play at least one of these games.
+
+"I wouldn’t mind playing the one where you try to throw a baseball at a certain speed. It’s up to you though."
+
+You could try the baseball one, you also thought about doing the BB gun one. They're all rigged in some way though, so your odds are probably the same no matter which one you have a go at.
+
+After discussing it, you and Holly decide to have a go at the:
+[[Baseball Game|Festival Baseball Game]] 
+[[BB Gun Game|Festival BB Gun Game]]
+
+
+:: Festival East Path {"position":"285,2169","size":"100,100"}
+<<if $holly_festival_stayed is true>>
+This way doesn’t seem to have much going on, as the only thing of
+interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
+
+<<continuelink "The day has gone pretty well, you think.">> The day      has gone pretty well, you think. About the same as every other year     you’ve gone. The only thing that was different was running into         Holly. Which was nice, but for whatever reason you just didn't feel 	that strong of a connection with her.<<continuelink "Other than that the day has been pretty unremarkable.">>Other than that the day has been pretty unremarkable.  Just another average day. You walk a bit more and eventually arrive back at the place you started. With nothing left 
+to do [[decide to head home and start walking towards the bus stop|Festival Ending Self]]
+<<endif>>
+
+"Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
+
+<<continuelink "Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.">> Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
+
+<<continuelink '"I might have been interested in the derby, of course, that went on 3 hours ago, so…"'>>"I might have been interested in the derby, of course, that went on 3 hours ago, so…"
+
+“Seems like this would be a good time to talk about each other. With how long it's been since we've been able to hang out and talk it's almost like starting over. How about we talk about our hobbies, what do you do for fun?"
+
+<<continuelink "You tell Holly about your hobbies...">> You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a bit basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
+
+Holly seems to be a bit surprised as you detail your hobbies, calling them 'uninteresting' and 'basic'.
+
+"Hmm, I mean, I guess those things could be considered 'basic'. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered 'basic' is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that's when you become a basic bitch or bastard. You definitely don’t have that problem, though."
+
+"Ya know, I like a lot of the same stuff. Music, movies, all that. You already know about my art, and I also enjoy fishing on occasion. Guess you should say I’m pretty ‘basic’ as well."
+
+<<continuelink "You also tell Holly…">> You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
+
+"A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment though, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
+
+"You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime." Holly says, perhaps suggesting something.
+
+<<continuelink "You mention to Holly that..">> You mention to Holly that’s part of the reason you’d never really considered it until recently. There was no way to get that much time off when working at Syperion.
+
+<<continuelink '"It’s definitely a cool idea. What made you think of doing that anyway?"'>>"It’s definitely a cool idea. What made you think of doing that anyway?"
+
+<<continuelink "You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.">> You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.
+
+"Are you taking advice from some unknown vagabond you met on the bus? Don't know if I would suggest that myself. //But// It’s not like you’re going to make ‘road tripping’ your lifestyle, right?"
+
+<<set $festival_walking_path to true>>
+
+<<if $festival_games_completed is not true>>
+"Anyway, looks like we’re almost back where we started. [[Guess we could go check out those games a bit north of here.|Festival Games]]
+
+<<else>>
+
+"Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. Might    even be able to see fireworks as we’re walking there."|Festival Ending Holly]]
+
+<<endif>>
+
+
+:: Festival Ending Self {"position":"568,2499.6666666666665","size":"100,100"}
+After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show. 
+
+As you walk to the entrance you reflect some more on how the day went.
+
+It’s been a long and interesting day. You came expecting to stay for an hour or two and then go home. But after talking to Holly you decided to stay a bit longer. You had some nice discussions with her but it didn’t really go much beyond that. There just wasn’t enough interest to take it any further than a nice chat. Still, you can’t help but feel like maybe you missed out on something. It’s not every day you get to rekindle a faded friendship.
+
+<<continuelink "You eventually make it to the entrance close to the bus stop home.">>You eventually make it to the entrance close to the bus stop home. You turn your head towards the festival area to watch the fireworks before catching the next bus home.
+<<set $holly_romance_festival to false>>
+<<set $self_festival_ending to true>>
+
+[[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
+
+
+:: Festival Ending Holly {"position":"360,2342","size":"100,100"}
+After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show.
+
+<<continuelink "It’s been a long and interesting day.">>It’s been a long and interesting day. You came here expecting to stay for an hour or two and then go home, but after talking to Holly you decided to stay. You really feel like the relationship between you and her has strengthened today. You got to talk really in-depth with her today, just like you used to.
+
+As you're walking to the parking lot with Holly, You turn to her and say:
+<<choice[[You really appreciated her company today, it’s been a while since you’ve been able to hang out with someone like you did today.|Festival Holly Ending Romance]]>>
+
+<<choice[[You enjoyed your time hanging out with her today, but you feel like there just isn’t enough chemistry between the two of you to make this into a real thing.|Festival Holly Ending No Romance]]>>
+
+
+:: Festival Holly Ending Romance {"position":"291.6666666666667,2503.6666666666665","size":"100,100"}
+"I really enjoyed yours as well." Holly says as she looks to you and smiles. "This whole day has reminded me a lot of when we, ya know, actually saw each other on a regular basis."
+
+You continue walking with Holly to her car, eventually reaching it just as the fireworks start to go off.
+
+You both lean on Holly’s car in the parking lot, watching the fireworks as the last bit of sun falls below the horizon, giving way to the stars and planets.
+
+<<continuelink "You feel serene,">> You feel serene, this day couldn't have gone any better. Hanging out with a friend at the end of the day, doing some simple shit, it’s nice and relaxing. You wouldn’t trade it for anything.
+
+The lightshow ends eventually, as all things do. And now it’s time to head back home.
+
+<<continuelink '"Suppose this is today, then."'>> "Suppose this is today, then. It’s been fantastic, really. The festival was alright, but the real highlight was getting to know //you// again." She says with emphasis while pointing to you.
+
+<<continuelink '"Hey,"'>> "Hey, if you ever wanna do something like this again, feel free to hit my number up."
+
+Holly shows you her number on her phone and you add it to your contacts.
+
+"I’ll be seeing you, $name. I’m sure it’ll happen one way or another."
+
+You say goodbye to Holly and head back to the bus stop. What a great day.
+<<set $holly_romance_festival to true>>
+
+[[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
+
+
+:: Festival Holly Ending No Romance {"position":"431.6666666666667,2498.6666666666665","size":"100,100"}
+Holly seems to be a bit surprised by this, her face fills with surprise and a bit of disappointment as you tell her this.
+
+<<continuelink '"Oh. Alright."'>>"Oh. Alright."
+“I mean, It has been a long time since we’ve hung out, I guess jumping into something after only hanging out for one day would be a bit rash.”
+
+<<continuelink'"And, well…"'>>"And, well… I can’t say I felt the same way, but I respect your decision. Guess we can watch these fireworks and then go our separate ways.” She’s not saying it outright but based off her less energetic demeanor and more somber face, she seems very disappointed.
+
+As you stand by Holly’s car watching the fireworks, you can’t help but feel awkward for completely killing the mood, but you figure it’s better for it to end this way than to keep dragging it out.
+
+The fireworks end after about 10 minutes. You and Holly say your goodbyes before you head off to catch the next bus home.
+<<set $holly_romance_festival to false>>
+<<set $holly_no_romance_festival to true>>
+
+[[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
+
+
+:: Festival Baseball Game {"position":"24.666666666666668,2483.666666666667","size":"100,100"}
+You decide to go with Holly’s first choice and try out the Baseball game. Which has you attempting to throw a baseball at certain speed in order to win a prize. 
+
+You walk up to the booth and pay for 2 shots at throwing the ball. One for each of you. It cost a total of $7. Which is ridiculous, but like Holly said you’re paying for the ‘experience’. 
+
+You offer Holly the first pitch since this was her first choice.
+
+<<continuelink '"Sure, I’ll have a go at it."'>> "Sure, I’ll have a go at it. I actually played softball when I was in middle school so maybe that’ll give me an edge.”
+
+<<continuelink "Holly lines up at the target.">> Her goal is to throw the ball at a speed of 60 MPH. A pretty high target for the average person. It’s made even more difficult with how inaccurate the sensor on the target is. It probably hasn’t been replaced or maintained since the thing was first made. Even if it was, there’s nothing stopping the vendor from making it read a bit slower.
+
+She thinks about it for a minute, lining up her throw. She reels back with the ball in her hand, ready to destroy the hell out of that target. She extends her arm and throws the ball at what seems to be a decent speed. The display takes a minute to show the speed, you both wait with mild anticipation, thinking about all the bragging opportunities if one of you were to make it while the other didn’t.
+<<set $holly_speed to random(50, 65)>>
+
+<<continuelink "The display finally shows the speed. Holly threw the ball at a speed of…">>The display finally shows the speed. Holly threw the ball at a speed of $holly_speed.
+
+<<if $holly_speed gte 60>>
+Unbelievable! She actually made it! Quite a feat given all the factors fighting against her. Hopefully you nail it as well, else you’ll never hear the end of it.
+
+The clerk tells Holly she can take any of the various stuffed animals they have hanging up, among them are a stuffed German Shepard, a stuffed Tiger, and a stuffed $race.
+
+Holly chooses the stuffed $race.
+
+<<else>>
+
+Holly throws the ball with all her might, but it wasn’t enough, as the speed is short of the 60 mph target.
+
+<<endif>>
+
+Now it’s your turn up. You’re probably the worst possible person to try this game, as you have no experience with baseball. That is unless you count those little plastic ones you threw around with when you were 4.
+
+<<continuelink "Well, you’ve gotta at least make an effort.">>Well, you’ve gotta at least make an effort. You think about the proper form to throw the ball, trying to mimic the cardboard cut-out they have standing by their booth and the way Holly threw the ball. Eventually, you feel like you’ve got the perfect form, you bring your arm back, ready to get back some of the money you wasted on this thing.
+
+You throw the ball, you can tell your grip wasn’t quite right, as the ball didn’t seem to have as much oomph as you anticipated. Still, the ball moves at a decent speed, hitting the soft target and letting out an unsatisfying ‘plump’ sound.
+
+<<set $player_speed to random(40, 70)>>
+
+<<continuelink "The display shows your speed, you threw the ball at a speed of...">>The display shows your speed, you threw the ball at a speed of $player_speed.
+
+<<if $player_speed gte 60>>
+You nail the target, reaching the target speed of 60MPH.
+
+<<else>>
+
+You gave it all you got but it just wasn’t enough to hit the target speed.
+
+<<endif>>
+
+<<if $player_speed and $holly_speed gte 60>>
+Thankfully you came through and matched Holly, It would seem nobody gained bragging rights today.
+
+<<elseif $player_speed lt 60 and $holly_speed gte 60>>
+It would seem Holly is the victor today, holding bragging rights against you for the foreseeable future.
+
+<<elseif $player_speed gte 60 and $holly_speed lt 60>>
+You emerge victorious today, gaining bragging rights against Holly for the foreseeable future.
+
+<<elseif $player_speed and $holly_speed lt 60>>
+It would seem nobody emerged victorious today. Not surprising given the awful chances. At least this way you’re both on even ground as far as bragging rights goes.
+<<endif>>
+
+<<set $festival_games_completed to true>>
+
+<<if $festival_walking_path is true>>
+<<continuelink "With the game over and the day winding down,">>With the game over and the day winding down, Holly suggests heading back to the entrance
+
+"Well, the day is winding down, suppose we should start heading towards the parking lot. We might be able to see the fireworks on our way out."
+
+You head out with Holly towards the [[parking lot.|Festival Ending Holly]]
+
+<<elseif $festival_walking_path is not true>>
+
+<<continuelink "As the days ends,">> As the day ends, Holly suggests going to check out the rest of the festival before the day ends.
+
+"It’s getting pretty late, suppose we should go check out that one path before it’s too late."
+
+You head out with Holly towards the [[rest of the festival.|Festival East Path]]
+<<endif>>
+
+
+:: Festival BB Gun Game {"position":"163.33333333333334,2483","size":"100,100"}
+You and Holly decide to check out the BB gun game. This game has you shooting out all of a paper target using an automatic BB gun in the shape of a Tommy Gun. Due to the gun’s incredible inaccuracy and high rate of fire you often end up wasting pellets hitting the same area repeatedly. Which is what makes this game so hard to win.
+
+<<continuelink "You pay the vendor enough for 2 turns on the gun,">>You pay the vendor enough for 2 turns on the gun, one for each of you. The total is $12, a ridiculous price.
+
+"It might be ridiculous, but remember, you’re paying for the ‘experience’” Holly says in her snarky tone.
+
+You decide to play first since it was your idea to check this game out. You line up at the gun. It’s quite beaten up, with most of the paint having chipped away. The gun does have sights on it but they are quite trash, so you’re really just eyeballing it. Not great since the $12 you paid will give you just 300 BB rounds each. Not much considering how fast the gun fires.
+
+<<continuelink "Thinking about strategies you could use to beat this game,">>Thinking about strategies you could use to beat this game, you feel the best way to win would be to shoot the outside of the target first.
+
+<<continuelink "You take hold of the gun and aim down its rudimentary sights,">>You take hold of the gun and aim down its rudimentary sights, it’s bolted down to a rail which prevents you from aiming the gun with anything resembling decent accuracy. Guess you’ll just have to make do. You start to shoot the target, with each pull of the trigger about 10 BB pellets fly out. An unnecessary amount, no doubt it was made that way in order to reduce your chance of winning.
+
+<<continuelink "You start off doing a pretty decent job,">>You start off doing a pretty decent job, you’ve shot out a decent chunk of the target, with about half of it remaining. It’s getting quite difficult at this point though since there’s less and less of the target to shoot. Instead of being able to essentially aim in the general area of the target to hit something, you've gotta be more careful with your shots. Which is difficult given the gun’s poor movement and sights.
+
+<<continuelink "You knock out some more of the target,">>You knock out some more of the target there’s about 25% remaining, but you only have 100 pellets to get the rest of it done. At this point, your shots are missing more than they are hitting. The remaining pieces of the target aren't supported by much, which leads to the paper just giving way to pellets, dealing no damage. 
+
+You’re just about to knock out the target, you aim the gun perfectly, your finger on the trigger ready to finally win one of these silly games.
+
+<<set $pc_win_int to random(30, 100)>>
+
+<<if $pc_win_int gte 70>>
+You push the trigger and the last barrage of BB pellets is unleashed. They hit the last bit of the target perfectly, destroying the last evidence of its existence.
+
+Despite all the odds against you, you made it! You won!
+
+The vendor begrudgingly tells that you have the pick of any cheaply made stuffed animal in stock. You decide to pick the Dragon, as it seemed to be highest quality one of the bunch.
+
+<<else>>
+You push the trigger, ready to decimate the last of that pain in the ass target, but as you do you hear a clicking noise, and nothing comes out. You’ve run out BB pellets.
+
+Goddmanit! You were this close to winning! You know you would have won if the gun wasn’t such a piece of trash. Oh well, it’s over. Maybe Holly will have some better luck. Which is really all these games are based on.
+<<endif>>
+
+<<continuelink "It’s Holly’s turn now, they say luck favors the Foxes, guess you’ll see.">>It’s Holly’s turn now, they say luck favors the Foxes, guess you’ll see.
+
+She lines up at the gun, no doubt thinking the same things you did.
+
+"You could have told me this thing was impossible to aim. You’d think this thing was a weapon of mass destruction with how bolted down it is."
+
+<<continuelink "She makes good progress at the start,">>She makes good progress at the start, chipping away a similar amount to you. She seems to have slightly better control over the rate of fire than you did.
+
+Although Holly seems to be falling into the same issues you did, as she knocks more and more of target off it gets more difficult to actually hit it. Guess this is one of the main obstacles in this game. As the game goes on it plays out very similar to your try. She ends up with about 20% of the target left but struggles to hit the rest due to flimsy target.
+<<set $holly_win_int to random(40, 100)>>
+<<if $holly_win_int gte 60>>
+Holly also ends up at the same point you did towards the end. She’s only got about 3 more trigger pulls before she runs out of ammo.
+
+She lines up a shot to knock out the rest of the target, she pulls the trigger, but the pellets just fly past the paper as it gives way. 
+Holly sighs, no doubt frustrated by this tedious game.
+
+Holly lines up another shot in attempt to win this damn game. She pulls the trigger and the pellets land right on target, getting rid of the remaining bits of the target.
+
+To your surprise, Holly actually managed to pull it off and win!
+
+The game vendor begrudgingly offers Holly a choice of any cheaply made stuffed animal they have on display. Among those displayed are a Dragon, a German Shepard, and a $race.
+
+Holly picks the $race. A funny coincidence all things considered, but that’s probably all it is, a coincidence.
+<<else>>
+Holly’s nearing the end of the game, unfortunately, it seems she isn’t going to make it. There’s a good chunk of the target left, with her gun only having 40 rounds left.
+
+She gets a few more bursts off before the gun clicks and runs out of ammo. She made a good effort but it just wasn’t enough.
+<<endif>>
+
+<<if $pc_win_int gte 70 and $holly_win_int gte 60>>
+It would seem that both of you made out today. It's rare enough for one person to win these games, but two? That's almost unheard of.
+
+<<elseif $pc_win_int lt 70 and $holly_win_int gte 60>>
+It seems the sayings were right, luck does favor the foxes. At least that $12 was not spent in vain.
+
+<<elseif $pc_win_int gte 70 and $holly_win_int lt 60>>
+You are the only one to emerge victorious today, even having won you feel like you wasted your money.
+
+<<elseif $pc_win_int lt 70 and $holly_win_int lt 60>>
+Unsurprisingly, neither of you managed too win today. That's to be expected given how rigged these games are. As Holly would say, at least you 'experienced' the games.
+
+<<else>>
+Error with if statement in FBBGG.
+<<endif>>
+
+<<continuelink "With the game done and over with, you evaluate your next course of action with Holly.">>With the game done and over with, you evaluate your next course of action with Holly.
+
+<<if $festival_walking_path is true>>
+"Eh, the day is getting pretty late, I suppose we should start heading towards the parking lot. We might be able to see the fireworks on our way out."
+
+You head with Holly out to the [[parking lot|Festival Ending Holly]]
+
+<<else>>
+"The day's winding down, we should probably check out the rest of the festival before it gets too late."
+
+You and Holly head towards the [[little bit of the festival you haven't checked out yet.|Festival East Path]]
+<<endif>>
+
+
+:: Your Bedroom Post Festival {"position":"423.33333333333337,2638.6666666666665","size":"100,100"}
+You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind recounts yesterdays time at Lake Fest.
+
+You feel like now would be a good time to start working on your road trip plans. You’ve already got a couple of ideas on what to do. 
+
+You could ask your roommates and see what they have to say about it. You could also look up Chris online and ask him for some advice.
+
+<<if $holly_romance_festival is true>>
+You might also hit up Holly and see what she wants to do about your next date.
+
+It's quite a nice day as well, you might even go on a walk today as well.
+
+But first you should probably [[get out of bed|Player Bedroom]]
+
+
+:: Player Bedroom {"position":"411.6666666666667,2783.6666666666665","size":"100,100"}
+You are standing in your bedroom. You see the [[bathroom to the east|Bathroom]], and the [[doorway to the hallway|Hallway]] to the north. 
+
+You could also use your [[computer|Computer]] or text Holly on your [[smartphone|Smartphone Holly]]
+
+
+:: Smartphone Holly {"position":"236.6666666666667,2786.9999999999995","size":"100,100"}
+Double-click this passage to edit it.
+
+
