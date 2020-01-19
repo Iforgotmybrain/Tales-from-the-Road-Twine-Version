@@ -60,15 +60,19 @@ Your name is $name. You are $gender and you are a $race. Is this correct?
 
 :: Your Bedroom {"position":"408,547","size":"100,100"}
 <<if $sasha_living_room_talked is not true>> 
-After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You see [[the door to the hallway in front of you|Hallway]] and [[the door to the bathroom to your east.|Bathroom]] You could also use your [[computer.|Computer]]
-<<endif>>
+After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You see the door to the hallway in front of you and the door to the bathroom to your east. You could also use your computer
 
-<<if $sasha_living_room_talked is true>>
+You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
+
+<<elseif $sasha_living_room_talked is true>>
 You wake up around your usual time of 11 AM. You get a notification on your phone stating that the yearly festival is going on today, you feel like Sasha might have mentioned that last night but you're not sure. Either way it might be worth checking out, you've gone to it every other year so why stop now?
 
 <<continuelink "Get out of bed">>
 
-You get out of bed and see [[the door to the hallway in front of you|Hallway]] and [[the door to the bathroom to your east.|Bathroom]] You could also use your [[computer.|Computer]]
+You get out of bed and see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
+
+You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
+<<endif>>
 
 
 :: Hallway {"position":"401,699","size":"100,100"}
@@ -84,10 +88,34 @@ Head back to [[Your Bedroom]]
 
 
 :: Sasha's Bedroom [Formatting-Help] {"position":"193,697","size":"100,100"}
-<<if $sasha_talked_1 is true>>
-You knock on Sasha's door again but she doesn't answer.
-<<return>>
-<<else>>
+<<if $festival_completed is true and $sasha_post_fest_talk is not true>>
+You knock on Sasha’s door, hoping to get some input on your road trip itinerary. While Sasha isn’t very well-traveled, you figured it couldn’t hurt to ask her what she thinks about the whole thing. Especially since she spent some years out of state before moving here.
+
+<<continuelink "Sasha answers the door and welcomes you in.">>Sasha answers the door and welcomes you in. “So, what brings you to me today? Wanna talk about someone or something?” She says with an inquisitive tone.
+
+You tell Sasha that you were actually here to talk about something a bit different for once. You go on to state that you wanted to get some input from her on your idea of going on a road trip across the country.
+
+<<continuelink "You explain the whole idea to her.">>You explain the whole idea to her. How you plan on bringing a few other people along, as well as where you plan ongoing. You feel like it would be a good idea to go in a northwesterly direction so you can check out some of the state parks in the northern mountain states. By the time you leave it should be early Summer, so weather shouldn’t be an issue, and the visuals will be a lot more interesting than going straight through the Midwest.
+
+“Sounds like you already have a pretty decent idea of what you’re doing. I’m guessing you want some input on where to stop in Oregon, right?”
+
+You nod your head, Sasha then thinks for a minute before offering some ideas.
+
+“Hmm, it’s been some time since I’ve lived there, but I can remember a few places that might be worth checking out. Crater Lake is worth a stop, as is Silver Falls. And there’s a bunch of other parks you could check out as well, I’ll write them down for you.”
+
+Sasha writes down about 7 places to check out in Oregon. You add them to your list which you’ll sort through later.
+
+<<continuelink '"Hey, one thing before you leave."'>>"Hey, one thing before you leave. You said you were going to take a few other people along; do you have anybody in mind yet?”
+
+You tell Sasha you haven’t really gotten to that part yet. You wanna finalize your travel plans before doing so.
+
+“Alright, I was just wondering. I’ll have to think about it, but I might be interested in tagging along with you if you end up having room. I’ve never really traveled before, but I guess there’s no time like now to give it go.”
+
+<<set $sasha_post_fest_talk to true>>
+
+<<continuelink "You tell Sasha you’ll keep her in mind.">>You tell Sasha you’ll keep her in mind. You say goodbye and [[head back out to the hallway.|Hallway]]
+
+<<elseif $sasha_talked_1 is not true>>
 
 You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at the desk.
 
@@ -121,10 +149,16 @@ You sympathize with Sasha, thinking back to the job you had before your current 
 <<continuelink "Continue">>
 		
 You thank Sasha for letting you know, you say goodbye and head out to the [[Hallway]].
+
+<<else>>
+You knock on Sasha's door but she doesn't answer.
+<<return>>
 <<endif>>
 
 
 :: Downstairs {"position":"577,702","size":"100,100"}
+<<set $sasha_living_room_talked to true>> Remove this hey you shouldn't see this.
+
 You head downstairs and see nothing out of the oridnary. The entrance way where you're currently standing connects directly to the living room and the kitchen. There's also the front door right by the stairs, you could also head back up the stairs to the hallway.
 
 After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Door]], [[Hallway]].
@@ -175,35 +209,78 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 
 
 :: Living Room {"position":"727,637","size":"100,100"}
+/* NEEDS FIXED!!! */
 <<if $sasha_talked_1 && $jacob_talked_1 && $park_completed && $cafe_completed is true && $sasha_living_room_talked is not true>>
+    
+    You return to the living room once again, Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
 
-You return to the living room once again, Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
+    It seems Sasha's watching a superhero movie involving some sort of pink titan.
 
-It seems Sasha's watching a superhero movie involving some sort of pink titan.
+    "You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven't got to watch the final one yet but I've heard it's killer."
 
-"You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven't got to watch the final one yet but I've heard it's killer."
+    <<continuelink "Continue">>
 
-<<continuelink "Continue">>
+    "Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven't got to watch it yet."
 
-"Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven't got to watch it yet."
+    <<timed 5s>>
+    You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
+    <</timed>>
 
-<<timed 5s>>
-You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
-<</timed>>
+    <<continuelink "Continue">>
 
-<<continuelink "Continue">>
+    "Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I'd love to rewatch them with you."
 
-"Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I'd love to rewatch them with you."
+    "Anyway, you want something or just here to chat?"
 
-"Anyway, you want something or just here to chat?"
+    [[Just wanna chat for a bit|Sasha Living Room Chat]] 
+    [[Actually I wanted to ask you for some advice|Sasha Living Room Purpose Chat]]
 
-[[Just wanna chat for a bit|Sasha Living Room Chat]] 
-[[Actually I wanted to ask you for some advice|Sasha Living Room Purpose Chat]]
+<<elseif $sasha_livng_room_talked is true and $jacob_living_room_talk is not true and $festival_completed is true>>
+    You check out the living room yet again, it would seem Jacob is sitting in a chair watching something on his phone. He sees you as you walk into the living room and gives you a nod. You sit on the couch and Jacob askes you a question shortly after.
+
+    "Hey, how was Lake Fest yesterday? I was gonna go yesterday but just didn’t get around to it.”
+
+    <<continuelink "You tell Jacob all about your day at Lake Fest."You tell Jacob all about your day at Lake Fest. Detailing how you met up with Holly and watched that concert with her.
+
+    <<if $holly_romance_festival is true>>
+        You tell Jacob you think your whole ordeal with her went pretty, especially considering you got her number at the end of the day.
+
+        <<continuelink '"Hell yeah."'>>"Hell yeah. I know you’ve mentioned her before a few times but I didn’t know you two had that kind of interest in each other."
+
+    <<elseif $holly_romance_festival is false>>
+
+        You tell Jacob you enjoyed hanging out with her but didn’t take any further than that. It was nice hanging out with an old friend but there was a reason you two drifted apart.
+
+        <<continuelink '"Yeah, I find that’s often the case myself."'>>"Yeah, I find that’s often the case myself. If you’re really friends with someone, you’ll find some way to keep in touch with them. The fake ones will just disappear if you aren’t actively seeking them out."
+
+    <<elseif $self_festival_ending is true>>
+
+        You tell Jacob you enjoyed watching the concert with her, but weren’t really interested in doing anything else.
+
+        <<continuelink '"That can happen."' "That can happen. Last time you talked to her was like 5 years ago, right? You’ve probably both changed a lot since then."
+
+     <<endif>>
+
+    “Anyway, you wanted to ask me about something? Guessing that’s why you came down here.”
+
+    <<continuelink "You tell Jacob that you did, in fact, come to ask about something."You tell Jacob that you did, in fact, come to ask about something. And that something is your road trip idea. 
+
+    You give him the general idea you have for it. You state that you plan on bringing around 3-4 people total and hope to travel in a northwesterly direction and end up in Oregon at the end. You’re still working out some of the finer details, but that’s the gist of it.
+
+    <<continuelink '"Seems like it’ll be fun."' "Seems like it'll be fun. I’ve done some traveling in the last few years but nothing like that. Speaking of, I’m guessing that traveling experience is why you’re next question is going to be 'Do you have suggestions on places to check out along the way?' " Jacob says smuggly. "And lucky for you, my friend, I do."
+
+    "You said you’re hoping to go in a sort of northwestern direction, right? That’ll take you through Indiana, Illinois, and then from there you’d either be going through Iowa or Wisconsin, depending on where you decide to stop. See…" Jacob thinks for a moment. "There’s not much going on in Indiana, Illinois though, you could stop a day or two in Chicago. From there on I can think of a few things you might want to check out, I’ll write ‘em up in text message here and send them to you here in a minute.”
+
+    <<continuelink "Jacob taps away at his phone and sends you a message">> Jacob taps away at his phone and sends you a message detailing some places you could check out. You add them to your list to be sorted through later.
+
+    <<continuelink '"So, you’re taking a few other people along, huh?"'>> "So, you’re taking a few other people along, huh? I’d be down to go if you have room. Just let me know a bit beforehand so I can make some arrangements, alright?”
+    <<set $jacob_living_room_talk to true>>
+    You tell Jacob you’ll keep him in mind before saying bye and [[leaving the living room.|Downstairs]]
+   
 
 <<else>>
-You enter the living room but see nothing except empty chairs and a dead TV. Maybe you should come back later.
-
-<<return>>
+    You enter the living room but see nothing except empty chairs and a dead TV. Maybe you should come back later.
+    <<return>>
 
 <<endif>>
 
@@ -797,7 +874,7 @@ Holly seems to be a bit surprised as you detail your hobbies, calling them 'unin
 <<endif>>
 
 
-:: Festival Ending Self {"position":"568,2499.6666666666665","size":"100,100"}
+:: Festival Ending Self {"position":"568,2499","size":"100,100"}
 After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show. 
 
 As you walk to the entrance you reflect some more on how the day went.
@@ -807,6 +884,7 @@ It’s been a long and interesting day. You came expecting to stay for an hour o
 <<continuelink "You eventually make it to the entrance close to the bus stop home.">>You eventually make it to the entrance close to the bus stop home. You turn your head towards the festival area to watch the fireworks before catching the next bus home.
 <<set $holly_romance_festival to false>>
 <<set $self_festival_ending to true>>
+<<set $festival_completed to true>>
 
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
@@ -822,7 +900,7 @@ As you're walking to the parking lot with Holly, You turn to her and say:
 <<choice[[You enjoyed your time hanging out with her today, but you feel like there just isn’t enough chemistry between the two of you to make this into a real thing.|Festival Holly Ending No Romance]]>>
 
 
-:: Festival Holly Ending Romance {"position":"291.6666666666667,2503.6666666666665","size":"100,100"}
+:: Festival Holly Ending Romance {"position":"291,2503","size":"100,100"}
 "I really enjoyed yours as well." Holly says as she looks to you and smiles. "This whole day has reminded me a lot of when we, ya know, actually saw each other on a regular basis."
 
 You continue walking with Holly to her car, eventually reaching it just as the fireworks start to go off.
@@ -843,11 +921,12 @@ Holly shows you her number on her phone and you add it to your contacts.
 
 You say goodbye to Holly and head back to the bus stop. What a great day.
 <<set $holly_romance_festival to true>>
+<<set $festival_completed to true>>
 
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Holly Ending No Romance {"position":"431.6666666666667,2498.6666666666665","size":"100,100"}
+:: Festival Holly Ending No Romance {"position":"431,2498","size":"100,100"}
 Holly seems to be a bit surprised by this, her face fills with surprise and a bit of disappointment as you tell her this.
 
 <<continuelink '"Oh. Alright."'>>"Oh. Alright."
@@ -860,11 +939,12 @@ As you stand by Holly’s car watching the fireworks, you can’t help but feel 
 The fireworks end after about 10 minutes. You and Holly say your goodbyes before you head off to catch the next bus home.
 <<set $holly_romance_festival to false>>
 <<set $holly_no_romance_festival to true>>
+<<set $festival_completed to true>>
 
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Baseball Game {"position":"24.666666666666668,2483.666666666667","size":"100,100"}
+:: Festival Baseball Game {"position":"24,2483","size":"100,100"}
 You decide to go with Holly’s first choice and try out the Baseball game. Which has you attempting to throw a baseball at certain speed in order to win a prize. 
 
 You walk up to the booth and pay for 2 shots at throwing the ball. One for each of you. It cost a total of $7. Which is ridiculous, but like Holly said you’re paying for the ‘experience’. 
@@ -944,7 +1024,7 @@ You head out with Holly towards the [[rest of the festival.|Festival East Path]]
 <<endif>>
 
 
-:: Festival BB Gun Game {"position":"163.33333333333334,2483","size":"100,100"}
+:: Festival BB Gun Game {"position":"163,2483","size":"100,100"}
 You and Holly decide to check out the BB gun game. This game has you shooting out all of a paper target using an automatic BB gun in the shape of a Tommy Gun. Due to the gun’s incredible inaccuracy and high rate of fire you often end up wasting pellets hitting the same area repeatedly. Which is what makes this game so hard to win.
 
 <<continuelink "You pay the vendor enough for 2 turns on the gun,">>You pay the vendor enough for 2 turns on the gun, one for each of you. The total is $12, a ridiculous price.
@@ -1037,7 +1117,7 @@ You and Holly head towards the [[little bit of the festival you haven't checked 
 <<endif>>
 
 
-:: Your Bedroom Post Festival {"position":"423.33333333333337,2638.6666666666665","size":"100,100"}
+:: Your Bedroom Post Festival {"position":"423,2638","size":"100,100"}
 You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind recounts yesterdays time at Lake Fest.
 
 You feel like now would be a good time to start working on your road trip plans. You’ve already got a couple of ideas on what to do. 
@@ -1050,15 +1130,16 @@ You might also hit up Holly and see what she wants to do about your next date.
 It's quite a nice day as well, you might even go on a walk today as well.
 
 But first you should probably [[get out of bed|Player Bedroom]]
+<<endif>>
 
 
-:: Player Bedroom {"position":"411.6666666666667,2783.6666666666665","size":"100,100"}
-You are standing in your bedroom. You see the [[bathroom to the east|Bathroom]], and the [[doorway to the hallway|Hallway]] to the north. 
+:: Player Bedroom {"position":"431,2791","size":"100,100"}
+You are standing in your bedroom. You see the [[hallway to the north|Hallway]], and the [[doorway to the bathway|Bathroom]] to the east. 
 
-You could also use your [[computer|Computer]] or text Holly on your [[smartphone|Smartphone Holly]]
+You could also use your [[computer|Computer]] or text Holly on your [[smartphone.|Smartphone Holly]]
 
 
-:: Smartphone Holly {"position":"236.6666666666667,2786.9999999999995","size":"100,100"}
+:: Smartphone Holly {"position":"236,2786","size":"100,100"}
 Double-click this passage to edit it.
 
 
