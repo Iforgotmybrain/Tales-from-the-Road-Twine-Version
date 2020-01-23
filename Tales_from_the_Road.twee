@@ -78,13 +78,15 @@ You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]]
 :: Hallway {"position":"401,699","size":"100,100"}
 You enter the hallway of your apartment which you share with 2 of your friends. Your bedroom is to the south, Sasha's bedroom is to the west, the stairs leading down are to the east, and Jacob's bedroom is to the north.
 
-You head towards [[Your Bedroom]], [[Sasha's Bedroom]], [[Downstairs]], [[Jacob's Bedroom]]
+You head towards <<if $festival_completed is not true>>[[Your Bedroom]], <<elseif $festival_completed is true>> [[Your Bedroom,|Player Bedroom]]<<endif>> [[Sasha's Bedroom]], [[Downstairs]], [[Jacob's Bedroom]]
 
 
 :: Bathroom {"position":"547,545","size":"100,100"}
-You enter the bathroom but don't see anything of note. Just the usual collection of bathroom related items. You showered last night so there's no reason to do so right now.
+You enter the bathroom but see nothing of note. At first glance it's just the usual collection of bathroom related items. Just don't do too much digging in the draws. 
 
-Head back to [[Your Bedroom]]
+You showered last night so there's no reason to do so right now.
+
+<<return>>
 
 
 :: Sasha's Bedroom [Formatting-Help] {"position":"193,697","size":"100,100"}
@@ -95,7 +97,7 @@ You knock on Sasha’s door, hoping to get some input on your road trip itinerar
 
 You tell Sasha that you were actually here to talk about something a bit different for once. You go on to state that you wanted to get some input from her on your idea of going on a road trip across the country.
 
-<<continuelink "You explain the whole idea to her.">>You explain the whole idea to her. How you plan on bringing a few other people along, as well as where you plan ongoing. You feel like it would be a good idea to go in a northwesterly direction so you can check out some of the state parks in the northern mountain states. By the time you leave it should be early Summer, so weather shouldn’t be an issue, and the visuals will be a lot more interesting than going straight through the Midwest.
+<<continuelink "You explain the whole idea to her.">>You explain the whole idea to her. How you plan on bringing a few other people along, as well as where you plan on going. You feel like it would be a good idea to go in a northwesterly direction so you can check out some of the state parks in the northern mountain states. By the time you leave it should be early Summer, so weather shouldn’t be an issue, and the visuals will be a lot more interesting than going straight through the Midwest.
 
 “Sounds like you already have a pretty decent idea of what you’re doing. I’m guessing you want some input on where to stop in Oregon, right?”
 
@@ -121,28 +123,18 @@ You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical
 
 <<continuelink "Continue">>
 
-The first anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
+The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
 	
-	<<timed 5s>>
-	"Hey $name, what's going on?" She says wondering what brings you to her room.
-    <</timed>>
+<<continuelink '"Hey $name, what's going on?"'>>"Hey $name, what's going on?" She says, wondering what brings you to her room.
 
-    <<timed 5s>>
-	You tell her you just wanted to check in, see how things are going.
-    <</timed>>
-
-<<continuelink "Continue">>
+You tell her you just wanted to check in, see how things are going.
 	
-"Honestly, not much has been going on. Just going through the daily routine, ya know? Haven't been having the greatest time at work, but with Geology it's not like there's a bunch of other options out there. Especially in this town."
-
-<<continuelink "Continue">>
+<<continuelink '"Honestly, not much has been going on."'>>"Honestly, not much has been going on. Just going through the daily routine. Haven't been having the greatest time at work, but with Geology it's not like there's a bunch of other options out there. Especially in this town."
 		
 You sympathize with Sasha, thinking back to the job you had before your current one. Although luckily your career field is a bit more in demand than Sasha's is.
 		
-		<<timed 5s>>
-		"Oh, by the way, I think Jacob wanted to ask you something. He mentioned something about football earlier today."
-        <</timed>>
-		
+
+<<continuelink '"Oh, by the way,"'>>"Oh, by the way, I think Jacob wanted to ask you something. He mentioned something about football earlier today."		
 
 <<set $sasha_talked_1 to true>>
 
@@ -157,8 +149,6 @@ You knock on Sasha's door but she doesn't answer.
 
 
 :: Downstairs {"position":"577,702","size":"100,100"}
-<<set $sasha_living_room_talked to true>> Remove this hey you shouldn't see this.
-
 You head downstairs and see nothing out of the oridnary. The entrance way where you're currently standing connects directly to the living room and the kitchen. There's also the front door right by the stairs, you could also head back up the stairs to the hallway.
 
 After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Door]], [[Hallway]].
@@ -190,8 +180,8 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 	"Hey bud, what's going on?" He says as you walk up to talk to him.
 		
 		<<linkreplace "Continue" t8n>>\
-		"Been wanting to talk to you about something. 
-		"Dunno if you've been keeping up with the Blues' Head Coach search but it seems like they've narrowed down their choices to two people, Karl Kowalski and Robert Indah. Kowalski is the OC for the Norsemen, not a ton of expiernece but I feel like his scheme would be a perfect fit for the Blues. And than Indah is the DC for the number one defense in the leauge on the 99ers. Although you have to wonder how much of that success can be attributed to his coaching verus the insane amount of talent they have."
+		"Been wanting to talk to you about something." 
+		"Dunno if you've been keeping up with the Blues' Head Coach search but it seems like they've narrowed down their choices to two people, Karl Kowalski and Robert Indah. Kowalski is the OC for the Norsemen, not a ton of experience but I feel like his scheme would be a perfect fit for the Blues. And then Indah is the DC for the number one defense in the leauge on the 99ers. Although you have to wonder how much of that success can be attributed to his coaching verus the insane amount of talent they have on defense."
 
 		
 		    <<linkreplace "Continue" t8n>>\
@@ -209,89 +199,47 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 
 
 :: Living Room {"position":"727,637","size":"100,100"}
-/* NEEDS FIXED!!! */
 <<if $sasha_talked_1 && $jacob_talked_1 && $park_completed && $cafe_completed is true && $sasha_living_room_talked is not true>>
-    
-    You return to the living room once again, Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
 
-    It seems Sasha's watching a superhero movie involving some sort of pink titan.
+You return to the living room once again, Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
 
-    "You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven't got to watch the final one yet but I've heard it's killer."
+It seems Sasha's watching a superhero movie involving some sort of pink titan.
 
-    <<continuelink "Continue">>
+"You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven't got to watch the final one yet but I've heard it's killer."
 
-    "Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven't got to watch it yet."
+<<continuelink "Continue">>
 
-    <<timed 5s>>
-    You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
-    <</timed>>
+"Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven't got to watch it yet."
 
-    <<continuelink "Continue">>
+<<timed 5s>>
+You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
+<</timed>>
 
-    "Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I'd love to rewatch them with you."
+<<continuelink "Continue">>
 
-    "Anyway, you want something or just here to chat?"
+"Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I'd love to rewatch them with you."
 
-    [[Just wanna chat for a bit|Sasha Living Room Chat]] 
-    [[Actually I wanted to ask you for some advice|Sasha Living Room Purpose Chat]]
+"Anyway, you want something or just here to chat?"
 
-<<elseif $sasha_livng_room_talked is true and $jacob_living_room_talk is not true and $festival_completed is true>>
-    You check out the living room yet again, it would seem Jacob is sitting in a chair watching something on his phone. He sees you as you walk into the living room and gives you a nod. You sit on the couch and Jacob askes you a question shortly after.
+[[Just wanna chat for a bit|Sasha Living Room Chat]] 
+[[Actually I wanted to ask you for some advice|Sasha Living Room Purpose Chat]]
 
-    "Hey, how was Lake Fest yesterday? I was gonna go yesterday but just didn’t get around to it.”
-
-    <<continuelink "You tell Jacob all about your day at Lake Fest."You tell Jacob all about your day at Lake Fest. Detailing how you met up with Holly and watched that concert with her.
-
-    <<if $holly_romance_festival is true>>
-        You tell Jacob you think your whole ordeal with her went pretty, especially considering you got her number at the end of the day.
-
-        <<continuelink '"Hell yeah."'>>"Hell yeah. I know you’ve mentioned her before a few times but I didn’t know you two had that kind of interest in each other."
-
-    <<elseif $holly_romance_festival is false>>
-
-        You tell Jacob you enjoyed hanging out with her but didn’t take any further than that. It was nice hanging out with an old friend but there was a reason you two drifted apart.
-
-        <<continuelink '"Yeah, I find that’s often the case myself."'>>"Yeah, I find that’s often the case myself. If you’re really friends with someone, you’ll find some way to keep in touch with them. The fake ones will just disappear if you aren’t actively seeking them out."
-
-    <<elseif $self_festival_ending is true>>
-
-        You tell Jacob you enjoyed watching the concert with her, but weren’t really interested in doing anything else.
-
-        <<continuelink '"That can happen."' "That can happen. Last time you talked to her was like 5 years ago, right? You’ve probably both changed a lot since then."
-
-     <<endif>>
-
-    “Anyway, you wanted to ask me about something? Guessing that’s why you came down here.”
-
-    <<continuelink "You tell Jacob that you did, in fact, come to ask about something."You tell Jacob that you did, in fact, come to ask about something. And that something is your road trip idea. 
-
-    You give him the general idea you have for it. You state that you plan on bringing around 3-4 people total and hope to travel in a northwesterly direction and end up in Oregon at the end. You’re still working out some of the finer details, but that’s the gist of it.
-
-    <<continuelink '"Seems like it’ll be fun."' "Seems like it'll be fun. I’ve done some traveling in the last few years but nothing like that. Speaking of, I’m guessing that traveling experience is why you’re next question is going to be 'Do you have suggestions on places to check out along the way?' " Jacob says smuggly. "And lucky for you, my friend, I do."
-
-    "You said you’re hoping to go in a sort of northwestern direction, right? That’ll take you through Indiana, Illinois, and then from there you’d either be going through Iowa or Wisconsin, depending on where you decide to stop. See…" Jacob thinks for a moment. "There’s not much going on in Indiana, Illinois though, you could stop a day or two in Chicago. From there on I can think of a few things you might want to check out, I’ll write ‘em up in text message here and send them to you here in a minute.”
-
-    <<continuelink "Jacob taps away at his phone and sends you a message">> Jacob taps away at his phone and sends you a message detailing some places you could check out. You add them to your list to be sorted through later.
-
-    <<continuelink '"So, you’re taking a few other people along, huh?"'>> "So, you’re taking a few other people along, huh? I’d be down to go if you have room. Just let me know a bit beforehand so I can make some arrangements, alright?”
-    <<set $jacob_living_room_talk to true>>
-    You tell Jacob you’ll keep him in mind before saying bye and [[leaving the living room.|Downstairs]]
-   
-
+<<elseif $sasha_living_room_talked is true and $jacob_living_room_talk is not true and $festival_completed is true>>
+You check out the living room yet again, it would seem Jacob is sitting in a chair watching something on his phone. He sees you as you walk into the living room and gives you a nod. [[You sit on the couch and Jacob askes you a question shortly after.|Jacob Living Room Dialogue]]
+	
 <<else>>
-    You enter the living room but see nothing except empty chairs and a dead TV. Maybe you should come back later.
-    <<return>>
-
+You enter the living room and see nothing but empty chairs and a TV entertaining itself. Maybe you should check back later.
+<<return>>
 <<endif>>
 
 
 :: Front Door {"position":"899,938","size":"100,100"}
-<<set $travel_locals = ["Home", "Sycamore Park", "Torie's Cafe"]>>
+/* Still need to edit this after Holly text */
 You head out the front door and stand on your front porch ready for adventure! You think of the following places to check out: 
 [[Home|Downstairs]] 
 <<if not visited ("Sycamore Park")>> [[Sycamore Park]]
 <<endif>><<if not visited ("Torie's Cafe")>> [[Torie's Cafe]]
-<<endif>> <<if $sasha_living_room_talked and $jacob_talked_bedroom_1 is true>> [[Festival|Festival Start]] <<endif>>
+<<endif>> <<if $sasha_living_room_talked is true and not visited("Festival Start")>> [[Festival|Festival Start]] <<endif>> <<if $sasha_post_fest_talk is true and $jacob_living_room_talk is true and $chris_pawbook_completed is true and $walk_completed is not true>>[[Go for a walk|Valery Walk]]<<endif>><<if $valery_walk_talked is true and $valery_house_talk is not true>>[[Go to Valery's house|Valery's House]]<<endif>>
 
 
 :: Kitchen Jacob Kowalski [Could-be-condensed] {"position":"457,1013","size":"100,100"}
@@ -305,10 +253,9 @@ You tell Jacob that you think Kowalski would make the best head coach. He lacks 
 
 "Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I'll stop bugging you."
 		
-<<timed 4s>>
+<<timed 3s>>
 
-You say goodbye to Jacob and head back to the You say goodbye to 
-Jacob and head back to the [[entrance way.|Downstairs]]
+You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
 		
 <</timed>>
 
@@ -322,9 +269,9 @@ You state that Indah seems to be the most qualifed for the job. Mentioning his m
 <<continuelink "Continue">>
 "Well the microwave is beeping and my lunch is done so I'll be on my way. See ya."
 	
-<<timed 4s>>
+<<timed 3s>>
 
-You say goodbye to Jacob and head back to thec[[entrance way.|Downstairs]]
+You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
 		
 <</timed>>
 
@@ -351,12 +298,10 @@ You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
 
 
 :: Torie's Cafe {"position":"1142,846","size":"100,100"}
-You catch a ride on the bus and end up at Tories Place, your all-time favorite place to grab lunch.
+You catch a ride on the bus and end up at Torie's Cafe, your all-time favorite place to grab lunch.
 
-The place has a modern aesthetic with colorful furniture and ample natural lighting giving the place an overall cheery vibe. They’re mainly known for their fantastic wraps, but also have some pretty good soups.
-
+Torie's has a very modern aesthetic, with colorful furniture and ample natural lighting giving the place an overall cheery vibe. They’re mainly known for their fantastic wraps, but also have some pretty good soups.
 <<continuelink "Continue">>
-
 Looking around you see the line to order, it’s a bit after lunch so there isn’t much of a wait. While walking to the line you see someone you think you know, they're sitting at a table towards the back and it seems as though they haven't noticed you yet.
 
 You could leave the line and go over and say hi to your friend, or you could just stay in line, get your food, and leave.
@@ -365,13 +310,11 @@ You could leave the line and go over and say hi to your friend, or you could jus
 
 <<continuelink "Just stay in line">>
 
-You decide to just do your own thing and order some food, the line moves quick and before you know it’s your turn to order.
+You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
 
 You decide to order your usual combo; a tuna wrap with a bag of chips and a drink. Not a bad deal for $4!
-
 <<continuelink "Continue">>
-
-You sit down at a table after grabbing your food, nothing much happens while eating. The friend you saw across the building leaves soon after you get your food, having seemingly no idea you were here.
+You sit down at a table after grabbing your food, nothing much happens while eating. The friend you saw leaves soon after you get your food, having seemingly no idea you were here.
 
 <<set $cafe_no_holly to true>>
 <<set $cafe_completed to true>>
@@ -380,9 +323,8 @@ You finish up your meal and throw your trash away before hopping on the bus to g
 
 
 :: Cafe Holly {"position":"1296,846","size":"100,100"}
+/* Provide more details about Holly's apperance? */
 You decide to leave the line and go over and say hi to your friend, Holly.
-
-/* Provide more details about Holly's apperance? also add in ending points. */
 
 Holly is a vixen. No, not like that; in the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
 
@@ -392,7 +334,7 @@ You exchange greetings with Holly and start conversing. There’s a lot of catch
 
 <<continuelink "Continue">>
 
-"Wow, Hey $name! It's been awhile.Last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before you went off to college in like 2013!"
+"Wow, Hey $name! It's been awhile. Last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before you went off to college in like 2013!"
 
 <<continuelink "Continue">>
 
@@ -402,7 +344,7 @@ You also ask what Holly’s been up to since you last met, a faint look of disap
 
 <<continuelink "Continue">>
 
-"Yeah, so, I dropped out of college at the end of 2016. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying "the college life". I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. I also hated my major, I quickly realized that marketing was not for me."
+"Yeah, so, I dropped out of college at the end of 2016. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying "the college life". I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. I also hated my major, I realized pretty quick that marketing was not for me."
 
 <<continuelink "Continue">>
 
@@ -514,17 +456,13 @@ Caught up in your thoughts you find yourself at [[the end of your walk before yo
 
 You tell Sasha you just wanted to chat with her for a bit.
 
-<<timed 3s>>
-“Alright, just like old times! It's been awhile since we've just sat down and talked”
-<</timed>>
 
-<<timed 7s>>
+<<continuelink'"Alright, just like old times!"'>>"Alright, just like old times!" It's been awhile since we've just sat down and talked”
+
 “So, what kind of movies do you like? Can’t remember ever talking about moives with you, and I know we haven’t gone to see any together.”
-<</timed>>
 
-<<timed 12s>>
-You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
-<</timed>>
+<<continuelink "You spent the next half an hour talking about movies with Sasha,">>You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
+
 
 <<continuelink "Continue">>
 
@@ -538,12 +476,10 @@ As Sasha finishes her rant on the prequel movies you start to plan your exit.
 
 You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
 
-<<timed 5s>>
+<<timed 3s>>
 “Alright, see you tomorrow. We’ve really gotta talk more often!”
 <</timed>>
-
 <<set $ending_points += 2>>
-
 You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]
 
 
@@ -553,9 +489,7 @@ You nod your head in agreement with Sasha before getting up and [[walking up to 
 
 You tell Sasha you want to ask her for some advice, that you wanted to ask her for help on finding 'purpose'.
 
-<<timed 6s>>
-Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn't be long before you got sick of your current work style.
-<</timed>>
+<<continuelink '"Purpose, huh?"'>>"Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn't be long before you got sick of your current work style."
 
 “Well I’m assuming your issue is that you don't really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don't even work. You've got the money to just sit on your ass for a year if you wanted."
 
@@ -573,21 +507,11 @@ I started to feel lost after those few months, I had no long-term goals, no real
 
 "Point is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say 'fuck it' and try some weird shit, you never know what might happen. You could end up finding your 'purpose', or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don't know, just do //something.//"
 
-<<click "Thanks Sasha.">>
+<<continuelink "'Thanks Sasha.'">>Thanks Sasha.
 
 “Of course, anything for my best friend. If you wanna talk about anything else, you just let me know."
-
-"You say good night to Sasha and head up to your [[bedroom for the night|Your Bedroom]]
-
-<</click>>
-
-<<click "Ask Sasha if she as any ideas that are more specific.">>
-
-“I don’t know. There’s that festival thing coming up tomorrow. Maybe you could there go there and see what's going on. Jacob might have an idea too. Couldn’t hurt to ask him.”
 <<set $ending_points += 4>>
-You thank Sasha and [[head up for the night.|Your Bedroom]] You'll have to ask Jacob some questions tomorrow.
-
-<</click>>
+"You say good night to Sasha and head up to your [[bedroom for the night.|Your Bedroom]]
 
 
 :: Festival Start {"position":"259,1432","size":"100,100"}
@@ -606,12 +530,12 @@ You shake the Tiger’s hand and introduce yourself as Dylan.
 “Nice to meet you Dylan. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
 <</timed>>
 <<continuelink "Continue">>
-You can’t really think of anything else remarkable here. The town is actually quite boring. You offer a few eating recommendations, including Tories Café, stating that there really isn’t much to do here except check out the local restaurants.
+You can’t really think of anything else remarkable here. The town is actually quite boring. You offer a few eating recommendations, including Torie's Café, stating that there really isn’t much to do here except check out the local restaurants.
 <<continuelink "Continue">>
 
-"Yeah, I kind of figured that. This is my second time going to this event and I can't say I've seen much else to do around here.” The Tiger says with a friendly tone. "Anyway, I bet you’re probably wondering why someone would come here just for one event.”
+"Yeah, I kind of figured that. This is my second time going to this event and I can't say I've seen much else to do around here.” The Tiger says with a friendly tone. "Anyway, I bet you’re probably wondering why someone would come here just for this one event.”
 
-You can’t say you were really racking your brain trying to figure that out, <<continuelink "but you’ll humor him.">>
+You can’t say you were really racking your brain trying to figure that out, <<continuelink "but you’ll humor him.">>but you’ll humor him.
 
 “Well, I’m actually on a trip across the country! I do it every year, in some shape or form. Last year I went by train but now I’m doing it by car.” He says with an enthusiastic tone. Clearly he’s quite interested in traveling the country.”
 
@@ -626,16 +550,14 @@ You tell Chris that you’ve been interested in doing something similar, you fin
 
 "If I could offer one tip, it's to plan ahead of time and check out what’s going to be going in the towns you’re passing by. Try to find the best possible time to leave so you can maximize the events you can go too."
 
-You thank Chris for adviceif you ever do decide to take on such an endeavor, you’ll definitely make sure too have a plan. 
+You thank Chris for the advice. If you ever do decide to take on such an endeavor, you’ll definitely make sure to have a plan. 
 <<continuelink "Continue">>
 
-"Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his hand out for a <<continuelink "farewell handshake.">>
+"Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his hand out for a <<continuelink "farewell handshake.">>farewell handshake
 
 You shake his hands and say goodbye, he offers one last piece of advice before departing.
 
-<<timed 7s>>
-"Hey, if you ever decide to go for it, hit me up on Pawbook. I’ve got a list of my favorite places to stop at it, I’d be glad to share"
-<</timed>>
+<<continuelink '"Hey, if you ever decide to go for it,"'>>"Hey, if you ever decide to go for it, hit me up on Pawbook. I’ve got a list of my favorite places to stop at it, I’d be glad to share it with you."
 
 You thank the Tiger as he goes on his way.
 
@@ -643,11 +565,24 @@ You have arrived at the [[festival.|Festival Vendors]]
 
 
 :: Computer {"position":"113,442","size":"100,100"}
-<<if $placeholder_var_remove is not true>>
+<<if $festival_completed is not true>>
 You sit down at your desk and turn on your monitor. Right now the only you can think of doing is [[checking your bank account|Bank]].
 
 [[Log off|Your Bedroom]]
 
+<<elseif $festival_completed is true and $chris_pawbook_completed is not true>>
+You sit down at your desk and turn on the monitor. You could check your [[bank account|Bank]] or send [[Chris a message about your road trip plans|Chris Pawbook]]
+
+[[Log off|Player Bedroom]]
+
+<<elseif $chris_pawbook_completed is true and $post_fest_day_completed is true and $road_trip_funding_completed is not true>>
+You sit down at your desk and turn on the monitor. Right now your priority is figuring out if you have enough money to pay for your road trip plan. You should probably access your [[bank|Bank Management]] to get started.
+
+[[Log off|Player Bedroom]]  /* Maybe add another scene here */
+
+<<else>>
+You can't think of anything to do on your computer right now.
+<<return>>
 <<endif>>
 
 
@@ -658,11 +593,11 @@ You login to your bank account and check your balance. You currently have $1500 
 
 
 :: Festival Vendors {"position":"262,1589","size":"100,100"}
-/* Cut all the vendor related dialogue. Felt like it didn't really add much to the story, just served as filler.*/
-You arrive at the festival and see crowds of people on the streets. Vendors as far as the eye can see.
+You arrive at the festival downtown and see crowds of people on the streets. Vendors as far as the eye can see. 
+
 The day is perfect for a festival, a light overcast keeps temperatures in the sun bearable, and a slight breeze keeps you cool.
 <<continuelink "You see rows of vendors directly ahead to your north.">>
-You can see stands for everything from spices to graphic tees. The quaint downtown streets filled with people from every part of the state, and country for that matter. Despite the wide assortment of merchants you don't really see anything that catches your eye. Instead you opt to get some classic fair food from one of the food trucks.
+You see rows of vendors directly ahead to your north. Stands for everything from spices to graphic tees. The quaint downtown streets filled with people from every part of the state, and country for that matter. Despite the wide assortment of merchants you don't really see anything that catches your eye. Instead you opt to get some classic fair food from one of the food trucks.
 <<continuelink "Go grab some food">>
 You decided to get a beef gyro, a slushy, and a funnel cake. All together this meal cost you $15. Pretty expensive, but you guess it's worth it given the occasion.
 
@@ -673,13 +608,9 @@ It seems you've come right as the bands are changing. As you see the next act ge
 <<continuelink "You put in your ear buds">>You put in your ear buds and listen to one of their songs real quick. Based off of that quick listen they seem to be a lo-fi indie band. Not your favorite kind of music, but the one song you listened to was pretty good, so you'll give them a shot.
 
 <<continuelink "As you wait for the band to start their set...">> As you wait for the band to start their set you feel someone tap the back of your shoulder. You turn around and to your surprise you see your friend, Holly.
-
 <<if $cafe_holly_talked is true>>
-
 "Didn't think I'd be running into you again so soon. What are you doing out here all by yourself?"
-
 <<else>>
-
 "I thought it was you, $name! It's been awhile, hasn't it?"
 
 You were surprised to see Holly, since it had been 5 years since you last talked to her. The last time you talked to her in person was during that trip to the local amusement park with her and some other friends.
@@ -687,26 +618,24 @@ You were surprised to see Holly, since it had been 5 years since you last talked
 "So, what are you doing out here all by yourself?"
 <<endif>>
 
-You tell Holly that you were just fufilling a tradtion. You state that you've gone to it almost every year so why stop now?
+You tell Holly that you're just out here fufilling a yearly tradtion. You state that you've gone to Lake Fest almost every year you've lived here so why stop now?
 
-<<continuelink '"Alright, that makes sense."'>>"Alright, that makes sense. Can't really give you too much shit for being on your own if I am too, huh? I had come here with one of my friends, //but// she pretty much ditched me for her other group of friends she saw walking about. Guess that tells me how she really feels about me, huh?"
+<<continuelink '"Alright, that makes sense."'>>"Alright, that makes sense. Not like I can really give you too much shit for being on your own if I am too, huh? I had come here with one of my friends, //but// she pretty much ditched me for her other group of friends she saw walking about. Guess that shows how she really feels about me, huh?"
 
 You give Holly your condolences about her friend ditching her. Stating that you’ve dealt with similar situations yourself. 
 <<continuelink "You also ask Holly if she knows much about the band about to play.">>You also ask Holly if she knows much about the band about to play.
 
 “Not a whole lot. I know they have a more lo-fi sound and that’s about it. With my friend Jessica ditching me I figured I might as well come over and check them out. It’s free, after all.”
 
-<<continuelink '“Well,"'>> "Well, since we’re both here by ourselves at this point, guess we might as well hang out for a bit and check out this band, yeah?”
+<<continuelink '“Well,"'>> "Well, I can't say I expected the day to play out like this. But, since we’re both here by ourselves at this point, guess we might as well hang out for a bit and check out this band, yeah?”
 
 
 <<continuelink "It's been a long time since...">> It’s been a long time since you’ve actually hung out and talked with Holly. And you are a bit tired of wandering here alone, so her offer is definitely enticing. You can’t really think of a good reason not to hang out with her, at least until the concert ends.
 
-<<timed 7s>>
-You tell Holly you’d be fine with hanging out for a bit.
-<</timed>>
-<<timed 9s>>
+<<continuelink "You tell Holly you’d be fine with hanging out for a bit.">>You tell Holly you’d be fine with hanging out for a bit.
+
 <<continuelink '"Alright!"'>> “Alright! Hopefully hanging out with you will be a better experience than coming here with Jessica.”
-<</timed>>
+
 
 [[The band seems to be starting their set|Festival Holly Concert]], as they go out on stage and introduce themselves.
 
@@ -735,45 +664,48 @@ It’s been awhile since you talked to Holly, so you decide to ask her what she�
 
 
 :: Holly Concert Dialogue {"position":"262,1889","size":"100,100"}
-“Oh boy, where do I start? Hmm… Guess I’ll go over what I did after I dropped out of college. So, I’ve been drawing since… eh, around middle school I’d say. Back then it was just a hobby, of course. Just something to channel my creative ideas, and maybe show off a bit, ~~heh.~~ Now, when I went to college I ended up making a social media account dedicated to posting my art, I plugged it a bit, ya know, posted my art on a few forums to try and get a following. Ended up working pretty well since I had 5000 followers by the time I dropped out. At this point though, it was still just a hobby, but I was definitely thinking about the money potential. After I dropped out I got a full-time retail job and just kept working on my art and expanding my following as best I could.”
+“Oh boy, where do I start? Hmm… Guess I’ll go over what I did after I dropped out of college. So, I’ve been drawing since… eh, around middle school I’d say. Back then it was just a hobby, of course. Just something to channel my creative ideas, and maybe show off a bit, ~~heh.~~ "
+
+"Now, when I went to college I ended up making a social media account dedicated to posting my art, I plugged it a bit, ya know, posted my art on a few forums to try and get a following. Ended up working pretty well since I had 5000 followers by the time I dropped out. At this point though, it was still just a hobby, but I was definitely thinking about the money potential. After I dropped out I got a full-time retail job and just kept working on my art and expanding my following as best I could.”
 
 <<continuelink "About what you expected to hear. You ask Holly when she started to see art as an actual career path instead of just a hobby.">> About what you expected to hear. You ask Holly when she started to see art as an actual career path instead of just a hobby.
 
 
-"Ehh, I started taking commissions shortly after leaving college. I felt like at that point I was good enough to have people actually interested in paying me to draw for them. It wasn’t a ton of money, just like beer money really. But it was something! And it was first time I’d been paid for doing art, which definitely helped motivate me."
+"Ehh, I started taking commissions shortly after leaving college. I felt like at that point I was good enough to justify people spending money on me, basically. It wasn’t a ton of money, just like beer money really. But it was something! And it was first time I’d been paid for doing art, which definitely helped motivate me."
 
 "About half a year into my retail job I expanded the amount of commissions I took and also opened up a donation page. At this point, the income from my art was actually starting to rack up. Wasn’t as much as my ‘real job’ but it was enough to pay some of my bills every month. I was really starting to see art as a legitimate career path at this point, it took a lot of time and effort to get to this point though. I’d been working on my art since Middle School and I was just now getting enough of a following to sustain myself.”
 
-"From there I just sort of kept expanding my work, I started making merch, I raised the prices of my commissions a bit and set up an account on one of those monthly subscription type of sites. The income from my art eventually took over my retail job’s income. I still ended up working at the retail job for another 2 months just so I could save up some money before I fully committed. And now, here I am. I started doing art full-time 9 months ago, and it’s been surprisingly smooth sailing since."
+"From there I just sort of kept expanding my work, I started making merch, I raised the prices of my commissions a bit and set up an account on one of those monthly subscription type of sites. The income from my art eventually took over my retail job’s income. I still ended up working at the retail job for another 2 months just so I could save up some money before I fully committed to art. And now, here I am. I started doing art full-time 9 months ago, and it’s been surprisingly smooth sailing since."
 
-<<continuelink “You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.”>> You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.
+<<continuelink "You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.">> You congratulate Holly on being able to support herself on her art. It takes a lot of effort and determination to achieve something like that.
 
 "For sure. I definitely got lucky being able to get such a huge following in a fairly short amount of time.”
 
-<<if cafe_holly_talked is true>>
+<<if $cafe_holly_talked is true>>
 
-<<continuelink ‘“How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up”’>>“How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up”
+"How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up"
+
 <<else>>
 
-<<continuelink ‘“Now, what have //you// been doing these last 5 years?”’>>“Now, what have //you// been doing these last 5 years?”
-
+"Now, what have //you// been doing these last 5 years?"
+<<endif>>
 You explain that you used to work for Spherion, but eventually quit for various reasons. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. Detailing that you now do freelance work off and on to provide some extra income.
 
-<<continuelink ‘”Interesting, what made you leave Spherion?”’>>”Interesting, what made you leave Spherion?”
-<<endif>>
+<<continuelink '"Interesting, what made you leave Spherion?"'>>”Interesting, what made you leave Spherion?”
 
 You explain to Holly how it all started. Initially, it all went pretty well. The job paid exceptionally well, had good benefits, and looked really good on a resume if you ever decided to go somewhere else. About 5 months into the job though you started to notice some of the dysfunction abound. You grew tired of the petty office politics, your ‘superiors’ never really valued your work or your feedback, and the work you were doing just wasn’t very fulfilling.
 
 Most workplaces will have elements of all those things, this is true, but here they were overwhelming. You knew you weren’t long for that place and started saving up a decent chunk of your paycheck each month. You put a significant amount into an investment account, as well as some straight into your savings. You stayed for about 7 months after that, and by the time you put in your 2-weeks, you had saved around $40,000 total. Enough to live modestly by yourself for 1 year. Or in your case, more than enough to live with your roommates for 2+ years.
 
-<<continuelink ‘”Wow, that’s just crazy to me…”’>>”Wow, that just crazy to me. Saving 40k in only one year is just insane. That’s almost how much I make in a year. I’m assuming you started your freelance contract work shortly after that, right?”
+<<continuelink '"Wow, that’s just crazy to me…"'>>”Wow, that just crazy to me. Saving 40k in only one year is just insane. That’s almost how much I make in a year. I’m assuming you started your freelance contract work shortly after that, right?”
 
-<<continuelink “Yes, you started working contracts shortly after being fired.”>> Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
+
+<<continuelink "Yes, you started working contracts shortly after being fired.">> Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
 
 “I can totally understand quitting a job because you don’t like the culture, that’s pretty much why I took up art as my career.”
 
 <<timed 7s>>
-You bring out your smartphone and look at the time, seems your conversation with Holly was a bit longer than you thought. You both talked for almost an hour, and at this point the band is on their last song. The evening is approaching, with only a few more hours left for the festival.
+You bring out your smartphone and look at the time, seems your conversation with Holly was a bit longer than you thought. You talked for almost an hour, and at this point the band is on their last song. The evening is approaching, with only a few more hours left for the festival.
 
 You could ask Holly to accompany you for the rest of the day here at the festival, or you could go your separate ways.
 
@@ -786,16 +718,22 @@ You think about it for a while, eventually deciding too:
 
 :: Holly Festival Hub {"position":"122,2092","size":"100,100"}
 <<set $holly_festival_stay to true>>
-<<set $ending_points -= 4>>
-<<set $race to "Wolf">> /* remove me */
-As the band finishes their set you leave the concert and head back towards the main festival area.
+<<set $ending_points += 6>>
+You decide to ask Holly if she wants to tag along for the rest of the day.
+
+<<continuelink '"Well,"'>>"Well, I wasn’t initially planning on staying after this concert, but since you’re offering… Sure, I’ll gladly tag along." She says with a smile.
+
+<<continuelink "As the band finishes their set you leave the concert and head back towards the main festival area.">>As the band finishes their set you leave the concert and head back towards the main festival area.
 
 You could go check out the rest of [[the festival over to the east,|Festival East Path]] or you could go check out the [[festival games over to the north.|Festival Games]]
 
 
 :: Festival Non-Holly Hub {"position":"428,2065","size":"100,100"}
 <<set $holly_festival_stay to false>>
-<<set $ending_points -= 2>>
+<<set $ending_points -= 4>>
+You decide to part ways with Holly after the concert.
+<<continuelink "As the band finishes their set you say goodbye to Holly and head back to the main festival area.">>As the band finishes their set you say goodbye to Holly and head back to the main festival area.
+
 There's not much left to do here. The only other thing you could think to do is check out the bits of [[the festival over to the east.|Festival East Path]]
 
 
@@ -804,9 +742,9 @@ You and Holly head towards the many fair games set up at the festival.
 
 As you arrive at the games Holly offers a quick remark about them
 
-"I used to always bug the hell out of my parents about playing these games. They’d always say ‘no, you’re not playing those games, they’re a rip-off. I could go to the store and buy you whatever toy it is you want for less money than it would take to win one of those games. Well guess what Dad, it wasn’t about the toy, it was about the experience. I don’t think the supermarket has you throwing a ball into a bowl in order to get a toy, do they Dad?"
+"I used to always bug the hell out of my parents about playing these games. They’d always say ‘no, you’re not playing those games, they’re a rip-off. I could go to the store and buy you whatever toy it is you want for less money than it would take to win one of those games.' Well guess what Dad, it wasn’t about the toy, it was about the experience. I don’t think the supermarket has you throwing a ball into a bowl in order to get a toy, do they Dad?"
 
-<<continuelink '"They are terribly unfair though,"'>>They are terribly unfair though, of course I didn’t really understand that as a kid. I think I’ve won a grand total of once. And that was on the basketball one, pure luck was the reason for that win.”
+<<continuelink '"They are terribly unfair though,"'>>"They are terribly unfair though, of course I didn’t really understand that as a kid. I think I’ve won a grand total of once. And that was on the basketball one, pure luck was the reason for that win.”
 
 As a kid, you had a similar experience to Holly. Though your parents would occasionally give in and let you play a few.
 
@@ -840,9 +778,9 @@ to do [[decide to head home and start walking towards the bus stop|Festival Endi
 
 “Seems like this would be a good time to talk about each other. With how long it's been since we've been able to hang out and talk it's almost like starting over. How about we talk about our hobbies, what do you do for fun?"
 
-<<continuelink "You tell Holly about your hobbies...">> You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a bit basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
+<<continuelink "You tell Holly about your hobbies...">> You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a //bit// basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
 
-Holly seems to be a bit surprised as you detail your hobbies, calling them 'uninteresting' and 'basic'.
+Holly seems to be a bit surprised as you detail your hobbies, as you call them 'uninteresting' and 'basic'.
 
 "Hmm, I mean, I guess those things could be considered 'basic'. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered 'basic' is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that's when you become a basic bitch or bastard. You definitely don’t have that problem, though."
 
@@ -850,7 +788,7 @@ Holly seems to be a bit surprised as you detail your hobbies, calling them 'unin
 
 <<continuelink "You also tell Holly…">> You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
 
-"A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment though, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
+"A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
 
 "You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime." Holly says, perhaps suggesting something.
 
@@ -895,13 +833,13 @@ After checking out everything the festival has to offer, you head back towards t
 <<continuelink "It’s been a long and interesting day.">>It’s been a long and interesting day. You came here expecting to stay for an hour or two and then go home, but after talking to Holly you decided to stay. You really feel like the relationship between you and her has strengthened today. You got to talk really in-depth with her today, just like you used to.
 
 As you're walking to the parking lot with Holly, You turn to her and say:
-<<choice[[You really appreciated her company today, it’s been a while since you’ve been able to hang out with someone like you did today.|Festival Holly Ending Romance]]>>
+<<choice[[I really enjoyed getting to hang out with you today, it’s been a while since I've had a day this enjoyable.|Festival Holly Ending Romance]]>>
 
-<<choice[[You enjoyed your time hanging out with her today, but you feel like there just isn’t enough chemistry between the two of you to make this into a real thing.|Festival Holly Ending No Romance]]>>
+<<choice[[I enjoyed my time hanging out with you today, but I feel like there just isn’t enough chemistry between the two of us to make this into a real thing.|Festival Holly Ending No Romance]]>>
 
 
 :: Festival Holly Ending Romance {"position":"291,2503","size":"100,100"}
-"I really enjoyed yours as well." Holly says as she looks to you and smiles. "This whole day has reminded me a lot of when we, ya know, actually saw each other on a regular basis."
+"I really enjoyed today too." Holly says as she looks to you and smiles. "This whole day has reminded me a lot of when we, ya know, actually saw each other on a regular basis."
 
 You continue walking with Holly to her car, eventually reaching it just as the fireworks start to go off.
 
@@ -911,7 +849,7 @@ You both lean on Holly’s car in the parking lot, watching the fireworks as the
 
 The lightshow ends eventually, as all things do. And now it’s time to head back home.
 
-<<continuelink '"Suppose this is today, then."'>> "Suppose this is today, then. It’s been fantastic, really. The festival was alright, but the real highlight was getting to know //you// again." She says with emphasis while pointing to you.
+<<continuelink '"Suppose this is today, then."'>> "Suppose this is today, then. It’s been fantastic, really. The festival was alright, but the real highlight was getting to know //you// again." She says with emphasis.
 
 <<continuelink '"Hey,"'>> "Hey, if you ever wanna do something like this again, feel free to hit my number up."
 
@@ -945,7 +883,7 @@ The fireworks end after about 10 minutes. You and Holly say your goodbyes before
 
 
 :: Festival Baseball Game {"position":"24,2483","size":"100,100"}
-You decide to go with Holly’s first choice and try out the Baseball game. Which has you attempting to throw a baseball at certain speed in order to win a prize. 
+You decide to go with Holly’s first choice and try out the Baseball game. Which has you attempting to throw a baseball at a certain speed in order to win a prize. 
 
 You walk up to the booth and pay for 2 shots at throwing the ball. One for each of you. It cost a total of $7. Which is ridiculous, but like Holly said you’re paying for the ‘experience’. 
 
@@ -953,7 +891,7 @@ You offer Holly the first pitch since this was her first choice.
 
 <<continuelink '"Sure, I’ll have a go at it."'>> "Sure, I’ll have a go at it. I actually played softball when I was in middle school so maybe that’ll give me an edge.”
 
-<<continuelink "Holly lines up at the target.">> Her goal is to throw the ball at a speed of 60 MPH. A pretty high target for the average person. It’s made even more difficult with how inaccurate the sensor on the target is. It probably hasn’t been replaced or maintained since the thing was first made. Even if it was, there’s nothing stopping the vendor from making it read a bit slower.
+<<continuelink "Holly lines up at the target.">>Holly lines up at the target. Her goal is to throw the ball at a speed of 60 MPH. A pretty high target for the average person. It’s made even more difficult with how inaccurate the sensor on the target is. It probably hasn’t been replaced or maintained since the thing was first made. Even if it was, there’s nothing stopping the vendor from making it read a bit slower.
 
 She thinks about it for a minute, lining up her throw. She reels back with the ball in her hand, ready to destroy the hell out of that target. She extends her arm and throws the ball at what seems to be a decent speed. The display takes a minute to show the speed, you both wait with mild anticipation, thinking about all the bragging opportunities if one of you were to make it while the other didn’t.
 <<set $holly_speed to random(50, 65)>>
@@ -1126,20 +1064,1439 @@ You could ask your roommates and see what they have to say about it. You could a
 
 <<if $holly_romance_festival is true>>
 You might also hit up Holly and see what she wants to do about your next date.
-
+<<endif>>
 It's quite a nice day as well, you might even go on a walk today as well.
 
 But first you should probably [[get out of bed|Player Bedroom]]
-<<endif>>
 
 
 :: Player Bedroom {"position":"431,2791","size":"100,100"}
-You are standing in your bedroom. You see the [[hallway to the north|Hallway]], and the [[doorway to the bathway|Bathroom]] to the east. 
+<<if $post_fest_day_completed is not true and $walk_completed is not true>>
+    You are standing in your bedroom. You see the [[hallway to the     
+	north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
+	east. 
 
-You could also use your [[computer|Computer]] or text Holly on your [[smartphone.|Smartphone Holly]]
+    You could also use your [[Computer.|Computer]]
+	<<if $holly_text_date_setup is not true or $holly_text_rejection is     false>>     Or text Holly on your [[Smartphone.|Smartphone Holly]]
+	<<endif>>
+
+<<elseif $walk_completed is true and $post_fest_day_completed is not true>>
+    You feel a bit sleepy having had a pretty busy day. You could go to     bed a bit early, so long as you're done with everything for the day. 
+    [[Go to bed early|Transistion]]
+
+<<elseif $post_fest_day_completed is true and $road_trip_funding_completed is not true>>
+
+    You wake up on Saturday feeling the same as ever. It's been about 
+	one week since you started making plans for your hastily imagined 
+	road trip.
+
+    Today you're hoping to figure out the financial side of things.
+    <<if $valery_walk_talked is true>>
+         You'd also like to check in on Valery and see how he's doing.
+    <<endif>>
+
+    You are standing in your bedroom. You see the hallway to the north     and the doorway to the bathroom to the east. 
+
+    You decide to go towards the [[Hallway]], [[Bathroom]], or use your 
+	[[Computer]].
+
+<<elseif $road_trip_funding_completed is true>>
+    After finishing your financials for the road trip you think of   
+	maybe taking a nap. Before you do, you should probably make sure 
+	there isn't anything else to do.
+
+    You decide to go towards the [[Hallway]], [[Bathroom]], or use your
+	[[Computer]] or take a [[Nap.|Second Transistion]]
+<<endif>>
 
 
 :: Smartphone Holly {"position":"236,2786","size":"100,100"}
-Double-click this passage to edit it.
+You bring out your smartphone and pull up your contacts app, scrolling down until you hit the H column and find “Holly”. You’ve never really been fond of calling people, so you decide to text her instead of calling.
+
+The next 20 minutes are spent attempting to write the perfect text, after much deliberation you decide to just keep it simple. You type up a simple greeting and tell Holly who it is that’s texting her, asking her what’s been going on since yesterday.
+
+You sent the message and browse social media while you wait for her to reply, after 10 minutes you see a text notification from her.
+
+<<continuelink '"Hey $name."'>> "Hey, $name. Haven’t really been doing much. Just chilling in my apartment.”
+
+You then spent another 10 minutes thinking of a reply. Various thoughts rush through your mind. You could ask her on another date, or maybe you changed your mind and don’t want to ask her out on another date after all.
+
+After giving it a lot of thought, you decide to send a text along the lines of the following:
+
+<<choice [["Got any plans next Sunday? I’m feeling like another date."|Holly Text Date]]>>
+<<choice [["About that next date… I don't think that's something I'm interested in."|Holly Decline Text]]>>
+
+<<else>>
+You can't think of anything to do with your phone right now
+<<return>>
+<<endif>>
+
+
+:: Jacob Living Room Dialogue {"position":"953,557","size":"100,100"}
+"Hey, how was Lake Fest yesterday? I was gonna go yesterday but just didn’t get around to it.”
+
+<<continuelink "You tell Jacob all about your day at Lake Fest.">> You tell Jacob all about your day at Lake Fest. Detailing how you met up with Holly and watched that concert with her.
+
+<<if $holly_romance_festival is true>>
+    You tell Jacob you think your whole ordeal with her went pretty, especially considering you got her number at the end of the day.
+
+    "Hell yeah. I know you’ve mentioned her before a few times but I didn’t know you two had that kind of interest in each other."
+
+<<elseif $holly_romance_festival is false>>
+
+    You tell Jacob you enjoyed hanging out with her but didn’t take any further than that. It was nice hanging out with an old friend but there was a reason you two drifted apart.
+
+    "Yeah, I find that’s often the case myself. If you’re really friends with someone, you’ll find some way to keep in touch with them. The fake ones will just disappear if you aren’t actively seeking them out."
+
+<<elseif $self_festival_ending is true>>
+
+    You tell Jacob you enjoyed watching the concert with her, but weren’t really interested in doing anything else.
+
+    "That can happen. Last time you talked to her was like 5 years ago, right? You’ve probably both changed a lot since then."
+
+<<endif>>
+
+“Anyway, you wanted to ask me about something? Guessing that’s why you came down here.”
+
+<<continuelink "You tell Jacob that you did, in fact, come to ask about something.">>You tell Jacob that you did, in fact, come to ask about something. And that something is your road trip idea. 
+
+ You give him the general idea you have for the road trip. You state that you plan on bringing around 3-4 people total and hope to travel in a northwesterly direction and end up in Oregon at the end. You’re still working out some of the finer details, but that’s the gist of it.
+
+<<continuelink '"Seems like it’ll be fun."'>>"Seems like it'll be fun. I’ve done some traveling in the last few years but nothing like that. Speaking of, I’m guessing that traveling experience is why you’re next question is going to be 'Do you have suggestions on places to check out along the way?' " Jacob says smuggly. "And lucky for you, my friend, I do."
+
+"You said you’re hoping to go in a sort of northwestern direction, right? That’ll take you through Indiana, Illinois, and then from there you’d either be going through Iowa or Wisconsin, depending on where you decide to stop. See…" Jacob thinks for a moment. "There’s not much going on in Indiana, Illinois though, you could stop a day or two in Chicago. From there on I can think of a few things you might want to check out, I’ll write ‘em up in text message here and send them to you here in a minute.”
+
+<<continuelink "Jacob taps away at his phone and sends you a message">> Jacob taps away at his phone and sends you a message detailing some places you could check out. You add them to your list to be sorted through later.
+
+<<continuelink '"So, you’re taking a few other people along, huh?"'>> "So, you’re taking a few other people along, huh? I’d be down to go if you have room. Just let me know a bit beforehand so I can make some arrangements, alright?”
+<<set $jacob_living_room_talk to true>>
+You tell Jacob you’ll keep him in mind before saying bye and [[leaving the living room.|Downstairs]]
+
+
+:: Chris Pawbook {"position":"239,315","size":"100,100"}
+<<if $chris_pawbook_in_progress is not true>>
+You open Firefox and look up Chris on Pawbook. You look up the full name he gave you: Chris Feldman. You quickly find him on the first page of results, his profile picturing being him at the Grand Canyon.
+
+He seems to be pretty popular given how many "pals" he has on Pawbook. Over 700 of them, in fact. You add to that number and send him a message, you tell him you're interested in getting some suggestions on that road trip you and him were discussing yesterday.
+
+<<continuelink "You wait a few minutes and he sends reply.">>You wait a few minutes and he sends reply. "Ayy, I knew you would end up going for it. So what you're plans as far as travel go? Where are you going to end up?"
+
+You give him the same details you've told everybody else. You're bringing 3-4 other people and plan on ending the road trip in Oregon.
+
+<<continuelink '"Alright,"'>>"Alright, sounds like a plan. Give me an hour or two and I'll get you a list of some places I've checked out along the route you're thinking of taking."
+
+You thank Chris for helping you out. Now you just have to wait for his reply.
+
+<<set $chris_pawbook_in_progress to true>>
+Since it'll be awhile until he gets the list, [[you decide to get up and go do something else while waiting.|Player Bedroom]]
+
+<<elseif $chris_pawbook_in_progress is true and $chris_pawbook_completed is not true>>
+You hop back on Pawbook and check your messages. It seems he's finally got his list together.
+
+He sent you an entire work document listing places for you to check out. It seems he has at least one thing to check out in each state you might go through. You'll have to go through them all later when you put your final plans together.
+
+You sent him a message thanking him again, he replies shortly after and states that he's more than happy to help out a fellow traveler.
+
+''Chris's Road Trip Destinations obtained.''
+<<set $chris_pawbook_completed to true>>
+You save the word document and shut down your computer before [[getting up from your desk.|Player Bedroom]]
+
+<<else>>
+You log on to Pawbook but can't think of anything else to do.
+<<return>>
+<<endif>>
+
+
+:: Valery Walk {"position":"1202,399","size":"100,100"}
+After a day of working on your road trip itinerary you decide to get some fresh air and go on a walk around the neighborhood. It’s a beautiful day outside, the temperature is a refreshing 78 and there’s a slight breeze off the lake making this almost a perfect day.
+
+You start your walk off by going your usual route, the road you take loops around, so it doesn’t really matter which way you take. The walk starts off pretty well, with nothing of note really happening, just the usually affair with you waving to the people you usually see walking a bout.
+
+<<continuelink "As you walk around the neighborhood you recall one of the houses near you being put up for rent recently.">>As you walk around the neighborhood you recall one of the houses near you being put up for rent recently. As you walk past it you see that the ‘for rent sign’ has been removed, seems somebody’s renting it now. You were somewhat familiar with the last person that lived there, you wouldn’t have considered yourselves friends, but you talked on occasion. He left on pretty good terms it would seem, you talked to him right before he left and he stated he was moving west since he got a big job offer from one of the big tech companies out there. You’ll have to say hi to whoever moved in there if you see them around them neighborhood. You’re pretty familiar with everybody else in the nearby area so it shouldn’t be too difficult to spot them.
+
+<<continuelink "You’re just about done with your walk at this point.">>You’re just about done with your walk at this point. You climb up the hill that eclipses your house, as you reach the top you can see your house right in view. While walking down the hill and towards your house you see someone unfamiliar coming towards you. You assume it to be the new person renting the house near your house. Sensing an opportunity to meet who you assume to be your new neighbor; you think about waving him down and introducing yourself. 
+
+Although, there’s no guarantee that’s who he really is, and if he ended up just being some random guy, it could end up being a bit awkward.
+
+He’s approaching you and you have to make decision; you decide that it would be best to:
+<<choice [[Wave him down and say hi.|Valery Walk Dialogue]]>>
+<<choice [[Just ignore him and go on your way.|Valery Walk No Dialogue]]>>
+
+
+:: Valery Walk Dialogue {"position":"1139,269","size":"100,100"}
+You say fuck it, and decide to go over and say hi to who you presume to be your new neighbor. You figure that you aren’t really out anything if it ends up just being some guy off the street. You wave him down as you walk towards him. 
+
+This seems a bit odd in your mind, but if the roles were reversed you probably wouldn’t think too much of it.
+
+You walk up to the slimly built Hyena and ask him if he’s the guy that moved into the newly rented house near you.
+
+<<continuelink '"I am, actually."'>>"I am, actually. Just moved in a week ago.” The hyena says in a some what confused tone. Probably surprised that you were able to figure that out.
+
+You introduce yourself as $name to the hyena, he replies and says “I’m Valery, nice to meet you $name.”
+
+<<continuelink '"I have to say, you have quite the initiative."'>> "I have to say, you have quite the initiative. I think you’re the first neighbor I’ve talked to so far. I’ve seen a few people out but none of them were gutsy enough to walk up and introduce themselves."
+
+"Really though, I appreciate it. It’s nice to get to know my neighbors, helps me feel a bit more at ease."
+
+<<continuelink "You tell Valery that you’re glad you could make him feel a bit more at ease.">>You tell Valery that you’re glad you could make him feel a bit more at ease. You also tell him that if he needs help with anything he can come down to your place and you’ll be more then glad to help him out.
+
+"I’ll be sure to keep that in mind. Hopefully I’ll be seeing you around!"
+
+<<set $valery_walk_talked to true>>
+<<set $walk_completed to true>>
+
+You tell Valery goodbye and [[head back to your house for the day.|Player Bedroom]]
+
+
+:: Valery Walk No Dialogue {"position":"1269,266","size":"100,100"}
+You decide to just keep to yourself and leave him be. It would be a weird going over and bugging a stranger that’s just minding their own business.
+
+<<set $valery_walk_talked to false>>
+<<set $walk_completed to true>>
+
+You continue on your walk with nothing else happening. The walk was pretty uneventful. [[You decide to stay in for the rest of the day.|Player Bedroom]]
+
+
+:: Holly Text Date {"position":"161,2936","size":"100,100"}
+You send the text message to Holly. You feel a bit nervous, as is to be expected. Though you’re almost certain she’ll say yes to another date, she gave you her number for a reason.
+
+<<continuelink "You wait a few moments until the text notification pops up.">>You wait a few moments until the text notification pops up. You read the text from Holly:
+
+“Next Thursday? I think I could do that.”
+<<continuelink '"About what time were you thinking?"'>>"About what time were you thinking?"
+
+<<continuelink "You reply and say that you were thinking of going out Thursday at around 4 or 5 PM.">>You reply and say that you were thinking of going out Thursday at around 4 or 5 PM.
+
+<<continuelink '"Sunday at 4 sounds good to me."'>>"Sunday at 4 sounds good to me. Are we just going to go out to eat, or..?"
+
+<<continuelink "You reply and state that you were thinking of going out to eat at one at the Firefly Tavern.">>You reply and state that you were thinking of going out to eat at one at the Firefly Tavern. But that you’re open to going wherever she wants.
+
+<<continuelink'"4PM on Sunday at Firefly Tavern sounds good to me."'>>"4PM on Thursday at Firefly Tavern sounds good to me."
+
+<<continuelink "You reply and tell Holly that it’s a date then.">>You reply and tell Holly that it’s a date then. You tell her you’ll see her then.
+
+<<set $holly_text_date_setup to true>>
+
+<<if $walk_completed is true>>
+You put the phone back in your pocket. After such a full day you're pretty sleepy. [[You think you might go to bed a bit early.|Player Bedroom]]
+
+<<else>>
+You put the phone back in your pocket and [[get back to planning your road trip.|Player Bedroom]]
+<<endif>>
+
+
+:: Holly Decline Text {"position":"311,2936","size":"100,100"}
+You send the text. Your heart races a bit at the thought of ending this relationship as soon as it started. But it seems like the right decision. 
+
+She replies shortly after. The text reads:
+
+<<continuelink '"I get it."'>> "I get it. It's fine. Appreciate you letting me know."
+
+You’re glad Holly seems to have taken it so well. You sent her one final text thanking her for understanding and wishing her all the best.
+
+“Of course. Same to you, $name.”
+<<set $holly_text_date_setup to false>>
+<<set $holly_text_rejection to true>>
+
+<<if $walk_completed is true>>
+You put the phone back in your pocket. After such a full day you're pretty sleepy. [[You think you might go to bed a bit early.|Player Bedroom]]
+
+<<else>>
+You put the phone back in your pocket and [[get back to planning your road trip.|Player Bedroom]]
+<<endif>>
+
+
+:: Transistion {"position":"482,2975","size":"100,100"}
+It’s about 10 PM now and you’re surprisingly tired, so you decide to go to bed a bit early. Everything you’ve wanted to do today got done, luckily. 
+
+In the next few days you’ll have to do some more work on your road trip plans. Probably the biggest issue remaining is how you’re going to finance it.
+<<set $post_fest_day_completed to true>>
+But for now, you're just going to [[rest|Player Bedroom]]
+
+
+:: Bank Management {"position":"113,575","size":"100,100"}
+Going on this road trip is going to be a pretty big expense, the mere $1500 you have in your bank account likely won’t be enough to supply you and your pals throughout the entire road trip. Odds are you’ll have to look into getting some money from your savings and possibly cash-out some of your investments.
+
+You figure it’s probably best to take money from your savings first, so you browse to your bank’s website and login to your account. You currently have $1500 in your checking account and $8500 in your savings. $10,000 is a pretty decent amount but you’re still not sure if that’s going to be enough, so you decide to spent some time figuring out a rough estimate of what you expect the trip to cost just based off the cost of lodging, food, and transportation.
+
+<<continuelink "You’re rough estimates some out to around $8500 total.">>You’re rough estimates some out to around $8500 total. That’s a fairly frugal estimate, and only includes the basics. You’d be able to cover those expensive without too much of an issue, but if it ended up being more expensive than that it could get a bit dicey. That’s not to mention the issue that comes from completely draining your bank account. Doing so would likely mean having to either get a normal job again or working on more contracts than usual.
+
+You could take out some funds from your investment accounts, although that obviously offers its own set of problems. Mostly long-term problems rather than the short-term nature of draining your bank account. Problems like delaying your planned early retirement. Going this route would prevent any financial issues from arising during the road trip, however.
+
+Ultimately it comes down to rather you want to potentially risk your short-term future or certainly harm your long-term future. Do you want to risk problems arising during the road trip in lieu of a better long-term outcome? Or do you want to be certain you’ll have enough funds for the whole trip?
+
+It’s your choice…
+
+<<choice [[Just go with the funds you have in your bank account.|Bank Funds]]>>
+
+<<choice [[Dip into your investment funds to prevent any issues from arising during or immediately after the road trip.|Bank Investments]]>>
+
+
+:: Bank Funds {"position":"1,605","size":"100,100"}
+<<set $road_trip_funding_completed to true>>You decide to stick with the money you’ve got and avoid harming your long-term prospects. 
+
+With the funding for the road trip taken care of, [[you log off the computer.|Player Bedroom]]
+
+
+:: Bank Investments {"position":"0,490","size":"100,100"}
+<<set $road_trip_funding_completed to true>>
+You decide to play it safe and take some extra money form your investment accounts to make sure you have enough.
+
+You cash-out one of your investment accounts, which should give you $10,000 extra for the road trip once the transaction is complete.
+
+With the funding for the road trip taken care of, [[you log off the computer.|Player Bedroom]]
+
+
+:: Valery's House {"position":"1202,1101","size":"100,100"}
+You decide to go and see how your new neighbor, Valery, is doing.
+
+You walk down the street to his house. You have to knock on his door as he doesn’t seem to have a doorbell.
+
+<<continuelink "Valery answers the door;">>Valery answers the door; he seems to be a bit surprised by you visiting.
+
+"Hey, $name. I was wondering if you were really going to come down or not. Unfortunately, you’ve come down at a pretty bad time, as I’ve got work in about half an hour.”
+
+<<continuelink '"Maybe we can meet up for lunch or something in a couple of days?"'>>Maybe we can meet up for lunch or something in a couple of days? I’ve got the weekend off and no commitments so I’m pretty much free.”
+
+<<continuelink "Going out for lunch doesn’t sound too bad,">>Going out for lunch doesn’t sound too bad, in fact it'd probably be the best way to get to know Valery. //But// you’re not quite sure how you feel about going out for lunch with someone you hardly know.
+
+It feels a bit weird to go from barely knowing your neighbor to going out and getting lunch with him. But at the same time you're not going to get to know him any better unless you hang out with him.
+
+Ultimately you tell Valery that:
+
+<<choice [[You'd love to get lunch with him this weekend|Valery's Home Lunch Confirm]]>>
+<<choice [[You appreciate the offer, but have to decline.|Valery's Home Lunch Deny]]>>
+
+
+:: Valery's Home Lunch Confirm {"position":"1127,1251","size":"100,100"}
+<<set $valery_house_talk to true>>
+<<set $valery_date to true>>
+You tell Valery you would be down for getting lunch sometime this weekend.
+
+<<continuelink '"Great! How about The Rat’s Place on Saturday?"'>>"Great! How about The Rat’s Place on Saturday?"
+
+You don't have anything going on Saturday, so you tell Valery that would work great.
+
+"Awesome. See you Saturday!"
+
+You say goodbye to Valery and [[head back home.|Downstairs]]
+
+
+:: Valery's Home Lunch Deny {"position":"1277,1251","size":"100,100"}
+<<set $valery_house_talk to true>>
+<<set $valery_date to false>>
+
+You tell Valery that you have some other plans for the weekend. Those plans may or may not be just sitting around the house and doing nothing, but he doesn’t need to know that.
+ 
+"Aw, well that’s too bad. Maybe we can get lunch some other time. Well, I better get moving, see you around."
+
+You say bye to Valery and [[head home.|Downstairs]]
+
+
+:: Second Transistion {"position":"561,3084","size":"100,100"}
+<<if $valery_date is true and $holly_text_date_setup is true>>
+//Many days after getting funds for your road trip on Monday//
+You wake up on Saturday, the day you're suppose to meet Valery on. These past few days have been spent planning for your road trip as well as relaxing a bit.
+
+<<continuelink "You get out of bed and get ready for lunch with Valery later today at 1.">>
+
+After getting showered and ready you mess around on your computer to waste some time. You end up leaving for [[The Rat's Place|Valery Rats Lunch]] at around 12:30.
+NEEDS FILLED
+/* Fill the rest of this stuff later */
+<<elseif $valery_date is not true and $holly_text_date_setup is true>>
+FILLER
+<<elseif $valery date is not true and $holly_text_date_setup is not true>>
+FILLER
+<<endif>>
+
+
+:: Valery Rats Lunch {"position":"561,3234","size":"100,100"}
+/* don't forget ending points and date points */
+You arrive about 10 minutes before 1 PM, you always like to give yourself some extra time. 
+
+Seems like Valery hasn’t gotten here yet; you’ll have to wait around a bit and see if he shows up. If not you’ll just head in and get a table.
+
+<<continuelink "It takes a couple more minutes...">>It takes a couple more minutes for Valery to finally arrive, as he pulls into the parking lot you exit your car and head towards the entrance of the restaurant, The Rat's Place.
+
+The Rat’s Place is situated just off the lake, the building itself is painted in a light blue color, with white accents. The side facing the lake is made almost entirely of glass, offering a spectacular view if you manage to get a seat on that side of the restaurant. 
+
+As you wait at the entrance of the restaurant for Valery, you read one of the plaques near the seating area. The plaque states that the restaurant is named after a set of critically acclaimed movies, called “The Rat Movies”. It says they were directed by some guy who goes by the name ‘Jerma’. You aren’t sure who that is, but if he has a restaurant named after his work, he must be a pretty popular guy. You have to imagine he’s pretty tall and handsome, with a great sense of humor as well.
+
+<<continuelink "As you're reading the plaque Valery enters the restaurant.">>As you're reading the plaque Valery enters the restaurant.
+
+“Hey, $name. How’s it going? This place just lets you pick your own seat, so we can just head over here and sit at one of these tables.”
+
+You follow Valery to the table, it would seem that the table he picked is on the lakeside of the restaurant, the mostly glass wall lets you as far out as the horizon!
+
+“We got pretty lucky, these are some of the best seats here. Most of the time they’re taken.”
+
+<<choice [[You’ve been here before?|VDC 1.1]]>>
+<<choice [[It’s a damn nice view for sure.|VDC 1.2]]>>
+<<choice [[Not bad, but nothing I haven’t seen 100 times.|VDC 1.3]]>>
+
+
+:: VDC 1.1 {"position":"411,3384","size":"100,100"}
+<<set $valery_date_points += 2>> 
+"Yup! Quite a few times actually. I might have just moved into the area, but I’ve been traveling up here for quite some time. But that’s a story for another time. We should probably focus on just getting our food and drinks ordered for now."
+
+[[Continue|VCP 1]]
+
+
+:: VDC 1.2 {"position":"561,3384","size":"100,100"}
+<<set $valery_date_points += 2>> 
+"There’s pretty much nothing like it. Like an ocean of freshwater."
+[[Continue|VCP 1]]
+
+
+:: VDC 1.3 {"position":"711,3384","size":"100,100"}
+<<set $valery_date_points -= 2>>
+"Doesn’t make it any less impressive. At least to me, anyway."
+[[Continue|VCP 1]]
+
+
+:: VCP 1 {"position":"549,3532","size":"100,100"}
+You and Valery sit down at your table and await the waiter to take your order.
+
+"Y'know, this restaurant is probably one of the more unique ones along the lake. At least from what I've seen. Had to have cost a fair bit of money to make this monster of a glass wall. Just think of the engineering they had to do get it to work, you have to make sure the glass is tempered and fairly thick, or else it’ll be destroyed in one hailstorm. "And you've gotta factor in the fact that its probably going to have to be cleaned pretty often..."
+
+"Sorry, was starting to go on a bit of tangent there. I’m an engineer so stuff like that kind of makes me geek out a bit."
+
+<<choice [[It's cool. I can definitely understand rambling on about stuff you're passionate about|VDC 2.1]]>>
+
+<<choice [[How long have you been an engineer?|VDC 2.2]]>>
+
+<<choice [[Cool, I get it, you’re an engineer.|VDC 2.3]]>>
+
+
+:: VDC 2.1 {"position":"366,3690","size":"100,100"}
+"Sure, but I have tendency to take it a bit too far."
+[[Continue|VCP 2]]
+
+
+:: VDC 2.2 {"position":"537,3692","size":"100,100"}
+"4 years! That’s how long I’ve been out of college as well. Went to UT and got my bachelor’s degree there. I was actually lucky enough to get a job right out the gate, so yeah, I've been working as an engineer for 4 years."
+
+[[Continue|VCP 2]]
+
+
+:: VDC 2.3 {"position":"691,3690","size":"100,100"}
+"Oh. Uh, sorry if it came off as bragging. Was just trying to explain why I was so interested in that particular wall…"
+<<set $valery_date_points -=4 >>
+
+[[Continue|VCP 2]]
+
+
+:: VCP 2 {"position":"539,3842","size":"100,100"}
+"Anyway, don’t know if you’ve been here before, but the BBQ here is fantastic. I got the pulled pork sandwich last time I was here, and it was perfect."
+
+<<continuelink "You tell Valery you appreciate the recommendation, although ultimately, it’s up to you to decide what you want.">>You tell Valery you appreciate the recommendation, although ultimately, it’s up to you to decide what you want.
+
+The waitress arrives shortly after the two of you sit down, giving you your menus and asking what the two of you want to drink. You order a soft drink and Valery orders iced tea.
+
+The waitress seemed to be familiar with Valery, as she remarked how he finally brought someone with him to eat.
+
+<<continuelink '"Heh,"'>> "Heh, guess I come here a bit too often if the staff are recognizing me."
+
+<<choice [[Coming here by yourself so often is bit sad, don't you think?|VDC 3.1]]>>
+
+<<choice [[Guess it’s a pretty good restaurant if you come here that often.|VDC 3.2]]>>
+
+<<choice [[How often do you actually come here?|VDC 3.3]]>>
+
+<<choice [[I wonder what they think of you, given how often you’re here.|VDC 3.4]]>>
+
+
+:: VDC 3.1 {"position":"314,3992","size":"100,100"}
+"Makes me worry a bit about how much time I waste here, I don’t really see it as ‘sad’ though. I mean come on, people have favorite restaurants, they have places they like to go too. There’s nothing wrong with that."
+<<set $valery_date_points -= 2>>
+[[Continue|VCP 3]]
+
+
+:: VDC 3.2 {"position":"464,3992","size":"100,100"}
+"Hah, I think it’s more of the atmosphere that I enjoy here rather than the food. But the food is actually pretty good. I do come here pretty often though, almost every lunch break I either carry-out, or stay here and eat if I have the time"
+
+"Since moving here I’ve been pretty lonely. So going to this place and having lunch just sort of me makes feel more… Connected? I guess you could say. Makes me feel less isolated, at least."
+<<set $valery_date_points += 4>>
+<<set $ending_points += 2>>
+[[Continue|VCP 3]]
+
+
+:: VDC 3.3 {"position":"614,3992","size":"100,100"}
+"Ehh, probably 5 times a week? A decent amount for sure, but it’s not like I spent all my time here. I enjoy the atmosphere and the feeling of familiarity. I also like that it gives me the opportunity to just be around people. I don’t really know anyone else here, so it’s not like I can get together with someone. No significant other, and none of my coworkers really get along with me. So yeah, it can get a bit a lonely. Going here just sort of, helps me feel connected."
+<<set $valery_date_points += 4>>
+<<set $ending_points += 2>>
+[[Continue|VCP 3]]
+
+
+:: VDC 3.4 {"position":"764,3992","size":"100,100"}
+"The hell are you talking about? Come on dude just because they recognize me doesn’t mean they think I’m some sort of no-life loser."
+<<if $valery_date_points <= -8>>
+"Honestly feels like you’re just being a prick for no reason. Come on, if you didn’t want to come you could have just said no. If you keep going after me, I’m out."
+<<else>>
+"No need to be a prick about it"
+<<endif>>
+<<set $valery_date_points -= 8>>
+<<set $ending_points -= 6>>
+
+[[Continue|VCP 3]]
+
+
+:: VCP 3 {"position":"540,4190","size":"100,100"}
+You and Valery look over the menu, most of the items are seafood or barbecue related. You see a few things that catch your eye, including the ribs and the grilled salmon. You’ve still got time to choose though so you’ll look over the menu some more.
+
+"Think I’ll go for something I haven’t had yet, the perch sandwich."
+<<if $valery_date_points >= 2>>
+"Y’know something though, looking over this menu gave a thought. Imagine how different society would be if things like ribs were made from actual pig? Obviously that was kind of a thing back in the dark ages, but nowadays we can just make these crazy synthetic ribs out of plants and stuff. If nothing else, we’d have one fucked up class structure that’s for sure."
+
+<<continuelink "You’ve never really given that topic much thought,">>You’ve never really given that topic much thought, though now that Valery brings it up, the entire world would likely be radically different if the eating of sapient species weren’t outlawed back in the 1700s.
+<<endif>>
+
+Well, the waitress should be here anytime to take your order, guess you better decide what you want. Thinking about it, you decide to just pick the grilled samon. Seafood sounds pretty good right about now.
+
+<<continuelink "Sure enough,">>Sure enough, shortly after picking your meal the waitress comes to your table asks’ if you’re ready to order.
+
+"I’ll have the perch sandwich" Valery says to waitress. "And I’ll just take the fries that come with it."
+
+You tell the waitress you’ll take the grilled salmon. And that you’re fine with the sides that come with it.
+
+"Alright I’ll get these order right in, just let me know If you need anything else." The waitress says as she finishes taking your orders.
+
+While you wait for your food to arrive, you should have plenty of time to [[get to know Valery a bit better.|VDCQ Base]]
+
+
+:: VDCQ Base {"position":"540,4340","size":"100,100"}
+You decide to ask Valery...
+
+[[About his fairly unusual name (For a dude).|VDCQ Name]]
+
+[[Why he decided to move here.|VCDQ Move]]
+
+[[How long he’s been coming to iridium City.|VCDQ City]]
+
+[[What his hobbies are.|VCDQ Hobby]]
+
+[[Just ignore him until dinner arrives.|VCDQ Bruh]]
+
+<<if $valery_question_asked is true>>
+[[That's enough questions for now|VCP 4]]
+<<endif>>
+
+
+:: VDCQ Name {"position":"240,4490","size":"100,100"}
+You ask Valery about his name, stating that Valery is a fairly unusual name for a guy.
+
+<<continuelink "You're right, it's a very different name." >>
+"You're right, it's a very different name. When I was younger I actually hated it quite a bit, but with time I started to like it more. Don't know why my parents liked the name Valery so much, I think they told me I was named me after a scientist or something like that. It’s been awhile since I asked them though so I could be misremembering."
+
+<<choice [[Well I think it’s a very fitting name for you!|VDCQ Name 1.1]]>>
+<<choice [[So long as you’re happy with your name I guess that’s all that matters.|VDCQ Name 1.2]]>>
+<<choice [[If I were you, I’d have probably already changed my name by now.|VDCQ Name 1.3]]>>
+
+
+:: VCDQ Move {"position":"390,4490","size":"100,100"}
+You ask Val about why he decided to move to Iridium City.
+
+<<continuelink '"Well that’s pretty simple,"'>>"Well that’s pretty simple, I moved here for work. It was a pretty easy choice, I loved the area, and the pay and benefits for the job were good, so I jumped on it."
+
+<<choice [[So, where do you work?|VCDQ Move 1.1]]>>
+<<choice [[What do you love so much about Iridium City? You seem to be quite attached to it.|VCDQ Move 1.2]]>>
+<<if $valery_date_points <= 4>>
+<<choice [[Cool, that’s enough. I don’t want to hear your whole life story.|VCDQ Move 1.3]]>>
+<<else>>
+<<choice [[Cool story, let's change the subject.|VCDQ Move 1.3]]>>
+<<endif>>
+
+
+:: VCDQ City {"position":"535,4493","size":"100,100"}
+"I’ve been coming up here for around 7 years! Of course, I haven’t lived here until very recent."
+
+[[What made you start visiting the city?|VCDQ City 1.1]]
+[[How do you feel about living in the city so far?|VCDQ City 1.2]]
+
+<<if $valery_date_points <=  -6>>
+[[I’m gonna stop you right there. I don’t want to hear your whole story leading up to this day.|VCDQ City 1.3]]
+
+<<else>>
+
+[[Interesting, but I wanna ask you about something else.|VDCQ Base]]
+
+<<endif>>
+
+
+:: VCDQ Hobby {"position":"690,4490","size":"100,100"}
+You ask Val what some of his hobbies are.
+
+“My hobbies? Well, I enjoy playing video games quite bit, I’ve also been messing around with the piano recently. I’m not any good at it, but it’s been fun learning. I’m also pretty big into cars.”
+
+[[Video games? Have a favorite game or system?|VCDQ Hobby 1.1]]
+[[How long have you been trying to play the piano?|VCDQ Hobby 1.2]]
+[[Cars, huh? Do you track?|VCDQ Hobby 1.3]]
+<<if $valery_date_points <= 4>>
+[[Could you be any less interesting?|VCDQ Hobby 1.4]]
+<<else>>
+[[Cool, let's talk about something else.|VDCQ Base]]
+<<endif>>
+
+
+:: VCDQ Bruh {"position":"830,4496","size":"100,100"}
+For whatever reason, you decide to just sit in relative silence while you wait for your lunch to arrive. This likely won't lead to you becoming freinds or getting to know Valery very much, but it might lead to lunch ending a little faster.
+
+<<set $valery_date_points -= 4>>
+
+[[Dinner arrives after about 20 minutes of waiting|VCP 4]]
+
+
+:: VDCQ Name 1.2 {"position":"64,4400","size":"100,100"}
+"I suppose so. The weird looks I get from people when I tell them my name is Valery can be a bit harsh at times, but I can deal with it. People just outright disliking me because of my more feminine name hurts though. Thankfully that hasn’t really been a problem since my high school and middle school years."
+<<set $valery_date_points += 2>>
+<<set $ending_points += 2>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VDCQ Name 1.3 {"position":"70,4518","size":"100,100"}
+"Can’t change your name until you're 18. And at that point my name was just part of who I was. Besides, at 18 my worst years were behind me. I was done with high school, and middle school was becoming a distant memory. Just didn’t make sense to change my name because a few people I didn't even care about hated it."
+
+<<set $valery_date_points -= 2>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VDCQ Name 1.1 {"position":"65,4282","size":"100,100"}
+"Aw, thanks. It’s not often I get a compliment on my name. Most people just think it’s weird. Sometimes they’ll come right out and say it, but usually I can just infer what they’re thinking when I tell them my name is Valery."
+
+"Weird looks are pretty much all I have to deal with nowadays, thankfully. Back in high school and middle school I’d always get picked on because of my more feminine name… But most people I meet now are decent enough to not hate me just based off of my name."
+<<set $valery_date_points += 8>>
+<<set $ending_points += 4>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Move 1.1 {"position":"235,4217","size":"100,100"}
+"I actually work for the city! Might not be the most prestigious work, but it’s good enough for me. Plus, it’s really cool having a job where you can make a big impact on the community. You don’t get that at a lot of places."
+
+<<continuelink "You can definitely appreciate Valery’s comments on having satisfying work.">>You can definitely appreciate Valery’s comments on having satisfying work. The mundane and unimpactful nature of your previous job at Spherion was a big reason why you left.
+
+<<set $valery_date_points += 2>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Move 1.2 {"position":"365,4222","size":"100,100"}
+"I just love the whole atmosphere of this place, there's nothing else like it. It can be a bit depressing during the winter when all the tourists and summer people leave, but the liveliness during the other seasons more than makes up for it."
+
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Move 1.3 {"position":"305,4338","size":"100,100"}
+<<if $valery_date_points <= -16>>
+
+“Okay, I’ve had it. You’ve been a total asshole this whole time for no damn reason. If you didn’t want to come out for lunch you could have just said no, but instead you come out here and purposely fuck around. I’m finished here, I’m not letting you push me around. Have fun paying for the bill, dick.”
+
+You put $30 on the table to pay for the bill before leaving.
+
+<<set $ending_points -= 10>>
+Placeholder stuff
+
+<<elseif $valery_date_points <= -4>>
+<<set $valery_question_asked to true>>
+
+"No need to be a dick about it. Could have just changed the subject…"
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ City 1.1 {"position":"335,4640","size":"100,100"}
+"The Lake Festival! One of friends was going and asked if I wanted to go. I said sure and ended up loving the festival and the city. Since then I’ve been to just about every lake festival. And I make… well, made, a couple of my own trips every year. Don't really need to make trips here since I moved, right?"
+
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ City 1.2 {"position":"464,4647","size":"100,100"}
+"I’m gonna be honest, it’s been a bit underwhelming. Not the city itself so much, but just… the overall experience. You know how it can be. Before you even get to do something you start making up scenarios in your head about how it's going to be. You plan it all out, think about how great things are going to be. Then you actually get to the real thing and… it just doesn’t go the way you were expecting."
+
+[[What exactly hasn't gone to plan?|VCDQ City 2.1]]
+
+<<if $valery_date_points <= -6>>
+<<set $valery_question_asked to true>>
+[[That’s just how it goes, too bad. Let’s move onto something else.|VDCQ Base]]
+<<else>>
+<<set $valery_question_asked to true>>
+[[I get it. Let’s talk about something else.|VDCQ Base]]
+<<endif>>
+
+
+:: VCDQ City 1.3 {"position":"589,4643","size":"100,100"}
+<<if $valery_date_points <= -16>>
+"It might not be your problem but showing a little kindness wouldn't kill you, asshole. Honestly, you've been a real fucking prick this whole time, but this is probably the most upset I've been over it. I open my heart to you and you just tell me you don't care. If you didn't give a shit about getting to know me you could have just declined to come to lunch. But instead you decide to come here and insult me over and over again. I'm out of here. Enjoy paying for the whole meal, dick."
+
+Seems you finally broke Valery. Probably wasn't the best idea to do that.
+
+You put $30 on the table for the bill before heading out.
+
+PLACEHOLDER FIX ME PLS
+
+<<else>>
+<<set $valery_question_asked to true>>
+[["Alright, ask away"|VDCQ Base]]
+
+
+:: VCDQ City 2.1 {"position":"465,4790","size":"100,100"}
+"I don’t know If I’d say, “hasn’t gone to plan” it’s more not having expectations met. Mainly, I’ve just been a bit underwhelmed with my social life here. Guess that’s to be expected with moving into a town where you don’t know anybody. Doesn’t really make it any easier though."
+
+<<choice [[Well, I guess you've got me now, at least.|VCDQ City 3.1]]>>
+<<choice [[It can be a hard adjustment, you’ve gotta do your best to put yourself out there and meet new people.|VCDQ City 3.2]]>>
+<<if $valery_date_points <= -6>>
+<<choice [[Reality is often disappointing. It’s not my problem so let’s talk about something else.|VCDQ City 3.3]]>>
+<<else>>
+<<choice [[Not everything goes to plan. You’ll just have to figure out a way to deal with it.|VCDQ City 3.3]]>>
+<<endif>>
+
+
+:: VCDQ City 3.1 {"position":"315,4940","size":"100,100"}
+"I guess I kind of do, in a way." 
+<<if $valery_date_points >= 12>>
+"You’re right, though. Might seem a bit sad, but you’re the closest thing I have to a friend in this town. I really do appreciate how welcoming you’ve been to me. As you've probably guessed not everyone has been so gun-ho about getting to know me. And with how well I’ve gotten along with you, it’s really helping me feel at home. So thank you, it's been a long time since I've felt this way when hanging out with someone."
+<<set $valery_heart_to_heart to true>>
+<<else>> 
+"I do appreciate you saying that, though. I suppose you are the closest thing I’ve got to a friend here."
+<<endif>>
+
+<<continuelink '"Anyway,"'>>"Anyway, that’s enough feely stuff for now let’s talk about something else before I get too sad."
+<<set $valery_date_points += 4>>
+<<set $ending_points += 2>>
+<<set $valery_question_asked to true>>
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ City 3.2 {"position":"465,4940","size":"100,100"}
+"I know, and I’ve been trying. It’s the main reason I invited you out to lunch, after all. The hardest part is finding those people. You see someone at work, on the street or wherever, and you don’t know anything about them. You don’t know how they’re going to react when you talk to them. You don’t know if they'll even have any shared interests, we might end up being complete opposites. So it can be scary, to me at least."
+
+<<continuelink "You ask Valery if he has tried finding friends in local clubs or groups for hobbies hes interested in,">>You ask Valery if he has tried finding friends in local clubs or groups for hobbies hes interested in.
+
+"I’ve definitely thought about it, but I usually end up not checking them out for similar reasons. It’s intimidating going to those meetups when you don’t know anyone. Plus, those groups or clubs probably already have their own cliques set up, and I’d just end up feeling like the odd one out."
+
+"Anyway, I think that’s enough talking about my problems. Let’s talk about something less boring."
+
+<<set $valery_date_points += 6>>
+<<set $ending_points += 4>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ City 3.3 {"position":"615,4940","size":"100,100"}
+<<if $valery_date_points <= -16>>
+"It might not be your problem but showing a little kindness wouldn't kill you, asshole. Honestly, you've been a real fucking prick this whole time, but this is probably the most upset I've been over it. I open my heart to you and you just tell me you don't care. If you didn't give a shit about getting to know me you could have just declined to come to lunch. But instead you decide to come here and insult me over and over again. I'm out of here. Enjoy paying for the whole meal, dick."
+
+Seems you finally broke Valery. Probably wasn't the best idea to do that.
+
+You put $30 on the table for the bill before heading out.
+
+PLACEHOLDER FIX ME PLS
+
+<<else>>
+"You're right, but it can difficult. Guess I can only do my best."
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+<<endif>>
+
+
+:: VCDQ Hobby 1.1 {"position":"675,4315","size":"100,100"}
+“Well I mostly play on PC and asking what my favorite game is… that’s a bit of a difficult question. Let’s see… I loved Fallout New Vegas, but Fallout 3 was one of my first introductions to open world games, there’s a lot of nostalgia there. And than you have games I loved as a kid, like Hot Pursuit 2 and Animal Crossing… Damn dude this is a loaded question. I guess I’ll go with Animal Crossing. I’m gonna have to think on this a bit more though…”
+<<set $valery_date_points += 2>>
+<<set $valery_question_asked to true>>
+[[Ask him more about his hobbies|VCDQ Hobby]]
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Hobby 1.2 {"position":"809,4312","size":"100,100"}
+“Only a couple of months. Up until that point I'd never played an instrument before and decided I was finally going to take a swing at it. So far it’s gone pretty well. I’m still a long way off from being decent, but I’m improving every month. Maybe someday I’ll be good enough to join a band and quit being an engineer, hah."
+<<set $valery_date_points += 2>>
+<<set $valery_question_asked to true>>
+[[Ask him more about his hobbies|VCDQ Hobby]]
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Hobby 1.3 {"position":"947,4312","size":"100,100"}
+"No, haven’t really thought about doing that. I think the nearest track is like 2 hours away so it’d be a bit out of the way. I mainly just follow stuff online, gawk at any cool cars I see on the street. Stuff like that. Guess that kind of makes me a casual car enthusiast. Oh well."
+
+<<set $valery_question_asked to true>>
+[[Ask him more about his hobbies|VCDQ Hobby]]
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCDQ Hobby 1.4 {"position":"1077,4320","size":"100,100"}
+<<if $valery_date_points <= -16>>
+“Okay, I’ve had it. You’ve been a total asshole this whole time for no damn reason. If you didn’t want to come out for lunch you could have just said no, but instead you came here and purposely fucked around with me. I’m finished here, I’m not letting you push me around. Have fun paying for the bill, fucking dick."
+
+Seems you finally broke Valery. Probably wasn't the best idea to do that.
+
+You put $30 on the table for the bill before leaving.
+
+PLACEHOLDER FIX ME PLS
+
+<<elseif $valery_date_points <= -6>>
+
+"Could you be anymore of a dick?"
+<<set $valery_date_points -= 6>>
+<<set $valery_question_asked to true>>
+
+[[Ask him another question|VDCQ Base]]
+
+
+:: VCP 4 {"position":"440,5273","size":"100,100"}
+"Looks like our food is on the way, quick service, as always!"
+
+The waitress brings your food out, everything seems to be in order so it's time to dig in!
+
+"They have pretty decent portions here for the price. Only thing that\'s really lacking are the side options, but that's a pretty minor compliant all things considered."
+
+<<continuelink "You have to agree...">> You have to agree with Valery, for $8 you get two sides and a fairly good grilled salmon.
+
+You and Valery spend the next 10 minutes just enjoying the meal, with only a little bit of small talk between the two of you.
+
+"Another great lunch at The Rat’s Place. What’d you think, $name?"
+
+<<choice [[It was pretty good.|VDC 4.1]]>>
+<<choice [[Nothing spectacular, it was decent.|VDC 4.2]]>>
+<<choice [[Definitely not the highlight of the day.|VDC 4.3]]>>
+
+
+:: VDC 4.1 {"position":"310,5423","size":"100,100"}
+<<if $valery_date_points >= 12>>
+“Well I’m glad you enjoyed it. We’ll have to come here again some time. Oh, and don’t worry about the bill. I’ve got it covered. If you could just leave the tip, that’d be great.”
+
+You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
+
+<<elseif $valery_date_points < 12>>
+"I’m glad you enjoyed it, we’ll have to see about getting lunch some other time, maybe."
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<elseif $valery_date_points <= -6>>
+
+"Well at least we each had a good lunch, even if we didn't get along the greatest."
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<endif>>
+
+
+:: VDC 4.2 {"position":"462,5423","size":"100,100"}
+<<if $valery_date_points >= 12>>
+“Well at least we got to know each other a little better. At least I think we did, anyway.”
+
+“Oh, and don’t worry about the bill. I’ve got it covered. If you could just leave the tip, that’d be great.”
+
+You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
+
+<<elseif $valery_date_points < 12>>
+"Guess that’s a pretty good summary of the whole lunch, huh?"
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<elseif $valery_date_points <= -6>>
+
+"At least something was decent, because our conversations sure weren’t."
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<endif>>
+
+
+:: VDC 4.3 {"position":"610,5423","size":"100,100"}
+<<if $valery_date_points >= 12>>
+"Well at least our conversations were pretty good, right?"
+
+"Oh, and don’t worry about the bill. I’ve got it covered. If you could just leave the tip, that’d be great."
+
+You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
+
+<<elseif $valery_date_points < 12>>
+"Hopefully you found our conversations to be a bit better than the food…"
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<elseif $valery_date_points <= -6>>
+"Honestly, that’s how I’d describe this whole ordeal. Just replace “the day” with “my life”."
+
+"Here's your part of the bill, $10. I'll get the tip."
+
+You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
+
+<<endif>>
+
+
+:: VCP 5 {"position":"444,5588","size":"100,100"}
+"Well with the bill taken care of I guess we should start heading out."
+
+<<if $valery_date_points >= 8>>
+<<choice [[I was actually thinking that maybe we could go to the nearby park and just hangout some more.|VDC 5.1]]>>
+
+<<choice [[And so we shall. It's been great getting to know you.|VDC 5.2]]>>
+
+<<elseif $valery_date_points < 8>>
+
+<<choice [[Guess so. It's, uh, been a decent time.|VDC 5.3]]>>
+
+<<choice [[Yup. See ya.|VDC 5.3]]>>
+
+<<endif>>
+
+
+:: VDC 5.1 {"position":"294,5738","size":"100,100"}
+You take a moment to think this through before committing, thinking about the ramifications if Valery were to say yes.
+
+<<if $holly_text_date_setup is true>>
+For starters, you would have to break up with Holly. Or at least, not go on that date set for tomorrow. How she would handle you suddenly changing your mind and dating someone else is unknown, but she likely wouldn’t take too kindly to it.
+<<endif>>
+
+This would make any future romance options quite difficult, unless you were to break up with Valery later. Though he isn't likely to appreciate being dumped so soon after hooking up with you. 
+
+After thinking it through, you decide that...
+
+<<choice [[You're going to go through with asking Valery to hangout in the park.|VDC 6.1]]>>
+
+<<choice [[You've changed your mind and won't get romantically involved with Valery.|VDC 6.2]]>>
+
+
+:: VDC 5.2 {"position":"444,5738","size":"100,100"}
+"Indeed it has. Might even have to see about getting together for lunch some other time. Until then, take care friend."
+
+You say goodbye to Valery and [[head back to your car.|Valery Lunch Transistion]]
+
+
+:: VDC 5.3 {"position":"594,5738","size":"100,100"}
+"It's certainly been a time. Don\'t know if I'd say it was a decent one. Maybe I'll see you round sometime, maybe not. Until then, take care."
+
+You say goodbye to Valery and [[head home.|Valery Lunch Transistion]]
+
+
+:: VDC 6.1 {"position":"272,5934","size":"100,100"}
+You ask Valery if he'd be up to hanging out a bit more at the nearby park.
+
+<<if $valery_date_points >= 6>>
+"I'd love too! Honestly we got along so well today I almost forgot this was suppose to just be a lunch hangout kind of thing. If I'm being honest, it... felt more like a date."
+
+You and Val take a short walk over to the [[nearby park.|Metro Park Val Date]]
+
+<<else>>
+"I appreciate your kindness, but I just didn't feel that strong of connection with you. I hope you're still alright with being friends, though. I just don't really feel like we would make a very good couple."
+
+You tell Valery that just being friends is alright. Though you were kind of hoping to take it a bit further then that.
+
+"Awesome. See you round the neighborhood, friend."
+
+You say goodbye to Valery and [[start heading back home.|Valery Lunch Transistion]]
+
+<<endif>>
+
+
+:: VDC 6.2 {"position":"605,5934","size":"100,100"}
+You decide to not ask Valery if he's interested in going to the park.
+
+"Welp, guess this is goodbye for now. See ya round the neighborhood, friend."
+
+You say goodbye to Valery and [[head back home.|Valery Lunch Transistion]]
+
+
+:: Valery Lunch Transistion {"position":"443,6335","size":"100,100"}
+/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
+
+Hi! You've reached the current end of Tales from the Road. Once/if I finish part 3, this is where you'll go on to play either Holly's date that you setup or you'd start finalizing the plans for the road trip.
+
+I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
+
+Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page.
+
+
+:: Metro Park Val Date {"position":"102,6098","size":"100,100"}
+Walking through the entrance you can see the map of the park and a few fountains. Looking at the map, it would seem that this is more of an urban park as it lacks the expansive walking trails found in some of the more rural parks, like that one near you. While this park might not be as nice for just going on a walk, it seems perfect if you just want to sit down and relax or talk with someone.
+
+<<continuelink '"Never been to this park before."'>>"Never been to this park before. I usually go to the one on Gorge street when I wanna go for a quick walk."
+
+"So, you wanna just sit down and chill for a bit? Because honestly, that sounds like a better time than walking through this place."
+
+You decide to follow Valery’s suggestion and just sit down at a bench and talk for a bit.
+
+"Man, it has been a long time since I’ve been able to just sit down with someone and talk about - just whatever really." Valery says as he seems to relax a bit. 
+
+"You’ve been asking me all these questions, so I think it's my turn to ask you some. Let's start off with a an easy one, what kind of music do you like to listen to?""
+
+<<choice [[Metal and harder rock is usually what I listen too.|MPV 1]]>>
+<<choice [[Indie rock is my main jam, though I'm not opposed to other genres|MPV 1]]>>
+<<choice [[Rap and hip-hop is typically what I'll listen to.|MPV 1]]>>
+
+
+:: MPV 1 {"position":"102,6248","size":"100,100"}
+"Alright, not a bad choice. I'm more of an alt-rock guy myself, used to just listen to regular rock but I got kind of bored of it, mainly because mainstream rock hasn't changed that much since the 2000s."
+
+"I was actually listening to whatever the top rock song of last year was and I seriously thought I was listening to a song from 2004, It had the same exact sound as a rock song from around 2004. The only thing that gave away the fact it was a song made in 2018 was a lyric in the song mentioning the year 2018. Shame to see such a storied and formerly great genre turn into a boring and stagnant mess."
+
+"Alt-rock and indie rock have sort of gone the way I would have expected rock too, lot more experimentation and different sound styles." 
+
+"But that's enough about music, let's talk more about you. Here's another questions for ya, how long have you lived in Iridium City?"
+
+
+<<continuelink "You tell Valery that you’ve been living here for around 3 years.">>You tell Valery that you’ve been living here for around 3 years. Before that you were in college and then during your childhood your family lived in Sprucetown, which is about 2 hours east from where you live now.
+
+"Sprucetown is still by the lake right, right? So you’ve been living in a city by the lake for most of your life. I’ve lived in-state my whole life as well but never by the lake, until recent of course."
+
+<<continuelink "You ask Valery where he lived before moving here.">>You ask Valery where he lived before moving here.
+
+“Just before moving here? Nagysburg. Lived there for 3 years until recent. Before that I lived in Fulton, which is where I grew up and went to college. Ended up staying there a year after graduating since I got a job at a local company.”
+
+<<choice [[How’d your time in Nagysburg and Fulton compare to your time here so far?|MPV 2.1]]>>
+
+<<choice [[I’m guessing there was some reason you left those places to come here. Besides the job, of course.|MPV 2.2]]>>
+
+
+:: MPV 2.1 {"position":"38,6394","size":"100,100"}
+"My time in Nagysburg was pretty similar to here. Main difference is that in Nagysburg I had something resembling a friend group, while here I know you and that’s pretty much it. The job I had in Nagysburg wasn’t that great though. Hardly any paid time off and the insurance was trash. I’ve had it a lot better here in that regard. Fulton’s a bit more complex. I had a great social life there, after all that’s where pretty every friend I made up until graduation lived."
+
+<<continuelink '"But I couldn’t help but feel unfulfilled."'>>"But I couldn’t help but feel unfulfilled. I’d lived my whole life there and it was really starting to drag on. You see the same people, drive the same roads to the same place your parents worked at when you were growing up. It got mundane, and honestly a little depressing. Life wasn’t really exciting anymore, I felt like I was just running off a script doing the same thing week after week."
+
+"So I started looking for jobs a fair ways away from home. Applied to a bunch of them but of course only a few asked me to interview. The company in Nagysburg ended up offering me the best salary and was in a pretty nice city so I figured that was probably my best bet. Ended up being a pretty nice experience. Got along really well with my coworkers and my neighbors as well, they ended up being part of that friend group I was talking about."
+
+<<if $valery_heart_to_heart is true>>
+"And of course we’ve already talked a bit about my time here so far. Still pretty early into the move so I’m sure things will get better."
+<<endif>>
+
+<<choice [[Seems like you did pretty well in the last time you moved. So I’m sure it’ll end up working out here, too.|MPV 3.1]]>>
+
+<<choice [[Well hopefully you don’t run off too soon from here, I’d probably end up missing ya.|MPV 3.2]]>>
+
+<<choice [[It’s good to get outside of your comfort zone and explore a bit. You know, I’m actually planning on going on a cross-country road trip here pretty soon.|MPV 3.3]]>>
+
+
+:: MPV 2.2 {"position":"205,6398","size":"100,100"}
+"Yup. For Nagysburg it was the job. I ended up getting completely burnt out because they gave me shit for time off. Plus, the insurance was basically useless so when I did get burnt out, I couldn’t even afford to go and see a therapist to help me get through it."
+
+"And then for Fulton; I just got bored of living there. I’d lived my whole life there and it was really starting to drag on. You see the same people, drive the same roads to the same place your parents worked at when you were growing up. It just got to be too much for me. So I started looking for jobs that were a decent distance away from Fulton. Applied to a bunch of jobs and got a couple of interviews, the company in Nagysburg ended up having the best salary and location."
+
+"I jumped on the job offer and moved there shortly after. Ended up being a pretty decent all things considered. I got along really well with my coworkers and even got to know one of my neighbor’s pretty well. That turned out to be a decent group of friends."
+
+<<choice [[Seems like you did pretty well in the last time you moved. So I’m sure it’ll end up working out here, too.|MPV 3.1]]>>
+
+<<choice [[Well hopefully you don’t run off too soon from here, I’d probably end up missing ya.|MPV 3.2]]>>
+
+<<choice [[It’s good to get outside of your comfort zone and explore a bit. You know, I’m actually planning on going on a cross-country road trip here pretty soon.|MPV 3.3]]>>
+
+
+:: MPV 3.1 {"position":"18,6561","size":"100,100"}
+"I didn’t do terrible in Nagysburg and Fulton I’ll say that. I don’t know if I’d say I did ‘pretty well’ though. After all there’s reason I moved away from those towns. I’ve already explained my issues with Fulton pretty well, but there’s some other stuff that went on during my time in Nagysburg that I didn’t talk much about."
+
+<<if $valery_date_points >= 15 and $valery_heart_to_heart is true>>
+<<continuelink "Valery seems to take a moment to think">>Valery seems to take a moment to think, he sighs before eventually talking again. “We’ve talked about some pretty personal stuff already, so [[I guess it’s alright if I talk to you about those issues."|MPV True Ending 1.1]]
+
+<<else>>
+
+"And if I’m being honest, I just don’t feel comfortable talking about those issues right now. It’s nothing against you, just a personal thing."
+
+"Well... With that said I suppose it's about time to think about heading home. It's getting pretty late. I do have one thing I wanted to talk about first though; which is our relationship. I know the reason we came here was because you were romantically interested in me wanted to ge to know me a bit better, [[and...|Valery Park Ending 1.1]]
+<<endif>>
+
+
+:: MPV 3.2 {"position":"158,6561","size":"100,100"}
+<<set $valery_date_points += 6>>
+<<set $ending_points += 4>>
+"Hah, I’d probably end up missing you too. Or at least, I'd always be wondering what could have been. Ya know, I kind of ran into that when I moved from Fulton and now Nagysburg. Constantly thinking about how things could have gone if I had stayed instead of moved."
+
+"It was a fairly deep-rooted problem for me moving from Fulton to Nagysburg, but I’ve gotten over it now for the most part now. That and the lack of people to talk to were really taking their toll on me."
+
+<<choice [[Lack of people to talk too? Wanna talk a bit more about that?|MPV 4.1]]>>
+
+<<choice [[That sounds pretty tough, I'm sure you'll get through it.|MPV 4.2]]>>
+
+
+:: MPV 3.3 {"position":"288,6564","size":"100,100"}
+"A road trip, huh? Didn’t think you’d be the kind of person to go out and do something like that."
+
+<<continuelink "You take some time to explain the whole concept to Valery. You tell him what your exact travel plans are and how long you plan on it taking.">>You take some time to explain the whole concept to Valery. You tell him what your exact travel plans are and how long you plan on it taking.
+
+"I won’t lie, it sounds really interesting. Be a great way to build our relationship, too. Maybe keep me in mind when you're picking people to go, yeah?"
+
+<<continuelink "You tell Val you'll keep him in mind when you start picking your travel mates.">>You tell Val you'll keep him in mind when you start picking your travel mates.
+
+"Also, I get what you're saying about moving outside of your comfort zone. When I moved to Nagysburg, I did enjoy being in a new city and experiencing all the new things that had to offer. What really got me down was just the complete lack of people I had to talk to about more serious stuff."
+
+<<choice [[A lack of people to talk to? Wanna talk about that a bit more?|MPV 4.1]]>>
+
+<<choice [[That's unfortunate. At least you seem to be having better luck with that this time around.|MPV 4.2]]>>
+
+
+:: MPV True Ending 1.1 {"position":"86,6869","size":"100,100"}
+"It’s not anything horrifying, don’t get the wrong idea. But it’s a bit depressing for me to look back on, so I don’t like talking about it too much."
+
+"Towards the end of my time in Nagysburg I was in a pretty bad place. I was lonely, and as I might have mentioned, I started getting pretty burnt out on my job because they were practically working me to death."
+
+"Now, I know you might be thinking “How could you be lonely? You said you had a pretty solid group of friends, right?” I had friends, yes. But most of those friends weren’t really the kind you’d spill your heart out too. We never talked about anything too serious, mostly just kept it centered around work or our hobbies. That meant I didn’t really have anybody to talk to about more serious stuff. Things like how I was feeling emotionally, my future, job burn out, and numerous other things."
+
+<<continuelink '"Back in Fulton"'>>"Back in Fulton I’d have a couple of friends that’d be down for listening to whatever bullshit I wanted to talk about, but that wasn’t the case in Nagysburg."
+
+"And of course, I couldn’t afford to see a therapist to help with that issue since my health insurance, which I paid $300 a month for by the way, wouldn’t cover any of the cost for therapy. I would have been paying close to $200 per session to just talk to somebody about my problems. Even with my decent paying job I couldn’t afford that."
+
+
+"I was just keeping all these feelings to myself and it wasn’t working. I didn’t know what to do. I didn’t feel like going to work, I didn’t feel like going out, I just wanted to stay at home and hide."
+
+<<choice [[How’d you get out of that emotional pit?|MPV True Ending 2.1]]>>
+
+<<choice [[And that’s part of the reason you wanted to move here, right?|MPV True Ending 2.2]]>>
+
+<<choice [[I think I’ve heard enough.|MPV True Ending 2.3]]>>
+
+
+:: Valery Park Ending 1.1 {"position":"519,6810","size":"100,100"}
+<<if $valery_heart_to_heart is true and $valery_true_ending is not true>>
+"Honestly, I’d say I’m pretty into you. When we were talking in the restaurant I couldn’t help but feel like I was back in Fulton hanging out with an old friend. It was great. Hell, I'm already thinking about what’s next for us. Better be another date, at least."
+
+<<choice [[I was thinking about that as well. I've a got a couple of ideas already in mind.|MPV One Ending 1.1]]>>
+<<choice [[There’s still plenty of time to figure that out. Since we live in the same neighborhood, I’m sure we’ll be seeing each other quite often.|MPV One Ending 1.2]]>>
+
+<<elseif $valery_heart_to_heart is not true and $valery_true_ending is not true and $valery_date_points >= 10>>
+
+"The feeling is mutual. I wasn’t sure about taking our relationship any further than friends when we were talking in the restaurant, but when we got here and started talking a bit more in-depth I really started to enjoy my time with you. It’s been great getting to know you, never would have expected coming into this that I’d be leaving with a romantic interest in you."
+
+<<choice [[It was a bit of a surprise for me as well. I figured that, at most, we'd part our lunch today as friends|MPV Three Ending 1.1]]>>
+
+<<choice [[Yeah, guess you never know.|MPV Three Ending 1.2]]>>
+
+<<else>>
+“I’ll be honest, I like you. But I just don’t know if I can see us being a couple, you know? At least, not right now. I just don’t know you well enough. Maybe we can go on another date sometime, but for now though, no, I don’t feel the same way you seem too. I don’t really see us being any more than friends.”
+
+<<choice [[I understand, Valery. I'm a bit disappointed but I respect your decision.|MPV Four Ending 1.1]]>>
+
+<<choice [[I'm disappointed Valery. But I get it, it makes sense.|MPV Four Ending 1.2]]>>
+<<endif>>
+
+
+:: MPV 4.1 {"position":"42,6688","size":"100,100"}
+<<if $valery_date_points >= 15 and $valery_heart_to_heart is true>>
+Valery seems to take a moment to think, he sighs before eventually talking again. "We’ve talked about some pretty deep stuff today, so [[I guess it’s alright if I talk to you about it."|MPV True Ending 1.1]]
+
+<<else>>
+
+"If I’m being honest, I just don’t feel comfortable talking about those issues right now. It’s nothing against you, just a personal thing."
+
+"Well, with that said I suppose it's about time to think about heading home. It's getting pretty late. I do have one thing I wanted to talk about first though; which is our relationship. I know the reason we came here was because you were romantically interested in me wanted to ge to know me a bit better, [[and...|Valery Park Ending 1.1]]
+
+<<endif>>
+
+
+:: MPV 4.2 {"position":"403,6673","size":"100,100"}
+"Yeah I'm doing my best, sometimes that isn't enough though. I just try to lean on my support group and hope they can help lift me up."
+
+"Well, It's getting pretty late. Was there anything you wanted to talk about?"
+
+<<continuelink "You tell Valery that you can\'t think of anything you really wanted to talk about right now.">>You tell Valery that you can\'t think of anything you really wanted to talk about right now.
+
+"Guess our day is about done here then, should probably head out before the mosquitoes start biting. But before that I do have one thing to talk to you about: our relationship. I know you brought me here because you were romantically interested in me, [[and...|Valery Park Ending 1.1]]
+
+
+:: MPV True Ending 2.1 {"position":"0,7018","size":"100,100"}
+<<set $valery_date_points += 8>>
+<<set $valery_true_ending to true>>
+"Honestly? I still haven’t 100% gotten out of that funk. I did start talking to some of my old friends towards the end of time at Nagysburg, which helped. Moving here has helped a bit. Or at least it's made me a bit more optimistic. New place, new opportunities and people."
+
+"Of course having too high of expectations can be a dangerous thing too. Like telling yourself that you're going to meet all these awesome people, and then you actually do the thing for real and it's nothing like you imagined. Wouldn't say that exact scenario has happened for me, but I did kind of expect that moving here would help sovle some of my problems."
+
+<<continuelink '"And then I’ve also been telling myself I have to really make an effort to try and meet new people,"'>>"And then I’ve also been telling myself I have to really make an effort to try and meet new people, like you. That’s helped quite bit too. Even if I don’t end up connecting, I can at least feel good about the fact that I’m trying."
+
+"And then I’ve also been telling myself I have to really make an effort to try and meet new people, like you. That’s helped quite bit too. Even if I don’t end up connecting, I can at least feel good about the fact that I’m trying."
+
+<<continuelink '"Alright,"'>>"Alright, I don't like to talk my sad shit for too long, makes me too emotional. Let's talk about something a bit more upbeat.
+
+"Namely, our relationship. Which is the reason you brought me. You didn't say it outright, but I know you're interested in me, [[why else would you have brought me here?"|MPV Ending Base]]
+
+
+:: MPV True Ending 2.2 {"position":"120,7018","size":"100,100"}
+<<set $valery_date_points += 8>>
+<<set $valery_true_ending to true>>
+"Kind of. I moved here because I really enjoyed the city, plus the job offer I got here was a lot less work intensive and had a lot better benefits. Being less stressed about work always helps."
+
+"Of course I did go into the move thinking about how well everything could work out for me. Thinking about how I’m going to meet all these awesome people, find my soulmate. So, I guess it was a mix of searching for a more satisfying life plus wanting a better job."
+
+<<continuelink '"It’s worked out alright so far."'"It’s worked out alright so far. Like I said the job is a lot better than my old one. And I’ve been keeping in contact with some of my old friends which has helped me a bit."
+
+"And since I’ve gotten here I’ve been telling myself that I need to be more active in getting to know new people, which has help quite a bit as well. Even if I don’t end up connecting with someone I can at least feel good about the fact that I’m trying."
+
+<<continuelink '"Alright,"'>>"Alright, I don't like to talk my sad shit for too long, makes me too emotional. Let's talk about something a bit more upbeat.
+
+"Namely, our relationship. Which is the reason you brought me. You didn't say it outright, but I know you're interested in me, [[why else would you have brought me here?"|MPV Ending Base]]
+
+
+:: MPV True Ending 2.3 {"position":"240,7018","size":"100,100"}
+<<set $valery_disaster_ending to true>>
+<<set $valery_date_end to true>>
+"Really? You couldn't take 10 minutes out of your life to just listen to what I have to say? Have to say out of all the people I've known, you have one of the most inconsiderate. Unfortunately for me you're also one of the people I liked the most. The key word there being "liked"
+
+""No point in continuing this pseudo-date when you can't even spare the time to listen to my story."
+
+Valery gets up and walks to us car without even saying goodbye. Seems you really struck a nerve with him.
+
+You get up shortly after that and [[head back to your car.|Valery Park Transistion 2]]
+
+
+:: MPV Ending Base {"position":"58,7164","size":"100,100"}
+<<if $valery_heart_to_heart is true and $valery_true_ending is true>>
+"Don’t worry, the interest goes both ways, like me. Honestly wasn’t sure if I wanted our relationship to go any further than friends at the start, but after our talks here and at the restaurant, I kind of fell for you. The last time I enjoyed being around someone this much was, uh, let’s just say awhile ago."
+
+"I really like you, $name. And I can’t wait to spend even more time with you."
+
+<<choice [[Don't get ahead of yourself, we still have some time left here... *lean in towards Valery*|MPV True Ending 1]]>>
+
+<<choice [[I feel the same. That said, I’m planning on going on a road trip pretty soon, might be a good opportunity for us to spend some more time together…|MPV True Ending 1.2]]>>
+
+<<choice [[Same here, Valery. Although I’d be lying if I said I wasn’t at least a little bit interested in you coming into lunch.|MPV True Ending 1.3]]>>
+
+
+:: MPV One Ending 1.1 {"position":"457,7054","size":"100,100"}
+"Hell yeah. We'll have to talk some more later about our next date plans."
+
+"Well, I guess our day is about done here. It has been a joy talking with you, can't say I expected today to end with us talking about our next date. But I'll take it, Gods know it's been a long time since I've been in a serious relationship."
+<<if $race is "Wolf" and $gender is "Female">>
+
+/* This line is so cheesey. I love it, but I also think it might a bit too chessey. On the other hand I feel like a game about furries should be willing to embrace this much chesseyness. So It's fucking staying. */
+
+<<choice [[*Give Valery a kiss on the cheek* Life is unpredictable, Valery. Sometimes you have days where life's a bitch. Fortunately for you, today was one where you got kissed by one instead.|MPV One Ending 2.1 Wolf]]>>
+
+<<choice [[Never know what you're gonna get when you wake up in the morning. Most of the time the day goes on in its usual mundane fashion. But sometimes you get days like this, and they make dealing with those mundane days worth it|MPV One Ending 2.2]]>>
+
+<<else>>
+<<choice [[*Give Valery a kiss on the cheek* We don't expect a lot of things, Valery. Most of time it's the terrible shit we don't expect, not today, though.|MPV One Ending 2.1]]>>
+
+<<choice [[Never know what you're gonna get when you wake up in the morning. Most of the time the day goes on in its usual mundane fashion. But sometimes you get days like this, and they make dealing with those mundane days worth it|MPV One Ending 2.2]]>>
+<<endif>>
+
+
+:: MPV One Ending 1.2 {"position":"597,7052","size":"100,100"}
+"Yeah, no point in worrying about it too much. Might be going on a few more walks around the neighborhood though."
+
+"Well, I guess our day is about done here. It has been a joy talking with you, can't say I expected today to end with us talking about our next date. But I'll take it, Gods know it's been a long time since I've been in a serious relationship."
+
+<<if $race is "Wolf" and $gender is "Female">>
+/* This line is so cheesey. I love it, but I also think it might a bit too chessey. On the other hand I feel like a game about furries should be willing to embrace this much chesseyness. So It's fucking staying. */
+<<choice [[*Give Valery a kiss on the cheek* Life is unpredictable, Valery. Sometimes you have days where life's a bitch. Fortunately for you, today was one where you got kissed by one instead.|MPV One Ending 2.1 Wolf]]>>
+
+<<choice [[Never know what you're gonna get when you wake up in the morning. Most of the time the day goes on in its usual mundane fashion. But sometimes you get days like this, and they make dealing with those mundane days worth it|MPV One Ending 2.2]]>>
+
+<<else>>
+<<choice [[*Give Valery a kiss on the cheek* We don't expect a lot of things, Valery. Most of time it's the terrible shit we don't expect, not today, though.|MPV One Ending 2.1]]>>
+
+<<choice [[Never know what you're gonna get when you wake up in the morning. Most of the time the day goes on in its usual mundane fashion. But sometimes you get days like this, and they make dealing with those mundane days worth it|MPV One Ending 2.2]]>>
+<<endif>>
+
+
+:: MPV One Ending 2.1 {"position":"426,7235","size":"100,100"}
+<<set $valery_ending to "ending one kiss">>
+<<set $valery_date_end to true>>
+"I'm not one for surprises, but when they're as sweet as this, I can't complain. "I'll have to find a way to one-up you now. Best be on the look out on our next date."
+
+"Wow, what a way to end the day. Suppose it's time I take my leave, much to my dismay. I'll be seeing you for sure, $name. If for nothing else but to set up that second date."
+
+You say goodbye to Valery and watch as he walks back to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transistion 2]]
+
+
+:: MPV One Ending 2.2 {"position":"679,7243","size":"100,100"}
+<<set $valery_ending to "ending one normal">>
+<<set $valery_date_end to true>>
+"You're right, $name. That's why I'll be looking forward to our next date so much."
+
+"Guess it's about time to take my leave. I'm sure I'll be seeing you. Especially since we still have to set up our second date."
+
+You say goodbye to Valery and watch as he walks back to his car. [[You stand up and walk back to your car shortly after.|Valery Park Transistion 2]]
+
+
+:: MPV One Ending 2.1 Wolf {"position":"558,7238","size":"100,100"}
+<<set $valery_ending to "ending one kiss">>
+<<set $valery_date_end to true>>
+"You sly Wolf, I bet you've been waiting all day to use that line. Well it was worth it, because that cheesy as hell line made me like you even more."
+
+"What a way to end the day. Suppose I should take my leave now, much to my dismay. I'll be seeing you, $name. If for nothing else but to set up our next date."
+
+You say goodbye to Valery and watch as he walks back to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transistion 2]]
+
+
+:: MPV True Ending 1.2 {"position":"1,7308","size":"100,100"}
+<<set $valery_ending to "ending two normal">>
+<<set $valery_date_end to true>>
+<<set $ending_points += 6>>
+"Yeah, that sounds pretty interesting. We'll have to talk about it some later. Would be a great way to build our relationship, I think."
+
+"Guess we better start heading home, we keep talking any longer and we'll be getting bit by mosquitoes."
+
+Valery stands up before resuming the conversation "Come give me a hug before we head back home."
+
+<<continuelink "You stand up">> You stand up and share a fairly long hug with Valery.
+
+"I'm sure I'll be seeing you around the neighborhood quite a bit now. Might even have to stop down at your house sometime." Valery says with a somewhat suggestive look. 
+
+"See ya round, $name."
+
+You say goodbye to Valery and watch as he heads back towards his car. Today was a good day.
+
+You get up shortly after and [[head back to your car.|Valery Park Transistion 2]]
+
+
+:: MPV True Ending 1.3 {"position":"133,7314","size":"100,100"}
+<<set $valery_ending to "ending two normal">>
+<<set $valery_date_end to true>>
+<<set $ending_points += 6>>
+"Man, I didn’t think I was that attractive. Guess I just hit the right buttons with you. Cause I know it wasn't my personality that got you hooked, we had barely talked at that point."
+
+"Well, it's getting pretty late. Think we've been talking for a little over 5 hours, sure didn't feel like it though. Guess we better think about heading out, stay and keep talking any longer and we'll end up getting devoured by mosquitoes."
+
+Valery stands up before continuing to talk "Come here and give me a hug before we head back home."
+
+<<continuelink "You stand up">> You stand up and share a fairly long hug with Valery.
+
+"I'm sure I'll be seeing you around the neighborhood quite a bit now. Might even have to stop down at your house sometime." Valery says with a somewhat suggestive look. 
+
+"See ya round, $name."
+
+You say goodbye to Valery and watch as he heads back towards his car. Today was a good day.
+
+You get up shortly after and [[head back to your car.|Valery Park Transistion 2]]
+
+
+:: MPV True Ending 1 {"position":"60,7429","size":"100,100"}
+You lean in towards Valery, moving your head towards his and wrapping your arms around his shoulders. 
+
+Valery also wraps his arms around you, pulling you closer to him.
+
+You embrace with Valery and share a passionate kiss. Chills run down your back, and butterflys fill your stomach as you take in the moment.
+
+The kiss ends after what seems like 5 minutes, though you know it was much shorter. While still holding you quite close, Valery speaks up.
+
+<<if $gender is "Male">>
+"Would you believe that was my first time kissing a guy? I've considered myself bisexual for a while but never really got romantically involved with a guy. Just couldn't find one that was my type; guess that changed tonight"
+
+"We'll just leave it at that for now, I don't go all in on the first date. See you around the neighborhood, $name. We'll have to talk about setting up a second date sometime." Valery says as he winks and walks back to his car.
+
+That went about as well as it could have all things considered. Hard to believe that you came into this barely knowing Valery. You also have to say, you feel pretty special about being the first guy Val's kissed, especially considering how picky he seems to be.
+<<set $valery_ending to "ending two kiss">>
+<<set $valery_date_end to true>>
+<<set $ending_points += 8>>
+You sit for a few moments before getting up and [[heading back to your car.|
+
+PLACEHOLDER
+
+<<else>>
+
+"You're quite the kisser, have to say it took me by surprise. Have to imagine you'll only get better, you'll have plenty of time to practice with me. That'll be it for now though, I don't go all in on the first date."
+
+"Well, see you around the neighborhood, $name. We'll have to sit down and talk about setting up our second date sometime." Valery says as he winks and walks back to his car.
+
+That went about as well as it could have. Hard to believe that you came into this barely knowing the guy.
+<<set $valery_ending to "ending two kiss">>
+<<set $valery_date_end to true>>
+<<set $ending_points += 8>>
+
+You sit for a few moments before getting up and [[heading back to your car.|Valery Park Transistion 2]]
+<<endif>>
+
+
+:: MPV Three Ending 1.1 {"position":"981,7217","size":"100,100"}
+"Yeah I that's just how life can be sometimes. Keeps you on your toes, I guess."
+
+"Well it's 5 PM now and we've been talking since we got at the restaurant at 1. It's been a great day but I suppose it's about time for us to head home. Can't remember the last I was actually disappointed about having to go home. Now, come here and give me a hug before we leave."
+
+<<continuelink "You and Valery both stand up before hugging each other goodbye.">>You and Valery both stand up before hugging each other goodbye.
+
+"See ya round, $name. I'm sure I'll see you around the neighborhood. Plus we've still gotta talk about our next date."
+<<set $valery_ending to "ending three normal">>
+You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transistion 2]]
+
+
+:: MPV Three Ending 1.2 {"position":"1111,7217","size":"100,100"}
+<<set $valery_ending to "ending three normal">>
+<<set $valery_date_end to true>>
+"You really don't. And if you really think about, it's crazy how circumstantial stuff can be. Like, if I had moved somewhere else in town, I probably never would have met you. And that's just one example. When you really think about it, your life could be dramatically different just based off a few seemingly minor decisions. Like where you decide to work, where you go to college, where you live, etc. Those all affect the kind of people you met, the kind of people your around. I don’t know, it’s just kind of crazy to me."
+
+"Anway, it's 5 PM now and we've been talking since we got at the restaurant at 1. It's been a great day but I suppose it's about time for us to head home. Can't remember the last I was actually disappointed about having to go home. Now, come here and give me a hug before we leave."
+
+<<continuelink "You and Valery both stand up before hugging each other goodbye.">>You and Valery both stand up before hugging each other goodbye.
+
+"See ya round, $name. I'm sure I'll see you around the neighborhood. Plus we've still gotta talk about our next date."
+
+You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transistion 2]]
+
+
+:: Valery Park Transistion 2 {"position":"331,7607","size":"100,100"}
+/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
+
+Hi! You've reached the current end of Tales from the Road. Once/if I finish part 3, this is where you'll go on to play either Holly's date that you setup or you'd start finalizing the plans for the road trip.
+
+I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
+
+Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page.
+
+
+:: MPV Four Ending 1.1 {"position":"791,6764","size":"100,100"}
+"I'm glad you took that as well as you did. I know there's some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I'm happy you're not one of them."
+
+"I wouldn't say this is a complete denial but... yeah, honestly I just don't see "us" working out. So I guess it kind of is."
+
+"Anway, I suppose we should head home, we've wasted enough time talking here." Valery stands up and extends his hand towards you "I hope we can at least part as friends."
+
+<<choice [[*Get up and reach out to shake his hand* Friends it is.|MPV Four Ending 2.1]]
+
+<<choice [[I respect your choice, but I feel like it would just be awkward for us to keep hanging out.|MPV Four Ending 2.2]]
+
+
+:: MPV Four Ending 1.2 {"position":"918,6765","size":"100,100"}
+"I'm glad you understand. I thought that maybe I'd see something different in you here, but I didn't. It's not your fault, we just aren't a good match."
+
+"Don't get me wrong, I don't hate you or anything. I just... don't really see a serious relationship between the two of us going anywhere."
+
+Valery reaches out his hand to you "I hope we can stay friends, though."
+
+<<choice [[*Get up and shake his hand* Friends it is.|MPV Four Ending 2.1]]>>
+
+<<choice [[Oh, I don't think so. I doubt an ordinary relationship would work out either. Plus it would just be awkward.|MPV Four Ending 2.2]]>>
+
+
+:: MPV Four Ending 2.1 {"position":"789,6880","size":"100,100"}
+<<set $valery_ending to "ending four friends">>
+<<set $valery_date_end to true>>
+"Valery grabs and shakes your hand 'I'm glad you feel the same, $name. Hopefully I'll still see you round the neighborhood!"
+
+You say your goodbyes to Valery and tell him you're happy to have another friend to count on.
+
+"Damn straight. You can never have enough real friends. See you later."
+
+[[You say bye and head back to your car|Valery Park Transistion 2]]
+
+
+:: MPV Four Ending 2.2 {"position":"916,6881","size":"100,100"}
+<<set $valery_ending to "ending four denied">>
+<<set $valery_date_end to true>>
+<<set $ending_points -= 2>>
+"I understand completely, we'd probably both have nagging thoughts in the back of our head saying "what if"."
+
+"Well suppose that's it. Have a good one, $name."
+
+You say goodbye to Valery and [[head back to your car.|Valery Park Transistion 2]]
 
 
