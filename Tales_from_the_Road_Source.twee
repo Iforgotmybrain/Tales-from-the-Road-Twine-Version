@@ -125,7 +125,7 @@ You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical
 
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
 	
-<<continuelink '"Hey $name, what's going on?"'>>"Hey $name, what's going on?" She says, wondering what brings you to her room.
+<<continuelink "Hey $name, what's going on?">> "Hey $name, what's going on?" She says, wondering what brings you to her room.
 
 You tell her you just wanted to check in, see how things are going.
 	
