@@ -186,7 +186,7 @@ You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical
 
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
 	
-<<continuelink '"Hey $name, what's going on?"'>>"Hey $name, what's going on?" She says, wondering what brings you to her room.
+<<continuelink "Hey $name, what's going on?">> "Hey $name, what's going on?" She says, wondering what brings you to her room.
 
 You tell her you just wanted to check in, see how things are going.
 	
@@ -1115,7 +1115,7 @@ You and Holly head towards the [[little bit of the festival you haven't checked 
 <<endif>>
 
 
-:: Your Bedroom Post Festival {"position":"424.6666666666667,2639.6666666666665","size":"100,100"}
+:: Your Bedroom Post Festival {"position":"424,2639","size":"100,100"}
 You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind recounts yesterdays time at Lake Fest.
 
 You feel like now would be a good time to start working on your road trip plans. You’ve already got a couple of ideas on what to do. 
@@ -1130,7 +1130,7 @@ It's quite a nice day as well, you might even go on a walk today as well.
 But first you should probably [[get out of bed|Player Bedroom]]
 
 
-:: Player Bedroom {"position":"421,2797.6666666666665","size":"100,100"}
+:: Player Bedroom {"position":"421,2797","size":"100,100"}
 <<if $post_fest_day_completed is not true and $walk_completed is not true>>
     You are standing in your bedroom. You see the [[hallway to the north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
 	east. 
@@ -2565,7 +2565,7 @@ You say goodbye to Valery and [[head back to your car.|Valery Park Transistion 2
 :: Untitled Passage {"position":"1358,6824","size":"100,100"}
 
 
-:: scripts [script] {"position":"826.3333333333334,111.66666666666666","size":"100,100"}
+:: scripts [script] {"position":"826,111","size":"100,100"}
 Hello There
 <<script>>
 var race = state.active.variables.race;
@@ -2646,6 +2646,7 @@ $(output).wiki(" What will you do?");
 <<button "Fight" [[Fighting Gold]]>> 
 <<set $fight_options to "fight">>
 <</button>>
+Golden Exp.
 
 
 :: Fighting Gold {"position":"703,111","size":"100,100"}
@@ -2653,7 +2654,7 @@ What will you do?
 <<button "attack">>
 
 
-:: Untitled Passage 1 {"position":"955,107.66666666666666","size":"100,100"}
+:: Untitled Passage 1 {"position":"955,107","size":"100,100"}
 <<script>>
 
 function CombatRuntimes() {
