@@ -31,8 +31,69 @@ Tales from the Road
 /*! <<replacelink>> macro set for SugarCube 2.x */
 !function(){"use strict";function showVer(n,notrans){n&&(n.innerHTML="",new Wikifier(n,n.tweecode),n.setAttribute("data-enabled","true"),n.style.display="inline",n.classList.remove("revision-span-out"),notrans||(n.classList.add("revision-span-in"),n.timeout&&clearTimeout(n.timeout),n.timeout=setTimeout(function(){n.classList.remove("revision-span-in"),n=null},20)))}function hideVer(n,notrans){n&&(n.setAttribute("data-enabled","false"),n.classList.remove("revision-span-in"),n.timeout&&clearTimeout(n.timeout),notrans?(n.style.display="none",n.innerHTML="",n=null):(n.classList.add("revision-span-out"),n.timeout=setTimeout(function(){"false"===n.getAttribute("data-enabled")&&(n.classList.remove("revision-span-out"),n.style.display="none",n.innerHTML=""),n=null},1e3)))}function tagcontents(b,starttags,desttags,endtags,k){function tagfound(i,e,endtag){for(var j=0;j<e.length;j++)if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)===i)return e[j]}for(var tg,l=0,c="",a=b.source.slice(k),i=0;i<a.length;i++){if(tg=tagfound(i,starttags))l++;else{if((tg=tagfound(i,desttags,!0))&&0===l)return b.nextMatch=k+i+tg.length+4,[c,tg];if((tg=tagfound(i,endtags,!0))&&(l--,l<0))return null}c+=a.charAt(i)}return null}function revisionSpanHandler(g,e,f,b){function mkspan(vtype){return h=insertElement(m,"span",null,"revision-span "+vtype),h.setAttribute("data-enabled",!1),h.style.display="none",h.tweecode="",h}var becomes,c,cn,m,h,vsn,k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length;if(this.shorthand&&flen)for(;f.length>0;)vsns.push([f.shift(),"insert"===this.flavour?"gains":"becomes"]);else("insert"===this.flavour||"continue"===this.flavour&&"time"===this.trigger)&&vsns.push(["","becomes"]);if("continue"===this.flavour&&flen)b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),vtype]);else{if(becomes=["becomes","gains"],c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k),c&&endtags.indexOf(c[1])===-1){for(;c;)vsns.push(c),c=tagcontents(b,begintags,becomes,endtags,b.nextMatch);c=tagcontents(b,begintags,["/"+e,"end"+e],endtags,b.nextMatch)}if(!c)return void throwError(g,"<<"+e+">>: cannot find a matching close tag");vsns.push(c),"continue"===this.flavour&&(k=b.nextMatch,b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),""]))}for("remove"===this.flavour&&vsns.push(["","becomes"]),cn=0,m=insertElement(g,"span",null,e),m.setAttribute("data-flavour",this.flavour),h=mkspan("initial"),vsn=vsns.shift(),h.tweecode=vsn[0],showVer(h,!0);vsns.length>0;)vsn&&(vtype=vsn[1]),vsn=vsns.shift(),h=mkspan(vtype),h.tweecode=vsn[0];"function"==typeof this.setup&&this.setup(m,g,e,f)}function revisionSetup(m,g,e,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,e,f){f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);done&&m.removeEventListener("keydown",l)})}function timeSetup(m,g,e,f){function cssTimeUnit(s){if("string"==typeof s){if("ms"===s.slice(-2).toLowerCase())return Number(s.slice(0,-2))||0;if("s"===s.slice(-1).toLowerCase())return 1e3*Number(s.slice(0,-1))||0}return throwError(g,"<<"+e+'>>: "'+s+'" is not a valid CSS time unit'),0}var tm=cssTimeUnit(f[0]),s=passage();setTimeout(function timefn(){if(passage()===s){var done=!revise("revise",m);done||setTimeout(timefn,tm)}},tm)}function hoverSetup(m){var fn,noMouseEnter=null!==document.head.onmouseenter,m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;m1&&m2&&(m1.onmouseenter=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp&&"false"!==this.getAttribute("data-enabled")&&revise("revise",this.parentNode)},m2.onmouseleave=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp||"false"!==this.getAttribute("data-enabled")&&revise("revert",this.parentNode)},gains&&(m1.onmouseleave=m2.onmouseleave),noMouseEnter&&(fn=function(n){return function(e){event.relatedTarget&&(event.relatedTarget===this||this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY)||this[n]()}},m1.onmouseover=fn("onmouseenter"),m2.onmouseout=fn("onmouseleave"),gains&&(m1.onmouseout=m2.onmouseout)),m=null)}function mouseSetup(m){var evt=null===document.head.onmouseenter?"onmouseenter":"onmouseover";m[evt]=function(){var done=!revise("revise",this);done&&(this[evt]=null)},m=null}function linkSetup(m,g,e,f){var l=document.createElement("a"),p=m.parentNode;l.className="link-internal replaceLink",p.insertBefore(l,m),l.insertBefore(m,null),jQuery(l).ariaClick(function(){var done=!1;m&&m.parentNode===this&&(done=!revise("revise",m),scrollWindowTo(m)),done&&(this.parentNode.insertBefore(m,this),this.parentNode.removeChild(this))}),l=null}function visitedSetup(m,g,e,f){var done,sav=State.variables,os="once seen",d=m.firstChild&&("insert"===this.flavour?m.firstChild.nextSibling:m.firstChild).tweecode;if(sav[os]=sav[os]||{},d&&!sav[os].hasOwnProperty(d))sav[os][d]=1;else{for(var i=sav[os][d];i>0&&!done;i--)done=!revise("revise",m,!0);sav[os].hasOwnProperty(d)&&(sav[os][d]+=1)}}function insideDepartingSpan(elem){for(var r=elem.parentNode;!r.classList.contains("passage");){if(r.classList.contains("revision-span-out"))return!0;r=r.parentNode}}function reviseAll(rt,rname){for(var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=!1,i=0;i<rall.length;i++)insideDepartingSpan(rall[i])||(ret=revise(rt,rall[i])||ret);return ret}function revise(rt,r,notrans){function doToGainerSpans(n,fn){for(var k=n-1;k>=0&&rc[k+1].classList.contains("gains");k--)fn(rc[k],notrans)}for(var ind2,curr,next,ind=-1,rev="revert"===rt,rnd=rt.indexOf("random")>-1,fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc="cycle"===fl,rcl=rc.length-1,k=0;k<=rcl;k++)"true"===rc[k].getAttribute("data-enabled")&&(ind=k);rev&&(ind-=1),curr=ind>=0?rc[ind]:cyc?rc[rcl]:null,ind2=ind,rnd&&(ind2=(ind+Math.floor(Math.random()*rcl))%rcl),next=ind2<rcl?rc[ind2+1]:cyc?rc[0]:null;var docurr=rev?showVer:hideVer,donext=rev?hideVer:showVer,currfn=function(){next&&next.classList.contains("gains")&&!rnd||(docurr(curr,notrans),doToGainerSpans(ind,docurr,notrans))},nextfn=function(){donext(next,notrans),rnd&&doToGainerSpans(ind2+1,donext,notrans)};return rev?(nextfn(),currfn()):(currfn(),nextfn()),!!cyc||(rev?ind>0:ind2<rcl-1)}if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<replacelink>> macro set requires SugarCube 2.0.0 or greater, aborting load");version.extensions.replacelinkMacroSet={major:1,minor:1,revision:7};var begintags=[],endtags=[];[{name:"insertlink",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replacelink",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continuelink",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler,e.shorthand=["link","mouse","hover"].indexOf(e.trigger)>-1,macros[e.name]=e,Macro.tags.register(e.name),begintags.push(e.name),endtags.push("/"+e.name,"end"+e.name)}),macros.revertlink=macros.reviselink=macros.randomiselink=macros.randomizelink={handler:function(a,b,c){function disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1)return void enableLink(l);for(var cannext,canprev,r,fl,rall=document.querySelectorAll(".passage [data-flavour]."+rname),i=0;i<rall.length;i++)r=rall[i],fl=r.getAttribute("data-flavour"),insideDepartingSpan(r)||("cycle"===fl?cannext=canprev=!0:("false"===r.firstChild.getAttribute("data-enabled")&&(canprev=!0),"false"===r.lastChild.getAttribute("data-enabled")&&(cannext=!0)));var can=l.classList.contains("revert")?canprev:cannext;(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}if(c.length<2)return void throwError(a,"<<"+b+">>: insufficient arguments (requires at least 2)");var l,rname,actName=b.slice(0,-4),rl="reviseLink",v="",end=!1,out=!1;switch(rname=c.shift().replace(" ","_"),l=insertElement(a,"a"),l.className="link-internal "+rl+" "+rl+"_"+rname+" "+actName,c.length>1&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift()),c[c.length-1]){case"end":end=!0,c.pop();break;case"out":out=!0,c.pop()}for(var h=State.variables,i=0;i<c.length;i++){var on=i===Math.max(c.indexOf(h[v]),0),d=insertElement(null,"span",null,rl+(on?"En":"Dis")+"abled");on?(h[v]=c[i],l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),l.appendChild(d)}jQuery(l).ariaClick(function(){reviseAll(actName,rname);var lall,t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if((end||out)&&u>=m-(end?2:1)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End",n.style.display="inline",this.parentNode.replaceChild(n,this)}else toggleText(t[u]),u=(u+1)%m,v&&(h[v]=c[u]),toggleText(t[u]),this.setAttribute("data-cycle",u);lall=document.getElementsByClassName(rl+"_"+rname);for(var i=0;i<lall.length;i++)updateLink(lall[i])}),disableLink(l),setTimeout(function(l){return function(){updateLink(l)}}(l),1),l=null}},macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["/"+b,"end"+b],evt=null===window.onmouseenter?"onmouseenter":"onmouseover",t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);if(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);"hoverrevise"!=b&&done&&(this[evt]=null)};new Wikifier(h,t[0]),"hoverrevise"===b?(h.onmouseover=f,h.onmouseout=function(){reviseAll("revert",rname)}):h[evt]=f,h=null}}},Macro.tags.register("mouserevise"),Macro.tags.register("hoverrevise"),macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}}}();
 
+/* typewriter */
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
 
-:: Great Days {"position":"405,171","size":"100,200"}
+
+:: Great Days {"position":"401,137","size":"100,200"}
 <<set $ending_points to 0>>
 What is your name? <<textbox "$name" "">>
 
@@ -51,7 +112,7 @@ What is your race? <<listbox "$race" autoselect>>
 [[Submit|Intro]]
 
 
-:: Intro {"position":"404,411","size":"100,100"}
+:: Intro {"position":"402,402","size":"100,100"}
 Your name is $name. You are $gender and you are a $race. Is this correct?
 
 [[Yes|Your Bedroom]]
@@ -75,7 +136,7 @@ You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]]
 <<endif>>
 
 
-:: Hallway {"position":"401,699","size":"100,100"}
+:: Hallway {"position":"411,699","size":"100,100"}
 You enter the hallway of your apartment which you share with 2 of your friends. Your bedroom is to the south, Sasha's bedroom is to the west, the stairs leading down are to the east, and Jacob's bedroom is to the north.
 
 You head towards <<if $festival_completed is not true>>[[Your Bedroom]], <<elseif $festival_completed is true>> [[Your Bedroom,|Player Bedroom]]<<endif>> [[Sasha's Bedroom]], [[Downstairs]], [[Jacob's Bedroom]]
@@ -125,7 +186,7 @@ You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical
 
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It's an unusal trait for someone like her.
 	
-<<continuelink "Hey $name, what's going on?">> "Hey $name, what's going on?" She says, wondering what brings you to her room.
+<<continuelink '"Hey $name, what's going on?"'>>"Hey $name, what's going on?" She says, wondering what brings you to her room.
 
 You tell her you just wanted to check in, see how things are going.
 	
@@ -524,11 +585,10 @@ The man looks to you and asks if you’re going to Lake Fest. You say yes, and t
 "So you’re a local! I’m Chris.” The Tiger says as <<continuelink "he reaches out to shake your hand.">>he reaches out to shake your hand.
 
 
-You shake the Tiger’s hand and introduce yourself as Dylan.
+You shake the Tiger’s hand and introduce yourself as $name.
 
-<<timed 1s t8n>>
-“Nice to meet you Dylan. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
-<</timed>>
+“Nice to meet you $name. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
+
 <<continuelink "Continue">>
 You can’t really think of anything else remarkable here. The town is actually quite boring. You offer a few eating recommendations, including Torie's Café, stating that there really isn’t much to do here except check out the local restaurants.
 <<continuelink "Continue">>
@@ -1055,7 +1115,7 @@ You and Holly head towards the [[little bit of the festival you haven't checked 
 <<endif>>
 
 
-:: Your Bedroom Post Festival {"position":"423,2638","size":"100,100"}
+:: Your Bedroom Post Festival {"position":"424.6666666666667,2639.6666666666665","size":"100,100"}
 You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind recounts yesterdays time at Lake Fest.
 
 You feel like now would be a good time to start working on your road trip plans. You’ve already got a couple of ideas on what to do. 
@@ -1070,14 +1130,13 @@ It's quite a nice day as well, you might even go on a walk today as well.
 But first you should probably [[get out of bed|Player Bedroom]]
 
 
-:: Player Bedroom {"position":"431,2791","size":"100,100"}
+:: Player Bedroom {"position":"421,2797.6666666666665","size":"100,100"}
 <<if $post_fest_day_completed is not true and $walk_completed is not true>>
-    You are standing in your bedroom. You see the [[hallway to the     
-	north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
+    You are standing in your bedroom. You see the [[hallway to the north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
 	east. 
 
     You could also use your [[Computer.|Computer]]
-	<<if $holly_text_date_setup is not true or $holly_text_rejection is     false>>     Or text Holly on your [[Smartphone.|Smartphone Holly]]
+	<<if $holly_text_date_setup is not true or $holly_text_rejection is     false>> Or text Holly on your [[Smartphone.|Smartphone Holly]]
 	<<endif>>
 
 <<elseif $walk_completed is true and $post_fest_day_completed is not true>>
@@ -1111,6 +1170,7 @@ But first you should probably [[get out of bed|Player Bedroom]]
 
 
 :: Smartphone Holly {"position":"236,2786","size":"100,100"}
+<<if $holly_text_setup or $holly_date_rejection is not true>>
 You bring out your smartphone and pull up your contacts app, scrolling down until you hit the H column and find “Holly”. You’ve never really been fond of calling people, so you decide to text her instead of calling.
 
 The next 20 minutes are spent attempting to write the perfect text, after much deliberation you decide to just keep it simple. You type up a simple greeting and tell Holly who it is that’s texting her, asking her what’s been going on since yesterday.
@@ -1124,11 +1184,13 @@ You then spent another 10 minutes thinking of a reply. Various thoughts rush thr
 After giving it a lot of thought, you decide to send a text along the lines of the following:
 
 <<choice [["Got any plans next Sunday? I’m feeling like another date."|Holly Text Date]]>>
+
 <<choice [["About that next date… I don't think that's something I'm interested in."|Holly Decline Text]]>>
 
 <<else>>
 You can't think of anything to do with your phone right now
 <<return>>
+
 <<endif>>
 
 
@@ -2498,5 +2560,125 @@ You say your goodbyes to Valery and tell him you're happy to have another friend
 "Well suppose that's it. Have a good one, $name."
 
 You say goodbye to Valery and [[head back to your car.|Valery Park Transistion 2]]
+
+
+:: Untitled Passage {"position":"1358,6824","size":"100,100"}
+
+
+:: scripts [script] {"position":"826.3333333333334,111.66666666666666","size":"100,100"}
+Hello There
+<<script>>
+var race = state.active.variables.race;
+
+let PlayerStats = {
+    hp: 100,
+    str: 5,
+    int: 5,
+    dex: 5,
+    agl: 5,
+    per: 5,
+    chs: 5
+};
+
+let PlayerSkills = {
+    unarmed: 10,
+    melee: 10,
+    ranged: 10,
+    fire_magic: 10,
+    ice_magic: 10,
+    mind_magic: 10,
+    healing_magic: 10,
+    salesmenship: 10
+};
+
+if (race == "Wolf") {
+    PlayerStats.str += 1;
+    PlayerStats.per += 1;
+    PlayerSkills.unarmed += 5
+};
+
+if (race == "Lion") {
+    PlayerStats.agl += 1;
+    PlayerStats.int += 1;
+    PlayerSkills.mind_magic += 5
+};
+
+if (race == "Dragon") {
+    PlayerStats.str += 1;
+    PlayerStats.agl += 1;
+    PlayerSkills.ice_magic += 5;
+    PlayerSkills.fire_magic += 5
+};
+
+if (race == "Fox") {
+    PlayerStats.dex += 1;
+    PlayerStats.chs += 1;
+    PlayerSkills.ranged += 5
+};
+
+/* This is how you modify the markup output in JS */
+$(output).wiki(PlayerStats.str);
+
+<</script>>
+
+
+:: MUDA {"position":"553,112","size":"100,100"}
+<<script>>
+let enemey_name = "DIO";
+
+$(output).wiki('"Oh, you\'re approaching me? Instead of running away you\'re coming right at me?"');
+
+$(output).wiki("\n");
+
+$(output).wiki("I can't beat the shit out of you without getting closer");
+
+$(output).wiki("\n");
+
+$(output).wiki('"Oh, then come as close as you like..."');
+
+$(output).wiki("\n");
+
+$(output).wiki("You approach " + enemey_name + " . ");
+
+$(output).wiki(" What will you do?");
+
+<</script>>
+<<button "Fight" [[Fighting Gold]]>> 
+<<set $fight_options to "fight">>
+<</button>>
+
+
+:: Fighting Gold {"position":"703,111","size":"100,100"}
+What will you do?
+<<button "attack">>
+
+
+:: Untitled Passage 1 {"position":"955,107.66666666666666","size":"100,100"}
+<<script>>
+
+function CombatRuntimes() {
+    /* while attacking */
+    $(output).wiki("What will you attack with?");
+    $(output).wiki(playermoves.join('\n'))
+}
+
+/* Will add more variables later */
+function PlayerUnarmedAttacks(name, damage) {
+    this.name = name;
+    this.damage = damage;
+
+}
+let playermoves = [""];
+
+let starora = new PlayerUnarmedAttacks("ORA!", 15);
+
+playermoves.push("ORA");
+
+let staroraora = new PlayerUnarmedAttacks("ORA ORA ORA!", 30);
+
+playermoves.push("ORA ORA ORA");
+
+CombatRuntimes();
+<</script>>
 
 
