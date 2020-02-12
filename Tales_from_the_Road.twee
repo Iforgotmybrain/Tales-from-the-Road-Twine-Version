@@ -788,13 +788,13 @@ You decide to ask Holly if she wants to tag along for the rest of the day.
 You could go check out the rest of [[the festival over to the east,|Festival East Path]] or you could go check out the [[festival games over to the north.|Festival Games]]
 
 
-:: Festival Non-Holly Hub {"position":"428,2065","size":"100,100"}
+:: Festival Non-Holly Hub {"position":"449.6666666666667,2051.6666666666665","size":"100,100"}
 <<set $holly_festival_stay to false>>
 <<set $ending_points -= 4>>
 You decide to part ways with Holly after the concert.
 <<continuelink "As the band finishes their set you say goodbye to Holly and head back to the main festival area.">>As the band finishes their set you say goodbye to Holly and head back to the main festival area.
 
-There's not much left to do here. The only other thing you could think to do is check out the bits of [[the festival over to the east.|Festival East Path]]
+There's not much left to do here. The only thing left to do would be to check out the rest of the festival area over to the [[east|Festival East Path]]
 
 
 :: Festival Games {"position":"118,2222","size":"100,100"}
@@ -821,15 +821,8 @@ After discussing it, you and Holly decide to have a go at the:
 [[BB Gun Game|Festival BB Gun Game]]
 
 
-:: Festival East Path {"position":"285,2169","size":"100,100"}
+:: Festival East Path {"position":"258.3333333333333,2174","size":"100,100"}
 <<if $holly_festival_stayed is true>>
-This way doesn’t seem to have much going on, as the only thing of
-interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
-
-<<continuelink "The day has gone pretty well, you think.">> The day      has gone pretty well, you think. About the same as every other year     you’ve gone. The only thing that was different was running into         Holly. Which was nice, but for whatever reason you just didn't feel 	that strong of a connection with her.<<continuelink "Other than that the day has been pretty unremarkable.">>Other than that the day has been pretty unremarkable.  Just another average day. You walk a bit more and eventually arrive back at the place you started. With nothing left 
-to do [[decide to head home and start walking towards the bus stop|Festival Ending Self]]
-<<endif>>
-
 "Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
 
 <<continuelink "Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.">> Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
@@ -862,12 +855,23 @@ Holly seems to be a bit surprised as you detail your hobbies, as you call them '
 
 <<set $festival_walking_path to true>>
 
-<<if $festival_games_completed is not true>>
-"Anyway, looks like we’re almost back where we started. [[Guess we could go check out those games a bit north of here.|Festival Games]]
+	<<if $festival_games_completed is not true>>
+	"Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival 		Games]]
+
+	<<else>>
+
+	"Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. 		Might    even be able to see fireworks as we’re walking 			there."|Festival Ending Holly]]
+	<<endif>>
+
 
 <<else>>
+This way doesn’t seem to have much going on, as the only thing of
+interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
 
-"Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. Might    even be able to see fireworks as we’re walking there."|Festival Ending Holly]]
+<<continuelink "The day has gone pretty well, you think.">> The day      has gone pretty well, you think. About the same as every other year     you’ve gone. The only thing that was different was running into         Holly. Which was nice, but for whatever reason you just didn't feel 	that strong of a connection with her.
+
+<<continuelink "Other than that the day has been pretty unremarkable.">>Other than that the day has been pretty unremarkable.  Just another average day. You walk a bit more and eventually arrive back at the place you started. With nothing left 
+to do [[decide to head home and start walking towards the bus stop|Festival Ending Self]]
 
 <<endif>>
 
@@ -887,7 +891,7 @@ It’s been a long and interesting day. You came expecting to stay for an hour o
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Ending Holly {"position":"360,2342","size":"100,100"}
+:: Festival Ending Holly {"position":"358.3333333333333,2345.3333333333335","size":"100,100"}
 After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show.
 
 <<continuelink "It’s been a long and interesting day.">>It’s been a long and interesting day. You came here expecting to stay for an hour or two and then go home, but after talking to Holly you decided to stay. You really feel like the relationship between you and her has strengthened today. You got to talk really in-depth with her today, just like you used to.
@@ -924,7 +928,7 @@ You say goodbye to Holly and head back to the bus stop. What a great day.
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Holly Ending No Romance {"position":"431,2498","size":"100,100"}
+:: Festival Holly Ending No Romance {"position":"419.3333333333333,2493","size":"100,100"}
 Holly seems to be a bit surprised by this, her face fills with surprise and a bit of disappointment as you tell her this.
 
 <<continuelink '"Oh. Alright."'>>"Oh. Alright."
@@ -1131,6 +1135,9 @@ But first you should probably [[get out of bed|Player Bedroom]]
 
 
 :: Player Bedroom {"position":"421,2797","size":"100,100"}
+<<set $road_trip_funding_completed to true>> 
+<<set $$post_fest_day_completed to true>>
+
 <<if $post_fest_day_completed is not true and $walk_completed is not true>>
     You are standing in your bedroom. You see the [[hallway to the north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
 	east. 
@@ -1166,6 +1173,7 @@ But first you should probably [[get out of bed|Player Bedroom]]
 
     You decide to go towards the [[Hallway]], [[Bathroom]], or use your
 	[[Computer]] or take a [[Nap.|Second Transistion]]
+	
 <<endif>>
 
 
@@ -1368,7 +1376,7 @@ You put the phone back in your pocket and [[get back to planning your road trip.
 <<endif>>
 
 
-:: Transistion {"position":"482,2975","size":"100,100"}
+:: Transistion {"position":"655.3333333333334,2876.6666666666665","size":"100,100"}
 It’s about 10 PM now and you’re surprisingly tired, so you decide to go to bed a bit early. Everything you’ve wanted to do today got done, luckily. 
 
 In the next few days you’ll have to do some more work on your road trip plans. Probably the biggest issue remaining is how you’re going to finance it.
@@ -1455,21 +1463,37 @@ You tell Valery that you have some other plans for the weekend. Those plans may 
 You say bye to Valery and [[head home.|Downstairs]]
 
 
-:: Second Transistion {"position":"561,3084","size":"100,100"}
-<<if $valery_date is true and $holly_text_date_setup is true>>
+:: Second Transistion {"position":"474.3333333333333,3034","size":"100,100"}
+<<if $valery_date and $holly_text_date_setup is true>>
 //Many days after getting funds for your road trip on Monday//
+
 You wake up on Saturday, the day you're suppose to meet Valery on. These past few days have been spent planning for your road trip as well as relaxing a bit.
 
 <<continuelink "You get out of bed and get ready for lunch with Valery later today at 1.">>
 
 After getting showered and ready you mess around on your computer to waste some time. You end up leaving for [[The Rat's Place|Valery Rats Lunch]] at around 12:30.
-NEEDS FILLED
-/* Fill the rest of this stuff later */
-<<elseif $valery_date is not true and $holly_text_date_setup is true>>
-FILLER
-<<elseif $valery date is not true and $holly_text_date_setup is not true>>
-FILLER
-<<endif>>
+
+<<elseif $valery_date is true and $holly_text_date_setup isnot true>>
+//Many days after getting funds for your road trip on Monday//
+
+You wake up on Saturday, the day you're suppose to meet Valery on. These past few days have been spent planning for your road trip as well as relaxing a bit.
+
+<<continuelink "You get out of bed and get ready for lunch with Valery later today at 1.">>
+
+After getting showered and ready you mess around on your computer to waste some time. You end up leaving for [[The Rat's Place|Valery Rats Lunch]] at around 12:30.
+
+<<elseif $valery_date isnot true and $holly_text_date_setup is true>>
+
+[[You've reached the current end of the game.|Valery Park Transistion 2]]
+
+<<elseif $valery_date isnot true and $holly_text_date_setup isnot true>>
+
+[[You've reached the current end of the game.|Valery Park Transistion 2]]
+
+<<else>>
+This means I missed a possible story path. Ope.
+
+<</if>>
 
 
 :: Valery Rats Lunch {"position":"561,3234","size":"100,100"}
@@ -2681,5 +2705,9 @@ playermoves.push("ORA ORA ORA");
 
 CombatRuntimes();
 <</script>>
+
+
+:: Festival 		Games {"position":"238.33333333333331,2324","size":"100,100"}
+Double-click this passage to edit it.
 
 
