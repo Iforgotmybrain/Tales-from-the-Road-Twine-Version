@@ -11,11 +11,12 @@ function PlayerUnarmedAttacks(name, damage) {
     this.damage = damage;
 
 }
-let playermoves = [""];
+/*Don't know if I'll need this/how to implement it. Need to make so the listed items become clickable in the markuo.*/
+/*let playermoves = [""];
 let starora = new PlayerUnarmedAttacks("ORA!", 15);
 playermoves.push("ORA");
 let staroraora = new PlayerUnarmedAttacks("ORA ORA ORA!", 30);
-playermoves.push("ORA ORA ORA");
+playermoves.push("ORA ORA ORA");*/
 
 CombatRuntimes();
 

@@ -145,13 +145,20 @@ setup.enemystats = function Enemy(name, hp, str, int, dex, agl, per, chs) {
     
 
 setup.whogoes = function WhoGoesThere() {
-    /* Use window or setup to make var global */
+    /* Use window or setup to make var global. Fixes the issues I had thank all the gods and learnxinyminutes.com */
     window.dio_test = new Enemy("DIO", 50, 5,5,5,5,5,5);
     const enemy_fighting = dio_test;
+    window.player_attack = "";
+
 };
 
 setup.damage = function EnemyDamage() {
-    dio_test.hp -= 10
+    for (let i = 0; i > 0; player_attack === "one") {
+        dio_test.hp -= 10;
+        console.log(dio_test.hp + "Working");
+        i++
+    }
+
 };
 
 
@@ -2338,13 +2345,15 @@ let staroraora = new PlayerUnarmedAttacks(&quot;ORA ORA ORA!&quot;, 30);
 playermoves.push(&quot;ORA ORA ORA&quot;);
 
 CombatRuntimes();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Festival 		Games" tags="" position="238,2324" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="140" name="DIO Attack" tags="" position="698,219.33333333333334" size="100,100">You ready yourself and attack with:
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Festival 		Games" tags="" position="238,2324" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="140" name="DIO Attack" tags="" position="698,219" size="100,100">You ready yourself and attack with:
 &lt;&lt;button [[ORA!|Enemy Stats]]&gt;&gt; 
 &lt;&lt;script&gt;&gt; 
+player_attack = &quot;one&quot;;
 setup.damage(); 
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="141" name="Enemy Stats" tags="" position="538,244.33333333333337" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="141" name="Enemy Stats" tags="" position="538,244" size="100,100">&lt;&lt;script&gt;&gt;
 $(output).wiki(dio_test.name + &quot;: &quot; + dio_test.hp + &quot;HP Remaining.&quot;);
+player_attack = &quot;&quot;;
 &lt;&lt;/script&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */

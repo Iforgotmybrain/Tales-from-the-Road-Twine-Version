@@ -34,10 +34,17 @@ setup.whogoes = function WhoGoesThere() {
     /* Use window or setup to make var global. Fixes the issues I had thank all the gods and learnxinyminutes.com */
     window.dio_test = new Enemy("DIO", 50, 5,5,5,5,5,5);
     const enemy_fighting = dio_test;
+    window.player_attack = "";
+
 };
 
 setup.damage = function EnemyDamage() {
-    dio_test.hp -= 10
+    for (let i = 0; i > 0; player_attack === "one") {
+        dio_test.hp -= 10;
+        console.log(dio_test.hp + "Working");
+        i++
+    }
+
 };
 
 
