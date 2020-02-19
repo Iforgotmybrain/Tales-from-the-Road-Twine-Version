@@ -1,14 +1,4 @@
-const PlayerStats = {
-    hp: 100,
-    str: 5,
-    int: 5,
-    dex: 5,
-    agl: 5,
-    per: 5,
-    chs: 5
-};
-
-const PlayerSkills = {
+const PlayerSkills = { /*Needs to be fixed for Twine. Won't work in current state.*/
     unarmed: 10,
     melee: 10,
     ranged: 10,
@@ -19,7 +9,7 @@ const PlayerSkills = {
     salesmenship: 10
 };
 
-function Enemy(name, hp, str, int, dex, agl, per, chs) {
+setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
     this.name = name;
     this.hp = hp;
     this.str = str;
@@ -31,22 +21,36 @@ function Enemy(name, hp, str, int, dex, agl, per, chs) {
 
 
 setup.whogoes = function WhoGoesThere() {
-    /* Use window or setup to make var global. Fixes the issues I had thank all the gods and learnxinyminutes.com */
-    window.dio_test = new Enemy("DIO", 50, 5,5,5,5,5,5);
-    const enemy_fighting = dio_test;
+    /* Use window or setup to make var global. Based learnxinyminutes.com*/
+    window.player_stats = new PlayerNPCs("Jotaro", 100,5,5,5,5,5,5);
+    window.dio_test = new PlayerNPCs("DIO", 50, 5,5,5,5,5,5);
+    const enemy_fighting = dio_test; /*Will need to adjust this to make it easy to grab name of enemy.*/
     window.player_attack = "";
 
 };
 
 setup.damage = function EnemyDamage() {
-    for (let i = 0; i > 0; player_attack === "one") {
-        dio_test.hp -= 10;
-        console.log(dio_test.hp + "Working");
-        i++
-    }
-
+    /*Also needs to be cleaned up and turned into a proper object.*/
+        if (player_attack === "one") {
+            dio_test.hp -= 10;
+            player_attack = "";
+        }
 };
 
+setup.enemyAttack = function EnemyAttacking() {
+    const enemyTurn = true;
+    const enemyAttacks = ["MUDA", "ZA WAURDO"]; /*Will need to make this into an object and function*/
+    while (enemyTurn === true) {
+        window.choosenAttack = enemyAttacks[Math.floor(Math.random() * enemyAttacks.length)];
+        if (choosenAttack === "MUDA") {
+            player_stats.hp -= 15;
+            break
+        } else if (choosenAttack === "ZA WAURDO") {
+            player_stats.hp -= 25;
+            break
+        }
+    }
+};
 
 function RaceSetting() {
     const race = state.active.variables.race;
