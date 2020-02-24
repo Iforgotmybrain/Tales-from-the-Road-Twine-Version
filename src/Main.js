@@ -7,11 +7,10 @@ setup.skills = function PlayerNPCSkills(unarmed, melee, ranged, fire_magic, ice_
     this.ice_magic = ice_magic;
     this.mind_magic = mind_magic;
     this.healing_magic = healing_magic;
-    this.salesmenship = salesmanship
+    this.salesmenship = salesmanship;
 };
 
 setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
-    /*Same as skills. A template for the PC and all NPCs.*/
     this.name = name;
     this.hp = hp;
     this.str = str;
@@ -23,17 +22,35 @@ setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
 };
 
 setup.pcmoves = function PlayerMoves (damage, accuracy) {
-    /*Stats of attacks. Base damage and accuracy, plan on adding more parameters.*/
+    /*Plan on adding more parameters.*/
     this.damage = damage;
     this.accuracy = accuracy;
 };
 
-setup.enemymoves = function EnemyMoves (name, damage, accuracy) {
-    /*Might want to add a parameter signifying prefence the AI has for an attack. DIO, for example, should not use
+function EnemyMoves (name, damage, accuracy) {
+    /*Might want to add a parameter signifying preference the AI has for an attack. DIO, for example, should not use
     * ZA WAURDO every turn. I could work some probability in to keep this from happening.*/
     this.name = name;
     this.damage = damage;
     this.accuracy = accuracy;
+
+}
+
+setup.initstats = function InitStats() {
+    window.playerSkills = new setup.skills(10,10,10,10,10,
+        10,10,10);
+    window.playerStats = new setup.stats("Jotaro", 100,5,5,5,5,5,5);
+
+    window.dioBrando = new setup.stats("DIO", 50,5,5,5,5,5,5);
+
+    window.mudaAttack = new EnemyMoves("MUDA", 10, .90);
+
+    window.zawaurdoAttack = new EnemyMoves("ZA WAURDO", 20, .90);
+
+    window.timestopKnifeAttack = new EnemyMoves("ZA WAURDO Knife Attack", 35, .90);
+
+    window.oraAttack = new setup.pcmoves(10,.95);
+    window.oraOraOraAttack = new setup.pcmoves(20,.95);
 };
 
 setup.whogoes = function StartingObjs() {
@@ -41,37 +58,19 @@ setup.whogoes = function StartingObjs() {
     * will be moved to different functions later. This is the quick and dirty way to get stuff working while I
     * muck about. */
 
-    /* Use window or setup to make var global. Based learnxinyminutes.com */
-    window.playerSkills = new setup.skills(10,10,10,10,10,
-        10,10,10);
-
-    window.playerStats = new setup.stats("Jotaro", 100,5,5,5,5,5,5);
-
-    window.dioBrando = new setup.stats("DIO", 50,5,5,5,5,5,5);
-
-    window.oraAttack = new setup.pcmoves(10,.95);
-    window.oraOraOraAttack = new setup.pcmoves(20,.95);
-
-    /*Gotta have a name for the attacks to show on the Twine markup.*/
-
-    window.mudaAttack = new setup.enemymoves("MUDA", 10, .90);
-
-    window.zawaurdoAttack = new setup.enemymoves("ZA WAURDO", 20, .90);
-
-    window.timestopKnifeAttack = new setup.enemymoves("ZA WAURDO Knife Attack", 35, .90);
-
-    window.enemyFighting = ""; /*Will need to adjust this to make it easy to grab name of enemy.*/
+    window.enemyFighting = "";
 
     window.playerAttack = "";
 
-    window.playerAttackHitMiss = false;
-
     window.playerFighting = false;
+
+    window.enemyAttacks = [mudaAttack, zawaurdoAttack];
 
 
 };
 
 setup.PCAttacking = function EnemyDamage() {
+    window.playerAttackHitMiss = false;
     /*Where calculating for damage done to enemy is done. Might need to be refactored with bigger scale. playerAttack
     * is defined in Twine.*/
     /* Calculator for unarmed attacks */
@@ -100,29 +99,65 @@ setup.PCAttacking = function EnemyDamage() {
     }
 };
 
+function getArrayRandomElement (arr) {
+    if (arr && arr.length) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+    // The undefined will be returned if the empty array was passed
+}
+
+setup.fuckit = function ArrayAppend(arr, append) {
+    if (arr && arr.length) {
+       return arr.push(append)
+    }
+};
+
 setup.enemyAttack = function EnemyAttacking() {
     /*Where an enemy, in this case DIO, chooses it's attacks.*/
+    window.choosenAttack = getArrayRandomElement(enemyAttacks);
     const enemyTurn = true;
-    /*Array of attacks for the AI to choose.*/
-    window.enemyAttacks = [mudaAttack, zawaurdoAttack];
-    enemyAttacks.push(timestopKnifeAttack);
-    /*Randomly picks one from the array. Shamelessly stolen from stackOverflow.*/
-    window.choosenAttack = enemyAttacks[Math.floor(Math.random() * enemyAttacks.length)];
-    /*Fucking with push command*/
     while (enemyTurn === true) {
         if (choosenAttack === mudaAttack) {
             /*Don't know I want to alter the damage AI does based off their stats.*/
-            playerStats.hp -= 10;
+            playerStats.hp -= mudaAttack.damage;
             break
         } else if (choosenAttack === zawaurdoAttack) {
-            playerStats.hp -= 20;
+            playerStats.hp -= zawaurdoAttack.damage;
             break
         } else if (choosenAttack === timestopKnifeAttack) {
-            playerStats.hp -= 35;
+            playerStats.hp -= timestopKnifeAttack.damage;
             break
         }
     }
 };
+
+/*setup.fuckit(enemyAttacks, timestopKnifeAttack);*/
+/*setup.JSLoaded = false;
+var lockID = LoadScreen.lock();  // Lock loading screen
+importScripts("https://www.googletagmanager.com/gtag/js?id=INSERT_GA_ID_HERE")
+    .then(function() {
+        setup.JSLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function (){ dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', 'INSERT_GA_ID_HERE');
+        LoadScreen.unlock(lockID);  // Unlock loading screen
+    }).catch(function(error) {
+        alert("Error: Could not load 'gtag.js'.");
+    }
+);
+
+
+$(document).on('click', 'a', function (ev) {
+    // Get the destination of the clicked link var passage
+    var passage = $(this).attr('data-passage');
+    // Send the message to google analytics
+    gtag('event', 'Navigation', {
+        event_label    : passage,
+        event_category : 'GuestClick'
+    });
+
+});*/
 
 function RaceSetting() {
     const race = state.active.variables.race;
