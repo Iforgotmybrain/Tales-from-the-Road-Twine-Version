@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72f7a2b6-babc-4528-8c0a-cc8af10ee764" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Proof of Concept JS.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Proof of Concept JS.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
       <workItem from="1582403403005" duration="4860000" />
       <workItem from="1582437167901" duration="2992000" />
       <workItem from="1582510106672" duration="4883000" />
-      <workItem from="1582584291474" duration="12825000" />
+      <workItem from="1582584291474" duration="12876000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got .push working.">
       <created>1582518268659</created>
@@ -84,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582518268659</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Streamlining code. UI work.">
+      <created>1582608601426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582608601427</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,17 +112,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finally got .push working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally got .push working." />
+    <MESSAGE value="Streamlining code. UI work." />
+    <option name="LAST_COMMIT_MESSAGE" value="Streamlining code. UI work." />
   </component>
   <component name="WindowStateProjectService">
     <state x="775" y="212" key="#testing.js" timestamp="1582069559269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="212" key="#testing.js/0.0.1920.1040@0.0.1920.1040" timestamp="1582069559269" />
-    <state x="543" y="115" key="CommitChangelistDialog2" timestamp="1582518268079">
+    <state x="543" y="115" key="CommitChangelistDialog2" timestamp="1582608600809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="543" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582518268079" />
+    <state x="543" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582608600809" />
     <state width="1899" height="220" key="GridCell.Tab.0.bottom" timestamp="1582159462188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
