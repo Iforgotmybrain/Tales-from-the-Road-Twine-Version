@@ -21,43 +21,36 @@ setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
     this.chs = chs;
 };
 
-setup.pcmoves = function PlayerMoves (damage, accuracy) {
-    /*Plan on adding more parameters.*/
-    this.damage = damage;
-    this.accuracy = accuracy;
-};
-
-function EnemyMoves (name, damage, accuracy) {
+setup.moves =function Moves (atkName, damage, accuracy) {
     /*Might want to add a parameter signifying preference the AI has for an attack. DIO, for example, should not use
     * ZA WAURDO every turn. I could work some probability in to keep this from happening.*/
-    this.name = name;
+    this.atkName = atkName;
     this.damage = damage;
     this.accuracy = accuracy;
 
-}
+};
 
 setup.initstats = function InitStats() {
     window.playerSkills = new setup.skills(10,10,10,10,10,
         10,10,10);
-    window.playerStats = new setup.stats("Jotaro", 100,5,5,5,5,5,5);
+    window.playerStats = new setup.stats("Jotaro", 70,9,9,9,9,9,3);
 
-    window.dioBrando = new setup.stats("DIO", 50,5,5,5,5,5,5);
+    window.dioBrando = new setup.stats("DIO", 40,9,9,7,9,9,8);
 
-    window.mudaAttack = new EnemyMoves("MUDA", 10, .90);
+    window.mudaAttack = new setup.moves("MUDA", 10, .90);
 
-    window.zawaurdoAttack = new EnemyMoves("ZA WAURDO", 20, .90);
+    window.zawaurdoAttack = new setup.moves("ZA WAURDO", 20, .90);
 
-    window.timestopKnifeAttack = new EnemyMoves("ZA WAURDO Knife Attack", 35, .90);
+    window.timestopKnifeAttack = new setup.moves("ZA WAURDO Knife Attack", 35, .90);
 
-    window.oraAttack = new setup.pcmoves(10,.95);
-    window.oraOraOraAttack = new setup.pcmoves(20,.95);
+    window.oraAttack = new setup.moves("ORA!", 10,.95);
+    window.oraOraRushAttack = new setup.moves("ORA ORA Rush!", 20,.95);
 };
 
 setup.whogoes = function StartingObjs() {
     /*Currently initializes lots of variables and creates the basic NPC and player objects. Lots of the stuff here
     * will be moved to different functions later. This is the quick and dirty way to get stuff working while I
     * muck about. */
-
     window.enemyFighting = "";
 
     window.playerAttack = "";
@@ -66,36 +59,26 @@ setup.whogoes = function StartingObjs() {
 
     window.enemyAttacks = [mudaAttack, zawaurdoAttack];
 
+    window.playerAttacks = [oraAttack];
 
 };
 
 setup.PCAttacking = function EnemyDamage() {
     window.playerAttackHitMiss = false;
-    /*Where calculating for damage done to enemy is done. Might need to be refactored with bigger scale. playerAttack
-    * is defined in Twine.*/
     /* Calculator for unarmed attacks */
-    window.playerAttackCalc = playerAttack.damage + 0.20 * playerStats.str + 0.10 * playerSkills.unarmed;
-    if (playerAttack === oraAttack) {
-        /*Uses Math.random to pick a float from 0 to 1.0. Any value less than .95 will equal a hit, in this case.*/
-        const playerAttackChance = Math.random();
-        console.log(playerAttackChance);
+    window.playerAttackCalc = playerAttack.damage + 0.20 * playerStats.str + 0.10 * playerSkills.unarmed | 0;
+    const playerAttackChance = Math.random();
+    console.log(playerAttackChance);
 
-        if (playerAttackChance <= oraAttack.accuracy) {
-            /*Using various stats to calculate how much to alter the base damage.*/
-            dioBrando.hp -= playerAttackCalc;
-            /*Player attack is done.*/
-            playerAttack = "";
-            /*Indicates to the game that the player didn't miss their attack*/
-            playerAttackHitMiss = true;
-
-        } else {
-            console.log("Miss");
-            /*Indicates to the game that the player missed their attack*/
-            playerAttackHitMiss = false;
-        }
+    if (playerAttackChance <= playerAttack.accuracy) {
+        dioBrando.hp -= playerAttackCalc;
+        /*Player attack is done.*/
+        playerAttack = "";
+        playerAttackHitMiss = true;
 
     } else {
-        console.log("It just works. This means something is wrong with playerAttack.")
+        console.log("Missed that one. Try another!");
+        playerAttackHitMiss = false;
     }
 };
 
@@ -104,34 +87,26 @@ function getArrayRandomElement (arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
     // The undefined will be returned if the empty array was passed
-}
+};
 
-setup.fuckit = function ArrayAppend(arr, append) {
-    if (arr && arr.length) {
-       return arr.push(append)
-    }
+setup.pullvalue = function pullValues(array, obj) {
+    return array.map(function(item) { return item[obj]; });
 };
 
 setup.enemyAttack = function EnemyAttacking() {
+    window.enemyAttackHitMiss = false;
     /*Where an enemy, in this case DIO, chooses it's attacks.*/
     window.choosenAttack = getArrayRandomElement(enemyAttacks);
-    const enemyTurn = true;
-    while (enemyTurn === true) {
-        if (choosenAttack === mudaAttack) {
-            /*Don't know I want to alter the damage AI does based off their stats.*/
-            playerStats.hp -= mudaAttack.damage;
-            break
-        } else if (choosenAttack === zawaurdoAttack) {
-            playerStats.hp -= zawaurdoAttack.damage;
-            break
-        } else if (choosenAttack === timestopKnifeAttack) {
-            playerStats.hp -= timestopKnifeAttack.damage;
-            break
-        }
+    window.enemyAttackCalc = choosenAttack.damage + 0.20 * enemyFighting.str | 0;
+    const enemyAttackChance = Math.random();
+    if (enemyAttackChance <= choosenAttack.accuracy) {
+        playerStats.hp -= enemyAttackCalc;
+    } else {
+        enemyAttackHitMiss = true;
+        console.log("You expect to hit, but it was me, Dio!");
     }
 };
 
-/*setup.fuckit(enemyAttacks, timestopKnifeAttack);*/
 /*setup.JSLoaded = false;
 var lockID = LoadScreen.lock();  // Lock loading screen
 importScripts("https://www.googletagmanager.com/gtag/js?id=INSERT_GA_ID_HERE")

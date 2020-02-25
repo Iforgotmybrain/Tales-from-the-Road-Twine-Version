@@ -74,8 +74,17 @@
       <workItem from="1582222901990" duration="2345000" />
       <workItem from="1582403403005" duration="4860000" />
       <workItem from="1582437167901" duration="2992000" />
-      <workItem from="1582510106672" duration="4706000" />
+      <workItem from="1582510106672" duration="4883000" />
+      <workItem from="1582584291474" duration="12825000" />
     </task>
+    <task id="LOCAL-00001" summary="Finally got .push working.">
+      <created>1582518268659</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582518268659</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +102,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finally got .push working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally got .push working." />
   </component>
   <component name="WindowStateProjectService">
     <state x="775" y="212" key="#testing.js" timestamp="1582069559269">
