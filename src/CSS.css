@@ -1,0 +1,70 @@
+.passage button {
+    text-align: center;
+    margin: 10px;
+    width: 25%;
+    background-color: #d46f07;
+    border: #d46f07;
+}
+
+.center {
+    text-align: center;
+}
+
+.attkb button {
+    margin: 10px;
+    width: 10%;
+    position: absolute;
+    left: 15%; bottom: 10px; right: 10px;
+    background-color: #d46f07;
+    border: #d46f07;
+}
+
+.tooltip {
+    position: relative;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*! <<replacelink>> macro set for SugarCube 2.x */
+.revision-span-in {
+    opacity: 0;
+}
+.revision-span:not(.revision-span-out) {
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.revision-span-out {
+    position: absolute;
+    opacity: 0;
+}

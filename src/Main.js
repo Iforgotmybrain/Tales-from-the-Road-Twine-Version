@@ -38,13 +38,13 @@ setup.initstats = function InitStats() {
     window.dioBrando = new setup.stats("DIO", 40,9,9,7,9,9,8);
 
     window.mudaAttack = new setup.moves("MUDA", 10, .90);
-
     window.zawaurdoAttack = new setup.moves("ZA WAURDO", 20, .90);
-
     window.timestopKnifeAttack = new setup.moves("ZA WAURDO Knife Attack", 35, .90);
+    window.roadRoller = new setup.moves("ROADA ROLLA", 35, .99);
 
     window.oraAttack = new setup.moves("ORA!", 10,.95);
     window.oraOraRushAttack = new setup.moves("ORA ORA Rush!", 20,.95);
+    window.starTheWorld = new setup.moves("Star Platinum: The World", 150, 1.0);
 };
 
 setup.whogoes = function StartingObjs() {
@@ -103,7 +103,7 @@ setup.enemyAttack = function EnemyAttacking() {
         playerStats.hp -= enemyAttackCalc;
     } else {
         enemyAttackHitMiss = true;
-        console.log("You expect to hit, but it was me, Dio!");
+        console.log("You expected a hit, but it was me, Dio!");
     }
 };
 
@@ -175,5 +175,14 @@ if (choosenAttack.name === "MUDA") {
     "He pulls an uncountable amount of knives from his belt, throwing them at you while time is stopped. Once the knives are +" +
         "are setup DIO unpauses time; the knives hit your body and cause " + choosenAttack.damage + " points of damage." +
         "You have " + playerStats.hp + " HP left.")
+} else if (choosenAttack.name === "ROADA ROLLA") {
+    $output.wiki("DIO stops time once again. At this point he's able to stop it for 9 seconds, while you can only stop it for 2 seconds." +
+        "DIO seems to have something different planned this time. He leaves the area for a few seconds while time is stopped," +
+        "you're unsure of what exactly he has planned. Shortly after he appears from above holding a road roller, he plans on" +
+        "crushing you with it while time is stopped! You use your two seconds of control during the time stop to try" +
+        "and stop him but he seems to be overpowering you, or at least that's what he thinks..." +
+        "DIO thinks he's finally finished you off, but right as he starts to boast you, you turn his own technique " +
+        "against him.");
+    state.active.variables["timestopping"] = true
 }
 

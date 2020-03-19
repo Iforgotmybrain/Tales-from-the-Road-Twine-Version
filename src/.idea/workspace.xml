@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72f7a2b6-babc-4528-8c0a-cc8af10ee764" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Proof of Concept JS.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Proof of Concept JS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSS.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -32,6 +35,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,6 +80,15 @@
       <workItem from="1582437167901" duration="2992000" />
       <workItem from="1582510106672" duration="4883000" />
       <workItem from="1582584291474" duration="12876000" />
+      <workItem from="1582663769776" duration="1129000" />
+      <workItem from="1584316569049" duration="33000" />
+      <workItem from="1584556885335" duration="128000" />
+      <workItem from="1584571089498" duration="96000" />
+      <workItem from="1584571254924" duration="86000" />
+      <workItem from="1584572294534" duration="1636000" />
+      <workItem from="1584641497305" duration="600000" />
+      <workItem from="1584645203294" duration="2829000" />
+      <workItem from="1584648341757" duration="1055000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got .push working.">
       <created>1582518268659</created>
