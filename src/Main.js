@@ -38,8 +38,11 @@ setup.initstats = function InitStats() {
     window.dioBrando = new setup.stats("DIO", 40,9,9,7,9,9,8);
 
     window.mudaAttack = new setup.moves("MUDA", 10, .90);
+
     window.zawaurdoAttack = new setup.moves("ZA WAURDO", 20, .90);
+
     window.timestopKnifeAttack = new setup.moves("ZA WAURDO Knife Attack", 35, .90);
+
     window.roadRoller = new setup.moves("ROADA ROLLA", 35, .99);
 
     window.oraAttack = new setup.moves("ORA!", 10,.95);
@@ -181,7 +184,7 @@ if (choosenAttack.name === "MUDA") {
         "you're unsure of what exactly he has planned. Shortly after he appears from above holding a road roller, he plans on" +
         "crushing you with it while time is stopped! You use your two seconds of control during the time stop to try" +
         "and stop him but he seems to be overpowering you, or at least that's what he thinks..." +
-        "DIO thinks he's finally finished you off, but right as he starts to boast you, you turn his own technique " +
+        "DIO thinks he's finally finished you off, but right as he starts to boast, you turn his own technique " +
         "against him.");
     state.active.variables["timestopping"] = true
 }
