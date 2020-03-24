@@ -107,7 +107,16 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   background-color: #d46f07;
   border: #d46f07;
 }
-
+.choice_button button {
+  text-align: center;
+  margin: 10px;
+  width: 10%;
+  position: relative;
+  left: 0%;
+  bottom: 50%;
+  background-color: #d46f07;
+  border: #d46f07;
+}
 .center {
   text-align: center;
 }
@@ -312,8 +321,14 @@ $(output).wiki(&quot; What will you do?&quot;);
 
 &lt;&lt;/script&gt;&gt;
 
-[[Beat the shit out of him|Combat Menu]]</tw-passagedata><tw-passagedata pid="2" name="Combat Menu" tags="" position="404,318" size="100,100">[[Attack|Player Attack]] [[Items|Item List]]
-</tw-passagedata><tw-passagedata pid="3" name="Player Attack" tags="button .center" position="327,472" size="100,100">&lt;&lt;if $health &lt; 1&gt;&gt;
+[[Beat the shit out of him|Combat Menu]]</tw-passagedata><tw-passagedata pid="2" name="Combat Menu" tags=".center" position="404,318" size="100,100">&lt;span class = choice_button&gt;
+
+&lt;&lt;button [[Attack|Player Attack]]&gt;&gt; &lt;&lt;/button&gt;&gt; 
+	
+&lt;&lt;button [[Items|Item List]]&gt;&gt; &lt;&lt;/button&gt;&gt;
+
+&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Player Attack" tags="button .center" position="334,468.6666666666667" size="100,100">&lt;&lt;if $health &lt; 1&gt;&gt;
 You have [[died.|An ending]]
 
 &lt;&lt;else&gt;&gt;
@@ -436,7 +451,7 @@ dioBrando.hp += 120;
 playerStats.hp += 100;
 enemyAttacks.push(timestopKnifeAttack);
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Attack Stats" tags="" position="176,265" size="100,100">Your current moveset includes:
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Attack Stats" tags="" position="936,171.66666666666666" size="100,100">Your current moveset includes:
 &lt;&lt;script&gt;&gt;
 const playerAttackNameArray = setup.pullvalue(playerAttacks, &quot;name&quot;);
 const playerAttackDamageArray = setup.pullvalue(playerAttacks, &quot;damage&quot;);
