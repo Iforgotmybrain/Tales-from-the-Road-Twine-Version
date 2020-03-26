@@ -107,13 +107,23 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   background-color: #d46f07;
   border: #d46f07;
 }
-.choice_button button {
+.choice_button_1 button {
   text-align: center;
   margin: 10px;
   width: 10%;
-  position: relative;
-  left: 0%;
-  bottom: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 60%;
+  background-color: #d46f07;
+  border: #d46f07;
+}
+.choice_button_2 button {
+  text-align: center;
+  margin: 10px;
+  width: 10%;
+  position: absolute;
+  left: 50%;
+  bottom: 55%;
   background-color: #d46f07;
   border: #d46f07;
 }
@@ -321,14 +331,15 @@ $(output).wiki(&quot; What will you do?&quot;);
 
 &lt;&lt;/script&gt;&gt;
 
-[[Beat the shit out of him|Combat Menu]]</tw-passagedata><tw-passagedata pid="2" name="Combat Menu" tags=".center" position="404,318" size="100,100">&lt;span class = choice_button&gt;
-
+[[Beat the shit out of him|Combat Menu]]</tw-passagedata><tw-passagedata pid="2" name="Combat Menu" tags=".center" position="404,323" size="100,100">&lt;span class = choice_button_1&gt;
+&lt;span id =&quot;oneAct&quot;&gt;
 &lt;&lt;button [[Attack|Player Attack]]&gt;&gt; &lt;&lt;/button&gt;&gt; 
-	
+&lt;/span&gt;&lt;/span&gt;
+&lt;span class = choice_button_2&gt;
+&lt;span id =&quot;twoAct&quot;&gt;
 &lt;&lt;button [[Items|Item List]]&gt;&gt; &lt;&lt;/button&gt;&gt;
-
-&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="3" name="Player Attack" tags="button .center" position="334,468.6666666666667" size="100,100">&lt;&lt;if $health &lt; 1&gt;&gt;
+&lt;/span&gt; &lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Player Attack" tags="button .center" position="334,468" size="100,100">&lt;&lt;if $health &lt; 1&gt;&gt;
 You have [[died.|An ending]]
 
 &lt;&lt;else&gt;&gt;
@@ -451,7 +462,7 @@ dioBrando.hp += 120;
 playerStats.hp += 100;
 enemyAttacks.push(timestopKnifeAttack);
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Attack Stats" tags="" position="936,171.66666666666666" size="100,100">Your current moveset includes:
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Attack Stats" tags="" position="936,171" size="100,100">Your current moveset includes:
 &lt;&lt;script&gt;&gt;
 const playerAttackNameArray = setup.pullvalue(playerAttacks, &quot;name&quot;);
 const playerAttackDamageArray = setup.pullvalue(playerAttacks, &quot;damage&quot;);
@@ -468,7 +479,7 @@ dioBrando.hp += 250;
 playerStats.hp += 120;
 enemyAttacks.push(roadRoller);
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Jotaro Ending" tags="" position="443,876" size="100,100">Right as DIO&#39;s time stop ends, you use Star Platinum: The World. Stopping time right before DIO crushes you with the road roller. DIO boasts ontop of the road roller thinking he&#39;s defeated you, it doesn&#39;t take long for him to realize that something&#39;s gone wrong as he slowly loses the ability to move. You walk behind him and lecture him about how it feels to be at the mercy of someone stopping time before punching him in the legs and sending him flying off the road roller.
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Jotaro Ending" tags="" position="408,891" size="100,100">Right as DIO&#39;s time stop ends, you use Star Platinum: The World. Stopping time right before DIO crushes you with the road roller. DIO boasts ontop of the road roller thinking he&#39;s defeated you, it doesn&#39;t take long for him to realize that something&#39;s gone wrong as he slowly loses the ability to move. You walk behind him and lecture him about how it feels to be at the mercy of someone stopping time before punching him in the legs and sending him flying off the road roller.
 
 DIO struggles to regenerate after the damage sustained to his legs. His bad leg still bleeding even after several seconds. In a desperate attemp to gain the upper hand DIO blinds you with his blood before trying to kick you with his bad leg. You counter with Star Platinum, hurting your hand in the process. DIO seems to think he&#39;s won, that&#39;s before his left leg starts cracking and the entire left side of his body starts to disintergrate.
 
