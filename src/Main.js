@@ -31,23 +31,13 @@ setup.moves =function Moves (atkName, damage, accuracy) {
 };
 
 setup.initstats = function InitStats() {
-    window.playerSkills = new setup.skills(10,10,10,10,10,
-        10,10,10);
-    window.playerStats = new setup.stats("Jotaro", 70,9,9,9,9,9,3);
 
-    window.dioBrando = new setup.stats("DIO", 40,9,9,7,9,9,8);
+    window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1);
+    window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1);
+    window.playerStats = new setup.stats("Temp", 50, 5,5,5,5,5);
 
-    window.mudaAttack = new setup.moves("MUDA", 10, .90);
-
-    window.zawaurdoAttack = new setup.moves("ZA WAURDO", 20, .90);
-
-    window.timestopKnifeAttack = new setup.moves("ZA WAURDO Knife Attack", 35, .90);
-
-    window.roadRoller = new setup.moves("ROADA ROLLA", 35, .99);
-
-    window.oraAttack = new setup.moves("ORA!", 10,.95);
-    window.oraOraRushAttack = new setup.moves("ORA ORA Rush!", 20,.95);
-    window.starTheWorld = new setup.moves("Star Platinum: The World", 150, 1.0);
+    window.punchAttack = new setup.moves("Punch", 3, .80);
+    window.knifeSlash = new setup.moves("Knife Slash", 8, .65);
 };
 
 setup.whogoes = function StartingObjs() {
@@ -60,9 +50,9 @@ setup.whogoes = function StartingObjs() {
 
     window.playerFighting = false;
 
-    window.enemyAttacks = [mudaAttack, zawaurdoAttack];
+    window.enemyAttacks = [];
 
-    window.playerAttacks = [oraAttack];
+    window.playerAttacks = [];
 
 };
 
@@ -74,7 +64,7 @@ setup.PCAttacking = function EnemyDamage() {
     console.log(playerAttackChance);
 
     if (playerAttackChance <= playerAttack.accuracy) {
-        dioBrando.hp -= playerAttackCalc;
+        enemyFighting.hp -= playerAttackCalc;
         /*Player attack is done.*/
         playerAttack = "";
         playerAttackHitMiss = true;
@@ -98,7 +88,7 @@ setup.pullvalue = function pullValues(array, obj) {
 
 setup.enemyAttack = function EnemyAttacking() {
     window.enemyAttackHitMiss = false;
-    /*Where an enemy, in this case DIO, chooses it's attacks.*/
+    /*Where an enemy chooses it's attacks.*/
     window.choosenAttack = getArrayRandomElement(enemyAttacks);
     window.enemyAttackCalc = choosenAttack.damage + 0.20 * enemyFighting.str | 0;
     const enemyAttackChance = Math.random();
