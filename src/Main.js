@@ -10,7 +10,7 @@ setup.skills = function PlayerNPCSkills(unarmed, melee, ranged, fire_magic, ice_
     this.salesmenship = salesmanship;
 };
 
-setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
+setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs, exp) {
     this.name = name;
     this.hp = hp;
     this.str = str;
@@ -21,12 +21,13 @@ setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs) {
     this.chs = chs;
 };
 
-setup.moves =function Moves (atkName, damage, accuracy) {
+setup.moves =function Moves (atkName, damage, accuracy, flavor) {
     /*Might want to add a parameter signifying preference the AI has for an attack. DIO, for example, should not use
     * ZA WAURDO every turn. I could work some probability in to keep this from happening.*/
     this.atkName = atkName;
     this.damage = damage;
     this.accuracy = accuracy;
+    this.flavor = flavor
 
 };
 
@@ -35,9 +36,11 @@ setup.initstats = function InitStats() {
     window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1);
     window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1);
     window.playerStats = new setup.stats("Temp", 50, 5,5,5,5,5);
+    window.playerSkills = new setup.skills(10,10,10,10,10,10,10,10,);
 
-    window.punchAttack = new setup.moves("Punch", 3, .80);
-    window.knifeSlash = new setup.moves("Knife Slash", 8, .65);
+    window.punchAttack = new setup.moves("Punch", 3, .80, " sends a fast punch right towards your chest.");
+    window.knifeSlash = new setup.moves("Knife Slash", 8, .65, "pulls a knife on you, slashing a non-vital spot.");
+    window.playerPunch = new setup.moves("Light Punch", 5, .90, "You punch the " + enemyFighting.name);
 };
 
 setup.whogoes = function StartingObjs() {
@@ -80,7 +83,7 @@ function getArrayRandomElement (arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
     // The undefined will be returned if the empty array was passed
-};
+}
 
 setup.pullvalue = function pullValues(array, obj) {
     return array.map(function(item) { return item[obj]; });
