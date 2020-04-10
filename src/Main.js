@@ -10,15 +10,16 @@ setup.skills = function PlayerNPCSkills(unarmed, melee, ranged, fire_magic, ice_
     this.salesmenship = salesmanship;
 };
 
-setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs, exp) {
+setup.stats = function PlayerNPCs(name, hp, str, int, dex, agl, per, chs, race) {
     this.name = name;
     this.hp = hp;
     this.str = str;
     this.int = int;
-    this.dex = dex;
+    this.end = dex;
     this.agl = agl;
     this.per = per;
     this.chs = chs;
+    this.race = race;
 };
 
 setup.moves =function Moves (atkName, damage, accuracy, flavor) {
@@ -33,10 +34,10 @@ setup.moves =function Moves (atkName, damage, accuracy, flavor) {
 
 setup.initstats = function InitStats() {
 
-    window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1);
-    window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1);
-    window.playerStats = new setup.stats("Temp", 50, 5,5,5,5,5);
-    window.playerSkills = new setup.skills(10,10,10,10,10,10,10,10,);
+    window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1, "Hyena");
+    window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1, "Tiger");
+    window.playerStats = new setup.stats("", 50, 5,5,5,5,5,5, "");
+    window.playerSkills = new setup.skills(10,10,10,10,10,10,10,10);
 
     window.punchAttack = new setup.moves("Punch", 3, .80, " sends a fast punch right towards your chest.");
     window.knifeSlash = new setup.moves("Knife Slash", 8, .65, "pulls a knife on you, slashing a non-vital spot.");
@@ -100,6 +101,26 @@ setup.enemyAttack = function EnemyAttacking() {
     } else {
         enemyAttackHitMiss = true;
         console.log("You expected a hit, but it was me, Dio!");
+    }
+};
+
+setup.raceSettings = function racialTraits() {
+    state.active.variables["name"] = playerStats.name;
+    state.active.variables["race"] = playerStats.race;
+    if (playerStats.race === "Wolf") {
+        playerStats.str += 1;
+        playerStats.per += 1;
+    } else if (playerStats.race === "Lion") {
+        playerStats.agl += 1;
+        playerStats.int += 1;
+    } else if (playerStats.race === "Fox") {
+        playerStats.agl += 1;
+        playerStats.chs += 1;
+    } else if (playerStats.race === "Dragon") {
+        playerStats.end += 1;
+        playerStats.str += 1;
+    } else {
+        console.log("Error assigning race traits.")
     }
 };
 
@@ -181,4 +202,3 @@ if (choosenAttack.name === "MUDA") {
         "against him.");
     state.active.variables["timestopping"] = true
 }
-
