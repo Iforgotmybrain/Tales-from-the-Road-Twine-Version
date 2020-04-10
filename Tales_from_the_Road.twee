@@ -788,7 +788,7 @@ You decide to ask Holly if she wants to tag along for the rest of the day.
 You could go check out the rest of [[the festival over to the east,|Festival East Path]] or you could go check out the [[festival games over to the north.|Festival Games]]
 
 
-:: Festival Non-Holly Hub {"position":"449.6666666666667,2051.6666666666665","size":"100,100"}
+:: Festival Non-Holly Hub {"position":"449,2051","size":"100,100"}
 <<set $holly_festival_stay to false>>
 <<set $ending_points -= 4>>
 You decide to part ways with Holly after the concert.
@@ -821,7 +821,7 @@ After discussing it, you and Holly decide to have a go at the:
 [[BB Gun Game|Festival BB Gun Game]]
 
 
-:: Festival East Path {"position":"258.3333333333333,2174","size":"100,100"}
+:: Festival East Path {"position":"258,2174","size":"100,100"}
 <<if $holly_festival_stayed is true>>
 "Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
 
@@ -856,7 +856,7 @@ Holly seems to be a bit surprised as you detail your hobbies, as you call them '
 <<set $festival_walking_path to true>>
 
 	<<if $festival_games_completed is not true>>
-	"Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival 		Games]]
+	"Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival Games]]
 
 	<<else>>
 
@@ -891,7 +891,7 @@ It’s been a long and interesting day. You came expecting to stay for an hour o
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Ending Holly {"position":"358.3333333333333,2345.3333333333335","size":"100,100"}
+:: Festival Ending Holly {"position":"358,2345","size":"100,100"}
 After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show.
 
 <<continuelink "It’s been a long and interesting day.">>It’s been a long and interesting day. You came here expecting to stay for an hour or two and then go home, but after talking to Holly you decided to stay. You really feel like the relationship between you and her has strengthened today. You got to talk really in-depth with her today, just like you used to.
@@ -928,7 +928,7 @@ You say goodbye to Holly and head back to the bus stop. What a great day.
 [[After you arrive home you head up to bed for the night.|Your Bedroom Post Festival]]
 
 
-:: Festival Holly Ending No Romance {"position":"419.3333333333333,2493","size":"100,100"}
+:: Festival Holly Ending No Romance {"position":"419,2493","size":"100,100"}
 Holly seems to be a bit surprised by this, her face fills with surprise and a bit of disappointment as you tell her this.
 
 <<continuelink '"Oh. Alright."'>>"Oh. Alright."
@@ -1376,7 +1376,7 @@ You put the phone back in your pocket and [[get back to planning your road trip.
 <<endif>>
 
 
-:: Transistion {"position":"655.3333333333334,2876.6666666666665","size":"100,100"}
+:: Transistion {"position":"655,2876","size":"100,100"}
 It’s about 10 PM now and you’re surprisingly tired, so you decide to go to bed a bit early. Everything you’ve wanted to do today got done, luckily. 
 
 In the next few days you’ll have to do some more work on your road trip plans. Probably the biggest issue remaining is how you’re going to finance it.
@@ -1463,7 +1463,7 @@ You tell Valery that you have some other plans for the weekend. Those plans may 
 You say bye to Valery and [[head home.|Downstairs]]
 
 
-:: Second Transistion {"position":"474.3333333333333,3034","size":"100,100"}
+:: Second Transistion {"position":"474,3034","size":"100,100"}
 <<if $valery_date and $holly_text_date_setup is true>>
 //Many days after getting funds for your road trip on Monday//
 
@@ -2705,9 +2705,5 @@ playermoves.push("ORA ORA ORA");
 
 CombatRuntimes();
 <</script>>
-
-
-:: Festival 		Games {"position":"238.33333333333331,2324","size":"100,100"}
-Double-click this passage to edit it.
 
 
