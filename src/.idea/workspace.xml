@@ -96,6 +96,7 @@
       <workItem from="1586475099279" duration="1065000" />
       <workItem from="1586549005874" duration="2929000" />
       <workItem from="1586573737141" duration="8153000" />
+      <workItem from="1586661783940" duration="7224000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got .push working.">
       <created>1582518268659</created>
@@ -208,5 +209,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="220" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582159462189" />
+    <state x="963" y="268" width="672" height="678" key="search.everywhere.popup" timestamp="1586664688778">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="963" y="268" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586664688778" />
   </component>
 </project>

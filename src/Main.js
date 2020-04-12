@@ -1,5 +1,6 @@
 setup.skills = function PlayerNPCSkills(unarmed, melee, ranged, fire_magic, ice_magic, mind_magic, healing_magic, salesmanship) {
-    /*The skills used by NPCs and the player. Used to help calculate damage currently.*/
+    /*The skills used by the player. Used to help calculate damage currently. NPCs do not currently use them.
+    * Might change later.*/
     this.unarmed = unarmed;
     this.melee = melee;
     this.ranged = ranged;
@@ -11,6 +12,7 @@ setup.skills = function PlayerNPCSkills(unarmed, melee, ranged, fire_magic, ice_
 };
 
 setup.stats = function PlayerNPCs(name, base_hp, current_hp, str, int, end, agl, per, chs, race) {
+    /* Stats for both NPCs and player. */
     this.name = name;
     this.base_hp = base_hp;
     this.current_hp = current_hp;
@@ -23,20 +25,25 @@ setup.stats = function PlayerNPCs(name, base_hp, current_hp, str, int, end, agl,
     this.race = race;
 };
 
-setup.moves = function Moves (atkName, damage, accuracy, flavor) {
-    /*Might want to add a parameter signifying preference the AI has for an attack. DIO, for example, should not use
-    * ZA WAURDO every turn. I could work some probability in to keep this from happening.*/
-    this.atkName = atkName;
+setup.moves = function Moves (name, damage, accuracy, flavor, type, statsType) {
+    /*Might want to add a parameter signifying preference the AI has for an attack. So they don't spam the most
+    * powerful move every turn.*/
+    this.name = name;
     this.damage = damage;
     this.accuracy = accuracy;
-    this.flavor = flavor
+    this.flavor = flavor;
+    this.type = type;
+    this.statsType = statsType;
 
 };
 
-setup.items = function Items (name, effect, flavor_text) {
+setup.weapons = function Weapons (name, effect, flavor_text, equipped, weaponStatsType) {
+    /* Weapons attributes. Might need to add-on to this depending on how it works in practice. */
     this.name = name;
     this.effect = effect;
     this.flavor_text = flavor_text;
+    this.equipped = equipped;
+    this.weaponStatsType = weaponStatsType;
 };
 
 setup.initstats = function InitStats() {
@@ -48,24 +55,19 @@ setup.initstats = function InitStats() {
 
     window.punchAttack = new setup.moves("Punch", 3, .80, " sends a fast punch right towards your chest.");
     window.knifeSlash = new setup.moves("Knife Slash", 8, .65, "pulls a knife on you, slashing a non-vital spot.");
-    window.playerPunch = new setup.moves("Light Punch", 5, .90, "You punch the " + enemyFighting.name);
+    window.playerPunch = new setup.moves("Light Punch", 2, .90, "You punch the " + enemyFighting.name,
+        playerSkills.unarmed, playerStats.str);
 
-    window.testItemHeals = new setup.items("Testing healing potion", playerStats.current_hp += 10, "This works nice.");
-    playerItems.push(testItemHeals.name);
+    window.playerKnifeSlash = new setup.moves("Knife Slash", 4, .95, "You slash the " + enemyFighting.name, playerSkills.melee,
+        playerStats.agl);
+
+    window.basicKnife = new setup.weapons("Basic Knife", 10, "A basic pocket knife.", false, playerSkills.melee);
+
 };
-setup.itemTest = function Test() {
-    window.choosenPlayerItem = "";
-    state.active.variables["itemChoosen"] = choosenPlayerItem;
-    if (choosenPlayerItem in playerItems.name) {
-        console.log("Works in theory or something");
-    }
-};
+
 setup.whogoes = function StartingObjs() {
-    /*Currently initializes lots of variables and creates the basic NPC and player objects. Lots of the stuff here
-    * will be moved to different functions later. This is the quick and dirty way to get stuff working while I
-    * muck about. */
-
-    window.playerItems = [];
+    window.playerWeaponEquip = false;
+    window.playerWeaponEquipped = "";
 
     window.enemyFighting = "";
 
@@ -82,7 +84,12 @@ setup.whogoes = function StartingObjs() {
 setup.PCAttacking = function EnemyDamage() {
     window.playerAttackHitMiss = false;
     /* Calculator for unarmed attacks */
-    window.playerAttackCalc = playerAttack.damage + 0.20 * playerStats.str + 0.10 * playerSkills.unarmed | 0;
+    if (playerWeaponEquip === false || playerAttack.statsType !== playerWeaponEquipped.weaponStatsType ) {
+        window.playerAttackCalc = playerAttack.damage + 0.20 * playerAttack.statsType + 0.10 * playerAttack.type | 0;
+    } else {
+        window.playerAttackCalc = playerAttack.damage + 0.20 * playerAttack.statsType + 0.05 * playerWeaponEquipped.effect
+            + 0.10 * playerAttack.type | 0;
+    }
     const playerAttackChance = Math.random();
     console.log(playerAttackChance);
 
