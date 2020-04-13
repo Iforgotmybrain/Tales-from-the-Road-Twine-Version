@@ -50,6 +50,7 @@ setup.initstats = function InitStats() {
 
     window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1, "Hyena");
     window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1, "Tiger");
+    window.targetDummy = new setup.stats("Target", 70,1,1,1,1,1,1,);
     window.playerStats = new setup.stats("", 50, "", 5,5,5,5,5,5, "");
     window.playerSkills = new setup.skills(10,10,10,10,10,10,10,10);
 
@@ -60,9 +61,11 @@ setup.initstats = function InitStats() {
 
     window.playerKnifeSlash = new setup.moves("Knife Slash", 4, .95, "You slash the " + enemyFighting.name, playerSkills.melee,
         playerStats.agl);
+    window.playerRevolverShot = new setup.moves("Revolver Shot", 10, .70, "You shoot the " + enemyFighting.name,
+        playerSkills.ranged);
 
     window.basicKnife = new setup.weapons("Basic Knife", 10, "A basic pocket knife.", false, playerSkills.melee);
-
+    window.testRevolver = new setup.weapons("Basic Revolver", 25, "A basic .357 revolver.", false, playerSkills.ranged);
 };
 
 setup.whogoes = function StartingObjs() {
@@ -78,6 +81,8 @@ setup.whogoes = function StartingObjs() {
     window.enemyAttacks = [];
 
     window.playerAttacks = [];
+
+    window.fightFlavor = "";
 
 };
 
