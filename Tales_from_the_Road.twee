@@ -13,6 +13,30 @@ Tales from the Road
 
 
 :: Story Stylesheet [stylesheet]
+body {
+  background-color: #19181A;
+}
+#ui-bar {
+  background-color:#19181A;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #474853;
+}
+#ui-bar-toggle {
+  background-color: #483737;
+}
+
+#menu-item-saves {
+  background-color: #d46f07;
+}
+#menu-item-restart {
+  background-color: #d46f07;
+}
+.passage {
+  font-size: 18px;
+}
+  
+
 /*! <<replacelink>> macro set for SugarCube 2.x */
 .revision-span-in {
 	opacity: 0;
@@ -96,6 +120,9 @@ Tales from the Road
 :: Great Days {"position":"401,137","size":"100,200"}
 <<set $ending_points to 0>>
 What is your name? <<textbox "$name" "">>
+<<continuelink "Enter">>
+
+After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom, What do you look like? 
 
 What is your gender? <<listbox "$gender" autoselect>>
 <<option "Male">>
@@ -113,6 +140,8 @@ What is your race? <<listbox "$race" autoselect>>
 
 
 :: Intro {"position":"402,402","size":"100,100"}
+"Looking fine as always" you say to yourself.
+
 Your name is $name. You are $gender and you are a $race. Is this correct?
 
 [[Yes|Your Bedroom]]
@@ -121,7 +150,7 @@ Your name is $name. You are $gender and you are a $race. Is this correct?
 
 :: Your Bedroom {"position":"408,547","size":"100,100"}
 <<if $sasha_living_room_talked is not true>> 
-After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You see the door to the hallway in front of you and the door to the bathroom to your east. You could also use your computer
+You see the door to the hallway in front of you and the door to the bathroom to your east. You could also use your computer
 
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
 
@@ -143,7 +172,7 @@ You head towards <<if $festival_completed is not true>>[[Your Bedroom]], <<elsei
 
 
 :: Bathroom {"position":"547,545","size":"100,100"}
-You enter the bathroom but see nothing of note. At first glance it's just the usual collection of bathroom related items. Just don't do too much digging in the draws. 
+You enter the bathroom but see nothing of note. At first glance it's just the usual collection of bathroom related items. Just don't do too much digging in the draws...
 
 You showered last night so there's no reason to do so right now.
 
@@ -180,7 +209,7 @@ You tell Sasha you haven’t really gotten to that part yet. You wanna finalize 
 
 <<elseif $sasha_talked_1 is not true>>
 
-You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at the desk.
+You knock on Sasha's door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at her desk.
 
 <<continuelink "Continue">>
 
@@ -196,12 +225,12 @@ You sympathize with Sasha, thinking back to the job you had before your current 
 		
 
 <<continuelink '"Oh, by the way,"'>>"Oh, by the way, I think Jacob wanted to ask you something. He mentioned something about football earlier today."		
-
+<<nobr>>
 <<set $sasha_talked_1 to true>>
 
 <<continuelink "Continue">>
-		
-You thank Sasha for letting you know, you say goodbye and head out to the [[Hallway]].
+<</nobr>>
+You thank Sasha for letting you know. You say goodbye and head out to the [[Hallway]].
 
 <<else>>
 You knock on Sasha's door but she doesn't answer.
@@ -313,12 +342,8 @@ You tell Jacob that you think Kowalski would make the best head coach. He lacks 
 <<continuelink "Continue">>
 
 "Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I'll stop bugging you."
-		
-<<timed 3s>>
 
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
-		
-<</timed>>
 
 
 :: Kitchen Jacob Indah {"position":"687,1013","size":"100,100"}
@@ -329,12 +354,8 @@ You state that Indah seems to be the most qualifed for the job. Mentioning his m
 
 <<continuelink "Continue">>
 "Well the microwave is beeping and my lunch is done so I'll be on my way. See ya."
-	
-<<timed 3s>>
 
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
-		
-<</timed>>
 
 
 :: Kitchen Jacob None {"position":"573,1012","size":"100,100"}
@@ -350,12 +371,7 @@ that."
 "Well the microwave is beeping and my lunch is done so I guess I'll stop wasting your time,
 see ya."
 		
-<<timed 4s>>
-		
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
-		
-		
-<</timed>>
 
 
 :: Torie's Cafe {"position":"1142,846","size":"100,100"}
@@ -387,7 +403,7 @@ You finish up your meal and throw your trash away before hopping on the bus to g
 /* Provide more details about Holly's apperance? */
 You decide to leave the line and go over and say hi to your friend, Holly.
 
-Holly is a vixen. No, not like that; in the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
+Holly is a vixen. No, no, not like that; in the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
 
 <<continuelink "Continue">>
 
@@ -481,7 +497,7 @@ You decide to get up and continue your walk, you feel pretty good after reflecti
 
 
 :: East Path {"position":"984,1233","size":"100,100"}
-\* Are either of these paths needed for the overall story? Or are they just filler? */
+/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn't go past the lake. 
 
@@ -525,7 +541,7 @@ You tell Sasha you just wanted to chat with her for a bit.
 <<continuelink "You spent the next half an hour talking about movies with Sasha,">>You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
 
 
-<<continuelink "Continue">>
+<<continuelink "//An hour or so later//">>//An hour or so later//
 
 “And that’s why I think the prequel movies are underrated. I’m telling you that they would have had a better inital release if the audiences' expectations weren’t set sky high.”
 
@@ -537,9 +553,8 @@ As Sasha finishes her rant on the prequel movies you start to plan your exit.
 
 You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
 
-<<timed 3s>>
 “Alright, see you tomorrow. We’ve really gotta talk more often!”
-<</timed>>
+
 <<set $ending_points += 2>>
 You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]
 
@@ -701,7 +716,7 @@ You give Holly your condolences about her friend ditching her. Stating that you�
 
 
 :: Festival Holly Concert {"position":"262,1739","size":"100,100"}
-The band starts playing, they sound about as you expected, with a lo-fi sound reminiscent of Mac Demarco. Not you’re choice of music if you were paying to be here, but it is a free concert so you can’t complain too much.
+The band starts playing, they sound about as you expected, with a lo-fi sound reminiscent of Mac Demarco. Not you’re choice of music if you were paying to be here, but //it is// a free concert so you can’t complain too much.
 
 Holly doesn't seem overly impressed by the band either, judging by her face.
 
@@ -764,7 +779,6 @@ Most workplaces will have elements of all those things, this is true, but here t
 
 “I can totally understand quitting a job because you don’t like the culture, that’s pretty much why I took up art as my career.”
 
-<<timed 7s>>
 You bring out your smartphone and look at the time, seems your conversation with Holly was a bit longer than you thought. You talked for almost an hour, and at this point the band is on their last song. The evening is approaching, with only a few more hours left for the festival.
 
 You could ask Holly to accompany you for the rest of the day here at the festival, or you could go your separate ways.
@@ -773,11 +787,10 @@ You think about it for a while, eventually deciding too:
 
 <<choice [[Ask Holly to tag along for the rest of the day.|Holly Festival Hub]]>>
 <<choice [[Part ways with Holly.|Festival Non-Holly Hub]]>>
-<</timed>>
 
 
 :: Holly Festival Hub {"position":"122,2092","size":"100,100"}
-<<set $holly_festival_stay to true>>
+<<set $holly_festival_stayed to true>>
 <<set $ending_points += 6>>
 You decide to ask Holly if she wants to tag along for the rest of the day.
 
@@ -789,7 +802,7 @@ You could go check out the rest of [[the festival over to the east,|Festival Eas
 
 
 :: Festival Non-Holly Hub {"position":"449,2051","size":"100,100"}
-<<set $holly_festival_stay to false>>
+<<set $holly_festival_stayed to false>>
 <<set $ending_points -= 4>>
 You decide to part ways with Holly after the concert.
 <<continuelink "As the band finishes their set you say goodbye to Holly and head back to the main festival area.">>As the band finishes their set you say goodbye to Holly and head back to the main festival area.
@@ -797,7 +810,7 @@ You decide to part ways with Holly after the concert.
 There's not much left to do here. The only thing left to do would be to check out the rest of the festival area over to the [[east|Festival East Path]]
 
 
-:: Festival Games {"position":"118,2222","size":"100,100"}
+:: Festival Games {"position":"119.66666666666667,2222","size":"100,100"}
 You and Holly head towards the many fair games set up at the festival.
 
 As you arrive at the games Holly offers a quick remark about them
@@ -821,52 +834,52 @@ After discussing it, you and Holly decide to have a go at the:
 [[BB Gun Game|Festival BB Gun Game]]
 
 
-:: Festival East Path {"position":"258,2174","size":"100,100"}
+:: Festival East Path {"position":"279.6666666666667,2115.6666666666665","size":"100,100"}
 <<if $holly_festival_stayed is true>>
-"Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
+	"Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
 
-<<continuelink "Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.">> Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
+	<<continuelink "Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.">> Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
 
-<<continuelink '"I might have been interested in the derby, of course, that went on 3 hours ago, so…"'>>"I might have been interested in the derby, of course, that went on 3 hours ago, so…"
+	<<continuelink '"I might have been interested in the derby, of course, that went on 3 hours ago, so…"'>>"I might have been interested in the derby, of course, that went on 3 hours ago, so…"
 
-“Seems like this would be a good time to talk about each other. With how long it's been since we've been able to hang out and talk it's almost like starting over. How about we talk about our hobbies, what do you do for fun?"
+	“Seems like this would be a good time to talk about each other. With how long it's been since we've been able to hang out and talk it's almost like starting over. How about we talk about our hobbies, what do you do for fun?"
 
-<<continuelink "You tell Holly about your hobbies...">> You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a //bit// basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
+	<<continuelink "You tell Holly about your hobbies...">> You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a //bit// basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
 
-Holly seems to be a bit surprised as you detail your hobbies, as you call them 'uninteresting' and 'basic'.
+	Holly seems to be a bit surprised as you detail your hobbies, as you call them 'uninteresting' and 'basic'.
 
-"Hmm, I mean, I guess those things could be considered 'basic'. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered 'basic' is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that's when you become a basic bitch or bastard. You definitely don’t have that problem, though."
+	"Hmm, I mean, I guess those things could be considered 'basic'. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered 'basic' is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that's when you become a basic bitch or bastard. You definitely don’t have that problem, though."
 
-"Ya know, I like a lot of the same stuff. Music, movies, all that. You already know about my art, and I also enjoy fishing on occasion. Guess you should say I’m pretty ‘basic’ as well."
+	"Ya know, I like a lot of the same stuff. Music, movies, all that. You already know about my art, and I also enjoy fishing on occasion. Guess you should say I’m pretty ‘basic’ as well."
 
-<<continuelink "You also tell Holly…">> You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
+	<<continuelink "You also tell Holly…">> You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
 
-"A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
+	"A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
 
-"You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime." Holly says, perhaps suggesting something.
+	"You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime." Holly says, perhaps suggesting something.
 
-<<continuelink "You mention to Holly that..">> You mention to Holly that’s part of the reason you’d never really considered it until recently. There was no way to get that much time off when working at Syperion.
+	<<continuelink "You mention to Holly that..">> You mention to Holly that’s part of the reason you’d never really considered it until recently. There was no way to get that much time off when working at Syperion.
 
-<<continuelink '"It’s definitely a cool idea. What made you think of doing that anyway?"'>>"It’s definitely a cool idea. What made you think of doing that anyway?"
+	<<continuelink '"It’s definitely a cool idea. What made you think of doing that anyway?"'>>"It’s definitely a cool idea. What made you think of doing that anyway?"
 
-<<continuelink "You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.">> You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.
+	<<continuelink "You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.">> You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.
 
-"Are you taking advice from some unknown vagabond you met on the bus? Don't know if I would suggest that myself. //But// It’s not like you’re going to make ‘road tripping’ your lifestyle, right?"
+	"Are you taking advice from some unknown vagabond you met on the bus? Don't know if I would suggest that myself. //But// It’s not like you’re going to make ‘road tripping’ your lifestyle, right?"
 
-<<set $festival_walking_path to true>>
+	<<set $festival_walking_path to true>>
 
 	<<if $festival_games_completed is not true>>
-	"Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival Games]]
+		"Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival Games]]
 
 	<<else>>
 
-	"Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. 		Might    even be able to see fireworks as we’re walking 			there."|Festival Ending Holly]]
+		"Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. 		Might    even be able to see fireworks as we’re walking 			there."|Festival Ending Holly]]
 	<<endif>>
 
 
 <<else>>
-This way doesn’t seem to have much going on, as the only thing of
-interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
+	This way doesn’t seem to have much going on, as the only thing of
+	interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
 
 <<continuelink "The day has gone pretty well, you think.">> The day      has gone pretty well, you think. About the same as every other year     you’ve gone. The only thing that was different was running into         Holly. Which was nice, but for whatever reason you just didn't feel 	that strong of a connection with her.
 
@@ -1134,20 +1147,17 @@ It's quite a nice day as well, you might even go on a walk today as well.
 But first you should probably [[get out of bed|Player Bedroom]]
 
 
-:: Player Bedroom {"position":"421,2797","size":"100,100"}
-<<set $road_trip_funding_completed to true>> 
-<<set $$post_fest_day_completed to true>>
-
+:: Player Bedroom {"position":"401,2800.3333333333335","size":"100,100"}
 <<if $post_fest_day_completed is not true and $walk_completed is not true>>
     You are standing in your bedroom. You see the [[hallway to the north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
 	east. 
 
     You could also use your [[Computer.|Computer]]
-	<<if $holly_text_date_setup is not true or $holly_text_rejection is     false>> Or text Holly on your [[Smartphone.|Smartphone Holly]]
+	<<if $holly_text_date_setup is not true or $holly_text_rejection is     false>> Or use your [[Smartphone.|Smartphone Holly]]
 	<<endif>>
 
 <<elseif $walk_completed is true and $post_fest_day_completed is not true>>
-    You feel a bit sleepy having had a pretty busy day. You could go to     bed a bit early, so long as you're done with everything for the day. 
+    You feel a bit sleepy having had a pretty busy day. You decide to go to bed a bit early, since you've finished everything you had planned.
     [[Go to bed early|Transistion]]
 
 <<elseif $post_fest_day_completed is true and $road_trip_funding_completed is not true>>
@@ -1178,7 +1188,7 @@ But first you should probably [[get out of bed|Player Bedroom]]
 
 
 :: Smartphone Holly {"position":"236,2786","size":"100,100"}
-<<if $holly_text_setup or $holly_date_rejection is not true>>
+<<if $holly_text_setup or $holly_date_rejection is not true and $holly_date_stayed is true>>
 You bring out your smartphone and pull up your contacts app, scrolling down until you hit the H column and find “Holly”. You’ve never really been fond of calling people, so you decide to text her instead of calling.
 
 The next 20 minutes are spent attempting to write the perfect text, after much deliberation you decide to just keep it simple. You type up a simple greeting and tell Holly who it is that’s texting her, asking her what’s been going on since yesterday.
@@ -1300,7 +1310,7 @@ This seems a bit odd in your mind, but if the roles were reversed you probably w
 
 You walk up to the slimly built Hyena and ask him if he’s the guy that moved into the newly rented house near you.
 
-<<continuelink '"I am, actually."'>>"I am, actually. Just moved in a week ago.” The hyena says in a some what confused tone. Probably surprised that you were able to figure that out.
+<<continuelink '"Yes, I am."'>>"Yes, I am. Just moved in a week ago.” The hyena says in a some what confused tone. Probably surprised that you were able to figure that out.
 
 You introduce yourself as $name to the hyena, he replies and says “I’m Valery, nice to meet you $name.”
 
@@ -1402,13 +1412,13 @@ It’s your choice…
 <<choice [[Dip into your investment funds to prevent any issues from arising during or immediately after the road trip.|Bank Investments]]>>
 
 
-:: Bank Funds {"position":"1,605","size":"100,100"}
+:: Bank Funds {"position":"47.66666666666667,745","size":"100,100"}
 <<set $road_trip_funding_completed to true>>You decide to stick with the money you’ve got and avoid harming your long-term prospects. 
 
 With the funding for the road trip taken care of, [[you log off the computer.|Player Bedroom]]
 
 
-:: Bank Investments {"position":"0,490","size":"100,100"}
+:: Bank Investments {"position":"3.3333333333333335,585","size":"100,100"}
 <<set $road_trip_funding_completed to true>>
 You decide to play it safe and take some extra money form your investment accounts to make sure you have enough.
 
@@ -1965,7 +1975,7 @@ You and Valery spend the next 10 minutes just enjoying the meal, with only a lit
 
 You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
 
-<<elseif $valery_date_points < 12>>
+<<elseif $valery_date_points > -6>>
 "I’m glad you enjoyed it, we’ll have to see about getting lunch some other time, maybe."
 
 "Here's your part of the bill, $10. I'll get the tip."
@@ -1991,7 +2001,7 @@ You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
 You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
 
-<<elseif $valery_date_points < 12>>
+<<elseif $valery_date_points > -6>>
 "Guess that’s a pretty good summary of the whole lunch, huh?"
 
 "Here's your part of the bill, $10. I'll get the tip."
@@ -2017,7 +2027,7 @@ You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
 You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5]]
 
-<<elseif $valery_date_points < 12>>
+<<elseif $valery_date_points > -6>>
 "Hopefully you found our conversations to be a bit better than the food…"
 
 "Here's your part of the bill, $10. I'll get the tip."
@@ -2546,9 +2556,9 @@ Also, thanks for playing! If you have any feedback for me, feel free to leave it
 
 "Anway, I suppose we should head home, we've wasted enough time talking here." Valery stands up and extends his hand towards you "I hope we can at least part as friends."
 
-<<choice [[*Get up and reach out to shake his hand* Friends it is.|MPV Four Ending 2.1]]
+<<choice [[*Get up and reach out to shake his hand* Friends it is.|MPV Four Ending 2.1]]>>
 
-<<choice [[I respect your choice, but I feel like it would just be awkward for us to keep hanging out.|MPV Four Ending 2.2]]
+<<choice [[I respect your choice, but I feel like it would just be awkward for us to keep hanging out.|MPV Four Ending 2.2]]>>
 
 
 :: MPV Four Ending 1.2 {"position":"918,6765","size":"100,100"}
@@ -2587,123 +2597,5 @@ You say goodbye to Valery and [[head back to your car.|Valery Park Transistion 2
 
 
 :: Untitled Passage {"position":"1358,6824","size":"100,100"}
-
-
-:: scripts [script] {"position":"826,111","size":"100,100"}
-Hello There
-<<script>>
-var race = state.active.variables.race;
-
-let PlayerStats = {
-    hp: 100,
-    str: 5,
-    int: 5,
-    dex: 5,
-    agl: 5,
-    per: 5,
-    chs: 5
-};
-
-let PlayerSkills = {
-    unarmed: 10,
-    melee: 10,
-    ranged: 10,
-    fire_magic: 10,
-    ice_magic: 10,
-    mind_magic: 10,
-    healing_magic: 10,
-    salesmenship: 10
-};
-
-if (race == "Wolf") {
-    PlayerStats.str += 1;
-    PlayerStats.per += 1;
-    PlayerSkills.unarmed += 5
-};
-
-if (race == "Lion") {
-    PlayerStats.agl += 1;
-    PlayerStats.int += 1;
-    PlayerSkills.mind_magic += 5
-};
-
-if (race == "Dragon") {
-    PlayerStats.str += 1;
-    PlayerStats.agl += 1;
-    PlayerSkills.ice_magic += 5;
-    PlayerSkills.fire_magic += 5
-};
-
-if (race == "Fox") {
-    PlayerStats.dex += 1;
-    PlayerStats.chs += 1;
-    PlayerSkills.ranged += 5
-};
-
-/* This is how you modify the markup output in JS */
-$(output).wiki(PlayerStats.str);
-
-<</script>>
-
-
-:: MUDA {"position":"553,112","size":"100,100"}
-<<script>>
-let enemey_name = "DIO";
-
-$(output).wiki('"Oh, you\'re approaching me? Instead of running away you\'re coming right at me?"');
-
-$(output).wiki("\n");
-
-$(output).wiki("I can't beat the shit out of you without getting closer");
-
-$(output).wiki("\n");
-
-$(output).wiki('"Oh, then come as close as you like..."');
-
-$(output).wiki("\n");
-
-$(output).wiki("You approach " + enemey_name + " . ");
-
-$(output).wiki(" What will you do?");
-
-<</script>>
-<<button "Fight" [[Fighting Gold]]>> 
-<<set $fight_options to "fight">>
-<</button>>
-Golden Exp.
-
-
-:: Fighting Gold {"position":"703,111","size":"100,100"}
-What will you do?
-<<button "attack">>
-
-
-:: Untitled Passage 1 {"position":"955,107","size":"100,100"}
-<<script>>
-
-function CombatRuntimes() {
-    /* while attacking */
-    $(output).wiki("What will you attack with?");
-    $(output).wiki(playermoves.join('\n'))
-}
-
-/* Will add more variables later */
-function PlayerUnarmedAttacks(name, damage) {
-    this.name = name;
-    this.damage = damage;
-
-}
-let playermoves = [""];
-
-let starora = new PlayerUnarmedAttacks("ORA!", 15);
-
-playermoves.push("ORA");
-
-let staroraora = new PlayerUnarmedAttacks("ORA ORA ORA!", 30);
-
-playermoves.push("ORA ORA ORA");
-
-CombatRuntimes();
-<</script>>
 
 
