@@ -47,10 +47,9 @@ setup.weapons = function Weapons (name, effect, flavor_text, equipped, weaponSta
 };
 
 setup.initstats = function InitStats() {
-
     window.hyenaMugger = new setup.stats("Hyena Mugger", 15,2,2,3,4,1,1, "Hyena");
     window.tigerMugger = new setup.stats("Armed Tiger Mugger", 15,2,23,4,1,1, "Tiger");
-    window.targetDummy = new setup.stats("Target", 70,1,1,1,1,1,1,);
+    window.targetDummy = new setup.stats("Target", 100, 100, 1,1,1,1,1,1,);
     window.playerStats = new setup.stats("", 50, "", 5,5,5,5,5,5, "");
     window.playerSkills = new setup.skills(10,10,10,10,10,10,10,10);
 
@@ -66,6 +65,27 @@ setup.initstats = function InitStats() {
 
     window.basicKnife = new setup.weapons("Basic Knife", 10, "A basic pocket knife.", false, playerSkills.melee);
     window.testRevolver = new setup.weapons("Basic Revolver", 25, "A basic .357 revolver.", false, playerSkills.ranged);
+
+    Object.defineProperty(playerStats, 'function5', {
+        writeable:false, configurable: true
+    });
+    playerStats.name = state.active.variables["name"];
+    playerStats.race = state.active.variables["race"];
+    if (playerStats.race === "Wolf") {
+        playerStats.str += 1;
+        playerStats.per += 1;
+    } else if (playerStats.race === "Lion") {
+        playerStats.agl += 1;
+        playerStats.int += 1;
+    } else if (playerStats.race === "Fox") {
+        playerStats.agl += 1;
+        playerStats.chs += 1;
+    } else if (playerStats.race === "Dragon") {
+        playerStats.end += 1;
+        playerStats.str += 1;
+    } else {
+        console.log("Error assigning race traits.")
+    }
 };
 
 setup.whogoes = function StartingObjs() {
@@ -84,6 +104,8 @@ setup.whogoes = function StartingObjs() {
 
     window.fightFlavor = "";
 
+    window.nextMoment = "";
+
 };
 
 setup.PCAttacking = function EnemyDamage() {
@@ -95,18 +117,18 @@ setup.PCAttacking = function EnemyDamage() {
         window.playerAttackCalc = playerAttack.damage + 0.20 * playerAttack.statsType + 0.05 * playerWeaponEquipped.effect
             + 0.10 * playerAttack.type | 0;
     }
-    const playerAttackChance = Math.random();
+    window.playerAttackChance = Math.random();
     console.log(playerAttackChance);
 
     if (playerAttackChance <= playerAttack.accuracy) {
         enemyFighting.current_hp -= playerAttackCalc;
         /*Player attack is done.*/
-        playerAttack = "";
-        playerAttackHitMiss = true;
+        let playerAttack = "";
+        window.playerAttackHitMiss = true;
 
     } else {
         console.log("Missed that one. Try another!");
-        playerAttackHitMiss = false;
+        window.playerAttackHitMiss = false;
     }
 };
 
@@ -122,37 +144,21 @@ setup.pullvalue = function pullValues(array, obj) {
 };
 
 setup.enemyAttack = function EnemyAttacking() {
-    window.enemyAttackHitMiss = false;
-    /*Where an enemy chooses it's attacks.*/
-    window.choosenAttack = getArrayRandomElement(enemyAttacks);
-    window.enemyAttackCalc = choosenAttack.damage + 0.20 * enemyFighting.str | 0;
-    const enemyAttackChance = Math.random();
-    if (enemyAttackChance <= choosenAttack.accuracy - (playerStats.agl / 150)) {
-        playerStats.current_hp -= enemyAttackCalc;
-    } else {
-        enemyAttackHitMiss = true;
-        console.log("You expected a hit, but it was me, Dio!");
-    }
-};
+    if (enemyAttacks.length > 0) {
+        window.enemyAttackHitMiss = false;
+        /*Where an enemy chooses it's attacks.*/
+        window.choosenAttack = getArrayRandomElement(enemyAttacks);
+        window.enemyAttackCalc = choosenAttack.damage + 0.20 * enemyFighting.str | 0;
+        window.enemyAttackChance = Math.random();
+        if (enemyAttackChance <= choosenAttack.accuracy - (playerStats.agl / 150)) {
+            playerStats.current_hp -= enemyAttackCalc;
+        } else {
+            window.enemyAttackHitMiss = true;
+            console.log("You expected a hit, but it was me, Dio!");
+        }
 
-setup.raceSettings = function racialTraits() {
-    state.active.variables["name"] = playerStats.name;
-    state.active.variables["race"] = playerStats.race;
-    state.active.variables["itemChoosen"] = playerStats.name;
-    if (playerStats.race === "Wolf") {
-        playerStats.str += 1;
-        playerStats.per += 1;
-    } else if (playerStats.race === "Lion") {
-        playerStats.agl += 1;
-        playerStats.int += 1;
-    } else if (playerStats.race === "Fox") {
-        playerStats.agl += 1;
-        playerStats.chs += 1;
-    } else if (playerStats.race === "Dragon") {
-        playerStats.end += 1;
-        playerStats.str += 1;
     } else {
-        console.log("Error assigning race traits.")
+        console.log('No attacks found. May or may not be intended.')
     }
 };
 
@@ -204,4 +210,30 @@ if (choosenAttack.name === "MUDA") {
         "DIO thinks he's finally finished you off, but right as he starts to boast, you turn his own technique " +
         "against him.");
     state.active.variables["timestopping"] = true
+
+    setup.skills();
+    setup.stats();
+    setup.whogoes();
+    setup.initstats();
+    setup.racesettings();
+
 }
+
+setup.stats();
+setup.whogoes();
+setup.moves();
+setup.skills();
+setup.initstats();
+setup.racesettings();
+window.nextMoment = "Post Ranged Test";
+window.testRevolver.equipped = true;
+window.playerWeaponEquip = true;
+window.playerWeaponEquipped = window.testRevolver;
+console.log(playerWeaponEquipped);
+playerAttacks.push(playerRevolverShot);
+enemyFighting = targetDummy;
+playerFighting = true;
+state.active.variables["firstAttack"] = playerAttacks[0].name;
+window.fightFlavor = "The targets await your gunfire."
+window.nextMoment === "Post Ranged Test";
+state.active.variables["returnMoment"] = window.nextMoment;
