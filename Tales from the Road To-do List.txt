@@ -2,11 +2,11 @@ Phase 1:
 * Work on making levels more open (Levels still not as open as I'd like. Big area I can improve on.)
 * Work on Holly date scene (WIP)
 * Figure out how I want to handle road trip destinations
-* Write up stuff to do on the computer. Chat rooms are the main idea right now.
+# Write up stuff to do on the computer. Chat rooms are the main idea right now. (DONE)
 * More CSS Styling
 * Get art comissioned for main characters (Sasha, Jacob, Holly, Valery). (Maybe? Have some people that'll do it for $5, almost have to at that price)
 * Implement basic sound (Royalty free stuff)
-* Play through and check for bugs and suspect writing
+* Play through and check for bugs and suspect writing (Mostly)
 * See if there's anything that JS can help with or improve
 * Maybe implement key bindings (Could be a lot of work)
 * ???
