@@ -228,7 +228,6 @@ You sympathize with Sasha, thinking back to the job you had before your current 
 <<nobr>>
 <<set $sasha_talked_1 to true>>
 
-<<continuelink "Continue">>
 <</nobr>>
 You thank Sasha for letting you know. You say goodbye and head out to the [[Hallway]].
 
@@ -810,7 +809,7 @@ You decide to part ways with Holly after the concert.
 There's not much left to do here. The only thing left to do would be to check out the rest of the festival area over to the [[east|Festival East Path]]
 
 
-:: Festival Games {"position":"119.66666666666667,2222","size":"100,100"}
+:: Festival Games {"position":"119,2222","size":"100,100"}
 You and Holly head towards the many fair games set up at the festival.
 
 As you arrive at the games Holly offers a quick remark about them
@@ -834,7 +833,7 @@ After discussing it, you and Holly decide to have a go at the:
 [[BB Gun Game|Festival BB Gun Game]]
 
 
-:: Festival East Path {"position":"279.6666666666667,2115.6666666666665","size":"100,100"}
+:: Festival East Path {"position":"279,2115","size":"100,100"}
 <<if $holly_festival_stayed is true>>
 	"Didn’t see much when I went this way before, but who knows maybe something changed." Holly says with a somewhat dismissive tone.
 
@@ -1147,7 +1146,7 @@ It's quite a nice day as well, you might even go on a walk today as well.
 But first you should probably [[get out of bed|Player Bedroom]]
 
 
-:: Player Bedroom {"position":"401,2800.3333333333335","size":"100,100"}
+:: Player Bedroom {"position":"401,2800","size":"100,100"}
 <<if $post_fest_day_completed is not true and $walk_completed is not true>>
     You are standing in your bedroom. You see the [[hallway to the north|Hallway]] and the [[doorway to the bathway|Bathroom]] to the 
 	east. 
@@ -1412,13 +1411,13 @@ It’s your choice…
 <<choice [[Dip into your investment funds to prevent any issues from arising during or immediately after the road trip.|Bank Investments]]>>
 
 
-:: Bank Funds {"position":"47.66666666666667,745","size":"100,100"}
+:: Bank Funds {"position":"47,745","size":"100,100"}
 <<set $road_trip_funding_completed to true>>You decide to stick with the money you’ve got and avoid harming your long-term prospects. 
 
 With the funding for the road trip taken care of, [[you log off the computer.|Player Bedroom]]
 
 
-:: Bank Investments {"position":"3.3333333333333335,585","size":"100,100"}
+:: Bank Investments {"position":"3,585","size":"100,100"}
 <<set $road_trip_funding_completed to true>>
 You decide to play it safe and take some extra money form your investment accounts to make sure you have enough.
 
@@ -1794,11 +1793,12 @@ For whatever reason, you decide to just sit in relative silence while you wait f
 <<if $valery_date_points <= -16>>
 
 “Okay, I’ve had it. You’ve been a total asshole this whole time for no damn reason. If you didn’t want to come out for lunch you could have just said no, but instead you come out here and purposely fuck around. I’m finished here, I’m not letting you push me around. Have fun paying for the bill, dick.”
+<<set $ending_points -= 10>>
 
-You put $30 on the table to pay for the bill before leaving.
+[[You put $30 on the table for the bill before heading out.|Valery Park Transistion 2]]
 
 <<set $ending_points -= 10>>
-Placeholder stuff
+
 
 <<elseif $valery_date_points <= -4>>
 <<set $valery_question_asked to true>>
@@ -1838,7 +1838,7 @@ Seems you finally broke Valery. Probably wasn't the best idea to do that.
 
 You put $30 on the table for the bill before heading out.
 
-PLACEHOLDER FIX ME PLS
+[[You put $30 on the table for the bill before heading out.|Valery Park Transistion 2]]
 
 <<else>>
 <<set $valery_question_asked to true>>
@@ -1857,7 +1857,7 @@ PLACEHOLDER FIX ME PLS
 <<endif>>
 
 
-:: VCDQ City 3.1 {"position":"315,4940","size":"100,100"}
+:: VCDQ City 3.1 {"position":"325,4940","size":"100,100"}
 "I guess I kind of do, in a way." 
 <<if $valery_date_points >= 12>>
 "You’re right, though. Might seem a bit sad, but you’re the closest thing I have to a friend in this town. I really do appreciate how welcoming you’ve been to me. As you've probably guessed not everyone has been so gun-ho about getting to know me. And with how well I’ve gotten along with you, it’s really helping me feel at home. So thank you, it's been a long time since I've felt this way when hanging out with someone."
@@ -1889,15 +1889,13 @@ PLACEHOLDER FIX ME PLS
 [[Ask him another question|VDCQ Base]]
 
 
-:: VCDQ City 3.3 {"position":"615,4940","size":"100,100"}
+:: VCDQ City 3.3 {"position":"595,4943.333333333333","size":"100,100"}
 <<if $valery_date_points <= -16>>
 "It might not be your problem but showing a little kindness wouldn't kill you, asshole. Honestly, you've been a real fucking prick this whole time, but this is probably the most upset I've been over it. I open my heart to you and you just tell me you don't care. If you didn't give a shit about getting to know me you could have just declined to come to lunch. But instead you decide to come here and insult me over and over again. I'm out of here. Enjoy paying for the whole meal, dick."
 
 Seems you finally broke Valery. Probably wasn't the best idea to do that.
 
-You put $30 on the table for the bill before heading out.
-
-PLACEHOLDER FIX ME PLS
+[[You put $30 on the table for the bill before heading out.|Valery Park Transistion 2]]
 
 <<else>>
 "You're right, but it can difficult. Guess I can only do my best."
@@ -1940,7 +1938,7 @@ Seems you finally broke Valery. Probably wasn't the best idea to do that.
 
 You put $30 on the table for the bill before leaving.
 
-PLACEHOLDER FIX ME PLS
+[[You put $30 on the table for the bill before heading out.|Valery Park Transistion 2]]
 
 <<elseif $valery_date_points <= -6>>
 
@@ -2494,9 +2492,7 @@ That went about as well as it could have all things considered. Hard to believe 
 <<set $valery_ending to "ending two kiss">>
 <<set $valery_date_end to true>>
 <<set $ending_points += 8>>
-You sit for a few moments before getting up and [[heading back to your car.|
-
-PLACEHOLDER
+You sit for a few moments before getting up and [[heading back to your car.|Valery Park Transistion 2]]
 
 <<else>>
 
@@ -2594,8 +2590,5 @@ You say your goodbyes to Valery and tell him you're happy to have another friend
 "Well suppose that's it. Have a good one, $name."
 
 You say goodbye to Valery and [[head back to your car.|Valery Park Transistion 2]]
-
-
-:: Untitled Passage {"position":"1358,6824","size":"100,100"}
 
 
