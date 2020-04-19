@@ -170,7 +170,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 let audioMute = function () {
 	if (!settings.soundStatus) {
-		new Wikifier(null, "<<masteraudio mute>>");
+			new Wikifier(null, "<<masteraudio mute>>");
 	  }
 };
 
@@ -182,6 +182,8 @@ Setting.addToggle("soundStatus", {
 	onInit : audioEnabler,
 	onChange : audioEnabler,
 });
+
+Setting.addToggle("muteAudio"
 
 setup.Path = "";
 setup.SoundPath = setup.Path + "music/";
@@ -2428,10 +2430,35 @@ You get seated at a typical booth made for two. Nothing too fancy or out of the 
 
 You tell Holly that you recommend any of their burgers. They’re the best you can find in town.
 
-&quot;</tw-passagedata><tw-passagedata pid="138" name="StoryInit" tags="" position="398,20" size="100,100">&lt;&lt;set _bgm = setup.SoundPath + &quot;bensound-thejazzpiano.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;jazz_1&quot; _bgm&gt;&gt;
+&quot;</tw-passagedata><tw-passagedata pid="138" name="StoryInit" tags="" position="398,20" size="100,100">&lt;&lt;cacheaudio &quot;jazz_1&quot; &quot;music/bensound-thejazzpiano.mp3&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;jazz_2&quot; &quot;music/bensound-hipjazz.mp3&quot;&gt;
+
+&lt;&lt;cacheaudio &quot;jazz_3&quot; &quot;music/bensound-thelounge.mpe&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;jazz_4&quot; &quot;music/Mela_Waltz_For_a_Memory.mp3&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;jazz_5&quot; &quot;Mela_-_09_-_The_Strip&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;piano_1&quot; &quot;music/Yakov_Golman_-_08_-_Valse_orchestral.mp3&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;piano_2&quot; &quot;music/Yakov_Golman_-_09_-_Sunrise&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;misc_1&quot; &quot;Captive_Portal_-_01_-_You_Can_Use&quot;&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;misc_2&quot; &quot;Captive_Portal_-_03_-_An_Example_For&quot;&gt;&gt;
+
+
 &lt;&lt;createplaylist &quot;bgm&quot;&gt;&gt;
 	&lt;&lt;track &quot;jazz_1&quot;&gt;&gt;
+	&lt;&lt;track &quot;jazz_2&quot;&gt;&gt;
+	&lt;&lt;track &quot;jazz_3&quot;&gt;&gt;
+	&lt;&lt;track &quot;jazz_4&quot;&gt;&gt;
+	&lt;&lt;track &quot;jazz_5&quot;&gt;&gt;
+	&lt;&lt;track &quot;piano_1&quot;&gt;&gt;
+	&lt;&lt;track &quot;piano_2&quot;&gt;&gt;
+	&lt;&lt;track &quot;misc_1&quot;&gt;&gt;
+	&lt;&lt;track &quot;misc_2&quot;&gt;&gt;
 &lt;&lt;/createplaylist&gt;&gt;
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
