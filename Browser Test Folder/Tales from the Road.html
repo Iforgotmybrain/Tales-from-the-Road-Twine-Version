@@ -163,27 +163,21 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
     margin: 0;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">let audioEnabler = function () {
-	if (!settings.soundStatus) {
+	if (!settings.soundStatus) { // is false
 			new Wikifier(null, "<<masteraudio stop>>");
     }
 };
 
-let audioMute = function () {
-	if (!settings.soundStatus) {
-		new Wikifier(null, "<<masteraudio mute>>");
-	  }
-};
-
 Setting.addHeader("Game Settings");
 Setting.addToggle("soundStatus", {
-	label : "Do you want music off or on?",
-	desc : "Toggles background music off or on.",
+	label : "Do you want sound off or on?",
+	desc : "Toggles audio off or on.",
 	default : true,
 	onInit : audioEnabler,
 	onChange : audioEnabler,
 });
 
-setup.Path = "";
+setup.Path = "";  // Running in a browser
 setup.SoundPath = setup.Path + "music/";
 setup.ImagePath = setup.Path + "images/";
 
@@ -326,7 +320,7 @@ setup.ImagePath = setup.Path + "images/";
             }
         });
     });
-}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
+}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399.3333333333333,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
 After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom, What do you look like? &lt;&lt;print settings.Sound&gt;&gt;
@@ -2428,10 +2422,16 @@ You get seated at a typical booth made for two. Nothing too fancy or out of the 
 
 You tell Holly that you recommend any of their burgers. They’re the best you can find in town.
 
-&quot;</tw-passagedata><tw-passagedata pid="138" name="StoryInit" tags="" position="398,20" size="100,100">&lt;&lt;set _bgm = setup.SoundPath + &quot;bensound-thejazzpiano.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;jazz_1&quot; _bgm&gt;&gt;
+&quot;</tw-passagedata><tw-passagedata pid="138" name="Settings" tags="" position="553,209.66666666666666" size="100,100">&lt;&lt;run Setting.addHeader(&quot;Game Settings&quot;);&gt;&gt;
+&lt;&lt;run Setting.addToggle(&quot;Sound&quot;, {
+	label : &quot;Do you want sound off or on?&quot;,
+	desc : &quot;Toggles audio off or on.&quot;,
+});&gt;&gt;
+
+Sound is: $soundtest</tw-passagedata><tw-passagedata pid="139" name="StoryInit" tags="" position="398,20.833333333333357" size="100,100">&lt;&lt;set _bgm = setup.SoundPath + &quot;bensound-thejazzpiano.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;test&quot; _bgm&gt;&gt;
 &lt;&lt;createplaylist &quot;bgm&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_1&quot;&gt;&gt;
+	&lt;&lt;track &quot;test&quot;&gt;&gt;
 &lt;&lt;/createplaylist&gt;&gt;
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
