@@ -331,7 +331,33 @@ Setting.addRange("masterVolume", {
             }
         });
     });
-}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
+}());
+
+/* Google Analytics */
+var lockID = LoadScreen.lock(); // Lock loading screen
+importScripts('https://www.googletagmanager.com/gtag/js?id=UA-143749082-4')
+	.then(function () {
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function () {
+			dataLayer.push(arguments);
+		};
+		gtag('js', new Date());
+		gtag('config', 'UA-143749082-4',{ 'anonymize_ip': true });
+		$(document).on('click', 'a[data-passage]', function () {
+			gtag('event', 'Navigation', {
+				event_label    : $(this).attr('data-passage'),
+				event_category : 'GuestClick'
+			});
+		});
+		if (State.size > 0) {
+			Engine.show();
+		}
+		LoadScreen.unlock(lockID); // Unlock loading screen
+	})
+	.catch(function (error) {
+		console.warn('Could not load "gtag" library.');
+		LoadScreen.unlock(lockID); // Unlock loading screen
+	});</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
 After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom, What do you look like? &lt;&lt;print settings.Sound&gt;&gt;
@@ -641,7 +667,7 @@ It’s an interesting idea, but that’s all it is for right now. An idea.
 
 &lt;&lt;set $path_lake to true&gt;&gt;
 
-You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="975,1233.3333333333333" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
+You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="975,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn&#39;t go past the lake. 
 
@@ -2183,7 +2209,7 @@ You say goodbye to Valery and watch as he walks back to his car. You stand up an
 
 &quot;Guess it&#39;s about time to take my leave. I&#39;m sure I&#39;ll be seeing you. Especially since we still have to set up our second date.&quot;
 
-You say goodbye to Valery and watch as he walks back to his car. [[You stand up and walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="123" name="MPV One Ending 2.1 Wolf" tags="" position="554.3333333333334,7238" size="100,100">&lt;&lt;set $valery_ending to &quot;ending one kiss&quot;&gt;&gt;
+You say goodbye to Valery and watch as he walks back to his car. [[You stand up and walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="123" name="MPV One Ending 2.1 Wolf" tags="" position="554,7238" size="100,100">&lt;&lt;set $valery_ending to &quot;ending one kiss&quot;&gt;&gt;
 &lt;&lt;set $valery_date_end to true&gt;&gt;
 &quot;You sly Wolf, I bet you&#39;ve been waiting all day to use that line. Well it was worth it, because that cheesy as hell line made me like you even more.&quot;
 
@@ -2528,7 +2554,7 @@ You ask Holly to provide some more details about her time in college, curious as
 
 &lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
-[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="143" name="Holly Hobbies Question Start" tags="" position="1807,3341.6666666666665" size="100,100">&lt;&lt;if $holly_hobby_question_asked isnot true&gt;&gt;
+[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="143" name="Holly Hobbies Question Start" tags="" position="1807,3341" size="100,100">&lt;&lt;if $holly_hobby_question_asked isnot true&gt;&gt;
 You ask Holly about her hobbies; she’s talked about them before but not in much detail.
 
 “My hobbies? Ah I don’t do anything too interesting, music, movies, stuff like that. Think we talked about that at the festival.”
@@ -2550,7 +2576,7 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 &lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
 “Rock and metal mostly. I like a few modern rock acts, but most of what I listen to his from the 80s and 90s. Not quite Dad rock but getting there. Most of the metal I listen to falls broadly under prog or thrash, of course what genre a metal band is considered varies a bit from person to person.”
 
-[[Ask another question about her hobbies|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="145" name="Holly Hobbies Question Fishing" tags="" position="1835.3333333333333,3551.6666666666665" size="100,100">&lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
+[[Ask another question about her hobbies|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="145" name="Holly Hobbies Question Fishing" tags="" position="1835,3551" size="100,100">&lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2
 //&#39;Does your Dad still take you fishing?&#39;//
 
@@ -2558,7 +2584,7 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 
 “The last time me and him went fishing was about a year and a half ago, went fishing on a boat one of his buddy’s owned. It was a fun time, especially since the guy had this really nice boat, way bigger than what my Dad used to own. Guy is loaded.”
 
-[[Ask her another question about her hobbies|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="146" name="Holly Hobbies Question Art" tags="" position="1992,3553.333333333333" size="100,100">&lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
+[[Ask her another question about her hobbies|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="146" name="Holly Hobbies Question Art" tags="" position="1992,3553" size="100,100">&lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
 //&#39;How come you don’t draw for fun anymore?//
 
 “Eh, ya know, when you start doing something as a job it kind of loses some of its magic. Or you get tired of it, burnt out. I haven’t burnt out yet, but I just don’t have the motivation to do art ‘just for fun’ when I know I’m going to be spending days where I’m doing nothing but drawing. It’s like being a taxi driver, you spend all day driving people around, you probably aren’t going to get off work and go for a drive, you just spent all day doing that.”
@@ -2570,7 +2596,7 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 
 [[‘I ended up quitting my job in part because of burn out, so I definitely hear you.’|Holly Hobbies Question Art Spherion]]
 
-[[&quot;Makes sense, let&#39;s talk about something else|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="147" name="Holly Hobbies Question Art Plans" tags="" position="1917,3703.333333333333" size="100,100">&lt;&lt;set $holly_date_points += 4&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="Holly Hobbies Question Art Spherion" tags="" position="2067,3703.333333333333" size="100,100">//‘I ended up quitting my job in part because of burn out, so I definitely hear you.’//
+[[&quot;Makes sense, let&#39;s talk about something else|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="147" name="Holly Hobbies Question Art Plans" tags="" position="1917,3703" size="100,100">&lt;&lt;set $holly_date_points += 4&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="Holly Hobbies Question Art Spherion" tags="" position="2067,3703" size="100,100">//‘I ended up quitting my job in part because of burn out, so I definitely hear you.’//
 
 “That’s right, you mentioned that back at the festival. Got tired of working at Spherion. So now you’re some sort of freelancer, pick your own work, make your own pay, sounds familiar.”
 
