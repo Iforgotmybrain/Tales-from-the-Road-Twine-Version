@@ -335,7 +335,7 @@ Setting.addRange("masterVolume", {
 
 After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom, What do you look like? &lt;&lt;print settings.Sound&gt;&gt;
 
-What is your gender? &lt;&lt;listbox &quot;$gender&quot; autoselect&gt;&gt;
+What is your sex? &lt;&lt;listbox &quot;$gender&quot; autoselect&gt;&gt;
 &lt;&lt;option &quot;Male&quot;&gt;&gt;
 &lt;&lt;option &quot;Female&quot;&gt;&gt;
 &lt;&lt;/listbox&gt;&gt;
@@ -1915,11 +1915,11 @@ You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="VDC 5.1" tags="" position="294,5738" size="100,100">You take a moment to think this through before committing, thinking about the ramifications if Valery were to say yes.
 
 &lt;&lt;if $holly_text_date_setup is true&gt;&gt;
-For starters, you would have to break up with Holly. Or at least, not go on that date set for tomorrow. How she would handle you suddenly changing your mind and dating someone else is unknown, but she likely wouldn’t take too kindly to it.
-&lt;&lt;endif&gt;&gt;
+For starters, you have to consider how Holly would react to this. You&#39;re probably not going to be able to cancel your date with her on such short notice, meaning you&#39;d have to tell her about this whole situation sometime during the actual date tomorrow. How she would handle you suddenly changing your mind and dating someone else is unknown, but she likely wouldn’t take too kindly to it.
+&lt;&lt;else&gt;&gt;
 
 This would make any future romance options quite difficult, unless you were to break up with Valery later. Though he isn&#39;t likely to appreciate being dumped so soon after hooking up with you. 
-
+&lt;&lt;endif&gt;&gt;
 After thinking it through, you decide that...
 
 &lt;&lt;choice [[You&#39;re going to go through with asking Valery to hangout in the park.|VDC 6.1]]&gt;&gt;
@@ -2859,7 +2859,7 @@ Holly lets out a sigh before starting to detail the issues.
 “Ah that’s such a cheesy thing to say, feels like something my Dad would say. But it’s true, can’t believe we’ve been here for over 2 whole hours.”
 
 [[&quot;So, what do you say, $name? Today live up to your exceptations?&quot;|Holly Good Ending]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="Holly Date Bad Ending" tags="" position="1416.6666666666665,3993.3333333333335" size="100,100">//&quot;Seems we&#39;ve spent a little over an hour here, feels like it was longer. Weird.&quot;//
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="Holly Date Bad Ending" tags="" position="1416,3993" size="100,100">//&quot;Seems we&#39;ve spent a little over an hour here, feels like it was longer. Weird.&quot;//
 
 &quot;Anyway, $name, I think we need to reevaluate our next steps. I mentioned it a bit ago but I wasn’t really feeling this date like I did the first one back at the festival. I… was a little afraid of this back when I gave you my number. I felt like maybe we were taking things a little too fast; going from seeing you for the first time in 5 years to basically dating, when we never really had any sort of romantic history. Seemed like maybe we didn’t get a good chance to really reconnect with each other, see if dating is something that would actually work out. Just sort of went with the flow I guess.”
 
@@ -2871,7 +2871,7 @@ Holly lets out a sigh before starting to detail the issues.
 
 &lt;&lt;choice [[&#39;I felt the same way, Holly. It’ll definitely be best for both of us if we just stay friends.&#39;|Holly Date Bad Ending Friends]]
 &lt;&lt;choice [[&#39;I understand what you mean but I don’t know if I can even see us being friends anymore, it’s just been too long.&#39;|Holly Date Bad Ending Cutoff]]
-</tw-passagedata><tw-passagedata pid="162" name="Holly Date Bad Ending Friends" tags="" position="1323.3333333333333,4140.000000000001" size="100,100">//&#39;I felt the same way, Holly. It’ll definitely be best for both of us if we just stay friends.&#39;//
+</tw-passagedata><tw-passagedata pid="162" name="Holly Date Bad Ending Friends" tags="" position="1323,4140" size="100,100">//&#39;I felt the same way, Holly. It’ll definitely be best for both of us if we just stay friends.&#39;//
 &lt;&lt;set $holly_date_ending to &quot;bad ending friends&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 “I knew you’d understand, $name. Even though our relationship didn’t go anywhere at least we got to know each other a bit better through these two little dates. Maybe we can get lunch some other time, talk about what’s been going on, stuff like that.”
@@ -2886,14 +2886,17 @@ You and Holly get up from the table and head outside, getting ready to say your 
 
 “Better not be another 5 years! No excuses now, you’ve got my phone number and we only live 20 minutes away.” Holly says as she walks off, waving to you as she walks to her car.
 
-[[You walk and head back to your car as well.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="163" name="Holly Date Bad Ending Cutoff" tags="" position="1455,4140.000000000001" size="100,100">//&#39;I understand what you mean but I don’t know if I can even see us being friends anymore, it’s just been too long.&#39;//
+[[You walk and head back to your car as well.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="163" name="Holly Date Bad Ending Cutoff" tags="" position="1455,4140" size="100,100">//&#39;I understand what you mean but I don’t know if I can even see us being friends anymore, it’s just been too long.&#39;//
 &lt;&lt;set $holly_date_ending to &quot;bad ending cutoff&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 &quot;I get it, 100%. It&#39;s been half a decade since we last talked, we&#39;ve changed a lot since then. We&#39;re in completely different stages of our life now, I completely understand.&quot;
 “Well, I suppose I’ll take my leave now. Bills already been taken care of, so… See ya. Best of luck on your road trip and on your freelance work.”
 You thank Holly for the words of encouragement and wave goodbye before [[getting up and heading back to your car.|Holly Date Transition]]
-</tw-passagedata><tw-passagedata pid="164" name="Holly Date Transition" tags="" position="1696.6666666666665,4430" size="100,100">&lt;&lt;if $holly_date_ending = &quot;bad ending friends&quot;&gt;&gt;
-&lt;&lt;elseif $holly_date_ending = &quot;bad ending cutoff&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="Holly Normal Ending" tags="" position="1658.3333333333333,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
+</tw-passagedata><tw-passagedata pid="164" name="Holly Date Transition" tags="" position="1696,4430" size="100,100">&lt;&lt;if $holly_date_ending = &quot;bad ending friends&quot;&gt;&gt;
+&lt;&lt;elseif $holly_date_ending = &quot;bad ending cutoff&quot;&gt;&gt;
+&lt;&lt;elseif $holly_date_ending = &quot;cheat ending&quot;&gt;&gt;
+&lt;&lt;elseif $holly_date_ending = &quot;normal ending&quot; or $holly_date_ending = &quot;good ending normal&quot;&gt;&gt;
+&lt;&lt;elseif $holly_date_ending = &quot;good ending true&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="Holly Normal Ending" tags="" position="1658,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
 
 You tell Holly today was pretty good. You got know a bit more about her hobbies, about her time in college. Overall it was a pretty good date, you think.
 
@@ -2928,19 +2931,19 @@ A sudden thought enters your mind, you never told Holly about what happened with
 &lt;&lt;endif&gt;&gt;
 &lt;&lt;if $holly_living_detailed is true&gt;&gt;
 &lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.|Holly Good Ending True]]&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="167" name="Holly Cheat Ending" tags="" position="2196.666666666667,3991.6666666666665" size="100,100">&lt;&lt;set $holly_date_ending to &quot;cheat ending&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="167" name="Holly Cheat Ending" tags="" position="2196,3991" size="100,100">&lt;&lt;set $holly_date_ending to &quot;cheat ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 //&#39;There&#39;s one thing I think you shoud know before we leave.&#39;//
 
 &quot;Really, what would that be?&quot;
 
-You knew getting romantically involved with Valery while dating Holly would be a mistake, you’ve gotten yourself into a right mess. For Holly’s sake, you’ve decided to be upfront with her about the current situation, you plan on telling her about your little romp in the park you had with Valery yesterday. She’ll probably end up leaving you, rightfully so, you think. But she doesn’t deserve to be flown through a loop, you’re just going to be honest with her.
+You knew getting romantically involved with Valery while dating Holly would be a mistake, you’ve gotten yourself into a right mess. For Holly’s sake, you’ve decided to be upfront with her about the current situation. She’ll probably end up leaving you, but she doesn’t deserve to be thrown through a loop, you’re just going to be honest with her.
 
 &lt;&lt;continuelink &quot;You go on to tell Holly that you might’ve messed up yesterday.&quot;&gt;&gt;You go on to tell Holly that you might’ve messed up yesterday. You tell her about Valery and how what seemed to be an innocent day out for lunch with a friend turned into a relationship. She seems to think you’re joking at first, her face is one of surprise and amusement.
 
 &lt;&lt;continuelink &quot;You stay quiet for a few moments.&quot;&gt;&gt;You stay quiet for a few moments. For Holly, it slowly starts to sink in that you’re not joking… You’re serious.
 
-“You’re not kidding, are you? You hooked up with some random piece you found wandering the streets of your neighborhood. And went out with them one day before our date, nonetheless! Seriously? And you’re just now telling me this?”
+“You’re not kidding, are you? You hooked up with some random guy you found wandering the streets of your neighborhood. And went out with them one day before our date, nonetheless! Seriously? And you’re just now telling me this?”
 
 “Wow, I… thought I had you figured better than that. I always saw you as a really loyal person, someone I could trust.” Holly is visibly upset at this revolution, her face is red, with her hand covering her mouth &lt;&lt;continuelink &quot;she removes it for a moment to talk to you again.&quot;&gt;&gt;she removes it for a moment to talk to you again.
 
@@ -2954,12 +2957,27 @@ You and Holly get up from the table and head out to the parking lot. You stop sh
 
 You agree with Holly, given how soon you plan on leaving for the road trip that&#39;ll likely be your best bet.
 
-You walk over to Holly and give her a hug before leaving, like you usally do. As you leave Holly&#39;s embrace she sneaks in a kiss on the cheek,</tw-passagedata><tw-passagedata pid="169" name="Holly Good Ending True" tags="" position="2071.6666666666665,4140" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="170" name="Holly Normal Ending Leaving" tags="" position="1661.6666666666665,4161.666666666667" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
+You walk over to Holly and give her a hug before leaving, like you usally do. As you leave Holly&#39;s embrace she sneaks in a kiss on your cheek 
+
+/* Probably going to see this edited or something, hate writing romance. */
+&quot;I&#39;ll see ya later, maybe we can get together a bit sooner next time, this a bit too long to wait, ya know?&quot; Holly says before walking away and heaidng back to her car.
+&lt;&lt;set $holly_date_ending to &quot;good ending normal&quot;&gt;&gt;
+&lt;&lt;set $holly_date_completed to true&gt;&gt;
+[[You follow suit and head back to your car as well|Holly Date Transition]]
+
+</tw-passagedata><tw-passagedata pid="169" name="Holly Good Ending True" tags="" position="2071,4140" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="170" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
 You and Holly get up from the table and head out to the parking lot. You stop shortly after getting outside to say your goodbyes to Holly.
 
 &quot;We should set something else up soon, another date, that road trip you&#39;re always talking about, I don&#39;t care. Just something. Not like I&#39;m that busy, you say the time and a location and I can be there.&quot;
 
 You agree with Holly, the road trip will likely be your best bet when it comes to spending time with Holly, given how soon you plan on leaving.
+
+You walk over to Holly and give her a hug before leaving, like you usally do. As you leave Holly&#39;s embrace she sneaks in a kiss on your cheek
+/* Probably going to see this edited or something, hate writing romance. */
+&quot;I&#39;ll see ya later, like I said, let&#39;s set something else up soon.&quot; Holly says before walking away and heaidng back to her car.
+&lt;&lt;set $holly_date_ending to &quot;normal ending&quot;&gt;&gt;
+&lt;&lt;set $holly_date_completed to true&gt;&gt;
+[[You follow suit and head back to your car as well|Holly Date Transition]]
 
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
