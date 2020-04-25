@@ -1,3 +1,6 @@
+/* Not currently planning on implementing this. Might do so later but I'm not huge on it. /*
+
+/* Would rather that people just rate the flipping game and get feedback that way instead of taking stats. */
 let googleAnalytics = function() {
 	if (settings.dataCollection === true) {
 		var lockID = LoadScreen.lock(); // Lock loading screen
