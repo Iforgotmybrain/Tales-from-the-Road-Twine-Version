@@ -20,6 +20,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,6 +39,7 @@
       <updated>1587597775415</updated>
       <workItem from="1587597782742" duration="22000" />
       <workItem from="1587776767354" duration="35000" />
+      <workItem from="1587792762124" duration="615000" />
     </task>
     <servers />
   </component>
