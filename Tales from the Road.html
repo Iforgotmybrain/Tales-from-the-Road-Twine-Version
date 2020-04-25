@@ -333,7 +333,7 @@ Setting.addRange("masterVolume", {
 }());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
-After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom, What do you look like? &lt;&lt;print settings.Sound&gt;&gt;
+After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom:
 
 What is your sex? &lt;&lt;listbox &quot;$gender&quot; autoselect&gt;&gt;
 &lt;&lt;option &quot;Male&quot;&gt;&gt;
@@ -1469,7 +1469,7 @@ It feels a bit weird to go from barely knowing your neighbor to going out and ge
 Ultimately you tell Valery that:
 
 &lt;&lt;choice [[You&#39;d love to get lunch with him this weekend|Valery&#39;s Home Lunch Confirm]]&gt;&gt;
-&lt;&lt;choice [[You appreciate the offer, but have to decline.|Valery&#39;s Home Lunch Deny]]&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="Valery&#39;s Home Lunch Confirm" tags="" position="1127,1251" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
+&lt;&lt;choice [[You appreciate the offer, but have to decline.|Valery&#39;s Home Lunch Deny]]&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="Valery&#39;s Home Lunch Confirm" tags="" position="1123.6666666666665,1247.6666666666665" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
 &lt;&lt;set $valery_date to true&gt;&gt;
 You tell Valery you would be down for getting lunch sometime this weekend.
 
@@ -1479,7 +1479,7 @@ You don&#39;t have anything going on Saturday, so you tell Valery that would wor
 
 &quot;Awesome. See you Saturday!&quot;
 
-You say goodbye to Valery and [[head back home.|Downstairs]]</tw-passagedata><tw-passagedata pid="54" name="Valery&#39;s Home Lunch Deny" tags="" position="1277,1251" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
+You say goodbye to Valery and [[head back home.|Downstairs]]</tw-passagedata><tw-passagedata pid="54" name="Valery&#39;s Home Lunch Deny" tags="" position="1270.3333333333333,1251" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
 &lt;&lt;set $valery_date to false&gt;&gt;
 
 You tell Valery that you have some other plans for the weekend. Those plans may or may not be just sitting around the house and doing nothing, but he doesn’t need to know that.
@@ -2930,7 +2930,7 @@ A sudden thought enters your mind, you never told Holly about what happened with
 &lt;&lt;choice [[&#39;Yup, let&#39;s get out of here.&#39;|Holly Good Ending Normal]]&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 &lt;&lt;if $holly_living_detailed is true&gt;&gt;
-&lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.|Holly Good Ending True]]&gt;&gt;
+&lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.&#39;|Holly Good Ending True]]&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="167" name="Holly Cheat Ending" tags="" position="2196,3991" size="100,100">&lt;&lt;set $holly_date_ending to &quot;cheat ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 //&#39;There&#39;s one thing I think you shoud know before we leave.&#39;//
@@ -2965,7 +2965,19 @@ You walk over to Holly and give her a hug before leaving, like you usally do. As
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 [[You follow suit and head back to your car as well|Holly Date Transition]]
 
-</tw-passagedata><tw-passagedata pid="169" name="Holly Good Ending True" tags="" position="2071,4140" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="170" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
+</tw-passagedata><tw-passagedata pid="169" name="Holly Good Ending True" tags="" position="2071,4140" size="100,100">//&#39;I&#39;m ready, let&#39;s get out of here.&#39;//
+You and Holly get up from the table and head out to the parking lot. You both stop shortly after leaving the building, getting ready to say your goodbyes.
+
+&quot;Oh wow, Sun&#39;s already starting to set. Didn&#39;t think we&#39;d end up being here this long. Guess it all worked out in the end, dinner taking so long to arrive gave us some more time to talk.&quot;
+
+&quot;Today&#39;s been pretty nice, glad we got to talk about my time living with Alex. That whole situation has been weighing on my mind a lot recently. Never really got to talk about it with anyone, sort of an embarrassing time for me, getting played by Alex like that. I knew you&#39;d understand though, you&#39;ve always been my go-to person when it comes to talking about this kind of stuff, and I really appreciate that.&quot;
+
+“Well that’s enough delaying I guess, doesn’t matter how much I talk we’re still going to have to leave eventually.” Holly says with a somewhat disappointed tone to her voice.
+
+You walk over to give Holly a hug before saying goodbye, like you usually do. The two of you embrace for a few seconds, your arms wrapped around each other, just enjoying the moment.
+
+As you let go Holly sneaks in a kiss on your cheek,
+</tw-passagedata><tw-passagedata pid="170" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
 You and Holly get up from the table and head out to the parking lot. You stop shortly after getting outside to say your goodbyes to Holly.
 
 &quot;We should set something else up soon, another date, that road trip you&#39;re always talking about, I don&#39;t care. Just something. Not like I&#39;m that busy, you say the time and a location and I can be there.&quot;
