@@ -1526,7 +1526,7 @@ Play some Civilization! That game is the closest thing you have to time travel, 
 [[You&#39;ve reached the current end of the game for this path.|Valery Park Transition 2]]
 
 &lt;&lt;else&gt;&gt;
-This means I missed a possible story path. Not great. Leave me a comment if you get this message so I can investigate. 
+This means I missed a possible story path. Not great. Leave me a comment if you get this message so I can investigate!
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="Valery Rats Lunch" tags="" position="561,3234" size="100,100">/* don&#39;t forget ending points and date points */
 You arrive about 10 minutes before 1 PM, you always like to give yourself some extra time. 
@@ -2279,38 +2279,27 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
 &quot;See ya round, $name. I&#39;m sure I&#39;ll see you around the neighborhood. Plus we&#39;ve still gotta talk about our next date.&quot;
 
 You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="129" name="Valery Park Transition 2" tags="" position="331,7607" size="100,100">/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
-&lt;&lt;if $holly_text_date_setup is true and $valery_ending === &quot;ending two normal&quot; or $valery_ending === &quot;ending one normal&quot; or $valery_ending === &quot;ending three normal&quot;&gt;&gt;
-While driving home you think about your time spent with Valery.
+&lt;&lt;if $holly_text_date_setup is true and $valery_ending = &quot;ending two normal&quot; or $valery_ending = &quot;ending one normal&quot; or $valery_ending = &quot;ending three normal&quot;&gt;&gt;
+You&#39;ve had a great time with Valery today, although you have to wonder if you really made the right decision. You really like Valery, but getting into a serious relationship with him might not be the best way to go. After all, you&#39;ve got a date coming up with Holly, and you don&#39;t think she&#39;s going to be into an open relationship... Guess you’ll have to mediate on this a bit, but for now you’ve gotta get ready for your //other// [[date tomorrow.|Holly-Valery Transition]]
 
-You had a great time with Valery today, although you have to wonder if you really made the right decision. You really like Valery, but getting into a serious relationship with him might not be the best way to go. After all, you&#39;ve got a date coming up with Holly, and you don&#39;t think she&#39;s going to be into an open relationship... Guess you’ll have to mediate on this a bit, but for now you’ve gotta get ready for your //other// [[date tomorrow.|Holly-Valery Transition]]
-
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending two kiss&quot; or $valery_ending === &quot;ending one kiss&quot;&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
+&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending = &quot;ending two kiss&quot; or $valery_ending = &quot;ending one kiss&quot;&gt;&gt;
 
 You certainly had your expectations for today blown away. You never would’ve expected today ending the way it did. That said, you have to wonder if you really made the right choice today. You’ve really fallen for Valery, but you do have prior commitments to Holly. And you were planning on going on your first date with her tomorrow. You doubt either Valery or Holly would appreciate knowing that you went on or set up a date with someone else, rightfully so. And they definitely don’t seem the type to want an open relationship. Well, there’s not much you can do about it right now. You’ll just have to [[get ready for Holly’s date tomorrow|Holly-Valery Transition]] and hope you figure it out.
 
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending four friends&quot;&gt;&gt;
-While driving home you reflect a bit on today&#39;s events.
-
+&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending = &quot;ending four friends&quot;&gt;&gt;
 Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. Thinking about it some more this was probably for the best, given that you have a date coming up with Holly tomorrow. Getting serious with Valery would make things very complicated. [[Now you can focus on getting ready for Holly tomorrow.|Holly-Valery Transition]]
 
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending four denied&quot;&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
-
+&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending = &quot;ending four denied&quot;&gt;&gt;
 You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed friends with him but that would&#39;ve been a little awkward, so you decided to just stop hanging out with him. [[Now you can focus on getting ready for your date with Holly tomorrow.|Holly-Valery Transition]]
 
 &lt;&lt;elseif $holly_text_date_setup is true and $valery_disaster_ending is true&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
-
 You probably could&#39;ve handled Valery&#39;s date just a little bit better, considering you made him storm off. But, no time to dwell on that. You&#39;ve gotta focus on your next date with Holly, which is [[coming up tomorrow|Holly-Valery Transition]]
 &lt;&lt;else&gt;&gt;
 Hi! You&#39;ve reached the current end of Tales from the Road. If you had setup a date with Holly, this where you would&#39;ve played through that. Once I completely finish Chapter 3 this will have you finalize the plans for the road trip instead of going to this game over screen.
 
 I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
 
-Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either would be a big help!
-
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="MPV Four Ending 1.1" tags="" position="791,6764" size="100,100">&quot;I&#39;m glad you took that as well as you did. I know there&#39;s some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I&#39;m happy you&#39;re not one of them.&quot;
+Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either would be a big help!</tw-passagedata><tw-passagedata pid="130" name="MPV Four Ending 1.1" tags="" position="791,6764" size="100,100">&quot;I&#39;m glad you took that as well as you did. I know there&#39;s some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I&#39;m happy you&#39;re not one of them.&quot;
 
 &quot;I wouldn&#39;t say this is a complete denial but... yeah, honestly I just don&#39;t see &quot;us&quot; working out. So I guess it kind of is.&quot;
 
