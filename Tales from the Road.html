@@ -196,7 +196,7 @@ Setting.addHeader("Game Settings");
 
 Setting.addToggle("soundStatus", {
 	label : "Do you want music off or on?",
-	default : true,
+	default : false,
 	onChange : audioEnabler,
 });
 	
@@ -366,8 +366,7 @@ What is your race? &lt;&lt;listbox &quot;$race&quot; autoselect&gt;&gt;
 &lt;&lt;option &quot;Dragon&quot;&gt;&gt;
 &lt;&lt;/listbox&gt;&gt;
 
-[[Submit|Intro]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="400,402" size="100,100">&lt;&lt;playlist &quot;bgm&quot; shuffle play&gt;&gt;
-&quot;Looking fine as always&quot; you say to yourself.
+[[Submit|Intro]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="400,402" size="100,100">&quot;Looking fine as always&quot; you say to yourself.
 
 Your name is $name. You are $gender and you are a $race. Is this correct?
 
@@ -378,7 +377,7 @@ You see the door to the hallway in front of you and the door to the bathroom to 
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
 
 &lt;&lt;elseif $sasha_living_room_talked is true&gt;&gt;
-You wake up around your usual time of 11 AM. You get a notification on your phone stating that the yearly festival is going on today, you feel like Sasha might have mentioned that last night but you&#39;re not sure. Either way it might be worth checking out, you&#39;ve gone to it every other year you&#39;ve lived here, so why stop now?
+You wake up around your usual time of 11 AM. You get a notification on your phone stating that the yearly Lake Festival is going on today, you feel like Sasha might have mentioned that last night but you&#39;re not sure. Either way it might be worth checking out, you&#39;ve gone to it every other year you&#39;ve lived here, so why stop now?
 
 &lt;&lt;continuelink &quot;Get out of bed&quot;&gt;&gt;
 
@@ -389,14 +388,16 @@ You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]]
 
 You enter the hallway of your apartment which you share with 2 of your friends. Your bedroom is to the south, Sasha&#39;s bedroom is to the southwest, the stairs leading down are to the east, and Jacob&#39;s bedroom is to the northeast.
 
-You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Downstairs]], [[Jacob&#39;s Bedroom]]</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom, it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the draws...
+You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Downstairs]], [[Jacob&#39;s Bedroom]]</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom, it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
 
 You showered last night so there&#39;s no reason to do so right now.
 
 &lt;&lt;return&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Sasha&#39;s Bedroom" tags="Formatting-Help" position="231,730" size="100,100">&lt;&lt;if $festival_completed is true and $sasha_post_fest_talk is not true&gt;&gt;
-You knock on Sasha’s door, hoping to get some input on your road trip itinerary. While Sasha isn’t very well-traveled, you figured it couldn’t hurt to ask her what she thinks about the whole thing. Especially since she spent some years out of state before moving here.
+You knock on Sasha’s door, hoping to get some input on your road trip itinerary. While Sasha isn’t very well-traveled, you figured it couldn’t hurt to ask her what she thinks about the whole thing. Especially since she spent some years out of state in Oregon before her familiy moved here.
 
-&lt;&lt;continuelink &quot;Sasha answers the door and welcomes you in.&quot;&gt;&gt;Sasha answers the door and welcomes you in. “So, what brings you to me today? Wanna talk about someone or something?” She says with an inquisitive tone.
+&lt;&lt;continuelink &quot;Sasha answers the door and welcomes you in.&quot;&gt;&gt;Sasha answers the door and welcomes you in. 
+[img[https://iforgotmybrain.github.io/72.png]]
+“So, what brings you to me today? Wanna talk about someone or something?” She says with an inquisitive tone.
 
 You tell Sasha that you were actually here to talk about something a bit different for once. You go on to state that you wanted to get some input from her on your idea of going on a road trip across the country.
 
@@ -406,7 +407,9 @@ You tell Sasha that you were actually here to talk about something a bit differe
 
 You nod your head, Sasha then thinks for a minute before offering some ideas.
 
-“Hmm, it’s been some time since I’ve lived there, but I can remember a few places that might be worth checking out. Crater Lake is worth a stop, as is Silver Falls. And there’s a bunch of other parks you could check out as well, I’ll write them down for you.”
+“Hmm, it has been some time since I’ve lived there, what&#39;s it been, 10 years? I was like 11 or 12 when we moved so yeah, 10 years.&quot;
+
+&quot;But I can remember a few places that might be worth checking out. Crater Lake is worth a stop, as is Silver Falls. And there’s a bunch of other parks you could check out as well, I’ll write them down for you.”
 
 Sasha writes down about 7 places to check out in Oregon. You add them to your list which you’ll sort through later.
 
@@ -414,7 +417,7 @@ Sasha writes down about 7 places to check out in Oregon. You add them to your li
 
 You tell Sasha you haven’t really gotten to that part yet. You wanna finalize your travel plans before doing so.
 
-“Alright, I was just wondering. I’ll have to think about it, but I might be interested in tagging along with you if you end up having room. I’ve never really traveled before, but I guess there’s no time like now to give it go.”
+“Alright, I was just wondering. I’ll have to think about it and check with work, but I might be interested in tagging along with you if you end up having room. I’ve never really traveled before, but I guess there’s no time like now to give it go.”
 
 &lt;&lt;set $sasha_post_fest_talk to true&gt;&gt;
 
@@ -433,7 +436,7 @@ The first thing anyone notices when they talk to Sasha are her blue eyes, contra
 
 You tell her you just wanted to check in, see how things are going.
 	
-&lt;&lt;continuelink &#39;&quot;Honestly, not much has been going on.&quot;&#39;&gt;&gt;&quot;Honestly, not much has been going on. Just going through the daily routine. Haven&#39;t been having the greatest time at work, but with Geology it&#39;s not like there&#39;s a bunch of other options out there. Especially in this town.&quot;
+&lt;&lt;continuelink &#39;&quot;Honestly, not much.&quot;&#39;&gt;&gt;&quot;Honestly, not much. Just going through the daily routine. Haven&#39;t been having the greatest time at work, but with my job field it&#39;s not like there&#39;s a bunch of other options out there. Especially in this town.&quot;
 		
 You sympathize with Sasha, thinking back to the job you had before your current one. Although luckily your career field is a bit more in demand than Sasha&#39;s is.
 		
@@ -493,15 +496,12 @@ You return to the living room once again, Sasha is sitting on the couch watching
 
 It seems Sasha&#39;s watching a superhero movie involving some sort of pink titan.
 [img[https://iforgotmybrain.github.io/72.png]]
-&quot;You watch this movie yet? Second to last one in the first phase of the LM movie universe. Haven&#39;t got to watch the final one yet but I&#39;ve heard it&#39;s killer.&quot;
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;You watch this movie yet? Second to last one in the series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s killer.&quot;&#39;&gt;&gt;
 
 &quot;Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven&#39;t got to watch it yet.&quot;
 
-You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.&quot;&gt;&gt;You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
 
 &quot;Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I&#39;d love to rewatch them with you.&quot;
 
@@ -516,7 +516,7 @@ You check out the living room yet again, it would seem Jacob is sitting in a cha
 &lt;&lt;else&gt;&gt;
 You enter the living room and see nothing but empty chairs and a TV entertaining itself. Maybe you should check back later.
 &lt;&lt;return&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Front Porch" tags="" position="892.3333333333334,901.3333333333334" size="100,100">/* Still need to edit this after Holly text */
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Front Porch" tags="" position="892,901" size="100,100">/* Still need to edit this after Holly text */
 You head out the front door and stand on your front porch ready for adventure! You think of the following places to check out: 
 [[Home|Downstairs]] 
 &lt;&lt;if not visited (&quot;Sycamore Park&quot;)&gt;&gt; [[Sycamore Park]]
@@ -563,17 +563,17 @@ You could leave the line and go over and say hi to your friend, or you could jus
 &lt;&lt;choice [[Go say hi to your friend|Cafe Holly]]&gt;&gt;
 
 &lt;&lt;choice [[Just stay in line|Cafe Line]]&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Cafe Holly" tags="" position="1296,846" size="100,100">/* Provide more details about Holly&#39;s apperance? */
-You decide to leave the line and go over and say hi to your friend, Holly.
+You decide to leave the line and go over and say hi to your friend, who you presume to be Holly.
 
-Holly is a vixen. No, no, not like that; in the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-You exchange greetings with Holly and start conversing. There’s a lot of catching up to do, you follow each other on social media but of course that isn’t a replacement for a proper conversation.
+Holly is a vixen. In the literal sense. You’ve known her since high school and while you haven’t really been in contact much since college, you still consider her to be a friend, albeit a distant one.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;Wow, Hey $name! It&#39;s been awhile. Last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before we went off to college in like 2014!&quot;
+You walk up to Holly and exchange greetings. There’s a lot of catching up to do; you follow each other on social media but of course that isn’t a replacement for a proper conversation.
+
+&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+
+&quot;Wow, Hey $name! It&#39;s been awhile. Damn, I think the last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before we went off to college in like 2014!&quot;
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
@@ -583,39 +583,33 @@ You also ask what Holly’s been up to since you last met, a faint look of disap
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;Yeah, so, I dropped out of college in 2016, after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. I also hated my major, I realized pretty quick that marketing was not for me.&quot;
+&quot;Yeah, so, I dropped out of college in 2016. Right after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. Also might&#39;ve made a slight mistake when it came to picking my major, I realized pretty quick that marketing was not for me.&quot;
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-You can find yourself agreeing with Holly, remembering how many times you second guessed your choice to attend college.
+You can find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.
 
-&lt;&lt;continuelink &quot;Continuie&quot;&gt;&gt;
-
-&quot;I knew after I started my first marketing internship that I would have hated that kind job and the corporate culture that surrounds it. Having to stick up to execs, deliver presentations on ideas that would ultimately be ignored by the project managers and higher-ups. Dealing with the petty workplace drama... and not to mention the monotony of it all... That just wasn’t for me You know I&#39;ve never been one to suck up and deal with other people’s bullshit.&quot;
+You ask Holly what she’s doing for work since she dropped out of college, she offers an answer that catches you a bit by surprise.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-You can definitely see yourself understanding Holly’s decision, thinking back to all the workplace drama and rejected proposals you’ve dealt with...
-
-You then ask Holly what she’s doing for work since she dropped out of college, she offers a surprising answer.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-&quot;I draw art for a living now! I was always interested in it, I’m sure you remember some of my drawings from back in high school. I never really thought of it as a legitimate career path, but I’ve managed to build a decent enough profile that I can get by on commissions. And you know, I really enjoy it. The customer tells me what they want, I draw it, and we go on our way. There’s (typically) no bullshit, and no one else telling me what to do.&quot;
+&quot;I draw art for a living now! I was always interested in it, I’m sure you remember some of my drawings from back in high school. I never really thought of it as a legitimate career path, just as a hobby, you know? But I’ve managed to build a decent enough following that&#39;s allowed me to get by with just doing art. And you know, I really enjoy it. The customer tells me what they want, I draw it, and we go on our way. I&#39;m my own boss, and I like that.&quot;
 
 &quot;So, what have you been doing since graduating college? I know you finished with a couple of internships and a great GPA, those internships lead anywhere?&quot;
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-You explain that you used to work for Spherion, but eventually quit for various reasons, including reasons she stated, like project managers ignoring ideas. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. Detailing how you now do freelance work off and on, not unlike what Holly does. It helps keep a steady flow of money coming into your bank account. And with living expenses being split between three people, you really don’t need much money to support your lifestyle.
+You explain that you used to work for Spherion, but eventually quit for a couple different reaons after spending a year there. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job.
+
+You tell her that now you just do freelance work here and there. It helps keep a steady flow of money coming into your bank account. And with your living expenses being split between three people, you really don’t need much money to support your lifestyle.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;Wow, that’s fantastic. Hearing stuff like that almost makes me wish I would have stayed in college. I couldn’t imagine having a savings large enough to live on for 2 years. Let alone being able to amass that much money by only working for a year! Still, like I said, I enjoy my work and I&#39;m pretty happy with where I am in life. Though having that kind of money never hurts.&quot;
+&quot;Wow, hearing stuff like that almost makes me wish I would have stayed in college. I couldn’t imagine having a savings large enough to live on for 2 years. Let alone being able to amass that much money by only working for a year! That&#39;s really impressive&quot;
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;Well $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go. Maybe I’ll see you around some other time.&quot;
+&quot;Well, anyway $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go. Maybe I’ll see you around some other time.&quot;
 
 &lt;&lt;set $cafe_holly_talked to true&gt;&gt;
 &lt;&lt;set $cafe_completed to true&gt;&gt;
@@ -663,13 +657,13 @@ After that the rest is history, you’ve been good friends with him ever since. 
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-You ended up meeting Sasha in a similar way. You ran into her at one of the one of the recitation sessions for your Sociology classes. You started off with the usual college small talk, ‘Hey, what’s your major?’ ‘What dorm do you live in?’ She ended up living in one of the nearby dorm complexes, which shared a dining hall with your building. This led to you and her getting lunch together on a fairly regular basis.
+You ended up meeting Sasha in a similar way. You ran into her at one of the one of the recitation sessions for your Sociology class. You started off with the usual college small talk, ‘Hey, what’s your major?’ ‘What dorm do you live in?’ She ended up living in one of the nearby dorm complexes, which shared a dining hall with your building. This led to you and her getting lunch together on a fairly regular basis.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-You talked quite a bit during lunch, and you eventually ended up hanging out with her outside of lunch quite a bit. You didn’t have as much in common with her as Jacob, but you still appreciated her company. You always kept in touch with her throughout the year, often attending various on-campus events together, and helping each other out with classes.
+You didn’t have as much in common with her as Jacob, but you still appreciated her company. You always kept in touch with her throughout the year, often attending various on-campus events together, and helping each other out with classes.
 
-She’s been a really great friend to you, though she can be a bit forgetful and snarky at times. You’re really glad you met her and Jacob during your time at college, who knows how different your current life would be if you didn’t!
+She’s been a really great friend to you, though she can be a bit snarky at times. You’re really glad you met her and Jacob during your time at college, who knows how different your current life would be if you didn’t!
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
@@ -693,35 +687,33 @@ You tell Sasha you just wanted to chat with her for a bit.
 
 As Sasha finishes her rant on the prequel movies you start to plan your exit.
 
-“Anyway, I really enjoyed talking about movies with you. We really need to watch the LM movies sometime, I know you’ll love them.”
+“Anyway, I really enjoyed talking about movies with you. We really need to watch those movies sometime, I know you’ll love them.”
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You tell Sasha you’re looking forward to watching them with her sometime.&quot;&gt;&gt; You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
 
-You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
-
-“Alright, see you tomorrow. We’ve really gotta talk more often!”
+“Alright, see you tomorrow. We’ve really gotta talk more often! I miss just sitting down and talking with you like we did in college.”
 
 &lt;&lt;set $ending_points += 2&gt;&gt;
 You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="21" name="Sasha Living Room Purpose Chat" tags="" position="713,368" size="100,100">&lt;&lt;set $sasha_living_room_talked to true&gt;&gt;
-/* I really like this scene. Think it was pretty well written  */
+/* I really like this scene. Think it was pretty well written. Probably best of chapter 1 */
 
 You tell Sasha you want to ask her for some advice, that you wanted to ask her for help on finding &#39;purpose&#39;.
 
-&lt;&lt;continuelink &#39;&quot;Purpose, huh?&quot;&#39;&gt;&gt;&quot;Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn&#39;t be long before you got sick of your current work style.&quot;
+&lt;&lt;continuelink &#39;&quot;Purpose, huh?&quot;&#39;&gt;&gt;&quot;Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn&#39;t be long before you got sick of freelance work.&quot;
 
 “Well I’m assuming your issue is that you don&#39;t really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don&#39;t even work. You&#39;ve got the money to just sit on your ass for a year if you wanted.&quot;
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic.&quot;&#39;&gt;&gt;
 
-“I have a little bit of experience with this myself, which of course makes me an expert on the topic. Back when I graduated high school, I was a mess. I had zero idea what I wanted to do. My parents wanted me to go to college, but I didn’t feel like I would be cut out for it. And I didn’t want to go straight to working either, since in my hometown there was really no viable career path for me. Factory jobs were long gone, and if you needed an entry level job the only options you had were retail jobs. And those weren&#39;t going to take me anywhere.
+&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic. I think we might&#39;ve walked about this before but whatever. Back when I graduated high school, I was a mess. I had zero idea what I wanted to do. My parents wanted me to go to college, but I didn’t feel like I would be cut out for it. But I didn’t want to go straight to working either, since in my hometown there was really no viable career path for me. Factory jobs were long gone, and if you needed an entry level job the only options you had were retail jobs. And those weren&#39;t going to take me anywhere.&quot;
 
-So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I just worked my part time job and didn’t do jack shit else. Worked my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end.
+&quot;So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I just worked my part time job and didn’t do jack shit else. Worked my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end. Not to mention my parents weren&#39;t going to support me for much longer.&quot;
 
-I started to feel lost after those few months, I had no long-term goals, no real ambition, I&#39;d say I wasn&#39;t too far off from becoming a dead beat. Didn&#39;t help that I surrounded myself with people just as lost as I was.”
+&quot;I started to feel lost after those few months, I had no long-term goals, no real ambition, I&#39;d say I wasn&#39;t too far off from becoming a dead beat. Didn&#39;t help that I surrounded myself with people just as lost as I was.&quot;
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;&#39;So what&#39;d you do?&#39;&quot;&gt;&gt;&#39;So what&#39;d you do?&#39;
 
-“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though; I’d go to community college and then transfer if I ended up enjoying it. This way I&#39;d be out less money if I ended up hating it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, “fuck it” and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
+“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though; I’d go to community college and than transfer if I ended up enjoying it. This way I&#39;d be out less money if I ended up hating it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, “fuck it” and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
 
 &quot;Point is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say &#39;fuck it&#39; and try some weird shit, you never know what might happen. You could end up finding your &#39;purpose&#39;, or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don&#39;t know, just do //something.//&quot;
 
@@ -742,29 +734,25 @@ You shake the Tiger’s hand and introduce yourself as $name.
 
 “Nice to meet you $name. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-You can’t really think of anything else remarkable here. The town is actually quite boring. You offer a few eating recommendations, including Torie&#39;s Café, stating that there really isn’t much to do here except check out the local restaurants.
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You can’t really think of anything else remarkable here.&quot;&gt;&gt;You can’t really think of anything else remarkable here. Iridium City is actually quite boring. You offer a few eating recommendations, including Torie&#39;s Café, stating that there really isn’t much to do here except check out the local restaurants.
 
-&quot;Yeah, I kind of figured that. This is my second time going to this event and I can&#39;t say I&#39;ve seen much else to do around here.” The Tiger says with a friendly tone. &quot;Anyway, I bet you’re probably wondering why someone would come here just for this one event.”
+&lt;&lt;continuelink &#39;&quot;Yeah, I kind of figured that.&quot;&#39;&gt;&gt;&quot;Yeah, I kind of figured that. This is my second time going to this event and I can&#39;t say I&#39;ve seen much else to do around here.” The Tiger says with a friendly tone. &quot;Anyway, I bet you’re probably wondering why someone would come here just for this one event.”
 
 You can’t say you were really racking your brain trying to figure that out, &lt;&lt;continuelink &quot;but you’ll humor him.&quot;&gt;&gt;but you’ll humor him.
 
-“Well, I’m actually on a trip across the country! I do it every year, in some shape or form. Last year I went by train but now I’m doing it by car.” He says with an enthusiastic tone. Clearly he’s quite interested in traveling the country.”
+“Well, I’m actually on a trip across the country! I do it every year, in some shape or form. Last year I went by train but now I’m doing it by car.” He says with an enthusiastic tone. Clearly he’s quite interested in traveling the country.
 
-You ask Chris for some more details, you’ve always been fascinated by the idea of traveling the country, but you’ve just never had the time or money to do so. &lt;&lt;continuelink &quot;Ask Chris&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You ask Chris for some more details,&quot;&gt;&gt;You ask Chris for some more details, you’ve always been fascinated by the idea of traveling the country, but you’ve just never had the time or money to do so.
 
 “Well, I start off my trip on the east coast, in New York city as you might’ve guessed by my shirt.” He says while pointing to his &#39;I heart NY&#39; shirt. 
 
 &quot;I spend a varying amount of time in each place I stop at. Just depends on what that city has to offer, ya know? The end destination changes every year too. Last year I stopped at San Francisco, and this time around I’ll be heading to Seattle.&quot;
 
 You tell Chris that you’ve been interested in doing something similar, you find the idea of traveling the country and seeing all it has to offer to be exciting! 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;If I could offer one tip, it&#39;s to plan ahead of time and check out what’s going to be going in the towns you’re passing by. Try to find the best possible time to leave so you can maximize the events you can go too.&quot;
+&lt;&lt;continuelink &#39;&quot;If I could offer one tip,&quot;&#39;&gt;&gt;&quot;If I could offer one tip, it&#39;s to plan ahead of time and check out what’s going to be going in the towns you’re passing by. Try to find the best possible time to leave so you can maximize the events you can go too.&quot;
 
-You thank Chris for the advice. If you ever do decide to take on such an endeavor, you’ll definitely make sure to have a plan. 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You thank Chris for the advice.&quot;&gt;&gt;You thank Chris for the advice. If you ever do decide to take on such an endeavor, you’ll definitely make sure to have a plan. 
 
 &quot;Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his hand out for a &lt;&lt;continuelink &quot;farewell handshake.&quot;&gt;&gt;farewell handshake
 
@@ -784,11 +772,11 @@ You sit down at your desk and turn on the monitor. You could check your [[bank a
 
 [[Log off|Player Bedroom]]
 
-&lt;&lt;elseif $chris_pawbook_completed is true and $post_fest_day_completed is true $road_trip_funding_completed is true and $chat_room is not true&gt;&gt;
+&lt;&lt;elseif $chris_pawbook_completed is true and $post_fest_day_completed is true and $road_trip_funding_completed is true and $chat_room is not true&gt;&gt;
 You sit down at your desk and turn on the monitor. With not much going on today you could hit up one of those [[old chat rooms you used to go on.|Computer Chat Room]]
 [[Log off|Player Bedroom]]
 
-&lt;&lt;elseif $chris_pawbook_completed is true and $post_fest_day_completed is true $road_trip_funding_completed is not true and $chat_room is not true&gt;&gt;
+&lt;&lt;elseif $chris_pawbook_completed is true and $post_fest_day_completed is true and $road_trip_funding_completed is not true and $chat_room is not true&gt;&gt;
 You sit down at your desk and turn on the monitor. With not much going on today you could hit up one of those [[old chat rooms you used to go on.|Computer Chat Room]] You also need to figure out your finances for the road trip sometime. You could do that by going to your [[bank&#39;s website.|Bank Management]]
 [[Log off|Player Bedroom]]
 
@@ -827,14 +815,15 @@ You were surprised to see Holly, since it had been almost 5 years since you last
 &quot;So, what are you doing out here all by yourself?&quot;
 &lt;&lt;endif&gt;&gt;
 
-You tell Holly that you&#39;re just out here fufilling a yearly tradtion. You state that you&#39;ve gone to Lake Fest almost every year you&#39;ve lived here so why stop now?
+You tell Holly that you&#39;re just out here fufilling your yearly tradtion of coming to Lake Fest. No one else wanted to tag along so you&#39;re out here enjoying it by yourself.
 
-&lt;&lt;continuelink &#39;&quot;Alright, that makes sense.&quot;&#39;&gt;&gt;&quot;Alright, that makes sense. Not like I can really give you too much shit for being on your own if I am too, huh? I had come here with one of my friends, //but// she pretty much ditched me for her other group of friends she saw walking about. Guess that shows how she really feels about me, huh?&quot;
+&lt;&lt;continuelink &#39;&quot;Alright, that makes sense.&quot;&#39;&gt;&gt;&quot;Alright, that makes sense. Not like I can really give you too much shit for being on your own if I am too, huh? I had come here with one of my friends, //but// she ditched me for some guy she just met. Guess that shows how she really feels about me, huh?&quot;
 
 You give Holly your condolences about her friend ditching her. Stating that you’ve dealt with similar situations yourself. 
+
 &lt;&lt;continuelink &quot;You also ask Holly if she knows much about the band about to play.&quot;&gt;&gt;You also ask Holly if she knows much about the band about to play.
 
-“Not a whole lot. I know they have a more lo-fi sound and that’s about it. With my friend Jessica ditching me I figured I might as well come over and check them out. It’s free, after all.”
+“Not a whole lot. I know they have a more lo-fi sound and that’s about it. With Jessica ditching me I figured I might as well come over and check them out. It’s free, after all.”
 
 &lt;&lt;continuelink &#39;“Well,&quot;&#39;&gt;&gt; &quot;Well, I can&#39;t say I expected the day to play out like this. But, since we’re both here by ourselves at this point, guess we might as well hang out for a bit and check out this band, yeah?”
 
@@ -843,7 +832,7 @@ You give Holly your condolences about her friend ditching her. Stating that you�
 
 &lt;&lt;continuelink &quot;You tell Holly you’d be fine with hanging out for a bit.&quot;&gt;&gt;You tell Holly you’d be fine with hanging out for a bit.
 
-&lt;&lt;continuelink &#39;&quot;Alright!&quot;&#39;&gt;&gt; “Alright! Hopefully hanging out with you will be a better experience than coming here with Jessica.”
+&lt;&lt;continuelink &#39;&quot;Alright!&quot;&#39;&gt;&gt; &quot;Alright! I was hoping you&#39;d yes, it&#39;s been 5 years since we&#39;ve hung out after all. We&#39;ve got a lot of catching up todo.&quot;
 
 
 [[The band seems to be starting their set|Festival Holly Concert]], as they go out on stage and introduce themselves.</tw-passagedata><tw-passagedata pid="26" name="Festival Holly Concert" tags="" position="262,1739" size="100,100">The band starts playing, they sound about as you expected, with a lo-fi sound reminiscent of Mac Demarco. Not you’re choice of music if you were paying to be here, but //it is// a free concert so you can’t complain too much.
@@ -865,7 +854,9 @@ It’s been awhile since you talked to Holly, so you decide to ask her what she�
 &quot;Honestly, not a whole lot given the time frame. Probably the biggest change in my life has been career,since I actually ended up dropping out of college at the end of my Sophomore year. Some stuff happened after that, but right now I’m doing art for a living. Pretty big jump going from a marketing major to an artist.”
 
 [[You tell Holly that is a pretty big jump, you also ask her what exactly lead up to her becoming an artist.|Holly Concert Dialogue]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Holly Concert Dialogue" tags="" position="262,1890" size="100,100">“Oh boy, where do I start? Hmm… Guess I’ll go over what I did after I dropped out of college. So, I’ve been drawing since… eh, around middle school I’d say. Back then it was just a hobby, of course. Just something to channel my creative ideas, and maybe show off a bit, ~~heh.~~ &quot;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Holly Concert Dialogue" tags="" position="262,1890" size="100,100">//You ask Holly how she ended up becoming an artist.//
+
+“Oh boy, where do I start? Hmm… Guess I’ll go over what I did after I dropped out of college. So, I’ve been drawing since… eh, around middle school I’d say. Back then it was just a hobby, of course. Just something to channel my creative ideas, and maybe show off a bit, ~~heh.~~ &quot;
 
 &quot;Now, when I went to college I ended up making a social media account dedicated to posting my art, I plugged it a bit, ya know, posted my art on a few forums to try and get a following. Ended up working pretty well since I had 5000 followers by the time I dropped out. At this point though, it was still just a hobby, but I was definitely thinking about the money potential. After I dropped out I got a full-time retail job and just kept working on my art and expanding my following as best I could.”
 
@@ -886,22 +877,13 @@ It’s been awhile since you talked to Holly, so you decide to ask her what she�
 
 &quot;How about you though? What happened with you and your job? Had to be getting some decent money based off the amount you saved up&quot;
 
-&lt;&lt;else&gt;&gt;
-
-&quot;Now, what have //you// been doing these last 5 years?&quot;
-&lt;&lt;endif&gt;&gt;
-You explain that you used to work for Spherion, but eventually quit for various reasons. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. Detailing that you now do freelance work off and on to provide some extra income.
-
-&lt;&lt;continuelink &#39;&quot;Interesting, what made you leave Spherion?&quot;&#39;&gt;&gt;”Interesting, what made you leave Spherion?”
-
 You explain to Holly how it all started. Initially, it all went pretty well. The job paid exceptionally well, had good benefits, and looked really good on a resume if you ever decided to go somewhere else. About 5 months into the job though you started to notice some of the dysfunction abound. You grew tired of the petty office politics, your ‘superiors’ never really valued your work or your feedback, and the work you were doing just wasn’t very fulfilling.
 
 Most workplaces will have elements of all those things, this is true, but here they were overwhelming. You knew you weren’t long for that place and started saving up a decent chunk of your paycheck each month. You put a significant amount into an investment account, as well as some straight into your savings. You stayed for about 7 months after that, and by the time you put in your 2-weeks, you had saved around $40,000 total. Enough to live modestly by yourself for 1 year. Or in your case, more than enough to live with your roommates for 2+ years.
 
 &lt;&lt;continuelink &#39;&quot;Wow, that’s just crazy to me…&quot;&#39;&gt;&gt;”Wow, that just crazy to me. Saving 40k in only one year is just insane. That’s almost how much I make in a year. I’m assuming you started your freelance contract work shortly after that, right?”
 
-
-&lt;&lt;continuelink &quot;Yes, you started working contracts shortly after being fired.&quot;&gt;&gt; Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
+&lt;&lt;continuelink &quot;Yes, you started freelance work shortly after being fired.&quot;&gt;&gt; Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
 
 “I can totally understand quitting a job because you don’t like the culture, that’s pretty much why I took up art as my career.”
 
@@ -912,7 +894,36 @@ You could ask Holly to accompany you for the rest of the day here at the festiva
 You think about it for a while, eventually deciding too: 
 
 &lt;&lt;choice [[Ask Holly to tag along for the rest of the day.|Holly Festival Hub]]&gt;&gt;
-&lt;&lt;choice [[Part ways with Holly.|Festival Non-Holly Hub]]&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Holly Festival Hub" tags="" position="122,2092" size="100,100">&lt;&lt;set $holly_festival_stayed to true&gt;&gt;
+&lt;&lt;choice [[Part ways with Holly.|Festival Non-Holly Hub]]&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&quot;Now, what have //you// been doing these last 5 years?&quot;
+
+You explain that you used to work for Spherion, but eventually quit after only a year at the company. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job. You state that you now do freelance work to help keep the money flowing.
+
+&lt;&lt;continuelink &#39;&quot;Interesting, what made you leave Spherion?&quot;&#39;&gt;&gt;”Interesting, what made you leave Spherion?”
+
+You explain to Holly how it all started. Initially, it all went pretty well. The job paid exceptionally well, had good benefits, and looked really good on a resume if you ever decided to go somewhere else. About 5 months into the job though you started to notice some of the dysfunction abound. You grew tired of the petty office politics, your ‘superiors’ never really valued your work or your feedback, and the work you were doing just wasn’t very fulfilling.
+
+Most workplaces will have elements of all those things, this is true, but here they were overwhelming. You knew you weren’t long for that place and started saving up a decent chunk of your paycheck each month. You put a significant amount into an investment account, as well as some straight into your savings. You stayed for about 7 months after that, and by the time you put in your 2-weeks, you had saved around $40,000 total. Enough to live modestly by yourself for 1 year. Or in your case, more than enough to live with your roommates for 2+ years.
+
+&lt;&lt;continuelink &#39;&quot;Wow, that’s just crazy to me…&quot;&#39;&gt;&gt;”Wow, that just crazy to me. Saving 40k in only one year is just insane. That’s almost how much I make in a year. I’m assuming you started your freelance contract work shortly after that, right?”
+
+
+&lt;&lt;continuelink &quot;Yes, you started freelance work shortly after being fired.&quot;&gt;&gt; Yes, you started working contracts shortly after being fired. They provided a nice in-flow of cash to help keep you going.
+
+“I can totally understand quitting a job because you don’t like the culture, that’s pretty much why I took up art as my career.”
+
+You bring out your smartphone and look at the time, seems your conversation with Holly was a bit longer than you thought. You talked for almost an hour, and at this point the band is on their last song. The evening is approaching, with only a few more hours left for the festival.
+
+You could ask Holly to accompany you for the rest of the day here at the festival, or you could go your separate ways.
+
+You think about it for a while, eventually deciding too: 
+
+&lt;&lt;choice [[Ask Holly to tag along for the rest of the day.|Holly Festival Hub]]&gt;&gt;
+&lt;&lt;choice [[Part ways with Holly.|Festival Non-Holly Hub]]&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Holly Festival Hub" tags="" position="122,2092" size="100,100">&lt;&lt;set $holly_festival_stayed to true&gt;&gt;
 &lt;&lt;set $ending_points += 6&gt;&gt;
 You decide to ask Holly if she wants to tag along for the rest of the day.
 
@@ -925,7 +936,7 @@ You could go check out the rest of [[the festival over to the east,|Festival Eas
 You decide to part ways with Holly after the concert.
 &lt;&lt;continuelink &quot;As the band finishes their set you say goodbye to Holly and head back to the main festival area.&quot;&gt;&gt;As the band finishes their set you say goodbye to Holly and head back to the main festival area.
 
-There&#39;s not much left to do here. The only thing left to do would be to check out the rest of the festival area over to the [[east|Festival East Path]]</tw-passagedata><tw-passagedata pid="30" name="Festival Games" tags="" position="119,2222" size="100,100">You and Holly head towards the many fair games set up at the festival.
+There&#39;s not much left to do here. The only thing you can think of would be to check out the fireworks display as you head back to the bus stop near the [[entrance|Festival Ending Self]]</tw-passagedata><tw-passagedata pid="30" name="Festival Games" tags="" position="119,2222" size="100,100">You and Holly head towards the many fair games set up at the festival.
 
 As you arrive at the games Holly offers a quick remark about them
 
@@ -985,17 +996,6 @@ After discussing it, you and Holly decide to have a go at the:
 
 		&quot;Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. 		Might    even be able to see fireworks as we’re walking 			there.&quot;|Festival Ending Holly]]
 	&lt;&lt;endif&gt;&gt;
-
-
-&lt;&lt;else&gt;&gt;
-	This way doesn’t seem to have much going on, as the only thing of
-	interest is the small stadium where various events have been held throughout the day. None of which interests you. Indeed, the only thing this path seems to offer is a nice walk. It loops around the stadium and will take you back to where you started. Oh well, if nothing else you can reflect on the day while walking back.
-
-&lt;&lt;continuelink &quot;The day has gone pretty well, you think.&quot;&gt;&gt; The day      has gone pretty well, you think. About the same as every other year     you’ve gone. The only thing that was different was running into         Holly. Which was nice, but for whatever reason you just didn&#39;t feel 	that strong of a connection with her.
-
-&lt;&lt;continuelink &quot;Other than that the day has been pretty unremarkable.&quot;&gt;&gt;Other than that the day has been pretty unremarkable.  Just another average day. You walk a bit more and eventually arrive back at the place you started. With nothing left 
-to do [[decide to head home and start walking towards the bus stop|Festival Ending Self]]
-
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="Festival Ending Self" tags="" position="568,2499" size="100,100">After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show. 
 
 As you walk to the entrance you reflect some more on how the day went.
@@ -1215,7 +1215,7 @@ You head with Holly out to the [[parking lot|Festival Ending Holly]]
 &quot;The day&#39;s winding down, we should probably check out the rest of the festival before it gets too late.&quot;
 
 You and Holly head towards the [[little bit of the festival you haven&#39;t checked out yet.|Festival East Path]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Your Bedroom Post Festival" tags="" position="424,2639" size="100,100">You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind recounts yesterdays time at Lake Fest.
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Your Bedroom Post Festival" tags="" position="404,2634" size="100,100">You wake up the next morning at your usual time of 11 AM. As you lay in your bed your mind goes over the list of things you need to do.
 
 You feel like now would be a good time to start working on your road trip plans. You’ve already got a couple of ideas on what to do. 
 
@@ -1224,7 +1224,7 @@ You could ask your roommates and see what they have to say about it. You could a
 &lt;&lt;if $holly_romance_festival is true&gt;&gt;
 You might also hit up Holly and see what she wants to do about your next date.
 &lt;&lt;endif&gt;&gt;
-It&#39;s quite a nice day as well, you might even go on a walk today as well.
+It seems like a pretty sunny day, maybe you&#39;ll go for a walk later today as well, get some fresh air, soak in the sun.
 
 But first you should probably [[get out of bed|Player Bedroom]]
 </tw-passagedata><tw-passagedata pid="39" name="Player Bedroom" tags="" position="401,2800" size="100,100">&lt;&lt;if $post_fest_day_completed is not true and $walk_completed is not true&gt;&gt;
@@ -1284,9 +1284,9 @@ After giving it a lot of thought, you decide to send a text along the lines of t
 You can&#39;t think of anything to do with your phone right now
 &lt;&lt;return&gt;&gt;
 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Jacob Living Room Dialogue" tags="" position="953,557" size="100,100">&quot;Hey, how was Lake Fest yesterday? I was gonna go yesterday but just didn’t get around to it.”
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Jacob Living Room Dialogue" tags="" position="953,557" size="100,100">&quot;Hey, how was Lake Fest yesterday? I was gonna go but just didn’t get around to it.”
 
-&lt;&lt;continuelink &quot;You tell Jacob all about your day at Lake Fest.&quot;&gt;&gt; You tell Jacob all about your day at Lake Fest. Detailing how you met up with Holly and watched that concert with her.
+&lt;&lt;continuelink &quot;You tell Jacob all about your day at Lake Fest.&quot;&gt;&gt; You tell Jacob all about your day at Lake Fest. Detailing how you met up with Holly and &#39;watched&#39; that concert with her.
 
 &lt;&lt;if $holly_romance_festival is true&gt;&gt;
     You tell Jacob you think your whole ordeal with her went pretty, especially considering you got her number at the end of the day.
@@ -1295,7 +1295,7 @@ You can&#39;t think of anything to do with your phone right now
 
 &lt;&lt;elseif $holly_romance_festival is false&gt;&gt;
 
-    You tell Jacob you enjoyed hanging out with her but didn’t take any further than that. It was nice hanging out with an old friend but there was a reason you two drifted apart.
+    You tell Jacob you enjoyed hanging out with her but didn’t take any further than that. It was nice hanging out with an old friend but there was a reason the two of you drifted apart.
 
     &quot;Yeah, I find that’s often the case myself. If you’re really friends with someone, you’ll find some way to keep in touch with them. The fake ones will just disappear if you aren’t actively seeking them out.&quot;
 
@@ -1340,7 +1340,7 @@ Since it&#39;ll be awhile until he gets the list, [[you decide to get up and go 
 &lt;&lt;elseif $chris_pawbook_in_progress is true and $chris_pawbook_completed is not true&gt;&gt;
 You hop back on Pawbook and check your messages. It seems he&#39;s finally got his list together.
 
-He sent you an entire work document listing places for you to check out. It seems he has at least one thing to check out in each state you might go through. You&#39;ll have to go through them all later when you put your final plans together.
+He sent you an entire word document full of places for you to check out. It seems he has at least one thing to check out in each state you might go through. You&#39;ll have to go through them all later when you put your final plans together.
 
 You sent him a message thanking him again, he replies shortly after and states that he&#39;s more than happy to help out a fellow traveler.
 
@@ -3021,7 +3021,7 @@ You walk over to Holly and give her a hug before leaving, like you usally do. As
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 [[You follow suit and head back to your car as well|Holly Date Transition]]
 
-</tw-passagedata><tw-passagedata pid="171" name="StoryMenu" tags="" position="522,22.33333333333333" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="172" name="Cafe Line" tags="" position="1302,989" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
+</tw-passagedata><tw-passagedata pid="171" name="StoryMenu" tags="" position="522,22" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="172" name="Cafe Line" tags="" position="1302,989" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
 
 You order your usual combo; a tuna wrap with a bag of chips and a drink. Not a bad deal for $4!
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
