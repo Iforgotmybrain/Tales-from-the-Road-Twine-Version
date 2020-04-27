@@ -2279,36 +2279,40 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
 &quot;See ya round, $name. I&#39;m sure I&#39;ll see you around the neighborhood. Plus we&#39;ve still gotta talk about our next date.&quot;
 
 You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="129" name="Valery Park Transition 2" tags="" position="331,7607" size="100,100">/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
-&lt;&lt;if $holly_text_date_setup is true and $valery_ending === &quot;ending two normal&quot; or $valery_ending === &quot;ending one normal&quot; or $valery_ending === &quot;ending three normal&quot;&gt;&gt;
-While driving home you think about your time spent with Valery.
+&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
+	&lt;&lt;switch $valery_ending&gt;&gt;
 
-You had a great time with Valery today, although you have to wonder if you really made the right decision. You really like Valery, but getting into a serious relationship with him might not be the best move. After all, you&#39;ve got a date coming up with Holly, and you don&#39;t think she&#39;s going to the kind of person to welcome an open relationship... Guess you’ll have to mediate on this a bit, but for now you’ve gotta get ready for your //other// [[date tomorrow.|Holly-Valery Transition]]
+	&lt;&lt;case &quot;ending three normal&quot; &quot;ending two normal&quot; &quot;ending one normal&quot;&gt;&gt;
+		While driving home you think about your time spent with Valery.
 
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending two kiss&quot; or $valery_ending === &quot;ending one kiss&quot;&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
+		You had a great time with Valery today, although you have to wonder if you really made the right decision. You really like Valery, but getting into a serious relationship with him might not be the best move. After all, you&#39;ve got a date coming up with Holly, and you don&#39;t think she&#39;s going to the kind of person to welcome an open relationship... Guess you’ll have to mediate on this a bit, but for now you’ve gotta get ready for your //other// [[date tomorrow.|Holly-Valery Transition]]
 
-You certainly had your expectations for today blown away. You never would’ve expected today ending the way it did. That said, you have to wonder if you really made the right choice today. You’ve really fallen for Valery, but you do have prior commitments to Holly. And you were planning on going on your first date with her tomorrow. You doubt either Valery or Holly would appreciate knowing that you went on or set up a date with someone else, rightfully so. And they definitely don’t seem the type to want an open relationship. Well, there’s not much you can do about it right now. You’ll just have to [[get ready for Holly’s date tomorrow|Holly-Valery Transition]] and hope you figure it out.
+	&lt;&lt;case &quot;ending one kiss&quot; &quot;ending two kiss&quot;&gt;&gt;
+		While driving home you reflect a bit on your time spent with Valery.
 
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending four friends&quot;&gt;&gt;
-While driving home you reflect a bit on today&#39;s events.
+		You certainly had your expectations for today blown away. You never would’ve expected today ending the way it did. That said, you have to wonder if you really made the right choice today. You’ve really fallen for Valery, but you do have prior commitments to Holly. And you were planning on going on your first date with her tomorrow. You doubt either Valery or Holly would appreciate knowing that you went on or set up a date with someone else, rightfully so. And they definitely don’t seem the type to want an open relationship. Well, there’s not much you can do about it right now. You’ll just have to [[get ready for Holly’s date tomorrow|Holly-Valery Transition]] and hope you figure it out.
 
-Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. Thinking about it some more this was probably for the best, given that you have a date coming up with Holly tomorrow. Getting serious with Valery would make things very complicated. [[So now you can focus on getting ready for Holly tomorrow.|Holly-Valery Transition]]
+	&lt;&lt;case &quot;ending four friends&quot;&gt;&gt;
+		While driving home you reflect a bit on today&#39;s events.
 
-&lt;&lt;elseif $holly_text_date_setup is true and $valery_ending === &quot;ending four denied&quot;&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
+		Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. Thinking about it some more this was probably for the best, given that you have a date coming up with Holly tomorrow. Getting serious with Valery would make things very complicated. [[So now you can focus on getting ready for Holly tomorrow.|Holly-Valery Transition]]
 
-You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward, so you decided to just stop hanging out with him. [[At least now you can focus your full attention on getting ready for that date with Holly tomorrow.|Holly-Valery Transition]]
+	&lt;&lt;case &quot;ending four denied&quot;&gt;&gt;
+		While driving home you reflect a bit on your time spent with Valery.
+
+		You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward, so you decided to just stop hanging out with him. [[At least now you can focus your full attention on getting ready for that date with Holly tomorrow.|Holly-Valery Transition]]
+	&lt;&lt;/switch&gt;&gt;
 
 &lt;&lt;elseif $holly_text_date_setup is true and $valery_disaster_ending is true&gt;&gt;
-While driving home you reflect a bit on your time spent with Valery.
+	While driving home you reflect a bit on your time spent with Valery.
 
-You probably could&#39;ve handled Valery&#39;s date just a little bit better, considering you made him storm off. But, no time to dwell on that. You&#39;ve gotta focus on your next date with Holly, which is [[coming up tomorrow|Holly-Valery Transition]]
+	You probably could&#39;ve handled Valery&#39;s date just a little bit better, considering you made him storm off. But, no time to dwell on that. You&#39;ve gotta focus on your next date with Holly, which is [[coming up tomorrow|Holly-Valery Transition]]
 &lt;&lt;else&gt;&gt;
-Hi! You&#39;ve reached the current end of Tales from the Road. If you had setup a date with Holly, this where you would&#39;ve played through that. Once I completely finish Chapter 3 this will have you finalize the plans for the road trip instead of going to this game over screen.
+	Hi! You&#39;ve reached the current end of Tales from the Road. If you had setup a date with Holly, this where you would&#39;ve played through that. Once I completely finish Chapter 3 this will have you finalize the plans for the road trip instead of going to this game over screen.
 
-I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
+	I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
 
-Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either would be a big help!
+	Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either would be a big help!
 
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="MPV Four Ending 1.1" tags="" position="791,6764" size="100,100">&quot;I&#39;m glad you took that as well as you did. I know there&#39;s some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I&#39;m happy you&#39;re not one of them.&quot;
 
@@ -2398,7 +2402,7 @@ You end the chat with the only other sane person you’ve encountered. They were
 Having now realized the decrepit state of Omegle you decide to just stop, and vow to never go on that site ever again.
 &lt;&lt;set $chat_room to true&gt;&gt;
 [[Log off|Player Bedroom]]
-</tw-passagedata><tw-passagedata pid="135" name="Holly Date Civ" tags="" position="1580.3333333333333,2963.3333333333335" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="135" name="Holly Date Civ" tags="" position="1580,2963" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
 After spending 20 minutes thinking about which nation to play as, you eventually decide on Egypt. The classic wonder hoarders. Not really a viable strategy on the higher difficulties, but you’ll be playing on King so you’re not too worried about their unique ability going to waste.
 
 &lt;&lt;continuelink &quot;You start up the game and get to playing.&quot;&gt;&gt;You start up the game and get to playing. The early game is fairly boring. You got a decent start and were lucky enough to spawn far away from any warmongers. The main issue you faced was dealing with the AI stealing your city spots. Suppose you’ll have to get payback a little later, once you’ve fortified your military some more.
@@ -2421,7 +2425,7 @@ You spend about 40 minutes getting ready. It’s now around 10:40 AM and your da
 You loaf around for a bit but eventually decide on the perfect thing to do while you wait…
 
 Play some Civilization! That game is the closest thing you have to time travel, after all. Now the only other thing you have to decide on is what nation you want to play as, [[that might take a while…|Holly Date Civ]]
-</tw-passagedata><tw-passagedata pid="137" name="Holly Date Arrival" tags="" position="1587,3133.3333333333335" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="137" name="Holly Date Arrival" tags="" position="1587,3133" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
 After a short drive, you arrive at… //Kit’s Tavern.//
 
 Ahh, Kit’s Tavern. It’s been a minute since you were last here. Great place, though. With arguably the best burgers in town.
@@ -2487,13 +2491,13 @@ After those few minutes pass you see Holly pull into the restaurant parking lot 
 
 You decide to…
 
-[[Ask Holly about her time in College|Holly College Question Start]]
+[[Ask what her time in college was like|Holly College Question Start]]
 [[Ask Holly a bit more about her hobbies|Holly Hobbies Question Start]]
 [[Talk a bit about the road trip|Holly RT Question Start]]
 [[Ask about her current living situation|Holly Living Question Start]]
 [[Ask her what ended up happening betwen her and Jessica|Holly Jessica Question Start]]
 &lt;&lt;if $holly_college_question_asked is true and $holly_hobby_question_asked is true&gt;&gt;
-[[&#39;I think I&#39;ve talked about everything I wanted. Let&#39;s move on&#39;|Holly Questions Transition]]
+[[&#39;I think I&#39;ve talked about everything I wanted to.&#39;|Holly Questions Transition]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="Holly College Question Start" tags="" position="1248,3360" size="100,100">&lt;&lt;if $holly_college_question_asked isnot true&gt;&gt;
 You ask Holly to provide some more details about her time in college, curious as to how it all went down.
 
@@ -2503,26 +2507,28 @@ You ask Holly to provide some more details about her time in college, curious as
 
 &lt;&lt;continuelink &#39;&quot;I loved the social experience of college&quot;&#39;&gt;&gt;&quot;I loved the social experience of college, but those marketing classes killed any intention of me actually graduating. I knew right there and then I was not doing 2 years of this bullshit. Nothing could change my mind about that.&quot;
 
-[[‘The social experience huh? You still talk to some people from college?’| Holly College Question Friends]]
+[[‘The social experience huh? You still talk to some people from college?’|Holly College Question Friends]]
 [[‘What made you even want to get into marketing?’|Holly College Question Major]]
 [[‘About what I expected to hear, let me ask you something else.”|Holly Questions Hub]]
 &lt;&lt;else&gt;&gt;
-[[‘The social experience huh? You still talk to some people from college?’| Holly College Question Friends]]
+You ask Holly another question about her time in college...
+
+[[‘The social experience huh? You still talk to some people from college?’|Holly College Question Friends]]
 [[‘What made you even want to get into marketing?’|Holly College Question Major]]
 [[‘About what I expected to hear, let me ask you about something else.”|Holly Questions Hub]]
 &lt;&lt;endif&gt;&gt;
-</tw-passagedata><tw-passagedata pid="141" name=" Holly College Question Friends" tags="" position="1098,3341" size="100,100">//&#39;The social experience huh? You still talk to some people from college?&#39;//
+</tw-passagedata><tw-passagedata pid="141" name="Holly College Question Friends" tags="" position="1098,3341" size="100,100">//&#39;The social experience huh? You still talk to some people from college?&#39;//
 
 “Only a few, mainly my roommate I had first year and a couple of people I shared classes with. They all live in and around the area so we’ll go out sometimes, reminisce about the college days. They’ll talk about their junior and senior years and I’ll just sit there like ‘Oh yeah I can totally relate, definitely didn’t drop out my 2nd year’.”
 
-“They’re good people though, better than most of my high school friends I guess since I still talk to them. Can’t say the same for anybody that isn’t you.”
+“They’re good people though, better than most of my high school friends considering I still talk to them. Can’t say the same for any high school friend that isn’t you.”
 &lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
 [[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="142" name="Holly College Question Major" tags="" position="1101,3460" size="100,100">//‘What made you even want to get into marketing?’//
 
 “There wasn’t really anything that made me want to major in marketing. Just thought it would be an easy major, decent outcomes once I’m out of college. Seemed like the right choice even though I wasn’t interested in it. I would’ve preferred to major in something like theatre or art, but I knew that would’ve been a bad choice considering I was paying my way through.”
 
-“I guess in the end, it doesn&#39;t even matter since I dropped out. Then again if I had majored in something I enjoyed I might’ve actually graduated, but that would’ve meant more debt… Eh, I think everything’s worked out alright so far, probably would’ve ended where I am today anyway, just with more debt.”
+“I guess in the end, it doesn&#39;t even matter since I dropped out. Then again if I had majored in something I enjoyed I might’ve actually graduated, but that would’ve meant more debt… Eh, I think everything’s worked out alright so far, probably would’ve ended up where I am today anyway, just with more debt.”
 
 &lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
@@ -2531,30 +2537,32 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 
 “My hobbies? Ah I don’t do anything too interesting, music, movies, stuff like that. Think we talked about that at the festival.”
 
-“I also like fishing, don’t do it too often though because it’s hard to find other people that wanna go fishing with me. Usually go with my Dad, he got me into fishing when I was little, used to take me out on a small boat to go fishing on the lake during the summer.”
+&lt;&lt;continuelink &#39;&quot;I also like fishing, don\’t do it too often though&quot;&#39;&gt;&gt; &quot;I also like fishing, don’t do it too often though because it’s hard to find other people that wanna go fishing with me. Usually go fishing with my Dad, he got me into it when I was little. Used to take me out on a small boat to go fishing on the lake during the summer.”
 
 “And of course, you’ve got my art. Don’t draw for fun quite as much as I used to, but I still find time here and there.”
 
-[[&#39;What kind of music do you like?&#39;|Holly Hobbies Question Music]]
-[[&#39;Does your Dad still take you fishing&#39;|Holly Hobbies Question Fishing]]
-[[&#39;How come you don&#39;t draw for fun anymore?|Holly Hobbies Question Art]]
-[[&#39;Cool, let&#39;s talk about something else|Holly Questions Hub]]
+[[&quot;&#39;What kind of music do you like?&#39;&quot;|Holly Hobbies Question Music]]
+[[&quot;&#39;Does your Dad still take you fishing?&#39;&quot;|Holly Hobbies Question Fishing]]
+[[&#39;How come you don&#39;t draw for fun anymore?&#39;|Holly Hobbies Question Art]]
+[[&#39;Cool, let&#39;s talk about something else&#39;|Holly Questions Hub]]
 
 &lt;&lt;else&gt;&gt;
-[[&#39;What kind of music do you like?&#39;|Holly Hobbies Question Music]]
-[[&#39;Does your Dad still take you fishing&#39;|Holly Hobbies Question Fishing]]
-[[&#39;How come you don&#39;t draw for fun anymore?|Holly Hobbies Question Art]]
-[[&#39;Let&#39;s talk about another topic|Holly Questions Hub]]
+You ask Holly some more questions about her hobbies:
+
+[[&quot;&#39;What kind of music do you like?&#39;&quot;|Holly Hobbies Question Music]]
+[[&quot;&#39;Does your Dad still take you fishing?&#39;&quot;|Holly Hobbies Question Fishing]]
+[[&#39;How come you don&#39;t draw for fun anymore?&#39;|Holly Hobbies Question Art]]
+[[&#39;Let&#39;s talk about another topic&#39;|Holly Questions Hub]]
 
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="Holly Hobbies Question Music" tags="" position="1980,3393" size="100,100">//&#39;What kind of music do you like?&#39;//
 &lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
-“Rock and metal mostly. I like a few modern rock acts, but most of what I listen to his from the 80s and 90s. Not quite Dad rock but getting there. Most of the metal I listen to falls broadly under prog or thrash, of course what genre a metal band is considered varies a bit from person to person.”
+“Rock and metal mostly. I like a few modern rock acts, but most of what I listen to his from the 80s and 90s. Guess you couldn&#39;t quite call it Dad rock but it&#39;s pretty close. Most of the metal I listen to falls broadly under prog or thrash, of course what genre a metal band is considered varies a bit from person to person.”
 
 [[Ask another question about her hobbies|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="145" name="Holly Hobbies Question Fishing" tags="" position="1981,3264" size="100,100">&lt;&lt;set $holly_hobby_question_asked to true&gt;&gt;
-&lt;&lt;set $holly_date_points += 2
+&lt;&lt;set $holly_date_points += 2&gt;&gt;
 //&#39;Does your Dad still take you fishing?&#39;//
 
-“Not so much anymore, he sold his boat years ago to help pay the bills. So if we do go fishing it’s usually either from a dock or in someone else’s boat. Plus, it’s hard to find a time that works for everybody, and I’m honestly not that keen on going back home. I like living on my own, ya know?”
+“Not so much anymore, he sold his boat years ago to help pay the bills. So if we do go fishing it’s usually either from a dock or in someone else’s boat. Plus, it’s hard to find a time that works for both of us, and I’m honestly not that keen on going back home. I like living on my own, ya know?”
 
 “The last time me and him went fishing was about a year and a half ago, went fishing on a boat one of his buddy’s owned. It was a fun time, especially since the guy had this really nice boat, way bigger than what my Dad used to own. Guy is loaded.”
 
@@ -2564,19 +2572,19 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 “Eh, ya know, when you start doing something as a job it kind of loses some of its magic. Or you get tired of it, burnt out. I haven’t burnt out yet, but I just don’t have the motivation to do art ‘just for fun’ when I know I’m going to be spending days where I’m doing nothing but drawing. It’s like being a taxi driver, you spend all day driving people around, you probably aren’t going to get off work and go for a drive, you just spent all day doing that.”
 
 &lt;&lt;continuelink &#39;&quot;I do worry about eventually getting burnt out though&quot;&#39;&gt;&gt;
-“I do worry about eventually getting burnt out though, I don’t really have a backup plan so I’d be screwed if I just lost all motivation to draw. It’s why I try not to overload myself, try to even out my interests, try to spread out my sessions. Sometimes I’ll even take a break for a week or two if I can afford it, helps keep me from losing interest.”
+“I do worry about eventually getting burnt out though, I don’t really have a backup plan so I’d be screwed if I just lost all motivation to draw. It’s why I try not to overload myself. Sometimes I’ll even take a break for a week or two if I can afford it.”
 
 &lt;&lt;choice [[‘No backup plans? You mean there isn’t anything else you want to do?’|Holly Hobbies Question Art Plans]]&gt;&gt;
 
 &lt;&lt;choice [[‘I ended up quitting my job in part because of burn out, so I definitely hear you.’|Holly Hobbies Question Art Spherion]]&gt;&gt;
 
-&lt;&lt;choice [[&quot;Makes sense, let&#39;s talk about something else|Holly Hobbies Question Start]]&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="Holly Hobbies Question Art Plans" tags="" position="2145,3509" size="100,100">&lt;&lt;set $holly_date_points += 4&gt;&gt;
+&lt;&lt;choice [[&#39;Makes sense, let&#39;s talk about something else&#39;|Holly Hobbies Question Start]]&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="Holly Hobbies Question Art Plans" tags="" position="2145,3509" size="100,100">&lt;&lt;set $holly_date_points += 4&gt;&gt;
 //‘No backup plans? You mean there isn’t anything else you want to do?&#39;//
 
 “Not anything I could reasonably obtain. I’d love to be a theatre actor but that’s not going to happen at this point. Thought about animation but no, that’s not happening. Marketing didn’t really work out in college so that’s definitely out of the question. Thought about maybe becoming a nurse in high school, would be a nice job, could be out there helping people, making a difference. Kind of lost interest though, plus it would’ve been even more debt than a regular 4-year degree.&quot;
 
-[[&#39;You losing interest seems to be a pretty regular thing.&#39;|Holly Hobbies Question Art Plans 2]]
-[[&#39;Fair enough, let’s talk about something else.&#39;|Holly Hobbies Question Start]]
+[[&quot;&#39;You losing interest seems to be a pretty regular thing.&#39;&quot;|Holly Hobbies Question Art Plans 2]]
+[[&quot;&#39;Fair enough, let’s talk about something else.&#39;&quot;|Holly Hobbies Question Start]]
 </tw-passagedata><tw-passagedata pid="148" name="Holly Hobbies Question Art Spherion" tags="" position="2101,3651" size="100,100">&lt;&lt;set $holly_date_points += 2&gt;&gt;
 //‘I ended up quitting my job in part because of burn out, so I definitely hear you.’//
 
@@ -2589,9 +2597,10 @@ You ask Holly about her hobbies; she’s talked about them before but not in muc
 &lt;&lt;set $holly_question_art_plans_2 to true&gt;&gt;
 //&#39;You losing interest seems to be a pretty regular thing.&#39;//
 &lt;&lt;/nobr&gt;&gt;
+
 “Agh, that is a common theme isn’t it? Me losing interest in things. Lost interest in marketing and college, lost interest in becoming a nurse, could end up losing interest in doing art… Guess I’m just too indecisive, just don’t know what I want to do.”
 
-“It worries me a little bit, like I said. But there’s really nothing I can really do about it, I’ll keep riding this art wave until it either dies out or I burn out, and then take it from there.”
+“It worries me a little bit, like I said. But there’s nothing I can really do about it, I’ll keep riding this art wave until it either dies out or I burn out, and then take it from there.”
 
 [[Ask her another question|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="150" name="Holly RT Question Start" tags="" position="1307,3498" size="100,100">&lt;&lt;if $holly_question_rt isnot true&gt;&gt;
 You decide to talk about your planned excursion across the country a bit.
@@ -2600,7 +2609,7 @@ You decide to talk about your planned excursion across the country a bit.
 
 &lt;&lt;continuelink &quot;You tell Holly that, yes, you are still quite serious about your excursion.&quot;&gt;&gt;You tell Holly that, yes, you are still quite serious about your excursion. So serious, in fact, that you’ve already made financial arrangements.
 
-“Damn, you’re committed than. Honestly didn’t except you to take that guy on the bus so seriously, figured you were just messing around. Guess I should’ve known better with you.” Her interest piqued, having seen how serious you are about this whole ordeal.
+“Damn, you’re committed then. Honestly didn’t except you to take that guy on the bus so seriously, figured you were just messing around. Guess I should’ve known better with you.” Her interest piqued, having seen how serious you are about this whole ordeal.
 
 The next words out of her mouth are...
 
@@ -2612,7 +2621,9 @@ The next words out of Holly&#39;s mouth are...
 [[“So, who’re you taking?”|Holly RT Question Who]]
 [[“When are you heading out?”|Holly RT Question When]]
 [[“Where do you plan on stopping along the way?”|Holly RT Question Where]]
-[[&quot;Let&#39;s talk about something else&quot;|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="151" name="Holly RT Question Who" tags="" position="1102,3636" size="100,100">&lt;&lt;nobr&gt;&gt;
+[[&#39;&quot;Let\&#39;s talk about something else&quot;&#39;|Holly Questions Hub]]
+
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="Holly RT Question Who" tags="" position="1102,3636" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
 &lt;&lt;set $holly_question_rt to true&gt;&gt;
 //&quot;So, who&#39;re you taking?&quot;//
@@ -2620,34 +2631,34 @@ The next words out of Holly&#39;s mouth are...
 You tell Holly that you’re not quite sure who’s coming along yet, but you’re fairly confident you’ll be taking 2 or 3 passengers with you.
 
 You specify that both of your roommates have voiced their desires to tag along with you, so you’ll likely be taking both of them.
-&lt;&lt;if $valery_end === &quot;ending four friends&quot;&gt;&gt;
-And while you don’t tell Holly this, there’s also another friend you’ve thought of bringing along but given recent events you’re not sure if it would be a good idea.
+&lt;&lt;switch $valery_ending&gt;&gt;
+&lt;&lt;case &quot;ending four friends&quot;&gt;&gt;
+	And while you won&#39;t tell Holly this, there’s also another friend you’ve thought of bringing along. But given recent events you’re not sure if it would be a good idea.
 
-“Guess you’d have room for at least one more, than. You know, //I’m available,// not like I have to get off work…”
+	“Guess you’d have room for at least one more, than. You know, //I’m available,// not like I have to get off work…”
 
-[[She askes you another question|Holly RT Question Start]]
+	[[Holly gets ready to ask you another question...|Holly RT Question Start]]
 
-&lt;&lt;elseif $valery_end === &quot;&quot;ending two normal&quot; or &quot;ending one normal&quot; or &quot;ending three normal&quot; or &quot;ending two kiss&quot; or &quot;ending one kiss&quot;&gt;&gt;
+&lt;&lt;case &quot;ending one normal&quot; &quot;ending two normal&quot; &quot;ending three normal&quot; &quot;ending one kiss&quot; &quot;ending two kiss&quot;&gt;&gt;
+	Unbeknownst to Holly, you’ll probably end up deciding rather to take her or Valery along. Of course, that’s if you don’t let her know about your fling with Valery. Once you tell her that she might walk out.
 
-Unbeknownst to Holly, you’ll probably end up deciding rather to take her or Valery along. Of course, that’s if you don’t let her know about your fling with Valery. Once you tell her that she might walk out.
+	“That last slot better go to me, $name. I need a break and getting to spend a few weeks away with you would be a dream come true.”
 
-“That last slot better go to me, $name. I need a break and getting to spend a few weeks away with you would be a dream come true.”
+	[[Holly gets ready to ask you another question...|Holly RT Question Start]]
 
-[[She askes you another question|Holly RT Question Start]]
+&lt;&lt;default&gt;&gt;
+	You tell Holly you’ll also give heavy consideration to bringing her along, so along as she wants to.
 
-&lt;&lt;else&gt;&gt;
-You tell Holly you’ll also give heavy consideration to bringing her along, so along as she wants to.
+	“You better, $name. No reason for me not to go, I get a break from drawing and get to spend time with you, I see no downside.”
 
-“You better, $name. No reason for me not to go, I get a break from drawing and get to spend time with you, I see no downside.”
-
-[[She askes you another question|Holly RT Question Start]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="Holly RT Question When" tags="" position="1267,3636" size="100,100">&lt;&lt;nobr&gt;&gt;
+	[[Holly gets ready to ask you another question...|Holly RT Question Start]]
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="Holly RT Question When" tags="" position="1267,3636" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_question_rt to true&gt;&gt;
-/“When are you heading out?”//
+//“When are you heading out?”//
 &lt;&lt;/nobr&gt;&gt;
 You tell Holly probably sometime in the next 2 – 3 weeks. Depending on how much you get done and how much notice some of your passengers might need.
 
-“Making pretty good time, less than 2 months from coming up with the plan and you’re about ready to head off.”
+“Making pretty good time, less then 2 months from coming up with the plan and you’re about ready to head off.”
 
 [[Holly gets ready to ask you another question|Holly RT Question Start]]</tw-passagedata><tw-passagedata pid="153" name="Holly RT Question Where" tags="" position="1392,3643" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
@@ -3000,7 +3011,7 @@ You sit down at a table after grabbing your food, nothing much happens while eat
 &lt;&lt;set $cafe_no_holly to true&gt;&gt;
 &lt;&lt;set $cafe_completed to true&gt;&gt;
 &lt;&lt;set $ending_points -= 4&gt;&gt;
-You finish up your meal and throw your trash away before hopping on the bus to go [[back home for the day.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="173" name="Holly Date Seating" tags="" position="1590.3333333333333,3270" size="100,100">//You follow Holly inside the restaurant, luckily there’s no line so you get seated right away.//
+You finish up your meal and throw your trash away before hopping on the bus to go [[back home for the day.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="173" name="Holly Date Seating" tags="" position="1590,3270" size="100,100">//You follow Holly inside the restaurant, luckily there’s no line so you get seated right away.//
 
 You get seated at a typical booth made for two. Nothing too fancy or out of the ordinary.
 
