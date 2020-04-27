@@ -3,4 +3,4 @@ Twine Version of my game Tales from the Road, which was previously programmed in
 
 You won't find much here except the source code and my amazing commit messages.
 
-Code is licensed under GNU General Public License v3.0. All assests are All Rights Reserved.
+Code is licensed under GNU General Public License v3.0. All art assests are All Rights Reserved.
