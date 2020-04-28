@@ -2889,16 +2889,18 @@ You and Holly get up from the table and head outside, getting ready to say your 
 &quot;I get it, 100%. It&#39;s been half a decade since we last talked, we&#39;ve changed a lot since then. We&#39;re in completely different stages of our life now, honestly might as well be two completely different people.&quot;
 “Well, I suppose I’ll take my leave now. Bills already been taken care of, so… See ya. Best of luck on your road trip and on your freelance work.”
 You thank Holly for the words of encouragement and wave goodbye before [[getting up and heading back to your car.|Holly Date Transition]]
-</tw-passagedata><tw-passagedata pid="163" name="Holly Date Transition" tags="" position="1696,4430" size="100,100">&lt;&lt;if $holly_date_ending = &quot;bad ending friends&quot;&gt;&gt;
-Somebody
-&lt;&lt;elseif $holly_date_ending = &quot;bad ending cutoff&quot;&gt;&gt;
-Once
-&lt;&lt;elseif $holly_date_ending = &quot;cheat ending&quot;&gt;&gt;
-Told
-&lt;&lt;elseif $holly_date_ending = &quot;normal ending&quot; or $holly_date_ending = &quot;good ending normal&quot;&gt;&gt;
-Me
-&lt;&lt;elseif $holly_date_ending = &quot;good ending true&quot;&gt;&gt;
-THE WORLD was gonna roll me
+</tw-passagedata><tw-passagedata pid="163" name="Holly Date Transition" tags="" position="1696,4430" size="100,100">&lt;&lt;switch $holly_date_ending&gt;&gt;
+&lt;&lt;case &quot;bad ending friends&quot;&gt;&gt;
+
+&lt;&lt;case &quot;bad ending cutoff&gt;&gt;
+
+&lt;&lt;case &quot;cheat ending&quot;&gt;&gt;
+
+&lt;&lt;case &quot;normal ending&quot; &quot;good ending normal&quot;&gt;&gt;
+
+&lt;&lt;case &quot;good ending true&quot;&gt;&gt;
+
+&lt;&lt;/switch&gt;&gt;
 
 Placeholder placeholder look for this shit you idiot, proofing copy, do it, do it now.</tw-passagedata><tw-passagedata pid="164" name="Holly Normal Ending" tags="" position="1658,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
 
