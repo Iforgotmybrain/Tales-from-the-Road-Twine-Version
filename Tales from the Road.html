@@ -2295,27 +2295,51 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
         You certainly had your expectations for today blown away. You never would’ve expected today ending the way it did. That said, you have to wonder if you really made the right choice today. You’ve really fallen for Valery, but you do have prior commitments to Holly. And you were planning on going on your first date with her tomorrow. You doubt either Valery or Holly would appreciate knowing that you went on or set up a date with someone else, rightfully so. And they definitely don’t seem the type to want an open relationship. Well, there’s not much you can do about it right now. You’ll just have to [[get ready for Holly’s date tomorrow|Holly-Valery Transition]] and hope you figure it out.
 
     &lt;&lt;case &quot;ending four friends&quot;&gt;&gt;
+		&lt;&lt;set $valery_dating to false&gt;&gt;
         While driving home you reflect a bit on today&#39;s events.
 
         Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. Thinking about it some more this was probably for the best, given that you have a date coming up with Holly tomorrow. Getting serious with Valery would make things very complicated. [[So now you can focus on getting ready for Holly tomorrow.|Holly-Valery Transition]]
 
     &lt;&lt;case &quot;ending four denied&quot;&gt;&gt;
+		&lt;&lt;set $valery_dating to false&gt;&gt;
         While driving home you reflect a bit on your time spent with Valery.
 
         You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward, so you decided to just stop hanging out with him. [[At least now you can focus your full attention on getting ready for that date with Holly tomorrow.|Holly-Valery Transition]]
     &lt;&lt;/switch&gt;&gt;
 
 &lt;&lt;elseif $holly_text_date_setup is true and $valery_disaster_ending is true&gt;&gt;
+	&lt;&lt;set $valery_dating to false&gt;&gt;
     While driving home you reflect a bit on your time spent with Valery.
 
     You probably could&#39;ve handled Valery&#39;s date just a little bit better, considering you made him storm off. But, no time to dwell on that. You&#39;ve gotta focus on your next date with Holly, which is [[coming up tomorrow|Holly-Valery Transition]]
-&lt;&lt;else&gt;&gt;
-    Hi! You&#39;ve reached the current end of Tales from the Road. If you had setup a date with Holly, this where you would&#39;ve played through that. Once I completely finish Chapter 3 this will have you finalize the plans for the road trip instead of going to this game over screen.
 
-    I recommend hitting the back button in the top left corner and saving on the last page you were on. Once/if I release the next update you //should// be able to load that save and continue without any problems.
+&lt;&lt;elseif $holly_text_date_setip isnot true&gt;&gt;
+	 &lt;&lt;switch $valery_ending&gt;&gt;
 
-    Also, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either would be a big help!
+    &lt;&lt;case &quot;ending three normal&quot; &quot;ending two normal&quot; &quot;ending one normal&quot;&gt;&gt;
+        &lt;&lt;set $valery_dating to true&gt;&gt;
+        While driving home you reflect a bit on today&#39;s events.
 
+        
+
+    &lt;&lt;case &quot;ending one kiss&quot; &quot;ending two kiss&quot;&gt;&gt;
+        &lt;&lt;set $valery_dating to true&gt;&gt;
+        While driving home you reflect a bit on your time spent with Valery.
+
+        You certainly had your expectations for today blown away. You never would’ve expected today ending the way it did. 
+
+    &lt;&lt;case &quot;ending four friends&quot;&gt;&gt;
+		&lt;&lt;set $valery_dating to false&gt;&gt;
+        While driving home you reflect a bit on today&#39;s events.
+
+        Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. Thinking about it some more this was probably for the best, given that you have a date coming up with Holly tomorrow. Getting serious with Valery would make things very complicated. [[So now you can focus on getting ready for Holly tomorrow.|Holly-Valery Transition]]
+
+    &lt;&lt;case &quot;ending four denied&quot;&gt;&gt;
+		&lt;&lt;set $valery_dating to false&gt;&gt;
+        While driving home you reflect a bit on your time spent with Valery.
+
+        You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward, so you decided to just stop hanging out with him. [[At least now you can focus your full attention on getting ready for that date with Holly tomorrow.|Holly-Valery Transition]]
+    &lt;&lt;/switch&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="MPV Four Ending 1.1" tags="" position="791,6764" size="100,100">&quot;I&#39;m glad you took that as well as you did. I know there&#39;s some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I&#39;m happy you&#39;re not one of them.&quot;
 
 &quot;I wouldn&#39;t say this is a complete denial but... yeah, honestly I just don&#39;t see &quot;us&quot; working out. So I guess it kind of is.&quot;
@@ -3071,26 +3095,37 @@ You continue to look over the menu and decide to go with a classic cheeseburger.
 
 [[“Anyway, let’s try and move to a more upbeat topic. You got any questions for me?”|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="173" name="Chapter 3 Road Trip Planning Passengers" tags="" position="1301,4596" size="100,100">It’s 10 AM on a late Spring day. Overcast fills the skies as a light wind off the lake keeps things chilly. The trees are full of leaves and the grass is the greenest it will be all year. You’ve just gotten dressed for the day and plan on finishing the plans for your road trip. Time to sit down at your desk and get to work.
 
-Having previously figured out the financial side of things and gotten a handful of locations you want to check out along the way, your final steps now are to choose who’s coming along and where you’re stopping.
-First things first you have to decide what you’re doing when it comes to passengers. 
+Having previously figured out the financial side of things, your final steps now are to choose who’s coming along and where you’re stopping. In that order.
 
-&lt;&lt;continuelink &quot;Sasha and Jacob both expressed strong interest in tagging along,&quot;&gt;&gt;Sasha and Jacob both expressed strong interest in tagging along, and you are pretty inclined to bring them along all things considered. You feel they would make pretty good companions on the road, plus it would be nice to just hang out and talk with them. It has been a while since the three of you have been able to do that.
+&lt;&lt;continuelink &quot;At minimum you’ll be having Sasha and Jacob tag along. &quot;&gt;&gt; At minimum you’ll be having Sasha and Jacob tag along. They both seemed pretty interested in coming along, plus it’ll be nice to just hang out and talk with them. It’s been a minute since the three of you have had time to just hangout and chill.
 
-&lt;&lt;continuelink &#39;&quot;Fuck it&quot;&#39;&gt;&gt;&quot;Fuck it&quot; You exclaim, deciding to bring along both Sasha and Jacob. Now you just have to decide how you’re handling the final spot.
+&lt;&lt;continuelink &quot;Now you just have to figure out what you’re going to do with the final passenger spot.&quot;&gt;&gt;Now you just have to figure out what you’re going to do with the final passenger spot.
 
 &lt;&lt;if $holly_dating is true and $valery_dating is true&gt;&gt;
-You have a bit of a complicated situation given that you’re simultaneously dating Holly and Valery. Perhaps not the best idea, you think. You can’t keep this going on forever, and now another chance presents itself to break it off with one of them. You could bring either Holly or Valery along, and break up with whoever you decide against. Of course, you could also just ignore this whole situation and go with just Sasha and Jacob, who knows how that’ll play out though. It just doesn’t seem like a very smart idea to you.
+You have a bit of a complicated situation given that you’re simultaneously dating Holly and Valery. Perhaps not the best idea, you think. You can’t keep this going on forever, and now another chance presents itself to break it off with one of them. You could bring either Holly or Valery along, and break up with whoever you decide against. Of course, you could also just ignore this whole situation and go with just Sasha and Jacob, who knows how that’ll play out though.
+
+You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
+&lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
+&lt;&lt;choice [[Bringing Holly along|Chapter 3 Road Trip Planning Holly]]&gt;&gt;
+&lt;&lt;choice [[Bringing Valery along|Chapter 3 Road Trip Planning Valery]]&gt;&gt;
 
 &lt;&lt;elseif $holly_dating is true and $valery_dating isnot true&gt;&gt;
 You could bring along Holly, given what she said during the date you feel like she would really like to come along. But of course, you could always ditch her and go with just Sasha and Jacob. You doubt she’ll be very appreciative of you leaving her out, might even go as far as breaking up with you. But ultimately, it is your call.
+
+You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
+&lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
+&lt;&lt;choice [[Bringing Holly along|Chapter 3 Road Trip Planning Holly]]&gt;&gt;
 
 &lt;&lt;elseif $holly_dating isnot true and $valery_dating is true&gt;&gt;
 You could ask Valery to be your final passenger. He seemed somewhat interested in trekking across the country with you. You wouldn’t say he was enthusiastic about it, but if you asked him to tag along, he’d probably say yes. He probably wouldn’t get too upset about not being invited, but it’s kind of hard to say. You just started dating him, you don’t really know how he’d react.
 
 You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
-&lt;&lt;choice [[Bringing Holly along|Chapter 3 Road Trip Planning Holly]]&gt;&gt;
-&lt;&lt;choice [[Bringing Valery along|Chapter 3 Road Trip Planning Valery]]&gt;&gt;
 &lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
+&lt;&lt;choice [[Bringing Valery along|Chapter 3 Road Trip Planning Valery]]&gt;&gt;
+&lt;&lt;else&gt;&gt;
+You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
+&lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
+&lt;&lt;endif&gt;&gt;
 </tw-passagedata><tw-passagedata pid="174" name="Chapter 3 Road Trip Planning Holly" tags="" position="1176,4746" size="100,100">&lt;&lt;set $holly_road_trip to true&gt;&gt;
 You decide to bring along Holly. You see no reason why you shouldn’t, she was obviously interested in joining you yesterday, plus it’ll be a good test for your relationship.
 
@@ -3100,7 +3135,7 @@ You decide to bring Valery along for the road trip, if he accepts, of course. He
 Now, for the final step; ==freedom.== [[figuring out where you want to stop.|Chapter 3 Road Trip Stops]]</tw-passagedata><tw-passagedata pid="176" name="Chapter 3 Road Trip Planning Default" tags="" position="1492,4756" size="100,100">&lt;&lt;set $default_road_trip to true&gt;&gt;
 You decide to just have Sasha and Jacob tag along, no reason to bring anyone else along, you feel.
 
-Now, for the final step; ==freedom.== [[figuring out where you want to stop.|Chapter 3 Road Trip Stops]]</tw-passagedata><tw-passagedata pid="177" name="Chapter 3 Road Trip Stops" tags="" position="1326,4937.666666666667" size="100,100">Given that you’re only going to be gone for around a week you’ll have to limit the places you’re visiting, around 5 or 6 places should be a good amount.
+Now, for the final step; ==freedom.== [[figuring out where you want to stop.|Chapter 3 Road Trip Stops]]</tw-passagedata><tw-passagedata pid="177" name="Chapter 3 Road Trip Stops" tags="" position="1326,4937" size="100,100">Given that you’re only going to be gone for around a week you’ll have to limit the places you’re visiting, around 5 or 6 places should be a good amount.
 
 &lt;&lt;continuelink &quot;You bring up the list you’ve written from suggestions given by Chris, Jacob, and Sasha.&quot;&gt;&gt;You bring up the list you’ve written from suggestions given by Chris, Jacob, and Sasha.
 
@@ -3117,17 +3152,17 @@ Looking through the list you’ve complied you think your first stop will be Chi
 Ultimately, after a few minutes of thinking, you decide that your final stop on this road trip will be...
 &lt;&lt;choice [[The Japanese Gardens|Chapter 3 Road Trip Final Stop Gardens]]&gt;&gt;
 &lt;&lt;choice [[Multnomah Falls|Chapter 3 Road Trip Final Stop Falls]]&gt;&gt;
-</tw-passagedata><tw-passagedata pid="178" name="Chapter 3 Road Trip Final Stop Gardens" tags="" position="1261,5092.666666666667" size="100,100">&lt;&lt;set $final_stop to &quot;gardens&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="178" name="Chapter 3 Road Trip Final Stop Gardens" tags="" position="1261,5092" size="100,100">&lt;&lt;set $final_stop to &quot;gardens&quot;&gt;&gt;
 A great choice. Though you couldn’t really go wrong with either, you feel.
 
 Now with that out of the way, you just have to hit up your passengers and let them know of your plans. Jacob and Sasha might need some extra time to get off work so it could still be a few weeks before you officially kick off your road trip. Still, what an exciting time!
 
-[[But that&#39;s a story for another time. You&#39;ve reached the end of chapter 3|Chapter 3 Ending]]</tw-passagedata><tw-passagedata pid="179" name="Chapter 3 Road Trip Final Stop Falls" tags="" position="1401,5087.666666666667" size="100,100">&lt;&lt;set $final_stop to &quot;falls&quot;&gt;&gt;
+[[But that&#39;s a story for another time. You&#39;ve reached the end of chapter 3|Chapter 3 Ending]]</tw-passagedata><tw-passagedata pid="179" name="Chapter 3 Road Trip Final Stop Falls" tags="" position="1401,5087" size="100,100">&lt;&lt;set $final_stop to &quot;falls&quot;&gt;&gt;
 A great choice. Though you couldn’t really go wrong with either, you feel.
 
 Now with that out of the way, you just have to hit up your passengers and let them know of your plans. Jacob and Sasha might need some extra time to get off work so it could still be a few weeks before you officially kick off your road trip. Still, what an exciting time!
 
-[[But that&#39;s a story for another time. You&#39;ve reached the end of chapter 3|Chapter 3 Ending]]</tw-passagedata><tw-passagedata pid="180" name="Chapter 3 Ending" tags="" position="1324.3333333333333,5254.333333333334" size="100,100">Hi! You&#39;ve reached the current end of Tales from the Road and the end of chapter 3. Up next would be chapter 4, which will be the start of the road trip. The start of the road trip means new locations which means new characters and new experiences. I feel like the road trip is going to be pretty fun to write which hopefully translates to it being fun to read. We’ll see though since right now all I have is an outline. 
+[[But that&#39;s a story for another time. You&#39;ve reached the end of chapter 3|Chapter 3 Ending]]</tw-passagedata><tw-passagedata pid="180" name="Chapter 3 Ending" tags="" position="1324,5254" size="100,100">Hi! You&#39;ve reached the current end of Tales from the Road and the end of chapter 3. Up next would be chapter 4, which will be the start of the road trip. The start of the road trip means new locations which means new characters and new experiences. I feel like the road trip is going to be pretty fun to write which hopefully translates to it being fun to read. We’ll see though since right now all I have is an outline. 
 
 As per usual I recommend hitting the back button in the top left corner and saving on the page you were on last. Once/if I release the next update you //should// be able to load that save and continue without any problems. If you want you can also export your save data to a txt file to make sure your saves don’t get deleted by clearing your browser data.
 
