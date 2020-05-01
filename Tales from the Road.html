@@ -386,7 +386,7 @@ You get out of bed and see the door to the hallway in front of you, and the door
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">[img[https://iforgotmybrain.github.io/UpstairsLayout.png]]
 
-You enter the hallway of your apartment. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom is to the south, Sasha&#39;s bedroom is to the southwest, the stairs leading down are to the east, and Jacob&#39;s bedroom is to the northeast.
+You enter the hallway of your apartment. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
 
 You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Downstairs]], [[Jacob&#39;s Bedroom]]</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom; it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
 
@@ -452,7 +452,7 @@ You thank Sasha for letting you know. You say goodbye and head out to the [[Hall
 You knock on Sasha&#39;s door but she doesn&#39;t answer.
 &lt;&lt;return&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Downstairs" tags="" position="577,702" size="100,100">[img[https://iforgotmybrain.github.io/DownstairsLayout.png]]
-You head downstairs and see nothing out of the ordinary. The usual worn wood panels adorn the floor, with a light gray paint illuminating the walls. The entrance way where you&#39;re currently standing connects directly to the living room and the kitchen. There&#39;s also the front porch if you wanted to go somewhere, you could also head back up the stairs to the hallway.
+You head downstairs and see nothing out of the ordinary. The usual worn wood panels adorn the floor, with a light gray paint illuminating the walls. The entrance way where you&#39;re currently standing connects directly to the living room and the kitchen. There&#39;s also the front porch if you wanted to go somewhere. You could also head back up the stairs to the hallway.
 
 After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Porch]], [[Hallway]].</tw-passagedata><tw-passagedata pid="8" name="Jacob&#39;s Bedroom" tags="" position="401,839" size="100,100">&lt;&lt;if $jacob_bedroom_talked_1 is not true&gt;&gt;
 You knock on the door but no one answers. Maybe you should come back later. 
@@ -497,11 +497,11 @@ You return to the living room once again; Sasha is sitting on the couch watching
 It seems Sasha&#39;s watching a superhero movie involving some sort of pink titan.
 [img[https://iforgotmybrain.github.io/72.png]]
 
-&lt;&lt;continuelink &#39;&quot;You watch this movie yet? Second to last one in the series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s killer.&quot;&#39;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;You watch this movie yet? Second to last one in the SL series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s fantastic.&quot;&#39;&gt;&gt;&quot;You watch this movie yet? Second to last one in the series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s fantastic.&quot;
 
-&quot;Actually, do you even like superhero movies? I won’t say anymore about it just In-case you haven&#39;t got to watch it yet.&quot;
+&quot;Actually, do you even like superhero movies? I won’t say anymore about it just in case.&quot;
 
-&lt;&lt;continuelink &quot;You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.&quot;&gt;&gt;You state your preference for superhero movies, saying that you haven’t really kept up with the LM movies since the first one.
+&lt;&lt;continuelink &quot;You state your preference for superhero movies, saying that you haven’t really kept up with the SL movies since the first one.&quot;&gt;&gt;You state your preference for superhero movies, saying that you haven’t really kept up with the SL movies since the first one.
 
 &quot;Oh boy, you are in for a treat if you ever decide to catch up on them. Definitely let me know before you do, I&#39;d love to rewatch them with you.&quot;
 
@@ -567,49 +567,31 @@ You could leave the line and go over and say hi to your friend, or you could jus
 Ah, Holly. A vixen in the most literal sense. She hasn’t aged much since you last saw her 5 years ago, her lighter hair color still matching fantastically with her orange fur. Seems her fashion hasn’t changed either, she still dresses in casual, loose fitting clothes. Still not carrying a purse with her either, she always said she hated lugging them around. Seems she still does.
 
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You walk up to Holly and exchange greetings.&quot;&gt;&gt;You walk up to Holly and exchange greetings. There’s a lot of catching up to do; you follow each other on social media but of course that isn’t a replacement for a proper conversation.
 
-You walk up to Holly and exchange greetings. There’s a lot of catching up to do; you follow each other on social media but of course that isn’t a replacement for a proper conversation.
+&quot;Wow, Hey $name! It&#39;s been a while. I think the last time we talked was back in college when we went to that amusement park with some other friends. And that was 5 years ago now.&quot;
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You fill in some details about what you’ve been up too since that amusement park trip.&quot;&gt;&gt; You fill in some details about what you’ve been up too since that amusement park trip. Detailing your current living situation with Sasha and Jacob, as well as talking about some of the antics you&#39;ve been up to since then.
 
-&quot;Wow, Hey $name! It&#39;s been awhile. Damn, I think the last time we talked was back in college when we went to that amusement park with some other friends. And the last time I actually saw you regularly was back before we went off to college in like 2014!&quot;
+You also ask what Holly’s been up to since you last met, a faint look of disappointment fills her face as she tells you.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;Yeah, so, I dropped out of college in 2016.&quot;&#39;&gt;&gt; &quot;Yeah, so, I dropped out of college in 2016. Right after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. Also might&#39;ve made a slight mistake when it came to picking my major, I realized pretty quick that marketing was not for me.&quot;
 
-You fill in some details about what you’ve been up too since that amusement park trip. Detailing your current living situation with Sasha and Jacob, as well as talking about some of your antics in college.
-
-You also ask what Holly’s been up to since you last met, a faint look of disappointment fills her face as she goes on to detail her life post-college.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-&quot;Yeah, so, I dropped out of college in 2016. Right after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty shit reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. Also might&#39;ve made a slight mistake when it came to picking my major, I realized pretty quick that marketing was not for me.&quot;
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-You can find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.
+&lt;&lt;continuelink &quot;You can find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.&quot;&gt;&gt; You can find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.
 
 You ask Holly what she’s doing for work since she dropped out of college, she offers an answer that catches you a bit by surprise.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;I draw art for a living now!&quot;&#39;&gt;&gt; &quot;I draw art for a living now! I was always interested in it, I’m sure you remember some of my drawings from back in high school. I never really thought of it as a legitimate career path, just as a hobby, you know? But I’ve managed to build a decent enough following that&#39;s allowed me to get by with just doing art. And you know, I really enjoy it. Don&#39;t have to deal with any bosses, project managers, it&#39;s nice.&quot;
 
-&quot;I draw art for a living now! I was always interested in it, I’m sure you remember some of my drawings from back in high school. I never really thought of it as a legitimate career path, just as a hobby, you know? But I’ve managed to build a decent enough following that&#39;s allowed me to get by with just doing art. And you know, I really enjoy it. The customer tells me what they want, I draw it, and we go on our way. I&#39;m my own boss, and I like that.&quot;
+&quot;What about you though? What have you been doing since graduating college? I know you finished with a couple of internships and a great GPA, those internships lead anywhere?&quot;
 
-&quot;So, what have you been doing since graduating college? I know you finished with a couple of internships and a great GPA, those internships lead anywhere?&quot;
+&lt;&lt;continuelink &quot;You explain that you used to work for Spherion, but eventually quit for a couple different reasons after spending a year there.&quot;&gt;&gt; You explain that you used to work for Spherion, but eventually quit for a couple different reasons after spending a year there. You tell Holly that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+You tell her that now you just do freelance work here and there. It helps keep a steady flow of money coming into your bank account. And with living expenses being split between three people, you really don’t need much money to support your lifestyle.
 
-You explain that you used to work for Spherion, but eventually quit for a couple different reasons after spending a year there. You state that you had luckily saved up enough money to live comfortably for around 2 years before quitting that job.
+&lt;&lt;continuelink &#39;&quot;Wow, hearing stuff like that almost makes me wish I would have stayed in college.&quot;&#39;&gt;&gt; &quot;Wow, hearing stuff like that almost makes me wish I would have stayed in college. I couldn’t imagine having a savings large enough to live on for 2 years. Let alone being able to amass that much money by only working for a year! That&#39;s really impressive&quot;
 
-You tell her that now you just do freelance work here and there. It helps keep a steady flow of money coming into your bank account. And with your living expenses being split between three people, you really don’t need much money to support your lifestyle.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-&quot;Wow, hearing stuff like that almost makes me wish I would have stayed in college. I couldn’t imagine having a savings large enough to live on for 2 years. Let alone being able to amass that much money by only working for a year! That&#39;s really impressive&quot;
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-&quot;Well, anyway $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go. Maybe I’ll see you around some other time.&quot;
+&lt;&lt;continuelink &#39;&quot;Well, anyway $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go.&quot;&#39;&gt;&gt; &quot;Well, anyway $name, it’s been fantastic talking but I’ve got a yoga class coming up in a half hour so I gotta go. Maybe I’ll see you around some other time.&quot;
 
 &lt;&lt;set $cafe_holly_talked to true&gt;&gt;
 &lt;&lt;set $cafe_completed to true&gt;&gt;
@@ -641,7 +623,7 @@ It’s an interesting idea, but that’s all it is for right now. An idea.
 
 &lt;&lt;set $path_lake to true&gt;&gt;
 
-You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="975,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
+You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966.6666666666666,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn&#39;t go past the lake. 
 
@@ -1747,7 +1729,7 @@ While you wait for your food to arrive, you should have plenty of time to [[get 
 [[I get it. Let’s talk about something else.|VDCQ Base]]
 &lt;&lt;endif&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="84" name="VCDQ City 1.3" tags="" position="600.6666666666666,4647.666666666667" size="100,100">&lt;&lt;if $valery_date_points &lt;= -16&gt;&gt;
+</tw-passagedata><tw-passagedata pid="84" name="VCDQ City 1.3" tags="" position="600,4647" size="100,100">&lt;&lt;if $valery_date_points &lt;= -16&gt;&gt;
 &quot;It might not be your problem but showing a little kindness wouldn&#39;t kill you, asshole. Honestly, you&#39;ve been a real fucking prick this whole time, but this is probably the most upset I&#39;ve been over it. I open my heart to you and you just tell me you don&#39;t care. If you didn&#39;t give a shit about getting to know me you could have just declined to come to lunch. But instead you decide to come here and insult me over and over again. I&#39;m out of here. Enjoy paying for the whole meal, dick.&quot;
 
 Seems you finally broke Valery. Probably wasn&#39;t the best idea to do that.
@@ -1958,7 +1940,7 @@ You say goodbye to Valery and [[start heading back home.|Valery Lunch Transition
 &quot;Welp, guess this is goodbye for now. See ya round the neighborhood, friend.&quot;
 
 You say goodbye to Valery and [[head back home.|Valery Lunch Transition]]
-</tw-passagedata><tw-passagedata pid="103" name="Valery Lunch Transition" tags="" position="438.99999999999994,6101.666666666667" size="100,100">&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="103" name="Valery Lunch Transition" tags="" position="438,6101" size="100,100">&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
 Having gotten lunch with Valery taken care of you can divert your full attention to your date with Holly tomorrow. Time to go home and [[get ready for tomorrow.|Holly-Valery Transition]]
 &lt;&lt;else&gt;&gt;
 Having gotten lunch with Valery taken care, and with nothing else going on this weekend, you&#39;re thinking of maybe working on the final plans for your road trip. Seems like that would be a good thing to do tomorrow. For now though, you&#39;re just going to [[go home and relax.|Chapter 3 Road Trip Planning Passengers]]
@@ -2068,7 +2050,7 @@ You decide to follow Valery’s suggestion and just sit down at a bench and talk
 
 &lt;&lt;choice [[And that’s part of the reason you wanted to move here, right?|MPV True Ending 2.2]]&gt;&gt;
 
-&lt;&lt;choice [[I think I’ve heard enough.|MPV True Ending 2.3]]&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="Valery Park Ending 1.1" tags="" position="525,6819.666666666667" size="100,100">&lt;&lt;if $valery_heart_to_heart is true and $valery_true_ending is not true&gt;&gt;
+&lt;&lt;choice [[I think I’ve heard enough.|MPV True Ending 2.3]]&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="Valery Park Ending 1.1" tags="" position="525,6819" size="100,100">&lt;&lt;if $valery_heart_to_heart is true and $valery_true_ending is not true&gt;&gt;
 &quot;Honestly, I’d say I’m pretty into you. When we were talking in the restaurant I couldn’t help but feel like I was back in Fulton hanging out with an old friend. It was great. Hell, I&#39;m already thinking about what’s next for us. Better be another date, at least.&quot;
 
 &lt;&lt;choice [[I was thinking about that as well. I&#39;ve a got a couple of ideas already in mind.|MPV One Ending 1.1]]&gt;&gt;
@@ -2187,7 +2169,7 @@ You say goodbye to Valery and watch as he walks back to his car. You stand up an
 
 &quot;Guess it&#39;s about time to take my leave. I&#39;m sure I&#39;ll be seeing you. Especially since we still have to set up our second date.&quot;
 
-You say goodbye to Valery and watch as he walks back to his car. [[You stand up and walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="123" name="MPV One Ending 2.1 Wolf" tags="" position="554,7241.333333333333" size="100,100">&lt;&lt;set $valery_ending to &quot;ending one kiss&quot;&gt;&gt;
+You say goodbye to Valery and watch as he walks back to his car. [[You stand up and walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="123" name="MPV One Ending 2.1 Wolf" tags="" position="554,7241" size="100,100">&lt;&lt;set $valery_ending to &quot;ending one kiss&quot;&gt;&gt;
 &lt;&lt;set $valery_date_end to true&gt;&gt;
 &quot;You sly Wolf, I bet you&#39;ve been waiting all day to use that line. Well it was worth it, because that cheesy as hell line made me like you even more.&quot;
 
@@ -2938,11 +2920,11 @@ You thank Holly for the words of encouragement and wave goodbye before [[getting
 
 Placeholder</tw-passagedata><tw-passagedata pid="164" name="Holly Normal Ending" tags="" position="1658,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
 
-You tell Holly today was pretty good. You got know a bit more about her hobbies, about her time in college. Overall it was a pretty good date, you think.
+You tell Holly that today was indeed pretty good. You got know a bit more about her hobbies, about her time in college. Overall it was a pretty nice date, you think.
 
 “I think it went pretty well too, couple things we didn’t really get into but it isn’t a huge deal. Maybe we’ll get into &#39;em some other time. Maybe on another date? Or just hanging out, whatever suits you.”
 
-&lt;&lt;continuelink &#39;&quot;That said,&quot;&#39;&gt;&gt;&quot;That said, I think it’s about time we leave this date. Bill’s already taken care of, I’m ready to take off if you are.&quot;
+&lt;&lt;continuelink &#39;&quot;That said,&quot;&#39;&gt;&gt;&quot;That said, I think it’s about time we leave this place. Bill’s already taken care of, I’m ready to take off if you are.&quot;
 
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;switch $valery_ending&gt;&gt;
@@ -3090,7 +3072,7 @@ You continue to look over the menu and decide to go with a classic cheeseburger.
 
 “It’s none of my business though, just find it sad to see people throw away their futures like that. Seems like such a waste of talent.”
 
-[[“Anyway, let’s try and move to a more upbeat topic. You got any questions for me?”|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="173" name="Chapter 3 Road Trip Planning Passengers" tags="" position="1301,4596" size="100,100">It’s 10 AM on a late Spring day. Overcast fills the skies as a light wind off the lake keeps things chilly. The trees are full of leaves and the grass is the greenest it will be all year. You’ve just gotten dressed for the day and plan on finishing the plans for your road trip. Time to sit down at your desk and get to work.
+[[“Anyway, let’s try and move to a more upbeat topic. You got any questions for me?”|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="173" name="Chapter 3 Road Trip Planning Passengers" tags="" position="1342.6666666666665,4594.333333333333" size="100,100">It’s 10 AM on a late Spring day. Overcast fills the skies as a light wind off the lake keeps things chilly. The trees are full of leaves and the grass is the greenest it will be all year. You’ve just gotten dressed for the day and plan on finishing the plans for your road trip. Time to sit down at your desk and get to work.
 
 Having previously figured out the financial side of things, your final steps now are to choose who’s coming along and where you’re stopping. In that order.
 
