@@ -181,7 +181,7 @@ body {
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">let audioEnabler = function () {
 	if (settings.soundStatus != true) {
 			new Wikifier(null, "<<masteraudio stop>>");
-	} else {	
+	} else {
 		new Wikifier(null, "<<playlist $currently_playing shuffle play>>");
 	}					
 };
@@ -195,8 +195,9 @@ setup.audioControls = function () {
 Setting.addHeader("Game Settings");
 
 Setting.addToggle("soundStatus", {
-	label : "Do you want music off or on?",
-	default : false,
+	label    : "Do you want music off or on?",
+	default  : false,
+	onInit   : audioEnabler,
 	onChange : audioEnabler,
 });
 	
@@ -204,6 +205,7 @@ Setting.addRange("masterVolume", {
 	label    : "Master volume",
 	min      : 0,
 	max      : 10,
+	default  : 5,
 	step     : 1,
 	onChange : function () {
 		SimpleAudio.volume(settings.masterVolume / 10);
@@ -349,8 +351,7 @@ Setting.addRange("masterVolume", {
             }
         });
     });
-}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">&lt;&lt;set $currently_playing to &quot;realest&quot;&gt;&gt;
-
+}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">&lt;&lt;set $currently_playing to &quot;bgm&quot;&gt;&gt;
 What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
@@ -386,7 +387,7 @@ You wake up around your usual time of 11 AM. You get a notification on your phon
 You get out of bed and see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
 
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">[img[https://iforgotmybrain.github.io/UpstairsLayout.png]]
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">[img[https://iforgotmybrain.github.io/img/UpstairsLayout.png]]
 
 You enter the hallway of your apartment. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
 
@@ -398,7 +399,7 @@ You showered last night so there&#39;s no reason to do so right now.
 You knock on Sasha’s door, hoping to get some input on your road trip itinerary. While Sasha isn’t very well-traveled, you figured it couldn’t hurt to ask her what she thinks about the whole thing. Especially since she spent some years out of state in Oregon before her family moved here.
 
 &lt;&lt;continuelink &quot;Sasha answers the door and welcomes you in.&quot;&gt;&gt;Sasha answers the door and welcomes you in. 
-[img[https://iforgotmybrain.github.io/72.png]]
+[img[https://iforgotmybrain.github.io/img/72.png]]
 “So, what brings you to me today? Wanna talk about someone or something?” She says with an inquisitive tone.
 
 You tell Sasha that you were actually here to talk about something a bit different for once. You go on to state that you wanted to get some input from her on your idea of going on a road trip across the country.
@@ -431,7 +432,7 @@ You knock on Sasha&#39;s door and she welcomes you in. Her bedroom is fairly typ
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 /* PLACEHOLDER MAKE LOCAL */
-[img[https://iforgotmybrain.github.io/72.png]]
+[img[https://iforgotmybrain.github.io/img/72.png]]
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It&#39;s an unusual trait for someone like her.
 	
 &lt;&lt;continuelink &#39;&quot;Hey $name, what\&#39;s going on?&quot;&#39;&gt;&gt; &quot;Hey $name, what&#39;s going on?&quot; She says, wondering what brings you to her room.
@@ -453,7 +454,7 @@ You thank Sasha for letting you know. You say goodbye and head out to the [[Hall
 &lt;&lt;else&gt;&gt;
 You knock on Sasha&#39;s door but she doesn&#39;t answer.
 &lt;&lt;return&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Downstairs" tags="" position="577,702" size="100,100">[img[https://iforgotmybrain.github.io/DownstairsLayout.png]]
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Downstairs" tags="" position="577,702" size="100,100">[img[https://iforgotmybrain.github.io/img/DownstairsLayout.png]]
 You head downstairs and see nothing out of the ordinary. The usual worn wood panels adorn the floor, with a light gray paint illuminating the walls. The entrance way where you&#39;re currently standing connects directly to the living room and the kitchen. There&#39;s also the front porch if you wanted to go somewhere. You could also head back up the stairs to the hallway.
 
 After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Porch]], [[Hallway]].</tw-passagedata><tw-passagedata pid="8" name="Jacob&#39;s Bedroom" tags="" position="401,839" size="100,100">&lt;&lt;if $jacob_bedroom_talked_1 is not true&gt;&gt;
@@ -497,7 +498,7 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 You return to the living room once again; Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
 
 It seems Sasha&#39;s watching a superhero movie involving some sort of pink titan.
-[img[https://iforgotmybrain.github.io/72.png]]
+[img[https://iforgotmybrain.github.io/img/72.png]]
 
 &lt;&lt;continuelink &#39;&quot;You watch this movie yet? Second to last one in the SL series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s fantastic.&quot;&#39;&gt;&gt;&quot;You watch this movie yet? Second to last one in the series. Haven\&#39;t got to watch the final one yet but I\&#39;ve heard it\&#39;s fantastic.&quot;
 
@@ -2447,56 +2448,23 @@ After those few minutes pass you see Holly pull into the restaurant parking lot 
 &lt;&lt;continuelink &quot;You tell her not much since you last met. Just the usual stuff.&quot;&gt;&gt;You tell her not much since you last met. Just the usual stuff.
 &quot;I feel it. Pretty much been the same for me. Stuff like this is a nice break from that monotony. Anyway, let’s head in and get a table before it gets too busy.&quot;
 
-[[You follow Holly inside the restaurant, luckily there’s no line so you get seated right away.|Holly Date Seating]]</tw-passagedata><tw-passagedata pid="138" name="StoryInit" tags="" position="398,20" size="100,100">&lt;&lt;cacheaudio &quot;jazz_1&quot; &quot;music/bensound-thejazzpiano.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;jazz_2&quot; &quot;music/bensound-hipjazz.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;jazz_3&quot; &quot;music/bensound-thelounge.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;jazz_4&quot; &quot;music/Mela_Waltz_For_a_Memory.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;jazz_5&quot; &quot;music/Mela_-_09_-_The_Strip.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;piano_1&quot; &quot;music/Yakov_Golman_-_08_-_Valse_orchestral.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;piano_2&quot; &quot;music/Yakov_Golman_-_09_-_Sunrise.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;misc_1&quot; &quot;music/Captive_Portal_-_01_-_You_Can_Use.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;misc_2&quot; &quot;music/Captive_Portal_-_03_-_An_Example_For.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;synth_1&quot; &quot;music/Timecrawler_82_-_02_-_Mt_Fuji.mp3&quot;&gt;&gt;
+[[You follow Holly inside the restaurant, luckily there’s no line so you get seated right away.|Holly Date Seating]]</tw-passagedata><tw-passagedata pid="138" name="StoryInit" tags="" position="398,20" size="100,100">&lt;&lt;cacheaudio &quot;synth_1&quot; &quot;music/Timecrawler_82_-_02_-_Mt_Fuji.mp3&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;synth_2&quot; &quot;music/Timecrawler_82_-_03_-_Street_Dancing.mp3&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;synth_3&quot; &quot;music/Nihilore_-_13_-_The_Author_Never_Dies_Instrumental.mp3&quot;&gt;&gt;
 
-&lt;&lt;cacheaudio &quot;synth_4&quot; &quot;music/Nihilore_-_07_-_Behind_the_Mask.mp3&quot;&gt;&gt;
-
-&lt;&lt;cacheaudio &quot;synth_5&quot; &quot;music/Nihilore_-_11_-_An_Honest_Mistake.mp3&quot;&gt;&gt;
-
 &lt;&lt;cacheaudio &quot;funky_1&quot; &quot;music/Six_Umbrellas_-_07_-_Asset_House.mp3&quot;&gt;&gt;
 
 &lt;&lt;createplaylist &quot;bgm&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_1&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_2&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_3&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_4&quot;&gt;&gt;
-	&lt;&lt;track &quot;jazz_5&quot;&gt;&gt;
-	&lt;&lt;track &quot;piano_1&quot;&gt;&gt;
-	&lt;&lt;track &quot;piano_2&quot;&gt;&gt;
-	&lt;&lt;track &quot;misc_1&quot;&gt;&gt;
-	&lt;&lt;track &quot;misc_2&quot;&gt;&gt;
 	&lt;&lt;track &quot;synth_1&quot;&gt;&gt;
 	&lt;&lt;track &quot;synth_2&quot;&gt;&gt;
 	&lt;&lt;track &quot;synth_3&quot;&gt;&gt;
-	&lt;&lt;track &quot;synth_4&quot;&gt;&gt;
-	&lt;&lt;track &quot;synth_5&quot;&gt;&gt;
 	&lt;&lt;track &quot;funky_1&quot;&gt;&gt;
 &lt;&lt;/createplaylist&gt;&gt;
 
 &lt;&lt;createplaylist &quot;realest&quot;&gt;&gt;
-&lt;&lt;track &quot;piano_2&quot;&gt;&gt;
+&lt;&lt;track &quot;synth_2&quot;&gt;&gt;
 &lt;&lt;/createplaylist&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Holly Questions Hub" tags="" position="1597,3400" size="100,100">Now would be a good time to ask Holly some questions or talk to her about something you’re interested in.
 
 You decide to…
