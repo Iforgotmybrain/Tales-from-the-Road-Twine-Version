@@ -181,14 +181,14 @@ body {
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">let audioEnabler = function () {
 	if (settings.soundStatus != true) {
 			new Wikifier(null, "<<masteraudio stop>>");
-	} else {
-		new Wikifier(null, "<<playlist 'bgm' shuffle play>>");
+	} else {	
+		new Wikifier(null, "<<playlist $currently_playing shuffle play>>");
 	}					
 };
 
 setup.audioControls = function () {
 	if (state.active.variables["controls"] === true) {
-		 new Wikifier(null, "<<playlist 'bgm' skip>>");
+		 new Wikifier(null, "<<playlist $currently_playing skip>>");
 	}
 };
 
@@ -349,7 +349,9 @@ Setting.addRange("masterVolume", {
             }
         });
     });
-}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
+}());</script><tw-passagedata pid="1" name="Great Days" tags="" position="399,152" size="100,200">&lt;&lt;set $currently_playing to &quot;realest&quot;&gt;&gt;
+
+What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
 After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom:
@@ -623,7 +625,7 @@ It’s an interesting idea, but that’s all it is for right now. An idea.
 
 &lt;&lt;set $path_lake to true&gt;&gt;
 
-You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966.6666666666666,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
+You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn&#39;t go past the lake. 
 
@@ -1468,7 +1470,7 @@ You don&#39;t have anything going on Saturday, so you tell Valery that would wor
 
 &quot;Awesome. See you Saturday!&quot;
 
-You say goodbye to Valery and [[head back home.|Downstairs]]</tw-passagedata><tw-passagedata pid="54" name="Valery&#39;s Home Lunch Deny" tags="" position="1270,1251" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
+You say goodbye to Valery and [[head back home.|Downstairs]]</tw-passagedata><tw-passagedata pid="54" name="Valery&#39;s Home Lunch Deny" tags="" position="1263,1251" size="100,100">&lt;&lt;set $valery_house_talk to true&gt;&gt;
 &lt;&lt;set $valery_date to false&gt;&gt;
 
 You tell Valery that you have some other plans for the weekend. Those plans may or may not be just sitting around the house and doing nothing, but he doesn’t need to know that.
@@ -1812,7 +1814,7 @@ Seems you finally broke Valery. Probably wasn&#39;t the best idea to do that.
 &lt;&lt;set $valery_question_asked to true&gt;&gt;
 
 [[Ask him another question|VDCQ Base]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="93" name="VCP 4" tags="" position="440,5273" size="100,100">&quot;Looks like our food is on the way, quick service, as always!&quot;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="93" name="VCP 4" tags="" position="443,5259" size="100,100">&quot;Looks like our food is on the way, quick service, as always!&quot;
 
 The waitress brings your food out, everything seems to be in order so it&#39;s time to dig in!
 
@@ -2300,25 +2302,25 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
         &lt;&lt;set $valery_dating to true&gt;&gt;
         Driving home from the park, you reflect a bit on today&#39;s events.
 
-        All things considered you think today went pretty damn well. You didn&#39;t really go into this whole thing with the intent of hooking up with Valery, you just sort of went with the flow of things and it just happened. While you really enjoyed hanging out with Valery today, you are somewhat glad that this whole thing is behind you. Since now you can focus on getting the final plans for your road trip setup. For tonight though, [[you&#39;re just going to relax a bit.|Chapter 3 Road Trip Planning Passengers]]
+        All things considered you think today went pretty damn well. You didn&#39;t really go into this whole thing with the intent of hooking up with Valery, you just sort of went with the flow of things and it just happened. While you really enjoyed hanging out with Valery today, you are somewhat glad that this whole thing is behind you. Since now you can focus on getting the final plans for your road trip setup. For tonight though, [[you&#39;re just going to sit back and relax a bit.|Chapter 3 Road Trip Planning Passengers]]
 
      &lt;&lt;case &quot;ending one kiss&quot; &quot;ending two kiss&quot;&gt;&gt;
         &lt;&lt;set $valery_dating to true&gt;&gt;
         Driving home from the park, you reflect a bit on today&#39;s events.
 
-        You certainly had your expectations for today blown away. You never would’ve expected things to play out the way they did, you just sort of went with the flow and ended up hooking up with Valery. Crazy how fast things can happen. And now with this whole thing taken care of, you can focus your full attention to getting the final plans for your road trip setup. For tonight though, [[you&#39;re just going to relax a bit|Chapter 3 Road Trip Planning Passengers]]
+        You certainly had your expectations for today blown away. You never would’ve expected things to play out the way they did, you just sort of went with the flow and ended up hooking up with Valery. Crazy how fast things can happen. And now with this whole thing taken care of, you can focus your full attention to getting the final plans for your road trip setup. For tonight though, [[you&#39;re just going to sit back and relax a bit.|Chapter 3 Road Trip Planning Passengers]]
 
      &lt;&lt;case &quot;ending four friends&quot;&gt;&gt;
         &lt;&lt;set $valery_dating to false&gt;&gt;
         Driving home from the park, you reflect a bit on today&#39;s events.
 
-        Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. And now with this whole ordeal behind you can you focus on getting the final plans for your road trip setup. Not now though, since tonight you&#39;re [[just going to kick back and relax bit|Chapter 3 Road Trip Planning Passengers]]
+        Your date with Valery didn’t go quite how you expected, but thankfully you were still able to walk away as a friend. And now with this whole ordeal behind you can you focus on getting the final plans for your road trip setup. Not now though, since tonight [[you&#39;re just going to sit back and relax a bit.|Chapter 3 Road Trip Planning Passengers]]
 
      &lt;&lt;case &quot;ending four denied&quot;&gt;&gt;
         &lt;&lt;set $valery_dating to false&gt;&gt;
         Driving home from the park, you reflect a bit on today&#39;s events.
 
-        You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward. Best to just go your separate way. And now with this whole ordeal behind you can you focus on getting the final plans for your road trip setup. Not now though, since tonight you&#39;re [[just going to kick back and relax bit|Chapter 3 Road Trip Planning Passengers]]
+        You were hoping to get a bit more involved with Valery but that ended up failing. You could&#39;ve stayed tried just being friends but that would&#39;ve been a little awkward. Best to just go your separate way. And now with this whole ordeal behind you can you focus on getting the final plans for your road trip setup. Not now though, since tonight you&#39;re [[you&#39;re just going to kick back and relax a bit.|Chapter 3 Road Trip Planning Passengers]]
      &lt;&lt;/switch&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="MPV Four Ending 1.1" tags="" position="791,6764" size="100,100">&quot;I&#39;m glad you took that as well as you did. I know there&#39;s some real pieces of work out there that go insane as soon as you tell them you have no interest in them. I&#39;m happy you&#39;re not one of them.&quot;
 
@@ -2491,6 +2493,10 @@ After those few minutes pass you see Holly pull into the restaurant parking lot 
 	&lt;&lt;track &quot;synth_4&quot;&gt;&gt;
 	&lt;&lt;track &quot;synth_5&quot;&gt;&gt;
 	&lt;&lt;track &quot;funky_1&quot;&gt;&gt;
+&lt;&lt;/createplaylist&gt;&gt;
+
+&lt;&lt;createplaylist &quot;realest&quot;&gt;&gt;
+&lt;&lt;track &quot;piano_2&quot;&gt;&gt;
 &lt;&lt;/createplaylist&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Holly Questions Hub" tags="" position="1597,3400" size="100,100">Now would be a good time to ask Holly some questions or talk to her about something you’re interested in.
 
 You decide to…
@@ -3072,7 +3078,7 @@ You continue to look over the menu and decide to go with a classic cheeseburger.
 
 “It’s none of my business though, just find it sad to see people throw away their futures like that. Seems like such a waste of talent.”
 
-[[“Anyway, let’s try and move to a more upbeat topic. You got any questions for me?”|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="173" name="Chapter 3 Road Trip Planning Passengers" tags="" position="1342.6666666666665,4594.333333333333" size="100,100">It’s 10 AM on a late Spring day. Overcast fills the skies as a light wind off the lake keeps things chilly. The trees are full of leaves and the grass is the greenest it will be all year. You’ve just gotten dressed for the day and plan on finishing the plans for your road trip. Time to sit down at your desk and get to work.
+[[“Anyway, let’s try and move to a more upbeat topic. You got any questions for me?”|Holly Questions Hub]]</tw-passagedata><tw-passagedata pid="173" name="Chapter 3 Road Trip Planning Passengers" tags="" position="1342,4594" size="100,100">It’s 10 AM on a late Spring day. Overcast fills the skies as a light wind off the lake keeps things chilly. The trees are full of leaves and the grass is the greenest it will be all year. You’ve just gotten dressed for the day and plan on finishing the plans for your road trip. Time to sit down at your desk and get to work.
 
 Having previously figured out the financial side of things, your final steps now are to choose who’s coming along and where you’re stopping. In that order.
 
