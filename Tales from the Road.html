@@ -2599,6 +2599,7 @@ You ask Holly some more questions about her hobbies:
 [[&quot;&#39;You losing interest seems to be a pretty regular thing.&#39;&quot;|Holly Hobbies Question Art Plans 2]]
 [[&quot;&#39;Fair enough, let’s talk about something else.&#39;&quot;|Holly Hobbies Question Start]]
 </tw-passagedata><tw-passagedata pid="148" name="Holly Hobbies Question Art Spherion" tags="" position="2101,3651" size="100,100">&lt;&lt;set $holly_date_points += 2&gt;&gt;
+&lt;&lt;set $ending_points += 2&gt;&gt;
 //‘I ended up quitting my job in part because of burn out, so I definitely hear you.’//
 
 “That’s right, you mentioned that back at the festival. Got tired of working at Spherion. So now you’re some sort of freelancer, pick your own work, make your own pay, sounds familiar.”
@@ -2606,6 +2607,7 @@ You ask Holly some more questions about her hobbies:
 “Honestly though for how much you were being paid at Spherion I think I would’ve just dealt with the burnout. Use that money to make yourself happy, spend it on your hobbies, go on vacations. That’s just me though, I wasn’t there so I can’t say how bad it really was.”
 
 [[Ask her another question|Holly Hobbies Question Start]]</tw-passagedata><tw-passagedata pid="149" name="Holly Hobbies Question Art Plans 2" tags="" position="2293,3512" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $ending_points += 2&gt;&gt;
 &lt;&lt;set $holly_date_points += 4&gt;&gt;
 &lt;&lt;set $holly_question_art_plans_2 to true&gt;&gt;
 //&#39;You losing interest seems to be a pretty regular thing.&#39;//
@@ -2777,8 +2779,11 @@ Holly lets out a sigh before starting to detail the issues.
 “Hey, one of those stories could’ve been mine. I posted about Alex online a couple of times, just needed somewhere to vent.”
 
 “But yeah, it really was a horror story. Taught me a real lesson about trusting people though. It doesn’t matter how trustworthy, charismatic or friendly someone seems to be, you can&#39;t trust them. There’s a lot of people out there just looking to take advantage of you for their own gain, ya know?”
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_date_points += 10&gt;&gt;
 &lt;&lt;set $holly_living_detailed to true&gt;&gt;
+&lt;&lt;set $ending_points += 6&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 [[“Anyway, that was a long rant. Let’s change up the subject a bit.”|Holly Questions Hub]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="Holly Living Question Roommates" tags="" position="1954,2900" size="100,100">//‘Fair enough. Roommates can be really hit or miss; I’ve been really lucky in that regard with Sasha and Jacob. They’re great friends and great roommates.’//
 “Yeah and with there being three of you, rent has got to be pretty cheap. That’s a big advantage of having roommates.”
@@ -2883,8 +2888,11 @@ You shouldn&#39;t see this, must mean I messed up the variables, or you&#39;re a
 &lt;&lt;choice [[&#39;I felt the same way, Holly. It’ll definitely be best for both of us if we just stay friends.&#39;|Holly Date Bad Ending Friends]]&gt;&gt;
 &lt;&lt;choice [[&#39;I understand what you mean but I don’t know if I can even see us being friends anymore, it’s just been too long.&#39;|Holly Date Bad Ending Cutoff]]&gt;&gt;
 </tw-passagedata><tw-passagedata pid="161" name="Holly Date Bad Ending Friends" tags="" position="1323,4140" size="100,100">//&#39;I felt the same way, Holly. It’ll definitely be best for both of us if we just stay friends.&#39;//
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_date_ending to &quot;bad ending friends&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
+&lt;&lt;set $ending_points += 2&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 “I knew you’d understand, $name. Even though our relationship didn’t go anywhere at least we got to know each other a bit better through these two little dates. Maybe we can get lunch some other time, talk about what’s been going on, stuff like that.”
 
 &quot;But for now, we’ve already got the bill taken care of, &lt;&lt;continuelink &#39;&quot;guess we can just head out.&quot;&#39;&gt;&gt;guess we can just head out.&quot;
@@ -2898,8 +2906,11 @@ You and Holly get up from the table and head outside, getting ready to say your 
 “Better not be another 5 years! No excuses now, you’ve got my phone number and we only live 20 minutes away.” Holly says as she walks off, waving to you as she walks to her car.
 
 [[You walk and head back to your car as well.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="162" name="Holly Date Bad Ending Cutoff" tags="" position="1455,4140" size="100,100">//&#39;I understand what you mean but I don’t know if I can even see us being friends anymore, it’s just been too long.&#39;//
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $holly_date_ending to &quot;bad ending cutoff&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
+&lt;&lt;set $ending_points -= 4&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 &quot;I get it, 100%. It&#39;s been half a decade since we last talked, we&#39;ve changed a lot since then. We&#39;re in completely different stages of our life now, honestly might as well be two completely different people.&quot;
 “Well, I suppose I’ll take my leave now. Bills already been taken care of, so… See ya. Best of luck on your road trip and on your freelance work.”
 You thank Holly for the words of encouragement and wave goodbye before [[getting up and heading back to your car.|Holly Date Transition]]
@@ -2972,6 +2983,7 @@ You tell Holly that your expectations were more than met. You got to know a lot 
 &lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.&#39;|Holly Good Ending True]]&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="166" name="Holly Cheat Ending" tags="" position="2196,3991" size="100,100">&lt;&lt;set $holly_date_ending to &quot;cheat ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
+&lt;&lt;set $ending_points -= 12&gt;&gt;
 //&#39;There&#39;s one thing I think you should know before we leave.&#39;//
 
 &quot;Really, what would that be?&quot;
@@ -3000,7 +3012,7 @@ You agree with Holly, given how soon you plan on leaving for the road trip that&
 &lt;&lt;continuelink &quot;As you get ready to depart you walk over to Holly and give her a hug.&quot;&gt;&gt;As you get ready to depart you walk over to Holly and give her a hug. The two of you take in the moment, for a couple of seconds, the world stands still.
 
 As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek. &quot;I&#39;ll see ya later, maybe we can get together a bit sooner next time, this was a bit //too long// to wait.&quot; Holly says before walking away and heaidng back to her car.
-
+&lt;&lt;set $ending_points += 6&gt;&gt;
 &lt;&lt;set $holly_date_ending to &quot;good ending normal&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 [[You head back to your car shortly after as well.|Holly Date Transition]]
@@ -3017,7 +3029,7 @@ You and Holly get up from the table and head out to the parking lot. You both st
 You walk over to give Holly a hug before saying goodbye, like you usually do. The two of you embrace for a few seconds, your arms wrapped around each other, just enjoying the moment.
 
 As you let go Holly sneaks in a kiss on your cheek,
-</tw-passagedata><tw-passagedata pid="169" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
+&lt;&lt;set $ending_points += 8&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
 You and Holly get up from the table and head out to the parking lot. You stop shortly after getting outside to say your goodbyes to Holly.
 
 &quot;We should set something else up soon, another date, that road trip you&#39;re always talking about, I don&#39;t care. Just something. Not like I&#39;m that busy, you say the time and a location and I can be there.&quot;
@@ -3029,6 +3041,7 @@ You agree with Holly, the road trip will likely be your best bet when it comes t
 As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek. &quot;I&#39;ll see ya later, like I said, let&#39;s set something else up soon.&quot; Holly says before walking away and heaidng back to her car.
 &lt;&lt;set $holly_date_ending to &quot;normal ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
+&lt;&lt;set $ending_points +=4&gt;&gt;
 [[You head back to your car shortly after as well.|Holly Date Transition]]
 
 </tw-passagedata><tw-passagedata pid="170" name="StoryMenu" tags="" position="522,22" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="Cafe Line" tags="" position="1302,989" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
@@ -3123,6 +3136,14 @@ You decide to bring Valery along for the road trip, if he accepts, of course. He
 
 Now, for the final step; ==freedom.== [[figuring out where you want to stop.|Chapter 3 Road Trip Stops]]</tw-passagedata><tw-passagedata pid="176" name="Chapter 3 Road Trip Planning Default" tags="" position="1492,4756" size="100,100">&lt;&lt;set $default_road_trip to true&gt;&gt;
 You decide to just have Sasha and Jacob tag along, no reason to bring anyone else along, you feel.
+
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $holly_dating is true and $valery_dating is true&gt;&gt;
+&lt;&lt;set $ending_points -= 16&gt;&gt;
+&lt;&lt;set $true_ending to false&gt;&gt;
+&lt;&lt;set $cheater to true&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 
 Now, for the final step; ==freedom.== [[figuring out where you want to stop.|Chapter 3 Road Trip Stops]]</tw-passagedata><tw-passagedata pid="177" name="Chapter 3 Road Trip Stops" tags="" position="1326,4937" size="100,100">Given that you’re only going to be gone for around a week you’ll have to limit the places you’re visiting, around 5 or 6 places should be a good amount.
 
