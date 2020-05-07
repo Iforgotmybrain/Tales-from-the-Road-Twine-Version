@@ -215,7 +215,7 @@ Setting.addRange("masterVolume", {
 	label    : "Master volume",
 	min      : 0,
 	max      : 10,
-	default  : 5,
+	default  : 3,
 	step     : 1,
 	onChange : function () {
 		SimpleAudio.volume(settings.masterVolume / 10);
@@ -1935,7 +1935,7 @@ After thinking it through, you decide that...
 
 &lt;&lt;choice [[You&#39;ve changed your mind and won&#39;t get romantically involved with Valery.|VDC 6.2]]&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="VDC 5.2" tags="" position="444,5738" size="100,100">&quot;Indeed it has. Might even have to see about getting together for lunch some other time. Until then, take care friend.&quot;
 
-You say goodbye to Valery and [[head back to your car.|Valery Lunch Transition]]</tw-passagedata><tw-passagedata pid="100" name="VDC 5.3" tags="" position="590,5739" size="100,100">&quot;It&#39;s certainly been a time. Don\&#39;t know if I&#39;d say it was a decent one. Maybe I&#39;ll see you round sometime, maybe not. Until then, take care.&quot;
+You say goodbye to Valery and [[head back to your car.|Valery Lunch Transition]]</tw-passagedata><tw-passagedata pid="100" name="VDC 5.3" tags="" position="593.3333333333334,5742.333333333333" size="100,100">&quot;It&#39;s certainly been a time. Don\&#39;t know if I&#39;d say it was a decent one. Maybe I&#39;ll see you round sometime, maybe not. Until then, take care.&quot;
 
 You say goodbye to Valery and [[head home.|Valery Lunch Transition]]</tw-passagedata><tw-passagedata pid="101" name="VDC 6.1" tags="" position="272,5934" size="100,100">You ask Valery if he&#39;d be up to hanging out a bit more at the nearby park.
 
@@ -1958,7 +1958,7 @@ You say goodbye to Valery and [[start heading back home.|Valery Lunch Transition
 &quot;Welp, guess this is goodbye for now. See ya round the neighborhood, friend.&quot;
 
 You say goodbye to Valery and [[head back home.|Valery Lunch Transition]]
-</tw-passagedata><tw-passagedata pid="103" name="Valery Lunch Transition" tags="" position="438,6101" size="100,100">&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="103" name="Valery Lunch Transition" tags="" position="431.33333333333337,6104.333333333333" size="100,100">&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
 Having gotten lunch with Valery taken care of you can divert your full attention to your date with Holly tomorrow. Time to go home and [[get ready for tomorrow.|Holly-Valery Transition]]
 &lt;&lt;else&gt;&gt;
 Having gotten lunch with Valery taken care, and with nothing else going on this weekend, you&#39;re thinking of maybe working on the final plans for your road trip. Seems like that would be a good thing to do tomorrow. For now though, you&#39;re just going to [[go home and relax.|Chapter 3 Road Trip Planning Passengers]]
@@ -2276,7 +2276,7 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
 
 &quot;See ya round, $name. I&#39;m sure I&#39;ll see you around the neighborhood. Plus we&#39;ve still gotta talk about our next date.&quot;
 
-You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="129" name="Valery Park Transition 2" tags="" position="331,7607" size="100,100">/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
+You say good bye to Valery and watch as he walks to his car. You stand up and [[walk back to your car shortly after.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="129" name="Valery Park Transition 2" tags="" position="319.3333333333333,7612" size="100,100">/* Transistion over the Holly date or next part depending on the choices. Next area not currently implemented */
 &lt;&lt;if $holly_text_date_setup is true&gt;&gt;
     &lt;&lt;switch $valery_ending&gt;&gt;
 
