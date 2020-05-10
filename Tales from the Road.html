@@ -179,7 +179,7 @@ body {
     margin: 0;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
-	var preload = ["https://iforgotmybrain.github.io/img/72.png"];
+	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/UpstairsLayout.png", "https://iforgotmybrain.github.io/img/DownstairsLayout.png"];
 
 	window._ImageCache = preload.map(function (url) {
 		var image = document.createElement('img');
@@ -441,7 +441,7 @@ You tell Sasha you haven’t really gotten to that part yet. You want to finaliz
 You knock on Sasha&#39;s door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at her desk.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-/* PLACEHOLDER MAKE LOCAL */
+
 [img[https://iforgotmybrain.github.io/img/72.png]]
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It&#39;s an unusual trait for someone like her.
 	
@@ -2537,7 +2537,7 @@ You ask Holly another question about her time in college...
 “They’re good people though, better than most of my high school friends considering I still talk to them. Can’t say the same for any high school friend that isn’t you.”
 &lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
-[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="142" name="Holly College Question Major" tags="" position="1091,3433.3333333333335" size="100,100">//‘What made you even want to get into marketing?’//
+[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="142" name="Holly College Question Major" tags="" position="1091,3433" size="100,100">//‘What made you even want to get into marketing?’//
 
 “There wasn’t really anything that made me want to major in marketing. Just thought it would be an easy major, decent outcomes once I’m out of college. Seemed like the right choice even though I wasn’t interested in it. I would’ve preferred to major in something like theatre or art, but I knew that would’ve been a bad choice considering I was paying my way through.”
 
@@ -2919,12 +2919,12 @@ You and Holly get up from the table and head outside, getting ready to say your 
 You thank Holly for the words of encouragement and wave goodbye before [[getting up and heading back to your car.|Holly Date Transition]]
 </tw-passagedata><tw-passagedata pid="163" name="Holly Date Transition" tags="" position="1696,4430" size="100,100">&lt;&lt;switch $holly_date_ending&gt;&gt;
 &lt;&lt;case &quot;bad ending friends&quot;&gt;&gt;
-	You arrive home after a 15-minute drive from Kit’s Tavern. You spent the rest of the night completing your Civ playthrough and planning the road trip. With the date taken care of you can focus your full attention to your road trip planning. And with Holly out of the picture that means no one less person to worry about bringing.
+	You arrive home after a 15-minute drive from Kit’s Tavern. Spending the rest of the night completing your Civ playthrough and planning the road trip. With the date taken care of you can focus your full attention to your road trip planning.
 	
 	After finishing your Civ playthrough [[you go to bed at around 1 AM.|Chapter 3 Road Trip Planning Passengers]] Tomorrow it’s time to start working on the final plans for the road trip.
 
 &lt;&lt;case &quot;bad ending cutoff&quot;&gt;&gt;
-	You arrive home after a 15-minute drive from Kit’s Tavern. You spent the rest of the night completing your Civ playthrough and planning the road trip. With the date taken care of you can focus your full attention to your road trip planning. And with Holly out of the picture that means no one less person to worry about bringing.
+	You arrive home after a 15-minute drive from Kit’s Tavern. Spending the rest of the night completing your Civ playthrough and planning the road trip. With the date taken care of you can focus your full attention to your road trip planning. And with Holly out of the picture that means no one less person to worry about bringing.
 	
 	After finishing your Civ playthrough [[you go to bed at around 1 AM.|Chapter 3 Road Trip Planning Passengers]] Tomorrow it’s time to start working on the final plans for the road trip.
 
@@ -2936,13 +2936,15 @@ You thank Holly for the words of encouragement and wave goodbye before [[getting
 &lt;&lt;case &quot;normal ending&quot; &quot;good ending normal&quot;&gt;&gt;
 	After getting in your car and driving home you decide to take the rest of the night and just relax bit. You had a pretty busy and exciting evening, some time to chill should be nice.
 	
-	After a few hours of messing around with your phone and continuing your Civ playthrough you decide to head to bed at your usual time of 1 AM. While laying in bed trying to fall asleep, you think about maybe working out the final plans for your road trip tomorrow. Not like you’ll have anything else to do. [[For now though, it’s time to rest.|Chapter 3 Road Trip Planning Passengers]]
+	Spending the rest of the night messing around on your phone, you decide to go to bed a bit early, at 10 PM. While lying in bed trying to fall asleep, you think about maybe working out the final plans for your road trip tomorrow. Not like you’ll have anything else to do. [[For now though, it’s time to rest.|Chapter 3 Road Trip Planning Passengers]]
 
 &lt;&lt;case &quot;good ending true&quot;&gt;&gt;
+	A fantastic time is now at an end. You get into your car shortly after Holly and drive home for the night, coming away from your date with Holly feeling a little bit better about yourself. And with a lot more ideas running through your head.
+	
+	Most are related to Holly, but as you exit your car and head into the house you think about possibly drafting your final plans for the road trip tomorrow. There’s not much else on your schedule with Holly’s date out of the way, so you see no reason not to. But that’s tomorrow, tonight you think you’ll just kick back and relax a bit, maybe reflect a bit on where your relationship with Holly is going. That’ll probably keep you distracted for a bit. [[And before you know it, it’ll be morning.|Chapter 3 Road Trip Planning Passengers]]
 
-&lt;&lt;/switch&gt;&gt;
 
-Placeholder</tw-passagedata><tw-passagedata pid="164" name="Holly Normal Ending" tags="" position="1658,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="Holly Normal Ending" tags="" position="1658,4010" size="100,100">//&quot;So, what do you say, $name? Think today went pretty good?&quot;//
 
 You tell Holly that today was indeed pretty good. You got know a bit more about her hobbies, about her time in college. Overall it was a pretty nice date, you think.
 
@@ -2983,7 +2985,7 @@ You tell Holly that your expectations were more than met. You got to know a lot 
 &lt;&lt;choice [[&#39;Yup, let&#39;s get out of here.&#39;|Holly Good Ending Normal]]&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 &lt;&lt;if $holly_living_detailed is true&gt;&gt;
-&lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.&#39;|Holly Good Ending True]]&gt;&gt;
+&lt;&lt;choice[[&#39;I&#39;m ready, let&#39;s get out of here.&#39;|Holly Ending True]]&gt;&gt;
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="166" name="Holly Cheat Ending" tags="" position="2196,3991" size="100,100">&lt;&lt;set $holly_date_ending to &quot;cheat ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
 &lt;&lt;set $ending_points -= 12&gt;&gt;
@@ -3005,7 +3007,13 @@ You knew getting romantically involved with Valery while dating Holly would be a
 
 You sit at the table thinking over your decisions for a moment. 
 
-[[Eventually, you get get up from the table and go back to your car.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="167" name="Holly Good Ending Normal" tags="" position="1935,4140" size="100,100">//&#39;Yup, let&#39;s get out of here.&#39;//
+[[Eventually, you get get up from the table and go back to your car.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="167" name="Holly Good Ending Normal" tags="" position="1935,4140" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $ending_points += 6&gt;&gt;
+&lt;&lt;set $holly_date_ending to &quot;good ending normal&quot;&gt;&gt;
+&lt;&lt;set $holly_date_completed to true&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+//&#39;Yup, let&#39;s get out of here.&#39;//
+
 You and Holly get up from the table and head out to the parking lot. You stop shortly after getting outside to say your goodbyes to Holly.
 
 &quot;Such a shame to say goodbye. We should set something else up soon, another date, that road trip you&#39;re always talking about, I don&#39;t care. Just something.&quot;
@@ -3015,24 +3023,29 @@ You agree with Holly, given how soon you plan on leaving for the road trip that&
 &lt;&lt;continuelink &quot;As you get ready to depart you walk over to Holly and give her a hug.&quot;&gt;&gt;As you get ready to depart you walk over to Holly and give her a hug. The two of you take in the moment, for a couple of seconds, the world stands still.
 
 As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek. &quot;I&#39;ll see ya later, maybe we can get together a bit sooner next time, this was a bit //too long// to wait.&quot; Holly says before walking away and heaidng back to her car.
-&lt;&lt;set $ending_points += 6&gt;&gt;
-&lt;&lt;set $holly_date_ending to &quot;good ending normal&quot;&gt;&gt;
-&lt;&lt;set $holly_date_completed to true&gt;&gt;
-[[You head back to your car shortly after as well.|Holly Date Transition]]
 
-</tw-passagedata><tw-passagedata pid="168" name="Holly Good Ending True" tags="" position="2071,4136" size="100,100">//&#39;I&#39;m ready, let&#39;s get out of here.&#39;//
+[[You head back to your car shortly after as well.|Holly Date Transition]]
+</tw-passagedata><tw-passagedata pid="168" name="Holly Ending True" tags="" position="2085.3333333333335,4139" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $ending_points += 8&gt;&gt;
+&lt;&lt;set $holly_date_ending to &quot;true ending&quot;&gt;&gt;
+&lt;&lt;set $holly_date_completed to true&gt;&gt;
+//&#39;I&#39;m ready, let&#39;s get out of here.&#39;//
+
 You and Holly get up from the table and head out to the parking lot. You both stop shortly after leaving the building, getting ready to say your goodbyes.
 
 &quot;Oh wow, Sun&#39;s already starting to set. Didn&#39;t think we&#39;d end up being here this long. Guess it all worked out in the end, dinner taking so long to arrive gave us some more time to talk.&quot;
 
-&quot;Today&#39;s been pretty nice, glad we got to talk about my time living with Alex. That whole situation has been weighing on my mind a lot recently. Never really got to talk about it with anyone, sort of an embarrassing time for me, getting played by Alex like that. I knew you&#39;d understand though, you&#39;ve always been my go-to person when it comes to talking about this kind of stuff, and I really appreciate that.&quot;
+&quot;Today&#39;s been pretty nice, glad we got to talk about my time living with Alex. That whole situation has been weighing on my mind a lot recently. Never really got to talk about it with anyone, mainly because it was sort of an embarrassing time for me. I knew you&#39;d understand though, you&#39;ve always been my go-to person when it comes to talking about this kind of stuff, and I really appreciate that.&quot;
 
-“Well that’s enough delaying I guess, doesn’t matter how much I talk we’re still going to have to leave eventually.” Holly says with a somewhat disappointed tone to her voice.
+“Well that’s enough delaying I guess; it doesn’t matter how much I talk we’re still going to have to leave eventually.” Holly says with a somewhat disappointed tone to her voice.
 
-You walk over to give Holly a hug before saying goodbye, like you usually do. The two of you embrace for a few seconds, your arms wrapped around each other, just enjoying the moment.
+You walk over to hug Holly before saying goodbye like you usually do. The two of you embrace for a few seconds, your arms wrapped around each other, just enjoying the moment. (expand more?)
 
-As you let go Holly sneaks in a kiss on your cheek,
-&lt;&lt;set $ending_points += 8&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
+As you leave her embrace, Holly sneaks in a kiss on your cheek. You both blush, with Holly slyly remarking “Maybe next time we’ll go a bit further than that, maybe.”. You’re not quite sure what to think of that, but your heart is racing like you just ran a marathon, and your stomach is in more knots than, well, you know.
+
+“Hopefully I’ll be seeing you soon, name. I expect to hear from you about that road trip, if I don’t there’s going to be trouble.” She states with a joking, yet somewhat serious tone. 
+
+Holly walks back to her car after saying goodbye, you take a second to regain your composure before [[heading back to your car as well.|Holly Date Transition]]</tw-passagedata><tw-passagedata pid="169" name="Holly Normal Ending Leaving" tags="" position="1661,4161" size="100,100">//&#39;Sure thing, let&#39;s get out of here&#39;//
 You and Holly get up from the table and head out to the parking lot. You stop shortly after getting outside to say your goodbyes to Holly.
 
 &quot;We should set something else up soon, another date, that road trip you&#39;re always talking about, I don&#39;t care. Just something. Not like I&#39;m that busy, you say the time and a location and I can be there.&quot;
