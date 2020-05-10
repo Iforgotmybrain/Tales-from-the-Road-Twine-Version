@@ -397,7 +397,7 @@ You wake up around your usual time of 11 AM. You get a notification on your phon
 You get out of bed and see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
 
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">[img[https://iforgotmybrain.github.io/img/UpstairsLayout.png]]
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="394.3333333333333,699" size="100,100">[img[https://iforgotmybrain.github.io/img/UpstairsLayout.png]]
 
 You enter the hallway of your apartment. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
 
@@ -2537,16 +2537,14 @@ You ask Holly another question about her time in college...
 “They’re good people though, better than most of my high school friends considering I still talk to them. Can’t say the same for any high school friend that isn’t you.”
 &lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 &lt;&lt;set $holly_date_points += 2&gt;&gt;
-[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="142" name="Holly College Question Major" tags="" position="1091,3433.3333333333335" size="100,100">//‘What made you even want to get into marketing?’//
-
+[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="142" name="Holly College Question Major" tags="" position="1091,3433" size="100,100">//‘What made you even want to get into marketing?’//
+&lt;&lt;set $holly_college_question_asked to true&gt;&gt;
 “There wasn’t really anything that made me want to major in marketing. Just thought it would be an easy major, decent outcomes once I’m out of college. Seemed like the right choice even though I wasn’t interested in it. I would’ve preferred to major in something like theatre or art, but I knew that would’ve been a bad choice considering I was paying my way through.”
-
+&lt;&lt;set $holly_date_points += 2&gt;&gt;
 “I guess in the end, it doesn&#39;t even matter since I dropped out. Then again if I had majored in something I enjoyed I might’ve actually graduated, but that would’ve meant more debt… Eh, I think everything’s worked out alright so far, probably would’ve ended up where I am today anyway, just with more debt.”
 
-&lt;&lt;set $holly_college_question_asked to true&gt;&gt;
-&lt;&lt;set $holly_date_points += 2&gt;&gt;
 [[&quot;&#39;You never know though, who&#39;s to say you wouldn&#39;t catch a lucky break if you majored in theatre or art?&#39;&quot;|Holly College Question Major 2]]
-[[&#39;Let me ask you something else&#39;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="143" name="Holly Hobbies Question Start" tags="" position="1807,3341" size="100,100">&lt;&lt;if $holly_hobby_question_asked isnot true&gt;&gt;
+[[&quot;&#39;Let me ask you something else&#39;&quot;|Holly College Question Start]]</tw-passagedata><tw-passagedata pid="143" name="Holly Hobbies Question Start" tags="" position="1807,3341" size="100,100">&lt;&lt;if $holly_hobby_question_asked isnot true&gt;&gt;
 You ask Holly about her hobbies; she’s talked about them before but not in much detail.
 
 “My hobbies? Ah I don’t do anything too interesting, music, movies, stuff like that. Think we talked about that at the festival.”
@@ -3181,9 +3179,9 @@ As per usual I recommend hitting the back button in the top left corner and savi
 
 And lastly, thanks for playing! If you have any feedback for me, feel free to leave it on the Itch.io page. You can either leave it in a comment or leave an actual star rating, either works.
 
-Okay, one last thing; if you liked the art, check out the person that made it, [[Kasscabel.|https://twitter.com/_kasscabel]] I know she has open commissions [[here|https://www.fiverr.com/kasscabel?source=gig-cards&amp;ref_ctx_id=8a13a74b-90a9-439c-b653-fdb82ebcce84]] if that’s something you’d be interested in. Same with the music, there’s too many to list here but I’ve got a full list of artists and tracks on the [[main itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] Maybe check them out.
+Okay, one last thing, promise. If you liked the art, consider checking out the person that made it, [[Kasscabel.|https://twitter.com/_kasscabel]] I know she has open commissions [[here|https://www.fiverr.com/kasscabel?source=gig-cards&amp;ref_ctx_id=8a13a74b-90a9-439c-b653-fdb82ebcce84]] if that’s something you’d be interested in. Same with the music, there’s too many to list here but I’ve got a full list of artists and tracks on the [[main itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] Maybe check them out as well.
 
-Cheers, and thanks again for playing to the end!</tw-passagedata><tw-passagedata pid="181" name="Holly Hobbies Question Fishing Guy" tags="" position="2146,3267" size="100,100">//&#39;Loaded, huh? Who exactly is he?&#39;//
+Cheers, Adíos, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="181" name="Holly Hobbies Question Fishing Guy" tags="" position="2146,3267" size="100,100">//&#39;Loaded, huh? Who exactly is he?&#39;//
 
 &quot;His name&#39;s Christopher Homme. based off what he’s said, I guess he got rich off real estate in the 80s and 90s. I’ve looked online to try and find some more info on him, but there’s really not much there.”
 
@@ -3220,12 +3218,13 @@ Cheers, and thanks again for playing to the end!</tw-passagedata><tw-passagedata
 [[Ask Holly another question about her hobbies|Holly Hobbies Question Start]]
 </tw-passagedata><tw-passagedata pid="185" name="Holly College Question Major 2" tags="" position="952,3409" size="100,100">//&#39;You never know though, who&#39;s to say you wouldn&#39;t catch a lucky break if you majored in theatre or art?&#39;//
 
-“I guess that’s one way you could look at it. But I don’t really like to dwell on the things I could’ve done, would rather focus on the now and the future.”
-&lt;&lt;continuelink &#39;&quot;I get what you&#39;re saying though;&quot;&#39;&gt;&gt; &quot;I get what you’re saying though; I probably should’ve just majored in something I actually liked because who the hell knows what’ll happen. Maybe I stand out and meet someone in the right networks and get a decent job right out of college. Or maybe I just fade into the background, not really accomplishing much but still graduating with 50k in debt with no job to show for it.&quot;
+“I guess that’s one way to look at it. But I don’t really like to dwell on the things I could’ve done, I would rather focus on the now and the future.”
+
+&lt;&lt;continuelink &#39;&quot;I get what you\&#39;re saying though;&quot;&#39;&gt;&gt; &quot;I get what you’re saying though; I probably should’ve just majored in something I actually liked because who the hell knows what’ll happen. Maybe I stand out and meet someone in the right networks and get a decent job right out of college. Or maybe I just fade into the background, not really accomplishing much but still graduating with 50k in debt with no job to show for it.&quot;
 
 &quot;That’s how I kind of saw it at the time. I figured just dropping out was the safest move, at the very least it meant I wouldn’t have 50k in student loans. Which would be a financial disaster for someone that’d likely be working minimum wage.&quot;
 
-&lt;continuelink &#39;&quot;Like I said, I think I made the right decision.&quot;&#39;&gt;&gt; &quot;Like I said, I think I made the right decision. Could I be doing better if I hadn’t dropped out? Of course, you can always do better. Could I also be doing a whole lot worse if I had stayed in? Absolutely. I could be making the same kind of money I am now but with an extra $320 coming out of my bank account every month.&quot;
+&lt;&lt;continuelink &#39;&quot;Like I said, I think I made the right decision.&quot;&#39;&gt;&gt; &quot;Like I said, I think I made the right decision. Could I be doing better if I hadn’t dropped out? Of course, you can always do better. Could I also be doing a whole lot worse if I had stayed in? Absolutely. I could be making the same kind of money I am now but with an extra $320 coming out of my bank account every month.&quot;
 
 [[&quot;&#39;When you explain it like that, I get it. Definitely best to go with the safe option when so much money is on the line. But that&#39;s enough about your time in college, let&#39;s talk about something else.&#39;&quot;|Holly Questions Hub]]
 
