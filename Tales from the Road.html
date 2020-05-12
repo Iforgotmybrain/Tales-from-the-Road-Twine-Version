@@ -179,7 +179,7 @@ body {
     margin: 0;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
-	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/UpstairsLayout.png", "https://iforgotmybrain.github.io/img/DownstairsLayout.png"];
+	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/UpstairsLayout.png", "https://iforgotmybrain.github.io/img/DownstairsLayout.png", "https://iforgotmybrain.github.io/img/74.png";
 
 	window._ImageCache = preload.map(function (url) {
 		var image = document.createElement('img');
@@ -577,6 +577,7 @@ You could leave the line and go over and say hi to your friend, or you could jus
 
 &lt;&lt;choice [[Just stay in line|Cafe Line]]&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Cafe Holly" tags="" position="1296,846" size="100,100">You decide to leave the line and go over and say hi to your friend, who you now know for sure is Holly.
 
+[img[https://iforgotmybrain.github.io/img/74.png]]
 Ah, Holly. A vixen in the most literal sense. She hasn’t aged much since you last saw her 5 years ago, her lighter hair color still matching fantastically with her orange fur. Seems her fashion hasn’t changed either, she still dresses in casual, loose fitting clothes. Still not carrying a purse with her either, she always said she hated lugging them around. Seems she still does.
 
 
@@ -722,10 +723,10 @@ While on the bus you sit next to a man with an ‘I heart NY shirt’ on. He’s
 
 The man looks to you and asks if you’re going to Lake Fest. You say yes, and that you’ve gone to it almost every year you’ve lived here.
 
-&quot;So you’re a local! I’m Chris.” The Tiger says as &lt;&lt;continuelink &quot;he reaches out to shake your hand.&quot;&gt;&gt;he reaches out to shake your hand.
+&quot;So you’re a local! I’m Chris.” The Tiger says as &lt;&lt;continuelink &quot;he reaches out to shake your paw.&quot;&gt;&gt;he reaches out to shake your paw.
 
 
-You shake the Tiger’s hand and introduce yourself as $name.
+You shake the Tiger’s paw and introduce yourself as $name.
 
 “Nice to meet you $name. I’m coming through here pretty much solely for Lake Fest. Though I wouldn’t be opposed to checking out some other places if you’ve got any recommendations. My hotel here is booked for the day so I’ve got time.”
 
@@ -749,9 +750,9 @@ You tell Chris that you’ve been interested in doing something similar, you fin
 
 &lt;&lt;continuelink &quot;You thank Chris for the advice.&quot;&gt;&gt;You thank Chris for the advice. If you ever do decide to take on such an endeavor, you’ll definitely make sure to have a plan. 
 
-&quot;Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his hand out for a &lt;&lt;continuelink &quot;farewell handshake.&quot;&gt;&gt;farewell handshake
+&quot;Well looks like our stop’s up here. It’s been great talking to you.” He says while extending his paw out for a &lt;&lt;continuelink &quot;farewell shake.&quot;&gt;&gt;farewell shake
 
-You shake his hands and say goodbye, he offers one last piece of advice before departing.
+You shake his paw and say goodbye, he offers one last piece of advice before departing.
 
 &lt;&lt;continuelink &#39;&quot;Hey, if you ever decide to go for it,&quot;&#39;&gt;&gt;&quot;Hey, if you ever decide to go for it, hit me up on Pawbook. I’ve got a list of my favorite places to stop at it, I’d be glad to share it with you.&quot;
 
@@ -800,6 +801,7 @@ It seems you&#39;ve come right as the bands are changing. As you see the next ac
 &lt;&lt;continuelink &quot;You put in your ear buds&quot;&gt;&gt;You put in your ear buds and listen to one of their songs real quick. Based off of that quick listen they seem to be a lo-fi indie band. Not your favorite kind of music, but the one song you listened to was pretty good, so you&#39;ll give them a shot.
 
 &lt;&lt;continuelink &quot;As you wait for the band to start their set...&quot;&gt;&gt; As you wait for the band to start their set you feel someone tap the back of your shoulder. You turn around and to your surprise you see your friend, Holly.
+[img[https://iforgotmybrain.github.io/img/74.png]]
 &lt;&lt;if $cafe_holly_talked is true&gt;&gt;
 &quot;Didn&#39;t think I&#39;d be running into you again so soon. What are you doing out here all by yourself?&quot;
 &lt;&lt;else&gt;&gt;
@@ -1055,7 +1057,7 @@ You offer Holly the first pitch since this was her first choice.
 
 &lt;&lt;continuelink &quot;Holly lines up at the target.&quot;&gt;&gt;Holly lines up at the target. Her goal is to throw the ball at a speed of 60 MPH. A pretty high target for the average person. It’s made even more difficult with how inaccurate the sensor on the target is. It probably hasn’t been replaced or maintained since the thing was first made. Even if it was, there’s nothing stopping the vendor from making it read a bit slower.
 
-She thinks about it for a minute, lining up her throw. She reels back with the ball in her hand, ready to destroy the hell out of that target. She extends her arm and throws the ball at what seems to be a decent speed. The display takes a minute to show the speed, you both wait with mild anticipation, thinking about all the bragging opportunities if one of you were to make it while the other didn’t.
+She thinks about it for a minute, lining up her throw. She reels back with the ball in her paw, ready to destroy the hell out of that target. She extends her arm and throws the ball at what seems to be a decent speed. The display takes a minute to show the speed, you both wait with mild anticipation, thinking about all the bragging opportunities if one of you were to make it while the other didn’t.
 &lt;&lt;set $holly_speed to random(50, 65)&gt;&gt;
 
 &lt;&lt;continuelink &quot;The display finally shows the speed. Holly threw the ball at a speed of…&quot;&gt;&gt;The display finally shows the speed. Holly threw the ball at a speed of $holly_speed.
@@ -2342,21 +2344,21 @@ You say good bye to Valery and watch as he walks to his car. You stand up and [[
 
 &quot;I wouldn&#39;t say this is a complete denial but... yeah, honestly I just don&#39;t see &quot;us&quot; working out. So I guess it kind of is.&quot;
 
-&quot;Anyway, I suppose we should head home, we&#39;ve wasted enough time talking here.&quot; Valery stands up and extends his hand towards you &quot;I hope we can at least part as friends.&quot;
+&quot;Anyway, I suppose we should head home, we&#39;ve wasted enough time talking here.&quot; Valery stands up and extends his paw towards you &quot;I hope we can at least part as friends.&quot;
 
-&lt;&lt;choice [[*Get up and reach out to shake his hand* Friends it is.|MPV Four Ending 2.1]]&gt;&gt;
+&lt;&lt;choice [[*Get up and reach out to shake his paw* Friends it is.|MPV Four Ending 2.1]]&gt;&gt;
 
 &lt;&lt;choice [[I respect your choice, but I feel like it would just be awkward for us to keep hanging out.|MPV Four Ending 2.2]]&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="MPV Four Ending 1.2" tags="" position="918,6765" size="100,100">&quot;I&#39;m glad you understand. I thought that maybe I&#39;d see something different in you here, but I didn&#39;t. It&#39;s not your fault, we just aren&#39;t a good match.&quot;
 
 &quot;Don&#39;t get me wrong, I don&#39;t hate you or anything. I just... don&#39;t really see a serious relationship between the two of us going anywhere.&quot;
 
-Valery reaches out his hand to you &quot;I hope we can stay friends, though.&quot;
+Valery reaches out his paw to you &quot;I hope we can stay friends, though.&quot;
 
-&lt;&lt;choice [[*Get up and shake his hand* Friends it is.|MPV Four Ending 2.1]]&gt;&gt;
+&lt;&lt;choice [[*Get up and shake his paw* Friends it is.|MPV Four Ending 2.1]]&gt;&gt;
 
 &lt;&lt;choice [[Oh, I don&#39;t think so. I doubt an ordinary relationship would work out either. Plus it would just be awkward.|MPV Four Ending 2.2]]&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="MPV Four Ending 2.1" tags="" position="782,6886" size="100,100">&lt;&lt;set $valery_ending to &quot;ending four friends&quot;&gt;&gt;
 &lt;&lt;set $valery_date_end to true&gt;&gt;
-&quot;Valery grabs and shakes your hand &#39;I&#39;m glad you feel the same, $name. Hopefully I&#39;ll still see you round the neighborhood!&quot;
+&quot;Valery grabs and shakes your paw &#39;I&#39;m glad you feel the same, $name. Hopefully I&#39;ll still see you round the neighborhood!&quot;
 
 You say your goodbyes to Valery and tell him you&#39;re happy to have another friend to count on.
 
@@ -2459,6 +2461,7 @@ You look around for Holly’s car, but don’t see it in the parking lot. &lt;&l
 
 After those few minutes pass you see Holly pull into the restaurant parking lot and exit her car. You also exit your car and head over to meet her.
 
+[img[https://iforgotmybrain.github.io/img/74.png]]
 &quot;Hey $name. What’s going on?&quot; She says as you walk over to her car to greet her.
 
 &lt;&lt;continuelink &quot;You tell her not much since you last met. Just the usual stuff.&quot;&gt;&gt;You tell her not much since you last met. Just the usual stuff.
@@ -3001,7 +3004,7 @@ You knew getting romantically involved with Valery while dating Holly would be a
 
 &lt;&lt;continuelink &#39;&quot;You’re not kidding, are you?&quot;&#39;&gt;&gt;&quot;You’re not kidding, are you? You hooked up with some random guy you found wandering the streets of your neighborhood. And went out with them one day before our date... Seriously? And you’re just now telling me this?&quot;
 
-“Wow, I… thought I had you figured better than that. I always saw you as a really loyal person, someone I could trust.” Holly is visibly upset at this revolution, her face is red, with her hand covering her mouth &lt;&lt;continuelink &quot;she removes it for a moment to talk to you again.&quot;&gt;&gt;she removes it for a moment to talk to you again.
+“Wow, I… thought I had you figured better than that. I always saw you as a really loyal person, someone I could trust.” Holly is visibly upset at this revolution, her face is red, with her paw covering her mouth &lt;&lt;continuelink &quot;she removes it for a moment to talk to you again.&quot;&gt;&gt;she removes it for a moment to talk to you again.
 
 “I’m… going to leave now. The less time I spent around you the better it’ll be for both of us.” She says with visible distress in her voice, you doubt you’ll be hearing from her ever again.
 
@@ -3025,7 +3028,7 @@ You agree with Holly, given how soon you plan on leaving for the road trip that&
 As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek. &quot;I&#39;ll see ya later, maybe we can get together a bit sooner next time, this was a bit //too long// to wait.&quot; Holly says before walking away and heaidng back to her car.
 
 [[You head back to your car shortly after as well.|Holly Date Transition]]
-</tw-passagedata><tw-passagedata pid="168" name="Holly Ending True" tags="" position="2081.6666666666665,4139" size="100,100">&lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="168" name="Holly Ending True" tags="" position="2081,4139" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $ending_points += 8&gt;&gt;
 &lt;&lt;set $holly_date_ending to &quot;true ending&quot;&gt;&gt;
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
