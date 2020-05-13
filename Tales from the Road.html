@@ -179,7 +179,7 @@ body {
     margin: 0;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
-	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/UpstairsLayout.png", "https://iforgotmybrain.github.io/img/DownstairsLayout.png", "https://iforgotmybrain.github.io/img/74.png"];
+	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/74.png"];
 
 	window._ImageCache = preload.map(function (url) {
 		var image = document.createElement('img');
@@ -397,9 +397,7 @@ You wake up around your usual time of 11 AM. You get a notification on your phon
 You get out of bed and see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
 
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">[img[https://iforgotmybrain.github.io/img/UpstairsLayout.png]]
-
-You enter the hallway of your apartment. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">You enter the hallway of your house. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
 
 You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Downstairs]], [[Jacob&#39;s Bedroom]]</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom; it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
 
@@ -464,10 +462,9 @@ You thank Sasha for letting you know. You say goodbye and head out to the [[Hall
 &lt;&lt;else&gt;&gt;
 You knock on Sasha&#39;s door but she doesn&#39;t answer.
 &lt;&lt;return&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Downstairs" tags="" position="577,702" size="100,100">[img[https://iforgotmybrain.github.io/img/DownstairsLayout.png]]
-You head downstairs and see nothing out of the ordinary. The usual worn wood panels adorn the floor, with a light gray paint illuminating the walls. The entrance way where you&#39;re currently standing connects directly to the living room and the kitchen. There&#39;s also the front porch if you wanted to go somewhere. You could also head back up the stairs to the hallway.
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Downstairs" tags="" position="577,702" size="100,100">You head downstairs and see nothing out of the ordinary. The usual worn wood panels adorn the floor, with a light gray paint illuminating the walls. The entrance way where you&#39;re currently standing connects directly to the living room and the kitchen. There&#39;s also the front porch if you wanted to go somewhere. You could also head back up the stairs to the hallway.
 
-After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Porch]], [[Hallway]].</tw-passagedata><tw-passagedata pid="8" name="Jacob&#39;s Bedroom" tags="" position="401,839" size="100,100">&lt;&lt;if $jacob_bedroom_talked_1 is not true&gt;&gt;
+After thinking about it, you head to the [[Kitchen]], [[Living Room]], [[Front Porch]], [[Hallway]].</tw-passagedata><tw-passagedata pid="8" name="Jacob&#39;s Bedroom" tags="" position="407,832" size="100,100">&lt;&lt;if $jacob_bedroom_talked_1 is not true&gt;&gt;
 You knock on the door but no one answers. Maybe you should come back later. 
 
 Head back to the [[Hallway]] 
