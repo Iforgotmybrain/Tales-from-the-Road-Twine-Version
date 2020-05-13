@@ -1257,7 +1257,7 @@ But first you should probably [[get out of bed|Player Bedroom]]
     You decide to go towards the [[Hallway]], [[Bathroom]], or use your
 	[[Computer]] or take a [[Nap.|Second Transition]]
 	
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Smartphone Holly" tags="" position="236,2799" size="100,100">&lt;&lt;if $holly_text_setup is not true and $holly_date_stayed is true and $holly_text_rejection is not true&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Smartphone Holly" tags="" position="236,2799" size="100,100">&lt;&lt;if $holly_text_setup is not true and $holly_romance_festival is true and $holly_text_rejection is not true&gt;&gt;
 You bring out your smartphone and pull up your contacts app, scrolling down until you hit the H column and find “Holly”. You’ve never really been fond of calling people, so you decide to text her instead of calling.
 
 The next 20 minutes are spent attempting to write the perfect text, after much deliberation you decide to just keep it simple. You type up a simple greeting and tell Holly who it is that’s texting her, asking her what’s been going on since yesterday.
@@ -1399,9 +1399,9 @@ You continue on your walk with nothing else happening. The walk was pretty uneve
 
 &lt;&lt;continuelink &#39;&quot;Sunday at 4 sounds good to me.&quot;&#39;&gt;&gt;&quot;Sunday at 4 sounds good to me. Are we just going to go out to eat, or..?&quot;
 
-&lt;&lt;continuelink &quot;You reply and state that you were thinking of going out to eat at one at the Firefly Tavern.&quot;&gt;&gt;You reply and state that you were thinking of going out to eat at one at the Firefly Tavern. But that you’re open to going wherever she wants.
+&lt;&lt;continuelink &quot;You reply and state that you were thinking of going out to eat at one at Kit&#39;s Tavern.&quot;&gt;&gt;You reply and state that you were thinking of going out to eat at one at Kit&#39;s Tavern. But that you’re open to going wherever she wants.
 
-&lt;&lt;continuelink&#39;&quot;4PM on Sunday at Firefly Tavern sounds good to me.&quot;&#39;&gt;&gt;&quot;4PM on Thursday at Firefly Tavern sounds good to me.&quot;
+&lt;&lt;continuelink&#39;&quot;4PM on Sunday at Kit\&#39;s Tavern sounds good to me.&quot;&#39;&gt;&gt;&quot;4PM on Thursday at Kit&#39;s Tavern sounds good to me.&quot;
 
 &lt;&lt;continuelink &quot;You reply and tell Holly that it’s a date then.&quot;&gt;&gt;You reply and tell Holly that it’s a date then. You tell her you’ll see her then.
 
@@ -1509,7 +1509,9 @@ You wake up on Saturday, the day you&#39;re suppose to meet Valery on. These pas
 After getting showered and ready you mess around on your computer to waste some time. You end up leaving for [[The Rat&#39;s Place|Valery Rats Lunch]] at around 12:30.
 
 &lt;&lt;elseif $valery_date isnot true and $holly_text_date_setup is true&gt;&gt;
-You wake up in your bedroom around 10 AM. A bit earlier than you’re used to, but today’s a bit different. You’ve got your date with Holly later today, after all. Best to get up early and get ready for such an occasion.
+//Many days after getting funds for your road trip on Monday//
+
+You wake up in your bedroom around 10 AM on Sunday. A bit earlier than you’re used to, but today’s a bit different. You’ve got your date with Holly later today, after all. Best to get up early and get ready for such an occasion.
 
 You spend about 40 minutes getting ready. It’s now around 10:40 AM and your date isn’t until 4 PM. Seems you’ve got a fair amount of spare time on your hands.
 
@@ -1856,16 +1858,14 @@ You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
-&lt;&lt;elseif $valery_date_points &lt;= -6&gt;&gt;
+&lt;&lt;else&gt;&gt;
 
-&quot;Well at least we each had a good lunch, even if we didn&#39;t get along the greatest.&quot;
+&quot;Well, at least we each had a good lunch.&quot;
 
 &quot;Here&#39;s your part of the bill, $10. I&#39;ll get the tip.&quot;
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
-&lt;&lt;else&gt;&gt;
-Error with date point variable at VDC 4.1. Send me a screenshot of this and I&#39;ll fix it.
 &lt;&lt;endif&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="95" name="VDC 4.2" tags="" position="462,5423" size="100,100">&lt;&lt;if $valery_date_points &gt;= 12&gt;&gt;
@@ -1882,16 +1882,14 @@ You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
-&lt;&lt;elseif $valery_date_points &lt;= -6&gt;&gt;
+&lt;&lt;else&gt;&gt;
 
-&quot;At least something was decent, because our conversations sure weren’t.&quot;
+&quot;Well, at least something was decent.&quot;
 
 &quot;Here&#39;s your part of the bill, $10. I&#39;ll get the tip.&quot;
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
-&lt;&lt;else&gt;&gt;
 
-Error with date point variable at VDC 4.2. Send me a screenshot of this and I&#39;ll fix it.
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="VDC 4.3" tags="" position="610,5423" size="100,100">&lt;&lt;if $valery_date_points &gt;= 12&gt;&gt;
 &quot;Well at least our conversations were pretty good, right?&quot;
 
@@ -1906,15 +1904,13 @@ You take a $5 bill from your wallet and [[put it on the table for the tip.|VCP 5
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
-&lt;&lt;elseif $valery_date_points &lt; -6&gt;&gt;
-&quot;Honestly, that’s how I’d describe this whole ordeal. Just replace “the day” with “my life”.&quot;
+&lt;&lt;else&gt;&gt;
+&quot;Honestly, that’s how I’d describe this whole ordeal.&quot;
 
 &quot;Here&#39;s your part of the bill, $10. I&#39;ll get the tip.&quot;
 
 You hand Val a $10 bill to [[pay for your part of the meal.|VCP 5]]
 
-&lt;&lt;else&gt;&gt;
-Error with date point variable at VDC 4.1. Send me a screenshot of this and I&#39;ll fix it.
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="97" name="VCP 5" tags="" position="444,5588" size="100,100">&quot;Well with the bill taken care of I guess we should start heading out.&quot;
 
 &lt;&lt;if $valery_date_points &gt;= 8&gt;&gt;
@@ -1966,7 +1962,7 @@ You say goodbye to Valery and [[start heading back home.|Valery Lunch Transition
 
 You say goodbye to Valery and [[head back home.|Valery Lunch Transition]]
 </tw-passagedata><tw-passagedata pid="103" name="Valery Lunch Transition" tags="" position="427,6100" size="100,100">&lt;&lt;if $holly_text_date_setup is true&gt;&gt;
-Having gotten lunch with Valery taken care of you can divert your full attention to your date with Holly tomorrow. Time to go home and [[get ready for tomorrow.|Holly-Valery Transition]]
+Having gotten lunch with Valery taken care, you can divert your full attention to your date with Holly tomorrow. Time to go home and [[get ready for tomorrow.|Holly-Valery Transition]]
 &lt;&lt;else&gt;&gt;
 Having gotten lunch with Valery taken care, and with nothing else going on this weekend, you&#39;re thinking of maybe working on the final plans for your road trip. Seems like that would be a good thing to do tomorrow. For now though, you&#39;re just going to [[go home and relax.|Chapter 3 Road Trip Planning Passengers]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="Metro Park Val Date" tags="" position="102,6098" size="100,100">Walking through the entrance you can see the map of the park and a few fountains. Looking at the map, it would seem that this is more of an urban park as it lacks the expansive walking trails found in some of the more rural parks, like that one near you. While this park might not be as nice for just going on a walk, it seems perfect if you just want to sit down and relax or talk with someone.
