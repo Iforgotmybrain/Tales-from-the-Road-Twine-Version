@@ -178,38 +178,7 @@ body {
     padding: 0.5em;
     margin: 0;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">let googleAnalytics = function() {
-	if (settings.dataCollection === true) {
-		var lockID = LoadScreen.lock(); // Lock loading screen
-		importScripts('https://www.googletagmanager.com/gtag/js?id=UA-143749082-4')
-		.then(function () {
-		window.dataLayer = window.dataLayer || [];
-		window.gtag = function () {
-			dataLayer.push(arguments);
-		};
-		gtag('js', new Date());
-		gtag('config', 'UA-143749082-4',{ 'anonymize_ip': true });
-		$(document).on('click', 'a[data-passage]', function () {
-			gtag('event', 'Navigation', {
-				event_label    : $(this).attr('data-passage'),
-				event_category : 'GuestClick'
-			});
-		});
-		if (State.size > 0) {
-			Engine.show();
-		}
-		LoadScreen.unlock(lockID); // Unlock loading screen
-	})
-	.catch(function (error) {
-		console.warn('Could not load "gtag" library.');
-		LoadScreen.unlock(lockID); // Unlock loading screen
-	});
-	} else {
-		window['ga-disable-UA-143749082-4'] = true;
-	}
-};
-
-(function () {
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
 	var preload = ["https://iforgotmybrain.github.io/img/72.png", "https://iforgotmybrain.github.io/img/74.png"];
 
 	window._ImageCache = preload.map(function (url) {
@@ -253,12 +222,6 @@ Setting.addRange("masterVolume", {
 	}
 });
 
-Setting.addToggle("dataCollection", {
-	label : "Allow collection of data using Google Analytics",
-	desc : "Send data to GA about how you play the game, such as time spent playing and what parts of the game you've completed.",
-	default : false,
-	onChange : googleAnalytics,
-});
 /*! <<replacelink>> macro set for SugarCube 2.x */
 !function(){"use strict";function showVer(n,notrans){n&&(n.innerHTML="",new Wikifier(n,n.tweecode),n.setAttribute("data-enabled","true"),n.style.display="inline",n.classList.remove("revision-span-out"),notrans||(n.classList.add("revision-span-in"),n.timeout&&clearTimeout(n.timeout),n.timeout=setTimeout(function(){n.classList.remove("revision-span-in"),n=null},20)))}function hideVer(n,notrans){n&&(n.setAttribute("data-enabled","false"),n.classList.remove("revision-span-in"),n.timeout&&clearTimeout(n.timeout),notrans?(n.style.display="none",n.innerHTML="",n=null):(n.classList.add("revision-span-out"),n.timeout=setTimeout(function(){"false"===n.getAttribute("data-enabled")&&(n.classList.remove("revision-span-out"),n.style.display="none",n.innerHTML=""),n=null},1e3)))}function tagcontents(b,starttags,desttags,endtags,k){function tagfound(i,e,endtag){for(var j=0;j<e.length;j++)if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)===i)return e[j]}for(var tg,l=0,c="",a=b.source.slice(k),i=0;i<a.length;i++){if(tg=tagfound(i,starttags))l++;else{if((tg=tagfound(i,desttags,!0))&&0===l)return b.nextMatch=k+i+tg.length+4,[c,tg];if((tg=tagfound(i,endtags,!0))&&(l--,l<0))return null}c+=a.charAt(i)}return null}function revisionSpanHandler(g,e,f,b){function mkspan(vtype){return h=insertElement(m,"span",null,"revision-span "+vtype),h.setAttribute("data-enabled",!1),h.style.display="none",h.tweecode="",h}var becomes,c,cn,m,h,vsn,k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length;if(this.shorthand&&flen)for(;f.length>0;)vsns.push([f.shift(),"insert"===this.flavour?"gains":"becomes"]);else("insert"===this.flavour||"continue"===this.flavour&&"time"===this.trigger)&&vsns.push(["","becomes"]);if("continue"===this.flavour&&flen)b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),vtype]);else{if(becomes=["becomes","gains"],c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k),c&&endtags.indexOf(c[1])===-1){for(;c;)vsns.push(c),c=tagcontents(b,begintags,becomes,endtags,b.nextMatch);c=tagcontents(b,begintags,["/"+e,"end"+e],endtags,b.nextMatch)}if(!c)return void throwError(g,"<<"+e+">>: cannot find a matching close tag");vsns.push(c),"continue"===this.flavour&&(k=b.nextMatch,b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),""]))}for("remove"===this.flavour&&vsns.push(["","becomes"]),cn=0,m=insertElement(g,"span",null,e),m.setAttribute("data-flavour",this.flavour),h=mkspan("initial"),vsn=vsns.shift(),h.tweecode=vsn[0],showVer(h,!0);vsns.length>0;)vsn&&(vtype=vsn[1]),vsn=vsns.shift(),h=mkspan(vtype),h.tweecode=vsn[0];"function"==typeof this.setup&&this.setup(m,g,e,f)}function revisionSetup(m,g,e,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,e,f){f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);done&&m.removeEventListener("keydown",l)})}function timeSetup(m,g,e,f){function cssTimeUnit(s){if("string"==typeof s){if("ms"===s.slice(-2).toLowerCase())return Number(s.slice(0,-2))||0;if("s"===s.slice(-1).toLowerCase())return 1e3*Number(s.slice(0,-1))||0}return throwError(g,"<<"+e+'>>: "'+s+'" is not a valid CSS time unit'),0}var tm=cssTimeUnit(f[0]),s=passage();setTimeout(function timefn(){if(passage()===s){var done=!revise("revise",m);done||setTimeout(timefn,tm)}},tm)}function hoverSetup(m){var fn,noMouseEnter=null!==document.head.onmouseenter,m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;m1&&m2&&(m1.onmouseenter=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp&&"false"!==this.getAttribute("data-enabled")&&revise("revise",this.parentNode)},m2.onmouseleave=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp||"false"!==this.getAttribute("data-enabled")&&revise("revert",this.parentNode)},gains&&(m1.onmouseleave=m2.onmouseleave),noMouseEnter&&(fn=function(n){return function(e){event.relatedTarget&&(event.relatedTarget===this||this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY)||this[n]()}},m1.onmouseover=fn("onmouseenter"),m2.onmouseout=fn("onmouseleave"),gains&&(m1.onmouseout=m2.onmouseout)),m=null)}function mouseSetup(m){var evt=null===document.head.onmouseenter?"onmouseenter":"onmouseover";m[evt]=function(){var done=!revise("revise",this);done&&(this[evt]=null)},m=null}function linkSetup(m,g,e,f){var l=document.createElement("a"),p=m.parentNode;l.className="link-internal replaceLink",p.insertBefore(l,m),l.insertBefore(m,null),jQuery(l).ariaClick(function(){var done=!1;m&&m.parentNode===this&&(done=!revise("revise",m),scrollWindowTo(m)),done&&(this.parentNode.insertBefore(m,this),this.parentNode.removeChild(this))}),l=null}function visitedSetup(m,g,e,f){var done,sav=State.variables,os="once seen",d=m.firstChild&&("insert"===this.flavour?m.firstChild.nextSibling:m.firstChild).tweecode;if(sav[os]=sav[os]||{},d&&!sav[os].hasOwnProperty(d))sav[os][d]=1;else{for(var i=sav[os][d];i>0&&!done;i--)done=!revise("revise",m,!0);sav[os].hasOwnProperty(d)&&(sav[os][d]+=1)}}function insideDepartingSpan(elem){for(var r=elem.parentNode;!r.classList.contains("passage");){if(r.classList.contains("revision-span-out"))return!0;r=r.parentNode}}function reviseAll(rt,rname){for(var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=!1,i=0;i<rall.length;i++)insideDepartingSpan(rall[i])||(ret=revise(rt,rall[i])||ret);return ret}function revise(rt,r,notrans){function doToGainerSpans(n,fn){for(var k=n-1;k>=0&&rc[k+1].classList.contains("gains");k--)fn(rc[k],notrans)}for(var ind2,curr,next,ind=-1,rev="revert"===rt,rnd=rt.indexOf("random")>-1,fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc="cycle"===fl,rcl=rc.length-1,k=0;k<=rcl;k++)"true"===rc[k].getAttribute("data-enabled")&&(ind=k);rev&&(ind-=1),curr=ind>=0?rc[ind]:cyc?rc[rcl]:null,ind2=ind,rnd&&(ind2=(ind+Math.floor(Math.random()*rcl))%rcl),next=ind2<rcl?rc[ind2+1]:cyc?rc[0]:null;var docurr=rev?showVer:hideVer,donext=rev?hideVer:showVer,currfn=function(){next&&next.classList.contains("gains")&&!rnd||(docurr(curr,notrans),doToGainerSpans(ind,docurr,notrans))},nextfn=function(){donext(next,notrans),rnd&&doToGainerSpans(ind2+1,donext,notrans)};return rev?(nextfn(),currfn()):(currfn(),nextfn()),!!cyc||(rev?ind>0:ind2<rcl-1)}if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<replacelink>> macro set requires SugarCube 2.0.0 or greater, aborting load");version.extensions.replacelinkMacroSet={major:1,minor:1,revision:7};var begintags=[],endtags=[];[{name:"insertlink",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replacelink",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continuelink",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler,e.shorthand=["link","mouse","hover"].indexOf(e.trigger)>-1,macros[e.name]=e,Macro.tags.register(e.name),begintags.push(e.name),endtags.push("/"+e.name,"end"+e.name)}),macros.revertlink=macros.reviselink=macros.randomiselink=macros.randomizelink={handler:function(a,b,c){function disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1)return void enableLink(l);for(var cannext,canprev,r,fl,rall=document.querySelectorAll(".passage [data-flavour]."+rname),i=0;i<rall.length;i++)r=rall[i],fl=r.getAttribute("data-flavour"),insideDepartingSpan(r)||("cycle"===fl?cannext=canprev=!0:("false"===r.firstChild.getAttribute("data-enabled")&&(canprev=!0),"false"===r.lastChild.getAttribute("data-enabled")&&(cannext=!0)));var can=l.classList.contains("revert")?canprev:cannext;(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}if(c.length<2)return void throwError(a,"<<"+b+">>: insufficient arguments (requires at least 2)");var l,rname,actName=b.slice(0,-4),rl="reviseLink",v="",end=!1,out=!1;switch(rname=c.shift().replace(" ","_"),l=insertElement(a,"a"),l.className="link-internal "+rl+" "+rl+"_"+rname+" "+actName,c.length>1&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift()),c[c.length-1]){case"end":end=!0,c.pop();break;case"out":out=!0,c.pop()}for(var h=State.variables,i=0;i<c.length;i++){var on=i===Math.max(c.indexOf(h[v]),0),d=insertElement(null,"span",null,rl+(on?"En":"Dis")+"abled");on?(h[v]=c[i],l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),l.appendChild(d)}jQuery(l).ariaClick(function(){reviseAll(actName,rname);var lall,t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if((end||out)&&u>=m-(end?2:1)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End",n.style.display="inline",this.parentNode.replaceChild(n,this)}else toggleText(t[u]),u=(u+1)%m,v&&(h[v]=c[u]),toggleText(t[u]),this.setAttribute("data-cycle",u);lall=document.getElementsByClassName(rl+"_"+rname);for(var i=0;i<lall.length;i++)updateLink(lall[i])}),disableLink(l),setTimeout(function(l){return function(){updateLink(l)}}(l),1),l=null}},macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["/"+b,"end"+b],evt=null===window.onmouseenter?"onmouseenter":"onmouseover",t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);if(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);"hoverrevise"!=b&&done&&(this[evt]=null)};new Wikifier(h,t[0]),"hoverrevise"===b?(h.onmouseover=f,h.onmouseout=function(){reviseAll("revert",rname)}):h[evt]=f,h=null}}},Macro.tags.register("mouserevise"),Macro.tags.register("hoverrevise"),macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}}}();
 
@@ -987,46 +950,44 @@ You could try the baseball one, you also thought about doing the BB gun one. The
 
 After discussing it, you and Holly decide to have a go at the:
 [[Baseball Game|Festival Baseball Game]] 
-[[BB Gun Game|Festival BB Gun Game]]</tw-passagedata><tw-passagedata pid="31" name="Festival East Path" tags="" position="279,2115" size="100,100">&lt;&lt;if $holly_festival_stayed is true&gt;&gt;
-	&quot;Didn’t see much when I went this way before, but who knows maybe something changed.&quot; Holly says with a somewhat dismissive tone.
+[[BB Gun Game|Festival BB Gun Game]]</tw-passagedata><tw-passagedata pid="31" name="Festival East Path" tags="" position="279,2115" size="100,100">&quot;Didn’t see much when I went this way before, but who knows maybe something changed.&quot; Holly says with a somewhat dismissive tone.
 
-	&lt;&lt;continuelink &quot;Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.&quot;&gt;&gt; Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
+&lt;&lt;continuelink &quot;Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.&quot;&gt;&gt; Indeed, the path to the east doesn’t seem to have much going on. You walk past the small stadium where various events have been held throughout the day. None of which interested you. It seems the path just loops around and goes back to where you started.
 
-	&lt;&lt;continuelink &#39;&quot;I might have been interested in the derby, of course, that went on 3 hours ago, so…&quot;&#39;&gt;&gt;&quot;I might have been interested in the derby, of course, that went on 3 hours ago, so…&quot;
+&lt;&lt;continuelink &#39;&quot;I might have been interested in the derby, of course, that went on 3 hours ago, so…&quot;&#39;&gt;&gt;&quot;I might have been interested in the derby, of course, that went on 3 hours ago, so…&quot;
 
-	“Seems like this would be a good time to talk about each other. With how long it&#39;s been since we&#39;ve been able to hang out and talk it&#39;s almost like starting over. How about we talk about our hobbies, what do you do for fun?&quot;
+“Seems like this would be a good time to talk about each other. With how long it&#39;s been since we&#39;ve been able to hang out and talk it&#39;s almost like starting over. How about we talk about our hobbies, what do you do for fun?&quot;
 
-	&lt;&lt;continuelink &quot;You tell Holly about your hobbies...&quot;&gt;&gt; You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a //bit// basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
+&lt;&lt;continuelink &quot;You tell Holly about your hobbies...&quot;&gt;&gt; You tell Holly about your hobbies, which you find to be pretty uninteresting. Because, well, the truth is, your hobbies are a //bit// basic and boring. You enjoy movies, music, watching TV, and maybe playing video games or watching sports here and there. Among other things.
 
-	Holly seems to be a bit surprised at you calling your hobbies &quot;basic&quot; and &quot;uninteresting&quot;.
+Holly seems to be a bit surprised at you calling your hobbies &quot;basic&quot; and &quot;uninteresting&quot;.
 
-	&quot;Hmm, I mean, I guess those things could be considered &#39;basic&#39;. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered &#39;basic&#39; is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that&#39;s when you become a basic bitch or bastard. You definitely don’t have that problem, though.&quot;
+&quot;Hmm, I mean, I guess those things could be considered &#39;basic&#39;. I won’t lie about that. That’s not necessarily a bad thing though. In some cases, I’d say it can even be a positive. The only reason those hobbies are considered &#39;basic&#39; is because of how popular they. And because of that popularity, it can make it easier to find other people that are interested in the same thing as you are. So long as you don’t let those hobbies become the only thing defining you, it’s fine. I guess you could say that&#39;s when you become a basic bitch or bastard. You definitely don’t have that problem, though.&quot;
 
-	&quot;Ya know, I like a lot of the same stuff. Music, movies, all that. You already know about my art, and I also enjoy fishing on occasion. Guess you should say I’m pretty ‘basic’ as well.&quot;
+&quot;Ya know, I like a lot of the same stuff. Music, movies, all that. You already know about my art, and I also enjoy fishing on occasion. Guess you should say I’m pretty ‘basic’ as well.&quot;
 
-	&lt;&lt;continuelink &quot;You also tell Holly…&quot;&gt;&gt; You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
+&lt;&lt;continuelink &quot;You also tell Holly…&quot;&gt;&gt; You also tell Holly that you like traveling, though you rarely do so due to various reasons. You also mention that you’ve been recently thinking about going on a road trip across the country. She seems pretty surprised by this.
 
-	&quot;A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
+&quot;A road trip across the country, huh? Can’t say something like that has ever crossed my mind before, seems like it would be fun though. Has to be a pretty big commitment, right? You’re basically putting the rest of your life on pause for the duration of the trip.”
 
-	&quot;You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime.&quot; Holly says, perhaps suggesting something.
+&quot;You’d almost have to be doing contract work like us or have some damn good vacation time. Or have a job with a lot of downtime.&quot; Holly says, perhaps suggesting something.
 
-	&lt;&lt;continuelink &quot;You mention to Holly that..&quot;&gt;&gt; You mention to Holly that’s part of the reason you’d never really considered it until recently. There was no way to get that much time off when working at Syperion.
+&lt;&lt;continuelink &quot;You mention to Holly that..&quot;&gt;&gt; You mention to Holly that’s part of the reason you’d never really considered it until recently. There was no way to get that much time off when working at Syperion.
 
-	&lt;&lt;continuelink &#39;&quot;It’s definitely a cool idea. What made you think of doing that anyway?&quot;&#39;&gt;&gt;&quot;It’s definitely a cool idea. What made you think of doing that anyway?&quot;
+&lt;&lt;continuelink &#39;&quot;It’s definitely a cool idea. What made you think of doing that anyway?&quot;&#39;&gt;&gt;&quot;It’s definitely a cool idea. What made you think of doing that anyway?&quot;
 
-	&lt;&lt;continuelink &quot;You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.&quot;&gt;&gt; You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.
+&lt;&lt;continuelink &quot;You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.&quot;&gt;&gt; You mention Chris, the Tiger you met on the bus. While you’ve given the idea of a road trip a passing thought before, it’s his first-hand account that has really driven your interest as of recent.
 
-	&quot;Are you taking advice from some unknown vagabond you met on the bus? Don&#39;t know if I would suggest that myself. //But// It’s not like you’re going to make ‘road tripping’ your lifestyle, right?&quot;
+&quot;Are you taking advice from some unknown vagabond you met on the bus? Don&#39;t know if I would suggest that myself. //But// It’s not like you’re going to make ‘road tripping’ your lifestyle, right?&quot;
 
-	&lt;&lt;set $festival_walking_path to true&gt;&gt;
+&lt;&lt;set $festival_walking_path to true&gt;&gt;
 
-	&lt;&lt;if $festival_games_completed is not true&gt;&gt;
-		&quot;Anyway, looks like we’re almost back where we started. [[Guess we 		could go check out those games a bit north of here.|Festival Games]]
+&lt;&lt;if $festival_games_completed is not true&gt;&gt;
+&quot;Anyway, looks like we’re almost back where we started. [[Guess we 	could go check out those games a bit north of here.|Festival Games]]
 
-	&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;
 
-		&quot;Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. 		Might    even be able to see fireworks as we’re walking 			there.&quot;|Festival Ending Holly]]
-	&lt;&lt;endif&gt;&gt;
+&quot;Well, I guess we’ve done about all there is to do. [[It’s getting      pretty late so I say we start heading towards the parking lot. Might even be able to see fireworks as we’re walking there.|Festival Ending Holly]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="Festival Ending Self" tags="" position="568,2499" size="100,100">After checking out everything the festival has to offer, you head back towards the entrance to watch the ending fireworks show. 
 
 As you walk to the entrance you reflect some more on how the day went.
@@ -3165,7 +3126,7 @@ Having previously figured out the financial side of things, your final steps now
 
 	You have a bit of a complicated situation given that you’re simultaneously dating Holly and Valery. Perhaps not the best idea, you think. You can’t keep this going on forever, and now another chance presents itself to break it off with one of them. You could bring either Holly or Valery along, and break up with whoever you decide against. Of course, you could also just ignore this whole situation and go with just Sasha and Jacob, who knows how that’ll play out though.
 
-You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
+	You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
 &lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
 &lt;&lt;choice [[Bringing Holly along|Chapter 3 Road Trip Planning Holly]]&gt;&gt;
 &lt;&lt;choice [[Bringing Valery along|Chapter 3 Road Trip Planning Valery]]&gt;&gt;
@@ -3173,7 +3134,7 @@ You sit at your desk a moment thinking it over, going over all the possibilities
 	&lt;&lt;elseif $valery_dating is not true&gt;&gt;
 	You think about maybe bringing along Holly, given what she said during the date you feel like she would really like to come along. But of course, you could always ditch her and go with just Sasha and Jacob. You doubt she’ll be very appreciative of you leaving her out, might even go as far as breaking up with you. But ultimately, it is your call.
 
-You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
+	You sit at your desk a moment thinking it over, going over all the possibilities. You eventually come to a decision; you are:
 &lt;&lt;choice [[Just going with Sasha and Jacob.|Chapter 3 Road Trip Planning Default]]&gt;&gt;
 &lt;&lt;choice [[Bringing Holly along|Chapter 3 Road Trip Planning Holly]]&gt;&gt;
 	&lt;&lt;endif&gt;&gt;
