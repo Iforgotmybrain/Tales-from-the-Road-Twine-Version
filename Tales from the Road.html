@@ -617,23 +617,18 @@ The park itself is pretty nice, it features various walking paths and is situate
 You’re here and ready to make the most it. As you enter the park you see two separate walking paths you&#39;d like to take. One to the west, the other to the east. Which one will you take first?
 
 &lt;&lt;if $path_lake is not true&gt;&gt; [[West Path]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $path_roommate is not true&gt;&gt; [[East Path]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $path_lake is true&gt;&gt; &lt;&lt;set $park_completed to true&gt;&gt; [[Head back home for the day|Your Bedroom]] &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="West Path" tags="" position="839,1233" size="100,100">You head down the west path and start your walk. 
-
+&lt;&lt;set $path_lake to true&gt;&gt;
 After walking for 15 minutes you come across a familiar sight, the Great Sycamore Lake. Hence the park’s name. You can see the Sun starting to set over the lake, with the sky starting to turn an orange color with the Sun being reflected off the water.
 
 Not wanting to miss such a beautiful scene, You decide to sit down at a bench overlooking the lake and take a moment to just take everything in.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
 While sitting down you decide to reflect a bit on your life. Recently you’ve been having some trouble finding purpose in your life. Your current career brings in money, sure, but you just don&#39;t find it very fulfilling. It was fun at first but almost a year into living this kind of life and you’re finding yourself uncertain and a bit depressed. You feel like you lack purpose and direction, your freelance style of work lacks a direct career path. You just hop from job to job.
 
 There are a few things you’ve thought of to try and remedy this issue. Including doing volunteer work, getting a part time job doing something you actually enjoy, or even taking on the dating scene again. One recent thing that’s come to mind is a cross-country road trip. While the road trip itself wouldn’t permanently fix your lack of passion, you could end up discovering something that reinvigorates you.
 
 It’s an interesting idea, but that’s all it is for right now. An idea.
-&lt;&lt;nobr&gt;&gt;
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-&lt;&lt;set $path_lake to true&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;
 You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn&#39;t go past the lake. 
@@ -2372,7 +2367,7 @@ You say your goodbyes to Valery and tell him you&#39;re happy to have another fr
 
 &quot;Well suppose that&#39;s it. Have a good one, $name.&quot;
 
-You say goodbye to Valery and [[head back to your car.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="134" name="Computer Chat Room" tags="" position="185.33333333333334,144.33333333333334" size="100,100">You fire up Firefox and decide to hit up an online chat room. You could take a couple of different approaches but you’re feeling like chatting to some randoms online. You’ve had mixed success in the past with random chats, 80% of the people on there are looking for some dirty shit, 10% are spambots, and the remaining 10% are people actually worth talking to.
+You say goodbye to Valery and [[head back to your car.|Valery Park Transition 2]]</tw-passagedata><tw-passagedata pid="134" name="Computer Chat Room" tags="" position="185,144" size="100,100">You fire up Firefox and decide to hit up an online chat room. You could take a couple of different approaches but you’re feeling like chatting to some randoms online. You’ve had mixed success in the past with random chats, 80% of the people on there are looking for some dirty shit, 10% are spambots, and the remaining 10% are people actually worth talking to.
 
 Back in the day you went on chat rooms like this all the time, they were a way for you to meet new people, maybe make a new online friend. As time went on you started to lose interest in them, and they kind of went out of style. You still have fond memories of spending nights chatting to friends you met on an MMO.
 
@@ -3256,6 +3251,46 @@ Cheers, Adíos, and thanks again for playing to the (current) end!
 [[&quot;&#39;When you explain it like that, I get it. Definitely best to go with the safe option when so much money is on the line. But that&#39;s enough about your time in college, let&#39;s talk about something else.&#39;&quot;|Holly Questions Hub]]
 
 [[&quot;&#39;I mean, I get why you did it. But personally, I&#39;d still go for the path with a higher risk and higher reward. Anyway, let&#39;s talk about something else.&#39;&quot;|Holly Questions Hub]]
+</tw-passagedata><tw-passagedata pid="186" name="Chapter 4 Start" tags="" position="1340,5459.166666666667" size="100,100">The clock ticks to 7:00 AM. Your alarm rings, awakening you from a deep slumber.
+
+Begrudgingly, you grab your phone and turn off the alarm instead of muting it for another five minutes. Knowing that today you can’t afford to loaf around for an hour in bed before getting up.
+
+&lt;&lt;continuelink &quot;Shortly after turning off the alarm, you arise from your dormant state&quot;&gt;&gt;Shortly after turning off the alarm, you arise from your dormant state, sitting on the side of the bed while you rethink rather you made the right decision to start the road trip this early.
+
+Alas, there’s nothing you can do now. The only option is to move forward with your plans, regardless of how much you regret making them right now.
+
+Mustering all your energy, you manage to get out of bed at record time. Having only spent 5 minutes lying in bed before rising to your feet, quite impressive.
+
+Before heading into the bathroom and getting showered, &lt;&lt;continuelink&quot;you open your curtains and let in the guiding light of the brilliant sun.&quot;&gt;&gt;you open your curtains and let in the guiding light of the brilliant sun.
+
+Or, at least that’s what you were hoping for. In reality it’s another cloudy, rainy spring day.
+
+Having opened your curtain to disappointment, &lt;&lt;continuelink &quot;you head to the bathroom and get the shower ready.&quot;&gt;&gt;you head to the bathroom and get the shower ready.
+
+The shower goes about as expected. Nothing out of the ordinary, just a regular shower. And now after getting prepped and dressed, you’re finally ready to set things into motion.
+
+First things first, you grab the suitcases you loaded up last night and [[bring them downstairs.|Chapter 4 Downstairs]] After all, wearing the same clothes for a week doesn’t seem like a very advisable choice.
+</tw-passagedata><tw-passagedata pid="187" name="Chapter 4 Downstairs" tags="" position="1340,5609.166666666667" size="100,100">&lt;&lt;if $sasha_chapter4_start is not true&gt;&gt;
+Bringing your luggage downstairs, you look to the living room and see Jacob sitting on the couch watching TV. Seems like he’s already packed and ready to go, ahead of even you.
+
+While Jacob might be up and at ‘em, Sasha is nowhere to be seen. Your hope is that she’s just getting ready, and that her habit of forgetting to set her alarm hasn’t doomed your road trip to a late start. 
+
+Not knowing for sure, you figure you should probably go knock on her door and see rather she’s up or not.
+&lt;&lt;else&gt;&gt;
+placeholder
+&lt;&lt;/if&gt;&gt;
+You are standing in the downstairs foyer. The usual worn wood panels adorn the floor, with a light gray paint covering the walls.
+
+The foyer connects directly to the kitchen and living room. You could also head upstairs to the hallway.
+
+You decide to go to the: [[Kitchen]], [[Living Room|Chapter 4 Living Room]], [[Hallway.|Chapter 4 Hallway]]</tw-passagedata><tw-passagedata pid="188" name="Chapter 4 Living Room" tags="" position="1265,5759.166666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="189" name="Chapter 4 Hallway" tags="" position="1415,5759.166666666667" size="100,100">You enter the hallway of your house. Dated light brown carpet lines the floor, and light blue paint clings to the walls. You see your bedroom to the south, Sasha&#39;s bedroom to the southwest, the stairs leading down to the east, and Jacob&#39;s bedroom to the northeast.
+
+You decide to head towards [[Jacob&#39;s Bedroom,|Chapter 4 Jacob&#39;s Bedroom]] [[Sasha&#39;s Bedroom,|Chapter 4 Sasha&#39;s Bedroom]] [[Your Bedroom,|Chapter 4 Player Bedroom]] [[The Stairs|Chapter 4 Downstairs]]</tw-passagedata><tw-passagedata pid="190" name="Chapter 4 Jacob&#39;s Bedroom" tags="" position="1265,5909.166666666667" size="100,100">You knock on Jacob’s door but he doesn’t answer. Makes sense considering he’s sitting downstairs in the living room. It would be quite weird if he were at two places at the same time.
+
+Knowing that there’s no point in standing at Jacob’s bedroom door, you turn around and look at the rest of the [[|hallway|Chapter 4 Hallway]]
+</tw-passagedata><tw-passagedata pid="191" name="Chapter 4 Sasha&#39;s Bedroom" tags="" position="1415,5915.833333333334" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="192" name="Chapter 4 Player Bedroom" tags="" position="1565,5909.166666666667" size="100,100">You enter your room and &lt;&lt;continuelink &quot;double check to make sure you packed everything.&quot;&gt;&gt;double check to make sure you packed everything.
+
+Yup, you got everything. You head back to the [[hallway shortly after.|Chapter 4 Hallway]]
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
