@@ -367,7 +367,7 @@ What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 
 After a good nights rest, you wake up in your bedroom sometime around 11 or 12. You get up and take a look at the mirror in your bedroom:
 
-What is your sex? &lt;&lt;listbox &quot;$gender&quot; autoselect&gt;&gt;
+What is your sex? &lt;&lt;listbox &quot;$sex&quot; autoselect&gt;&gt;
 &lt;&lt;option &quot;Male&quot;&gt;&gt;
 &lt;&lt;option &quot;Female&quot;&gt;&gt;
 &lt;&lt;/listbox&gt;&gt;
@@ -381,7 +381,7 @@ What is your race? &lt;&lt;listbox &quot;$race&quot; autoselect&gt;&gt;
 
 [[Submit|Intro]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="400,402" size="100,100">&quot;Looking fine as always&quot; you say to yourself.
 
-Your name is $name. You are $gender and you are a $race. Is this correct?
+Your name is $name. You are $sex and you are a $race. Is this correct?
 
 [[Yes|Your Bedroom]]
 [[No|Great Days]]</tw-passagedata><tw-passagedata pid="3" name="Your Bedroom" tags="" position="408,547" size="100,100">&lt;&lt;if $sasha_living_room_talked is not true&gt;&gt; 
@@ -436,9 +436,7 @@ You tell Sasha you haven’t really gotten to that part yet. You want to finaliz
 
 &lt;&lt;elseif $sasha_talked_1 is not true&gt;&gt;
 
-You knock on Sasha&#39;s door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at her desk.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;You knock on Sasha&#39;s door and she welcomes you in.&quot;&gt;&gt;You knock on Sasha&#39;s door and she welcomes you in. Her bedroom is fairly typical with nothing out of the ordinary, except of course for Sasha the black German Shepard sitting at her desk.
 
 [img[https://iforgotmybrain.github.io/img/72.png]]
 The first thing anyone notices when they talk to Sasha are her blue eyes, contrasting greatly with her darker fur. It&#39;s an unusual trait for someone like her.
@@ -476,10 +474,9 @@ You enter the kitchen but see nothing of interest.
 
 You enter the kitchen and see that it&#39;s about as lackluster as ever. Outdated appliances from the early 00s hum along, running off of shoddy repairs and determination. The tiles on the floor are even more dated. Given the peach-like color and styling you imagine they were installed sometime in the 80s.
 
-&lt;&lt;linkreplace &quot;Continue&quot; t8n&gt;&gt;\
 You see Jacob standing by the microwave waiting for his lunch to get done cooking. &lt;&lt;if $sasha_talked_1 is true&gt;&gt; Guess you should see what he wanted to talk to you about. &lt;&lt;else&gt;&gt; Suppose you should see what he&#39;s been up to. &lt;&lt;endif&gt;&gt;
 
-	&lt;&lt;linkreplace &quot;Continue&quot; t8n&gt;&gt;\
+	&lt;&lt;linkreplace &quot;Go say hi to Jacob&quot; t8n&gt;&gt;\
 	As you approach Jacob it&#39;s hard to miss his most predominant feature, his antlers. A feature shared amongst all Deer like him. He also has a fairly fit build, though you wouldn&#39;t be able to tell that with the baggy sweats and jacket he&#39;s wearing today.
 	
 	&quot;Hey bud, what&#39;s going on?&quot; He says as you walk up to talk to him.
@@ -489,7 +486,7 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 		&quot;Dunno if you&#39;ve been keeping up with the Blues&#39; Head Coach search but it seems like they&#39;ve narrowed down their choices to two people, Karl Kowalski and Robert Indah. Kowalski is the OC for the Norsemen, not a ton of experience but I feel like his scheme would be a perfect fit for the Blues. And then Indah is the DC for the number one defense in the league on the 99ers. Although you have to wonder how much of that success can be attributed to his coaching versus the insane amount of talent they have on defense.&quot;
 
 		
-		    &lt;&lt;linkreplace &quot;Continue&quot; t8n&gt;&gt;\
+		    &lt;&lt;linkreplace &quot;Continue listening to Jacob&#39;s sports ramblings&quot; t8n&gt;&gt;\
 			&quot;Anyway, I was wondering who you think the Blues should pick. I&#39;m leaning more towards Kowalski myself but I wouldn&#39;t be upset at Indah either.&quot;
 			&lt;&lt;set $jacob_talked_1 to true&gt;&gt;
 			[[&quot;&#39;Kowalski&#39;&quot;|Kitchen Jacob Kowalski]] 
@@ -499,7 +496,6 @@ You see Jacob standing by the microwave waiting for his lunch to get done cookin
 		    &lt;&lt;/linkreplace&gt;&gt;\
 	    &lt;&lt;/linkreplace&gt;&gt;\
     &lt;&lt;/linkreplace&gt;&gt;\
-&lt;&lt;/linkreplace&gt;&gt;\
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Living Room" tags="" position="755,712" size="100,100">&lt;&lt;if $sasha_talked_1 &amp;&amp; $jacob_talked_1 &amp;&amp; $park_completed &amp;&amp; $cafe_completed is true &amp;&amp; $sasha_living_room_talked is not true&gt;&gt;
 
 You return to the living room once again; Sasha is sitting on the couch watching something on the television. You decide to join her and have a seat on one of the chairs.
@@ -531,33 +527,22 @@ You head out the front door and stand on your front porch ready for adventure! Y
 [[Home|Downstairs]] 
 &lt;&lt;if not visited (&quot;Sycamore Park&quot;)&gt;&gt; [[Sycamore Park]]
 &lt;&lt;endif&gt;&gt;&lt;&lt;if not visited (&quot;Torie&#39;s Cafe&quot;)&gt;&gt; [[Torie&#39;s Cafe]]
-&lt;&lt;endif&gt;&gt; &lt;&lt;if $sasha_living_room_talked is true and not visited(&quot;Festival Start&quot;)&gt;&gt; [[Festival|Festival Start]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $sasha_post_fest_talk is true and $jacob_living_room_talk is true and $chris_pawbook_completed is true and $walk_completed is not true&gt;&gt;[[Go for a walk|Valery Walk]]&lt;&lt;endif&gt;&gt;&lt;&lt;if $valery_walk_talked is true and $valery_house_talk is not true&gt;&gt;[[Go to Valery&#39;s house|Valery&#39;s House]]&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Kitchen Jacob Kowalski" tags="Could-be-condensed" position="457,1013" size="100,100">You tell Jacob that you think Kowalski would make the best head coach. He lacks experience, but you don&#39;t think that will be a huge issue.
-
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt; &lt;&lt;if $sasha_living_room_talked is true and not visited(&quot;Festival Start&quot;)&gt;&gt; [[Festival|Festival Start]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $sasha_post_fest_talk is true and $jacob_living_room_talk is true and $chris_pawbook_completed is true and $walk_completed is not true&gt;&gt;[[Go for a walk|Valery Walk]]&lt;&lt;endif&gt;&gt;&lt;&lt;if $valery_walk_talked is true and $valery_house_talk is not true&gt;&gt;[[Go to Valery&#39;s house|Valery&#39;s House]]&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Kitchen Jacob Kowalski" tags="" position="457,1013" size="100,100">You tell Jacob that you think Kowalski would make the best head coach. He lacks experience, but you don&#39;t think that will be a huge issue.
 
 &quot;Interesting choice, and I&#39;m inclined to agree. I suppose I could see his lack of time coaching to be an issue, but the way he runs his offense with the Norsemen is just perfect for this team.&quot;
-	
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 
-&quot;Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I&#39;ll stop bugging you.&quot;
+&lt;&lt;continuelink &#39;&quot;Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I\&#39;ll stop bugging you.&quot;&#39;&gt;&gt; &quot;Well that was all I wanted to talk about, the microwave is beeping and my lunch is done so I\&#39;ll stop bugging you.&quot;
 
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]</tw-passagedata><tw-passagedata pid="13" name="Kitchen Jacob Indah" tags="" position="687,1013" size="100,100">You state that Indah seems to be the most qualified for the job. Mentioning his many years spent on the 99ers as DC.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-&quot;That&#39;s fair. I definitely feel like he&#39;s the safer pick. Though you have to wonder how he&#39;d handle the offensive side of the ball. Not too many great offensive coordinators on the market this year.&quot;
+&lt;&lt;continuelink &#39;&quot;That\&#39;s fair.&quot;&#39;&gt;&gt;&quot;That&#39;s fair. I definitely feel like he&#39;s the safer pick. Though you have to wonder how he&#39;d handle the offensive side of the ball. Not too many great offensive coordinators on the market this year.&quot;
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
 &quot;Well the microwave is beeping and my lunch is done so I&#39;ll be on my way. See ya.&quot;
 
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]
 		</tw-passagedata><tw-passagedata pid="14" name="Kitchen Jacob None" tags="" position="573,1012" size="100,100">You remind Jacob that you aren&#39;t really much for sports. With how often he talks to you about football it seems to escape his mind quite often.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-&quot;Shit, that&#39;s right. Guess I just wasted a whole bunch of your time
-talking about something you couldn&#39;t give a damn about. Sorry about
-that.&quot;
-	
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &#39;&quot;Shit, that\&#39;s right.&quot;&#39;&gt;&gt;&quot;Shit, that&#39;s right. Guess I just wasted a whole bunch of your time talking about something you couldn&#39;t give a damn about. Sorry about that.&quot;
 	
 &quot;Well the microwave is beeping and my lunch is done so I guess I&#39;ll stop wasting your time,
 see ya.&quot;
@@ -565,7 +550,7 @@ see ya.&quot;
 You say goodbye to Jacob and head back to the [[entrance way.|Downstairs]]</tw-passagedata><tw-passagedata pid="15" name="Torie&#39;s Cafe" tags="" position="1142,846" size="100,100">You catch a ride on the bus and end up at Torie&#39;s Cafe, your all-time favorite place to grab lunch.
 
 Torie&#39;s has a very modern aesthetic, with colorful furniture and ample natural lighting giving the place an overall cheery vibe. They’re mainly known for their fantastic wraps, but also have some pretty good soups.
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;Look around for the line to order.&quot;&gt;&gt;
 Looking around you see the line to order, it’s a bit after lunch so there isn’t much of a wait. While walking to the line you see someone you think you know, they&#39;re sitting at a table towards the back and it seems as though they haven&#39;t noticed you yet.
 
 You could leave the line and go over and say hi to your friend, or you could just stay in line, get your food, and leave.
@@ -2147,7 +2132,7 @@ You get up shortly after that and [[head back to your car.|Valery Park Transitio
 &lt;&lt;choice [[Same here, Valery. Although I’d be lying if I said I wasn’t at least a little bit interested in you coming into lunch.|MPV True Ending 1.3]]&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="MPV One Ending 1.1" tags="" position="457,7054" size="100,100">&quot;Hell yeah. We&#39;ll have to talk some more later about our next date plans.&quot;
 
 &quot;Well, I guess our day is about done here. It has been a joy talking with you, can&#39;t say I expected today to end with us talking about our next date. But I&#39;ll take it, Gods know it&#39;s been a long time since I&#39;ve been in a serious relationship.&quot;
-&lt;&lt;if $race is &quot;Wolf&quot; and $gender is &quot;Female&quot;&gt;&gt;
+&lt;&lt;if $race is &quot;Wolf&quot; and $sex is &quot;Female&quot;&gt;&gt;
 
 /* This line is so cheesy. I love it, but I also think it might a bit too cheesy. On the other hand I feel like a game about furries should be willing to embrace this much cheesiness. So It&#39;s fucking staying. */
 
@@ -2163,7 +2148,7 @@ You get up shortly after that and [[head back to your car.|Valery Park Transitio
 
 &quot;Well, I guess our day is about done here. It has been a joy talking with you, can&#39;t say I expected today to end with us talking about our next date. But I&#39;ll take it, Gods know it&#39;s been a long time since I&#39;ve been in a serious relationship.&quot;
 
-&lt;&lt;if $race is &quot;Wolf&quot; and $gender is &quot;Female&quot;&gt;&gt;
+&lt;&lt;if $race is &quot;Wolf&quot; and $sex is &quot;Female&quot;&gt;&gt;
 /* This line is so cheesy. I love it, but I also think it might a bit too cheesy. On the other hand I feel like a game about furries should be willing to embrace this much cheesiness. So It&#39;s fucking staying. */
 &lt;&lt;choice [[*Give Valery a kiss on the cheek* Life is unpredictable, Valery. Sometimes you have days where life&#39;s a bitch. Fortunately for you, today was one where you got kissed by one instead.|MPV One Ending 2.1 Wolf]]&gt;&gt;
 
@@ -2233,7 +2218,7 @@ You embrace with Valery and share a passionate kiss. Chills run down your back, 
 
 The kiss ends after what seems like 5 minutes, though you know it was much shorter. While still holding you quite close, Valery speaks up.
 
-&lt;&lt;if $gender is &quot;Male&quot;&gt;&gt;
+&lt;&lt;if $sex is &quot;Male&quot;&gt;&gt;
 &quot;Would you believe that was my first time kissing a guy? I&#39;ve considered myself bisexual for a while but never really got romantically involved with a guy. Just couldn&#39;t find one that was my type; guess that changed tonight&quot;
 
 &quot;We&#39;ll just leave it at that for now, I don&#39;t go all in on the first date. See you around the neighborhood, $name. We&#39;ll have to talk about setting up a second date sometime.&quot; Valery says as he winks and walks back to his car.
@@ -3063,7 +3048,7 @@ As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek.
 </tw-passagedata><tw-passagedata pid="170" name="StoryMenu" tags="" position="522,22" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="Cafe Line" tags="" position="1302,989" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
 
 You order your usual combo; a tuna wrap with a bag of chips and a drink. Not a bad deal for $4!
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;Look for a table to sit at&quot;&gt;&gt;
 You sit down at a table after grabbing your food, nothing much happens while eating. The friend you saw leaves soon after you get your food, having seemingly no idea you were here.
 
 &lt;&lt;set $cafe_no_holly to true&gt;&gt;
@@ -3528,7 +3513,7 @@ Opening the rear car doors, &lt;&lt;continuelink &quot;you and Valery step into 
 [[Enough Questions|Chapter 4 RT CD 2 Transition]]
 &lt;&lt;else&gt;&gt;
 placeholder
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="RT CD VV" tags="" position="1860.6666666666667,5960.333333333333" size="100,100">//&#39;How long have you known this friend in Chicago, Valery?&#39;//
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="RT CD VV" tags="" position="1860,5960" size="100,100">//&#39;How long have you known this friend in Chicago, Valery?&#39;//
 
 &quot;Well, he&#39;s a childhood friend, so quite a while. Met him when I was 10, which makes it 15 years.&quot;
 
@@ -3715,7 +3700,34 @@ The conversation eventually dwindles down shortly after. Being around 2 hours aw
 
 [[Some time later...|Chapter 4 RT CD 4]]
 &lt;&lt;else&gt;&gt;
-PLACEHOLDER
+&quot;Know what? I&#39;ll look it up right now and settle this argument.&quot;
+
+Sasha grabs her phone and starts looking up the definintion of a commune. A couple of minutes later and she reads out the definition with a disappointed look on her face &quot;It says here that a commune is &#39;a group of people living together and sharing possessions and responsibilities.&#39;&quot;
+Your face lights up with a smirk as Sasha accidentally proves your point right. She sits silent for a moment before barking out her response.
+
+&quot;Okay but we’re still not a commune. Maybe our living situation has commune characteristics but it’s not a damn commune, $name.&quot;
+
+&lt;&lt;continuelink &quot;&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;&quot;&gt;&gt;&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;
+
+&quot;Our careers and better judgement, perhaps? Why would we start a commune? It doesn’t make sense, $name. This whole conversation doesn’t make sense!&quot;
+
+You laugh at Sasha’s remark, she does have a point-
+
+Jacob interjects with his point of view as you&#39;re talking &quot;So, just a thought. But wouldn’t a commune have to include more than just us 3 to really be considered a commune? Think about it, when you hear of a commune it usually includes dozens of people, not just 3.&quot;
+
+&quot;I appreciate the support Jacob but I think I’m just going to drop this discussion. It’s just getting too silly for me.&quot; Sasha speaks with a bemused expression on her face.
+
+&lt;&lt;continuelink&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;&gt;&gt;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;
+
+&quot;Well you take it because that’s all you’re going to get. It’s a shared living space. If that constitutes a commune than I guess most college students are living in a commune.&quot;
+
+Jacob gives his thoughts on the conversation yet again &quot;See, now this is why I was so excited for this road trip. I missed having these back and forth conversations. We’ve all been too busy to just chill and relax with each other like in college.&quot;
+
+&quot;The two of you just spent 20 minutes arguing about rather or not renting an apartment with someone is considered a commune. That’s exactly the type of silly shit we used to talk about late at night in college after a few drinks, I love it.&quot;
+
+The conversation eventually dwindles down shortly after. Being around 2 hours away from Chicago, you decide to spend the rest of your time reading through &quot;American Gods&quot;. A befitting book considering your current situation.
+
+[[Some time later...|Chapter 4 RT CD 4]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="211" name="Chapter 4 RT CD 4" tags="" position="2619,5768" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
