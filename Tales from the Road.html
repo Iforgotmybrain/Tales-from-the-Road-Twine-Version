@@ -379,7 +379,7 @@ What is your race? &lt;&lt;listbox &quot;$race&quot; autoselect&gt;&gt;
 &lt;&lt;option &quot;Dragon&quot;&gt;&gt;
 &lt;&lt;/listbox&gt;&gt;
 
-[[Submit|Intro]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="400,402" size="100,100">&quot;Looking fine as always&quot; you say to yourself.
+[[Submit|Intro]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="406.6666666666667,402" size="100,100">&quot;Looking fine as always&quot; you say to yourself.
 
 Your name is $name. You are $sex and you are a $race. Is this correct?
 
@@ -3241,9 +3241,10 @@ Cheers, Adíos, and thanks again for playing to the (current) end!
 
 [[&quot;&#39;I mean, I get why you did it. But personally, I&#39;d still go for the path with a higher risk and higher reward. Anyway, let&#39;s talk about something else.&#39;&quot;|Holly Questions Hub]]
 </tw-passagedata><tw-passagedata pid="186" name="Chapter 4 Start" tags="" position="1340,5459" size="100,100">PLACEHOLDER REMOVE THIS MORON
-&lt;&lt;set $holly_road_trip to true&gt;&gt;
+&lt;&lt;set $valery_road_trip to true&gt;&gt;
 &lt;&lt;set $name to &quot;Serj&quot;&gt;&gt;
 &lt;&lt;set $race to &quot;Wolf&quot;&gt;&gt;
+&lt;&lt;set $jacob_talked_1 to true&gt;&gt;
 The clock ticks to 7:00 AM. Your alarm rings, awakening you from a deep slumber.
 
 Begrudgingly, you grab your phone and turn off the alarm instead of muting it for another five minutes. Knowing that today you can’t afford to loaf around for an hour in bed before getting up.
@@ -3490,7 +3491,7 @@ Opening the rear car doors, &lt;&lt;continuelink &quot;you and Valery step into 
 
 &quot;That&#39;s awesome! Nothing better than being able to catch up with an old friend.&quot;
 
-&lt;&lt;continuelink &quot;Jacob joins the conversation, talking about his travels to Chicago&quot;&gt;&gt; Jacob joins the conversation, talking about his travels to Chicago &quot;I\&#39;ve been to Chicago a few times as well, Valery. Like Sasha said, I&#39;ve got some family there. Pretty much did the same thing as you, hit \&#39;em up when $name finished their planning. Said &#39;Hey, I\&#39;m gonna be stopping in Chicago on this date, you gonna be available?&#39;&quot;
+&lt;&lt;continuelink &quot;Jacob joins the conversation, talking about his travels to Chicago&quot;&gt;&gt; Jacob joins the conversation, talking about his travels to Chicago &quot;I&#39;ve been to Chicago a few times as well, Valery. Like Sasha said, I&#39;ve got some family there. Pretty much did the same thing as you, hit &#39;em up when $name finished their planning. Said &#39;Hey, I&#39;m gonna be stopping in Chicago on this date, you gonna be available?&#39;&quot;
 
 [[With Jacob having joined the conversation, you decide to do the same by asking some questions|Chapter 4 RT CD 1 Valery]]
 
@@ -3509,7 +3510,7 @@ Opening the rear car doors, &lt;&lt;continuelink &quot;you and Valery step into 
 
 &quot;Sounds good. I was going to say, if you had no plans you could always tag along with me and $name while we check out some of the touristy stuff in Chicago. But no, that sounds nice. Hope you have a good time.&quot;
 
-Jacob decides to put in his 2 cents regarding Chicago. &lt;&lt;continuelink &#39;&quot;You know I\&#39;ve been to Chicago a few times myself, Holly.&quot;&#39;&gt;&gt;&quot;You know I&#39;ve been to Chicago a few times myself, Holly. Have some family that live there. It&#39;s a pretty nice city, honestly. Gets a really bad rep in media but they tend to only show the bad side of the city. A city is a lot more than just what they show in TV shows or the news. For better or worse, sometimes.&quot;
+Jacob decides to put in his 2 cents regarding Chicago. &lt;&lt;continuelink &#39;&quot;You know I\&#39;ve been to Chicago a few times myself, Holly.&quot;&#39;&gt;&gt;&quot;You know I&#39;ve been to Chicago a few times myself, Holly. Have some family that live there. It&#39;s a pretty nice city, honestly. Gets a really bad rep in media but they tend to only show the bad side of the city. It&#39;s is a lot more than just what they show in TV shows or the news. Feel like that&#39;s the case with most cities.&quot;
 
 [[With Jacob joining the conversation, you decide to do the same by asking some questions.|Chapter 4 RT Chicago Dialogue Holly]]
 &lt;&lt;else&gt;&gt;
@@ -3549,7 +3550,7 @@ Eventually, you start to zone out a bit. The monotony of seeing the same flat pl
 
 &quot;I haven&#39;t! I told you, I don&#39;t travel much. Just not my thing—plus I&#39;m not a big fan of long drives. Err, typically not a fan of long drives. This road trip is kind of an exception to that.&quot;
 
-&quot;I mean, I lived in Oregon until I was 12, and then my family moved to this great state and settled in the fantastic city of Pitseleh. That&#39;s really the only traveling I&#39;ve done unless you count me going to university and moving to Iridium City.&quot;
+&quot;I mean, I lived in Oregon until I was 12, and then my family moved to this great state and settled in the fantastic city of Pitseleh. That&#39;s really the only traveling I&#39;ve done unless you count me going to college and moving to Iridium City.&quot;
 
 &quot;I think it&#39;s going to be exciting to check out Chicago for the day though. Go out, check some local landmarks out, head back to the car at whatever time we decide upon once we get there. Sounds like a good time.&quot;
 
@@ -3560,7 +3561,9 @@ Eventually, you start to zone out a bit. The monotony of seeing the same flat pl
 
 &quot;Plan is to stop at my Aunt&#39;s house, have supper, sit around and chat about stuff for a bit with her, my uncle, and my cousin. Typical family get together stuff. Nothing too crazy. Be nice to see everybody, though.&quot;
 
-&lt;&lt;return &quot;Ask another question&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="206" name="Chapter 4 RT CD 2 Transition" tags="" position="2152,5765" size="100,100">After asking some questions things seem to die down a bit. With Jacob and Sasha occasionally asking Valery a question here and there while you listen to music and look out the window.
+&lt;&lt;return &quot;Ask another question&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="206" name="Chapter 4 RT CD 2 Transition" tags="" position="2152,5765" size="100,100">//Some time later...//
+
+After asking some questions things seem to die down a bit. With Jacob and Sasha occasionally asking &lt;&lt;if $valery_road_trip is true&gt;&gt; Valery &lt;&lt;elseif $holly_road_trip is true&gt;&gt; Holly &lt;&lt;/if&gt;&gt; a question here and there while you listen to music and look out the window.
 
 Eventually, you start to zone out a bit. The monotony of seeing the same flat plains is luring you to sleep, with your music drowning out the dialogue in the background. Before you know it, [[you’ve started to doze off, head laying back on the car seat headrest.|Chapter 4 RT CD 2]]
 
@@ -3568,13 +3571,17 @@ Eventually, you start to zone out a bit. The monotony of seeing the same flat pl
 
 &quot;See, you probably remember my trip to Tampa since I went there when I was in high school. All the other places I went to during or after college.&quot;
 
-&lt;&lt;return &quot;Ask another question.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="208" name="RT CD HS" tags="" position="2071,5519" size="100,100">&quot;I //probably// will at some point. Maybe after we leave that park in Wisconsin I&#39;ll drive a bit. Once we get closer to Minneapolis though, somebody else is going to have to take over. I&#39;m not ready to deal with congested city traffic, no way.&quot;
+&lt;&lt;return &quot;Ask another question.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="208" name="RT CD HS" tags="" position="2071,5519" size="100,100">//&#39;Are you planning on driving at all during this road trip, Sasha?&#39;//
 
-Jacob offers his two cents on Sasha driving &quot;It does take a while to get comfortable with driving. You&#39;ve never really driven anywhere, have you? And I don&#39;t mean that as a slight before you say something. I just know when we were in college you didn&#39;t even have a car, Sasha. You took the bus or walked everywhere. And now you basically just drive around town and that&#39;s it.&quot;
+&quot;I //probably// will at some point. Maybe after we leave that park in Wisconsin I&#39;ll drive a bit. Once we get closer to Minneapolis though, somebody else is going to have to take over. I&#39;m not ready to deal with congested city traffic, no way.&quot;
+
+Jacob offers some input on Sasha driving &quot;It does take a while to get comfortable with driving. You&#39;ve never really driven anywhere, have you? And I don&#39;t mean that as a slight before you say something. I just know when we were in college you didn&#39;t even have a car, Sasha. You took the bus or walked everywhere. And now you basically just drive around town and that&#39;s it.&quot;
 
 &quot;No, I haven&#39;t. My experience learning to drive probably has something to do with all of this but that&#39;s a whole other can of worms to open. For now we&#39;ll just leave it at; I don&#39;t like driving because I&#39;m not used to it.&quot;
 
-&lt;&lt;return &quot;Ask another question.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="209" name="Chapter 4 RT CD 2" tags="" position="2309,5765" size="100,100">An undetermined amount of time later and you&#39;re quickly awoken from your nap by the startling sound of the car’s tires hitting the rumble strips. /* (Could add SFX here) */
+&lt;&lt;return &quot;Ask another question.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="209" name="Chapter 4 RT CD 2" tags="" position="2309,5765" size="100,100">//An undetermined amount of time later...//
+
+You&#39;re quickly awoken from your nap by the startling sound of the car’s tires hitting the rumble strips. /* (Could add SFX here) */
 
 &lt;&lt;continuelink &quot;Looking around, you can see Jacob’s face showing a slight surprise before he interjects&quot;&gt;&gt;Looking around, you can see Jacob’s face showing a slight surprise before he interjects &quot;Man… Only an hour and a half into this road trip and I’m already starting to feel sleepy. Traveling how many hours by car is dangerous enough without having to deal with fatigue.&quot; Jacob says with a slightly lethargic tone.
 
@@ -3583,7 +3590,7 @@ Seems you&#39;ve been napping for around an hour. Conisdering you&#39;d only bee
 &quot;Didn’t your uncle actually get into a car crash from something like that? Driving too long, wasn’t it? I don’t remember the exact story you told me but I think it was something along those lines&quot; Sasha remarks, her memory having been stoked by Jacob’s remark.
 
 &lt;&lt;if $holly_road_trip or $valery_road_trip is true&gt;&gt;
-&quot;Yeah, it was something like that. Hell, that was a while ago, wasn’t it? 3 years ago, maybe? Might as well tell the whole story over again. ‘Sides, our new friend here probably has no idea what we’re talking about.&quot;
+&quot;Yeah, it was something like that. Hell, that was a while ago, wasn’t it? 3 years ago, maybe? Might as well tell the whole story over again. ‘Sides, our new friend in the back probably has no idea what we’re talking about.&quot;
 &lt;&lt;else&gt;&gt;
 &quot;Yeah, something like that. Hell, that was a while ago now that I think about it. 3 years, I think. Screw it, I&#39;ll just tell the story over again.&quot;
 &lt;&lt;/if&gt;&gt;
@@ -3619,7 +3626,7 @@ Seems you&#39;ve been napping for around an hour. Conisdering you&#39;d only bee
 
 &quot;You know I’ve never been in an accident myself but I can see why it messes up your back so much. Going from 60-0 in a matter of milliseconds isn’t exactly great for your body.&quot;
 
-&quot;I was in one when I first got my license. Wasn’t anything major thankfully, just a fender bender in like a 25 zone. I can’t really speak to the 60-0 thing.” Sasha details. &quot;Also, all this talk about car crashes has kind of got me nervous. We better not be jinxing ourselves here.&quot;
+&quot;I was in one when I first got my license. Wasn’t anything major thankfully, just a fender bender in like a 25 zone. I can’t really speak to the 60-0 thing.” Sasha details. &quot;Also, all this talk about car crashes has me a bit nervous. We better not be jinxing ourselves here.&quot;
 
 &quot;Do you really believe in that superstitious stuff, Sasha? What’s next, are you going to ask us to buy your essential oils? Tell us how we can be our own boss selling some placebo vitamins?&quot; Jacob jokingly jabs toward Sasha
 
@@ -3631,9 +3638,9 @@ Seems you&#39;ve been napping for around an hour. Conisdering you&#39;d only bee
 
 &quot;Because we all love each other? Nah, fair retort and a fair point. But someone amongst us used to be making bank before they quit. Just throwing that out there. Still love you, $name.&quot;
 
-[[&quot;&#39;Hey now, we can all be comrades in poverty. I mean, if you really think about it, our living situation is kind of like a commune…&#39;&quot;|Chapter 4 RT CD 3]]</tw-passagedata><tw-passagedata pid="210" name="Chapter 4 RT CD 3" tags="" position="2469,5765" size="100,100">//&#39;Hey, we can all be comrades in poverty. I mean, if you really think about it, our living situation is kind of like a commune…&#39;//
+[[&quot;&#39;Hey now, we can all be comrades in poverty. No need to attack me. On the topic of our living situation though... Don&#39;t you think we kind of live in a commune kind of situation? Think about it...&#39;&quot;|Chapter 4 RT CD 3]]</tw-passagedata><tw-passagedata pid="210" name="Chapter 4 RT CD 3" tags="" position="2469,5765" size="100,100">//&#39;Hey now, we can all be comrades in poverty. No need to attack me. On the topic of our living situation though... Don&#39;t you think we kind of live in a commune kind of situation? Think about it...&#39;//
 
-&quot;$name, no it isn’t. We share expenses and chores, that doesn’t mean we live in a commune.&quot;
+&quot;$name, no we don&#39;t. We share expenses and chores, that doesn’t mean we live in a commune.&quot;
 
 &lt;&lt;continuelink &quot;You counter Sasha’s claim, exclaiming that it’s the &#39;we&#39; that matters the most. It’s &#39;our&#39; apartment, &#39;our&#39; expenses.&quot;&gt;&gt;You counter Sasha’s claim, exclaiming that it’s the &#39;we&#39; that matters the most. It’s &#39;our&#39; apartment, &#39;our&#39; expenses.
 
@@ -3650,7 +3657,7 @@ Your face lights up with a smirk as Valery proves your point right. Sasha sits s
 
 &lt;&lt;continuelink &#39;&quot;Okay but we’re still not a commune.&quot;&#39;&gt;&gt;&quot;Okay but we’re still not a commune. Maybe our living situation has commune characteristics but it’s not a damn commune, $name.&quot;
 
-&lt;&lt;continuelink &quot;&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;&quot;&gt;&gt;&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;
+&lt;&lt;continuelink &quot;&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;&quot;&gt;&gt;//&#39;It’s not. But it could be, Sasha. What’s stopping us?&#39;//
 
 &quot;Our careers and better judgement, perhaps? Why would we start a commune? It doesn’t make sense, $name. This whole conversation doesn’t make sense!&quot;
 
@@ -3660,15 +3667,17 @@ You laugh at Sasha’s remark, she does have a point-
 
 &quot;I appreciate the support Valery but I think I’m just going to drop this discussion. It’s just getting too silly for me.&quot; Sasha speaks with a bemused expression on her face.
 
-&lt;&lt;continuelink&quot;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;&quot;&gt;&gt;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;
+&lt;&lt;continuelink&quot;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;&quot;&gt;&gt;//&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;//
 
 &quot;Well you take it because that’s all you’re going to get. It’s a shared living space. If that constitutes a commune than I guess most college students are living in a commune.&quot;
 
-Jacob interrupts the conversation briefly &quot;See, now this is why I was so excited for this road trip. I missed having these back and forth conversations. We’ve all been too busy to just chill and relax with each other like in college.&quot;
+Jacob interrupts the conversation, now you&#39;ve got everyone in the car talking: &quot;See, now //this// is why I was so excited for this road trip. I missed having these back and forth conversations. We’ve all been too busy to just chill and relax with each other like in college.&quot;
 
-&quot;The two of you just spent 20 minutes arguing about rather or not renting an apartment with someone is considered a commune. That’s the exact type of silly shit we used to talk about late at night in college, I love it.&quot;
+&quot;The two of you just spent 20 minutes arguing about rather or not renting an apartment with someone else is considered a commune. This is exactly the type of silly shit we used to talk about late at night in college, I love it.&quot;
 
-&quot;Of course you wouldn’t know about that, sorry Valery. Kind of forget that you just joined this misfit group a few hours ago.&quot; Jacob says while looking at Valery through the mirror.
+&quot;Those nights where we&#39;d be hanging out at 1 AM on The Union&#39;s second floor lobby just talking about whatever popped into our mind. Oh man, I miss those days.&quot;
+
+&lt;&lt;continuelink &#39;&quot;Of course you wouldn’t know about that, sorry Valery.&quot;&#39;&gt;&gt;&quot;Of course you wouldn’t know about that, sorry Valery. Kind of forget that you just joined this misfit group a few hours ago.&quot; Jacob says while looking at Valery through the mirror.
 
 &quot;No worries. I get the gist of it. Obviously you don’t have these kinds of arguments without knowing someone really well.&quot;
 
@@ -3683,11 +3692,11 @@ The conversation eventually dwindles down shortly after. Being around 2 hours aw
 &lt;&lt;elseif $holly_road_trip is true&gt;&gt;
 &quot;Here, I’ll Google that for you Sasha and end this argument right here, right now.&quot; Holly interjects before grabbing her phone.
 
-She taps away at her phone for a moment before reading the textbook definition &quot;Here we go… just a warning, I don’t think you’re going to like this, Sasha. It says that a commune is &#39;a group of people living together and sharing possessions and responsibilities.&#39;&quot; 
+&lt;&lt;continuelink &quot;She taps away at her phone for a moment before reading the textbook definition:&quot;&gt;&gt;She taps away at her phone for a moment before reading the textbook definition: &quot;Here we go… just a warning, I don’t think you’re going to like this, Sasha. It says that a commune is &#39;a group of people living together and sharing possessions and responsibilities.&#39;&quot; 
 
-&quot;Don’t shoot the messenger here, I’m just a neutral third party giving unbiased facts.&quot; Holly states while putting her hands up in a joking manner.
+&quot;Don’t shoot the messenger here, I’m just a neutral third party here.&quot; Holly states while putting her hands up in a joking manner.
 
-Your face lights up after hearing Holly prove your point right. Meanwhile Sasha sits silent for a moment before barking out her response.
+&lt;&lt;continuelink &quot;Your face lights up after hearing Holly prove your point right.&quot;&gt;&gt;Your face lights up after hearing Holly prove your point right. Meanwhile Sasha sits silent for a moment before barking out her response.
 
 &quot;Okay but we’re still not a commune. Maybe our living situation has commune characteristics but it’s not a damn commune, $name&quot;
 
@@ -3697,27 +3706,29 @@ Your face lights up after hearing Holly prove your point right. Meanwhile Sasha 
 
 You laugh at Sasha’s remark. She does have a point-
 
-&quot;Okay, so, just a thought I had. But, wouldn’t a commune typically be bigger than just 3 or 4 people? I mean, I’m no expert on communes but whenever you hear of a commune there’s usually dozens of people in it. Not just 3 or 4.&quot; Holly interjects to provide some more information to consider, this time backing up Sasha’s side of the argument.
+&lt;&lt;continuelink &#39;&quot;Okay, so, just a thought I had.&quot;&#39;&gt;&gt;&quot;Okay, so, just a thought I had. But, wouldn’t a commune typically be bigger than just 3 or 4 people? I mean, I’m no expert on communes but whenever you hear of a commune there’s usually dozens of people in it. Not just 3 or 4.&quot; Holly interjects to provide some more information to consider, this time backing up Sasha’s side of the argument.
 
 &quot;Okay so there’s support for both sides of this argument. Thank you, Holly. But I think I’ll just drop this discussion because it keeps getting sillier and sillier. &quot; Sasha speaks with a bemused expression on her face.
 
-&lt;&lt;continuelink&quot;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;&quot;&gt;&gt;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;
+&lt;&lt;continuelink&quot;&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;&quot;&gt;&gt;//&#39;Hmm… How about a shared living space with commune characteristic? I’d take that over calling our living situation a commune.&#39;//
 
 &quot;Well you better take it because that’s all you’re going to get. It’s a shared living space. If that constitutes a commune than I guess most college students are living in a commune.&quot;
 
-Jacob interrupts the conversation briefly &quot;See, now //this// is why I was so excited for this road trip. I missed having these back and forth conversations. We’ve all been too busy to just chill and relax with each other like in college.&quot;
+Jacob interrupts the conversation, now you&#39;ve got everyone in the car talking: &quot;See, now //this// is why I was so excited for this road trip. I missed having these back and forth conversations. We’ve all been too busy to just chill and relax with each other like in college.&quot;
 
 &quot;The two of you just spent 20 minutes arguing about rather or not renting an apartment with someone else is considered a commune. This is exactly the type of silly shit we used to talk about late at night in college, I love it.&quot;
 
-&quot;Of course you wouldn’t know about that, sorry Holly. Kind of forget that you just joined this misfit group recently.&quot; Jacob says while looking at Holly through the mirror.
+&quot;Those nights where we&#39;d be hanging out at 1 AM on The Union&#39;s second floor lobby just talking about whatever popped into our mind. Oh man, I miss those days.&quot;
+
+&lt;&lt;continuelink &#39;&quot;Of course you wouldn’t know about that, sorry Holly.&quot;&#39;&gt;&gt;Of course you wouldn’t know about that, sorry Holly. Kind of forget that you just joined this misfit group recently.&quot; Jacob says while looking at Holly through the mirror.
 
 &quot;Oh, I don’t think I need to be long-term member of this group to get the gist of it. Back in high school me and $name used to talk about stuff like this all the time, I get it.&quot;
 
-&lt;&lt;continuelink&quot;&#39;Yes! I remember most of those conversations too. You get my humor just like these two do.&#39;&quot;&gt;&gt;
+&lt;&lt;continuelink&quot;&#39;Yes! I remember most of those conversations too. You get my humor just like these two do.&#39;&quot;&gt;&gt;//&#39;Yes! I remember most of those conversations too. You get my humor just like these two do.&#39;//
 
 &quot;I can see that. They have that same love for absurdity that you do. You know, I’m sure by the end of this whole thing we’ll be a big ‘ole happy group of 4. Going on even more ‘adventures’ together.&quot;
 
-&quot;Hey, I wouldn’t doubt that. I’m sure if you’ve got along with her for, what, 7, 8 years? That me and Sasha will be friends with her come the end of this road trip. I suppose a week of forced social interaction will do that.&quot; Jacob responds with a somewhat snarky tone.
+&quot;Hey, I wouldn’t doubt that. I’m sure if you’ve got along with Holly for, what, 7, 8 years? That me and Sasha will be friends with her come the end of this road trip. I suppose a week of forced social interaction will do that.&quot; Jacob responds with a somewhat snarky tone.
 
 &quot;I’d say the same for you two. $name has lived with the both of you for how long, can’t be all that bad, right?&quot;
 
@@ -3760,8 +3771,8 @@ The conversation dwindles down shortly after. Being around 2 hours away from Chi
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="211" name="Chapter 4 RT CD 4" tags="" position="2619,5768" size="100,100">You get about halfway through your book before you see the first sights of the Chicago skyline. The Sears Tower standing tall over the city with Lake Michigan a short distance away over to the east of the city. It seems the rainy weather that was inhabiting your home state isn&#39;t affecting Chicago. Instead it&#39;s partly cloudy out, with no rain in sight.
 
 &quot;Oh yeah, there&#39;s that Chicago skyline again. The city looks great from a distance. &#39;Course, having a great lake right beside it will help.&quot;
-
-&quot;So. Game planning time. We&#39;ve already got our travel arrangements sorted out, right? We park at the parking garage near the (pink stop name), I take the L to the Jefferson Park area, (Valery/Holly) get picked up by the friend they&#39;re visiting, and $name and Sasha go and do whatever the hell they want. $name has us all getting back around 5 PM-ish and it&#39;ll be around 12 when we get to the garage. A decent chunk of time. Any objections? Issues? Did I miss anything, $name?&quot;
+/* Still don&#39;t like this */
+&quot;So. Game planning time. We&#39;ve already got our travel arrangements sorted out, right? We park at the parking garage near the Polk stop, I take the L to the Jefferson Park area, &lt;&lt;if $valery_road_trip is true&gt;&gt;Valery gets picked up by the friend they&#39;re visiting, and $name and Sasha go and do whatever the hell they want. &lt;&lt;elseif $holly_road_trip is true&gt;&gt; Holly gets picked up by the friend they&#39;re visiting, and $name and Sasha go and do whatever the hell they want. &lt;&lt;else&gt;&gt; and you two will be out sightseeing. &lt;&lt;/if&gt;&gt; We should all be back around 5-ish, that means around 5 hours to do our stuff. A decent chunk of time. Any objections? Issues? Did I miss anything, $name?&quot;
 
 &lt;&lt;continuelink &quot;&#39;No, you covered everything. We&#39;re good to go.&#39;&quot;&gt;&gt;&#39;No, you covered everything. We&#39;re good to go.&#39;
 
@@ -3779,7 +3790,7 @@ A 10-mile, 30-minute drive later and you eventually arrive at the parking garage
 
 [[&quot;&#39;Hey, what family do you have in Chicago, Jacob?&#39;&quot;|RT CD VJ]]
 
-[[//Enough questions for now//|Chapter 4 RT CD 2 Transition]]</tw-passagedata><tw-passagedata pid="214" name="Chapter 4 Chicago Start" tags="" position="2620,5903" size="100,100">Jacob turns the key to off, grabbing his phone from it&#39;s holder before opening the door of the car and getting out.
+[[&#39;Enough questions for now&#39; You think to yourself.|Chapter 4 RT CD 2 Transition]]</tw-passagedata><tw-passagedata pid="214" name="Chapter 4 Chicago Start" tags="" position="2620,5903" size="100,100">Jacob turns the key to off, grabbing his phone from it&#39;s holder before opening the door of the car and getting out.
 
 &lt;&lt;continuelink &quot;After getting out of the car he lets out a long stretch:&quot;&gt;&gt;After getting out of the car he lets out a long stretch:
 &quot;Ohh yeah, feels good to stand up and stretch after that long drive. I feel like a new man now.&quot;
