@@ -428,13 +428,15 @@ The Festival
 &lt;/span&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
-You wake up around your usual time of 11 AM. You get a notification on your phone stating that the yearly Lake Festival is going on today, you feel like Sasha might have mentioned that last night but you&#39;re not sure. Either way it might be worth checking out, you&#39;ve gone to it every other year you&#39;ve lived here, so why stop now?
+ The next day you wake up around your usual time of 11 AM. While lying in bed, you roll over towards your night stand, grabbing your phone to see there&#39;s a notification stating that the yearly Lake Festival is going on today. You feel like Sasha might have mentioned that last night but you&#39;re quiet not sure. Either way it might be worth checking out, you&#39;ve gone to it every other year you&#39;ve lived here, so why stop now?
 
 &lt;&lt;continuelink &quot;Get out of bed&quot;&gt;&gt;
 
-You get out of bed and see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
+You get out of bed and get dressed before evaluating your next action.
 
-You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]] 
+You see the door to the hallway in front of you, and the door to the bathroom to your east. You could also use your computer.
+
+You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">You enter the upstairs hallway of your house. Dated light brown carpet lines the floor, and light blue paint clings to the walls. The door to your bedroom is directly behind you, the door to Sasha&#39;s bedroom is to the front left of you, with Jacob&#39;s bedroom door being up and to the right. There&#39;s also the stairs leading downstairs over to your right.
 
 You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Jacob&#39;s Bedroom]], [[The Downstairs|Downstairs]].</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom; it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
@@ -625,7 +627,7 @@ Ah, Holly. A vixen in the most literal sense. She hasn’t aged much since you l
 
 Curious, you ask what Holly’s been up to since you last met, a faint look of disappointment fills her face as she tells you.
 
-&lt;&lt;continuelink &#39;&quot;Yeah, so, I dropped out of college..&quot;&#39;&gt;&gt; &quot;Yeah, so… I dropped out of college. Right after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty poor reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. Also might have made a slight mistake when it came to picking my major — I realized pretty quick that marketing was not for me.&quot;
+&lt;&lt;continuelink &#39;&quot;Yeah, so... I dropped out of college.&quot;&#39;&gt;&gt; &quot;Yeah, so… I dropped out of college. Right after my 2nd year. Believe it or not it wasn’t because of my grades, I just wasn’t enjoying &quot;the college life&quot;. I know that’s a pretty poor reason to drop out, but I just couldn’t see myself doing another 2 years there, ya know?. Also might have made a slight mistake when it came to picking my major — I realized pretty quick that marketing was not for me.&quot;
 
 &lt;&lt;continuelink &quot;It&#39;s easy to find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.&quot;&gt;&gt; It&#39;s easy to find yourself sympathizing with Holly, remembering how many times you second guessed your choice to attend college.
 
@@ -701,54 +703,53 @@ Caught up in your thoughts you find yourself at [[the end of your walk before yo
 You tell Sasha you just wanted to chat with her for a bit.
 
 
-&lt;&lt;continuelink &#39;&quot;Alright, just like old times!&quot;&#39;&gt;&gt; &quot;Alright, just like old times!&quot; It&#39;s been awhile since we&#39;ve just sat down and talked”
+&lt;&lt;continuelink &#39;&quot;Alright, just like old times!&quot;&#39;&gt;&gt; &quot;Alright, just like old times!&quot; It&#39;s been a while since we&#39;ve just sat down and talked.”
 
-“So, what kind of movies do you like? Can’t remember ever talking about movies with you, and I know we haven’t gone to see any together.”
+&quot;So, what kind of movies do you like? Can’t remember ever talking about movies with you, and I know we haven’t gone to see any together.&quot;
 
 &lt;&lt;continuelink &quot;You spent the next half an hour talking about movies with Sasha,&quot;&gt;&gt;You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
 
 
 &lt;&lt;continuelink &quot;//An hour or so later//&quot;&gt;&gt;//An hour or so later//
 
-“And that’s why I think the prequel movies are underrated. I’m telling you that they would have had a better initial release if the audiences&#39; expectations weren’t set sky high.”
+&quot;…And that’s why I think the prequel movies are underrated. I’m telling you that they would have had a better initial release if the audiences&#39; expectations weren’t set sky high.&quot;
 
 As Sasha finishes her rant on the prequel movies you start to plan your exit.
 
-“Anyway, I really enjoyed talking about movies with you. We really need to watch those movies sometime, I know you’ll love them.”
+&quot;Anyway, I really enjoyed talking about movies with you. We really need to watch those movies sometime, I know you’ll love them.&quot;
 
 &lt;&lt;continuelink &quot;You tell Sasha you’re looking forward to watching them with her sometime.&quot;&gt;&gt; You tell Sasha you’re looking forward to watching them with her sometime. Now is not that time though, as you say good night and head up to bed.
 
-“Alright, see you tomorrow. We’ve really gotta talk more often! I miss just sitting down and talking with you like we did in college.”
+&quot;Alright, see you tomorrow. We’ve really gotta talk more often! I miss just sitting down and talking with you like we did way back when.&quot;
 
 &lt;&lt;set $ending_points += 2&gt;&gt;
 You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="21" name="Sasha Living Room Purpose Chat" tags="" position="699,384" size="100,100">&lt;&lt;set $sasha_living_room_talked to true&gt;&gt;
-/* I really like this scene. Think it was pretty well written. Probably best of chapter 1 */
 
 You tell Sasha you want to ask her for some advice, that you wanted to ask her for help on finding &#39;purpose&#39;.
 
 &lt;&lt;continuelink &#39;&quot;Purpose, huh?&quot;&#39;&gt;&gt;&quot;Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn&#39;t be long before you got sick of freelance work.&quot;
 
-“Well I’m assuming your issue is that you don&#39;t really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don&#39;t even work. You&#39;ve got the money to just sit on your ass for a year if you wanted.&quot;
+“Well, let&#39;s make some assumptions. I’m guessing your issue is that you don&#39;t really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don&#39;t even work. You&#39;ve got the money to just sit on your ass for a year if you wanted.&quot;
 
 &lt;&lt;continuelink &#39;&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic.&quot;&#39;&gt;&gt;
 
-&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic. I think we might&#39;ve talked about this before but whatever. Back when I graduated high school, I was a mess. I had zero idea what I wanted to do. My parents wanted me to go to college, but I didn’t feel like I would be cut out for it. But I didn’t want to go straight to working either, since in my hometown there was really no viable career path for me. Factory jobs were long gone, and if you needed an entry level job the only options you had were retail jobs. And those weren&#39;t going to take me anywhere.&quot;
+&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic. I think we might have talked about this before but whatever. Back when I graduated high school, I was a mess. I had zero idea what I wanted to do. My parents wanted me to go to college, but I didn’t feel like I would be cut out for it. But I didn’t want to go straight to working either, since in my hometown there was really no viable career path for me. Factory jobs were long gone, and if you needed an entry level job the only options you had were retail jobs. And those weren&#39;t going to take me anywhere.&quot;
 
-&quot;So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I worked my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end. Not to mention my parents weren&#39;t going to support me for much longer.&quot;
+&quot;So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I put in my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end. Not to mention my parents weren&#39;t going to support me for much longer.&quot;
 
 &quot;I started to feel lost after those few months, I had no long-term goals, no real ambition, I&#39;d say I wasn&#39;t too far off from becoming a dead beat. Didn&#39;t help that I surrounded myself with people just as lost as I was.&quot;
 
 &lt;&lt;continuelink &quot;&#39;So what&#39;d you do?&#39;&quot;&gt;&gt;&#39;So what&#39;d you do?&#39;
 
-“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though, I’d go to community college to save money and then transfer to a 4-year if I ended up enjoying it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, “fuck it” and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
+“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though, I’d go to community college to save money and then transfer to a 4-year if I ended up enjoying it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, &#39;fuck it&#39; and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
 
-&quot;Point is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say &#39;fuck it&#39; and try some weird shit, you never know what might happen. You could end up finding your &#39;purpose&#39;, or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don&#39;t know, just do //something.//&quot;
+&quot;What I&#39;m trying to say is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say &#39;fuck it&#39; and try some weird shit. You never know what might happen. You could end up finding your &#39;purpose&#39;, or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don&#39;t know, just do //something.//&quot;
 
 &lt;&lt;continuelink &quot;&#39;Thanks Sasha.&#39;&quot;&gt;&gt;&#39;Thanks Sasha.&#39;
 
 “Of course, anything for my best friend. If you wanna talk about something else, you just let me know.&quot;
 &lt;&lt;set $ending_points += 4&gt;&gt;
-You say good night to Sasha and head up to your [[bedroom for the night.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="22" name="Festival Start" tags="" position="259,1432" size="100,100">You hop on a bus headed to the festival. The Lake Festival, to be exact. You&#39;ve gone to this event just about every year you&#39;ve lived here, it&#39;s nothing special and you mostly just go out of tradition. 
+You say good night to Sasha and head up to your [[bedroom for the night.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="22" name="Festival Start" tags="" position="267.3333333333333,1440.3333333333333" size="100,100">You hop on a bus headed to the festival. The Lake Festival, to be exact. You&#39;ve gone to this event just about every year you&#39;ve lived here, it&#39;s nothing special and you mostly just go out of tradition. 
 
 While on the bus you sit next to a man with an ‘I heart NY shirt’ on. He’s carrying a sizable backpack, and based off his appearance he seems to be a tourist.
 
@@ -3927,7 +3928,7 @@ Sasha Chat
 
 Now, do you wanna stop here and start playing the game at chaper 2, or do you want to skip chapter 2 as well?
 [[Play Chapter 2|placeholderrmkmg]]
-[[Skip Chapter 2]]</tw-passagedata><tw-passagedata pid="216" name="placeholderrmkmg" tags="" position="762,132" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 2" tags="" position="1175,118" size="100,100">Okay comrade. Same deal here, tell me what you want:
+[[Skip Chapter 2]]</tw-passagedata><tw-passagedata pid="216" name="placeholderrmkmg" tags="" position="758.6666666666666,127" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 2" tags="" position="1175,118" size="100,100">Okay comrade. Same deal here, tell me what you want:
 
 Stick with Holly?
 
