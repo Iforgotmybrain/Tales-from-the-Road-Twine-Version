@@ -395,20 +395,18 @@ Your name is $name. You are $sex and you are a $race. Is this correct?
 
 [[Yes|Your Bedroom]]
 [[No|Great Days]]</tw-passagedata><tw-passagedata pid="3" name="Your Bedroom" tags="" position="408,547" size="100,100">&lt;&lt;if $sasha_living_room_talked is not true&gt;&gt; 
-&lt;&lt;nobr&gt;&gt;
-&lt;&lt;if visited(&quot;Your Bedroom&quot;) is 1&gt;&gt;
-&lt;&lt;nobr&gt;&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;span style = &quot;font-size: 32px&quot;&gt;
-Chapter 1&lt;br&gt;
-&lt;/span&gt;
-&lt;span style = &quot;font-size: 24px&quot;&gt;
-Going Nowhere
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;
+    &lt;&lt;if visited(&quot;Your Bedroom&quot;) is 1&gt;&gt;
+    &lt;&lt;nobr&gt;&gt;
+    /* Fix this with CSS styling */
+    &lt;div style=&quot;text-align: center&quot;&gt;
+        &lt;span style = &quot;font-size: 32px&quot;&gt;
+            Chapter 1&lt;br&gt;
+        &lt;/span&gt;
+        &lt;span style = &quot;font-size: 24px&quot;&gt;
+            Going Nowhere
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;&lt;/nobr&gt;&gt;
 You&#39;re standing in your bedroom after having awakened from a good night&#39;s rest. Your feet are standing on the ever-plush blue carpet that you&#39;re oh-so familiar with. The walls pained in the usual peach color you&#39;re accustomed to.
 
 Looking around, your room is indeed in the same layout as last night. Your bed is directly behind you as it sits against the corner of the west and north wall, your nightstand standing as it usually does right beside it. All the while your desk awaits your presence from across the room.
@@ -416,6 +414,15 @@ Looking around, your room is indeed in the same layout as last night. Your bed i
 As far as exits from your bedroom go, you see the door to the [[hallway|Hallway]] in front of you and to the right, with the door to the [[bathroom|Bathroom]] to the east.
 
 You might also check out your [[computer over at the desk.|Computer]]
+&lt;&lt;else&gt;&gt;
+You&#39;re standing in your bedroom as your feet stand on the ever-plush blue carpet that you&#39;re oh-so familiar with. The walls pained in the usual peach color you&#39;re accustomed to.
+
+Looking around, your room is indeed in the same layout as last night. Your bed is directly behind you as it sits against the corner of the west and north wall, your nightstand standing as it usually does right beside it. All the while your desk awaits your presence from across the room.
+
+As far as exits from your bedroom go, you see the door to the [[hallway|Hallway]] in front of you and to the right, with the door to the [[bathroom|Bathroom]] to the east.
+
+You might also check out your [[computer over at the desk.|Computer]]
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;elseif $sasha_living_room_talked is true&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
@@ -710,7 +717,7 @@ You tell Sasha you just wanted to chat with her for a bit.
 
 &quot;So, what kind of movies do you like? Can’t remember ever talking about movies with you, and I know we haven’t gone to see any together.&quot;
 
-&lt;&lt;continuelink &quot;You spent the next half an hour talking about movies with Sasha,&quot;&gt;&gt;You spent the next half an hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
+&lt;&lt;continuelink &quot;You spent the next half hour talking about movies with Sasha,&quot;&gt;&gt;You spent the next half hour talking about movies with Sasha, maybe not exactly what you had in mind when you came to talk with her, but it works.
 
 
 &lt;&lt;continuelink &quot;//An hour or so later//&quot;&gt;&gt;//An hour or so later//
@@ -726,13 +733,13 @@ As Sasha finishes her rant on the prequel movies you start to plan your exit.
 &quot;Alright, see you tomorrow. We’ve really gotta talk more often! I miss just sitting down and talking with you like we did way back when.&quot;
 
 &lt;&lt;set $ending_points += 2&gt;&gt;
-You nod your head in agreement with Sasha before getting up and [[walking up to your room.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="21" name="Sasha Living Room Purpose Chat" tags="" position="699,384" size="100,100">&lt;&lt;set $sasha_living_room_talked to true&gt;&gt;
+You nod your head in agreement with Sasha before getting up and [[walking to your room.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="21" name="Sasha Living Room Purpose Chat" tags="" position="699,384" size="100,100">&lt;&lt;set $sasha_living_room_talked to true&gt;&gt;
 
 You tell Sasha you want to ask her for some advice, that you wanted to ask her for help on finding &#39;purpose&#39;.
 
-&lt;&lt;continuelink &#39;&quot;Purpose, huh?&quot;&#39;&gt;&gt;&quot;Purpose, huh? Yeah that doesn’t surprise me. Figured it wouldn&#39;t be long before you got sick of freelance work.&quot;
+&lt;&lt;continuelink &#39;&quot;Purpose, huh?&quot;&#39;&gt;&gt;&quot;Purpose, huh? Yeah, that doesn’t surprise me. Figured it wouldn&#39;t be long before you got sick of freelance work.&quot;
 
-“Well, let&#39;s make some assumptions. I’m guessing your issue is that you don&#39;t really have anything to chase after. The way your work goes now, you basically jump job to job every month. Hell, I know some months you don&#39;t even work. You&#39;ve got the money to just sit on your ass for a year if you wanted.&quot;
+“Well, let&#39;s make some assumptions. I’m guessing your issue is that you don&#39;t really have anything to chase after. The way your work goes now, you basically jump from job to job every month. Hell, I know some months you don&#39;t even work. You&#39;ve got the money to just sit on your ass for a year if you wanted.&quot;
 
 &lt;&lt;continuelink &#39;&quot;I have a little bit of experience with this myself, which of course makes me an expert on the topic.&quot;&#39;&gt;&gt;
 
@@ -740,11 +747,11 @@ You tell Sasha you want to ask her for some advice, that you wanted to ask her f
 
 &quot;So, I took a gap year to try and plan my future out. Told myself I’d work part time while ‘researching’ career paths. Now, you know me, how well do you think that worked out? I put in my 20 hours a week and then pissed off and went partying with my friends or sat at home all day. It was fun for a few months, but your mind wants something to work towards, and this lifestyle was a dead end. Not to mention my parents weren&#39;t going to support me for much longer.&quot;
 
-&quot;I started to feel lost after those few months, I had no long-term goals, no real ambition, I&#39;d say I wasn&#39;t too far off from becoming a dead beat. Didn&#39;t help that I surrounded myself with people just as lost as I was.&quot;
+&quot;I started to feel lost after those few months... I had no long-term goals, no real ambition, I&#39;d say I wasn&#39;t too far off from becoming a dead beat. Didn&#39;t help that I surrounded myself with people just as lost as I was.&quot;
 
 &lt;&lt;continuelink &quot;&#39;So what&#39;d you do?&#39;&quot;&gt;&gt;&#39;So what&#39;d you do?&#39;
 
-“After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though, I’d go to community college to save money and then transfer to a 4-year if I ended up enjoying it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, &#39;fuck it&#39; and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was Geology.”
+&quot;After talking with my parents and a couple of my friends who actually did something after high school, I decided that I’d give college a try. I wasn’t going straight to university though, I’d go to a community college to save money and then transfer to a 4 year if I ended up enjoying it. This wasn’t my ideal path, but my way of doing things kind of turned out to be a disaster, so I said, &#39;fuck it&#39; and decided to give the more traditional post high school path a go. Ended up liking college quite a bit as you might have guessed given our background. I went in as undecided but found my passion pretty quick, which was studying rocks. How exciting.&quot;
 
 &quot;What I&#39;m trying to say is, sometimes you have to go outside your comfort zone to find what you want. Just go out there, say &#39;fuck it&#39; and try some weird shit. You never know what might happen. You could end up finding your &#39;purpose&#39;, or meeting a lifelong friend. If I were you, I’d start trying out new stuff. Maybe pick up a new hobby, meet someone new, volunteer, I don&#39;t know, just do //something.//&quot;
 
