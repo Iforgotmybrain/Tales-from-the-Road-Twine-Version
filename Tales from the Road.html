@@ -372,6 +372,7 @@ Character Options
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 &lt;&lt;set $currently_playing to &quot;bgm&quot;&gt;&gt;
+&lt;&lt;set $ending_points = 0&gt;&gt;
 What is your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;continuelink &quot;Enter&quot;&gt;&gt;
 
@@ -2499,7 +2500,7 @@ You end the chat with the only other sane person you’ve encountered. They were
 Having now realized the decrepit state of Omegle you decide to just stop, and vow to never go on that site ever again.
 &lt;&lt;set $chat_room to true&gt;&gt;
 [[Log off|Player Bedroom]]
-</tw-passagedata><tw-passagedata pid="135" name="Holly Date Civ" tags="" position="1586.6666666666667,2969.6666666666665" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="135" name="Holly Date Civ" tags="" position="1586,2969" size="100,100">&lt;&lt;set $holly_date_points to 0&gt;&gt;
 After spending 20 minutes thinking about which nation to play as, you eventually decide on Egypt. The classic wonder hoarders. Not really a viable strategy on the higher difficulties, but you’ll be playing on King so you’re not too worried about their unique ability going to waste.
 
 &lt;&lt;continuelink &quot;You start up the game and get to playing.&quot;&gt;&gt;You start up the game and get to playing. The early game is fairly boring. You got a decent start and were lucky enough to spawn far away from any warmongers. The main issue you faced was dealing with the AI stealing your city spots. Suppose you’ll have to get payback a little later, once you’ve fortified your military some more.
@@ -3932,7 +3933,7 @@ You can also follow [[my itch.io account|https://iforgotmybrain.itch.io/]] to ge
 
 One last thing. If you liked the art, consider checking out the person that made it, [[Kasscabel.|https://twitter.com/_kasscabel]] I know she has open commissions [[here|https://www.fiverr.com/kasscabel]] if that’s something you’d be interested in. Same with the music, there’s too many artists to list here but I’ve got a full list of them on the [[main itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] Maybe check them out as well.
 
-That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="215" name="Chapter 1 Skip" tags="" position="668,148" size="100,100">&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
+That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="215" name="Chapter 1 Skip" tags="" position="694.6666666666666,148" size="100,100">&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
 &lt;&lt;set $jacob_talked_1 to true&gt;&gt;
 
 Alright, tell me what you&#39;re looking for and we&#39;ll get you put in the right place. Probably.
@@ -3942,7 +3943,7 @@ Let&#39;s start with chapter 1. Here&#39;s a list of the most important stuff yo
 Did you talk to Holly at the cafe?
 &lt;&lt;set $cafe_completed to true&gt;&gt;
 /*Fix this in other passages */
-&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; true &lt;&lt;set $ending_points += 2&gt;&gt; &gt;&gt; Sure did!
+&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; true &lt;&lt;set $ending_points += 2&gt;&gt;&gt;&gt; Sure did!
 &lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; false &lt;&lt;set $ending_points -= 4&gt;&gt;&gt;&gt; Nope. Holly who?
 &lt;&lt;set $path_lake to true&gt;&gt;
 &lt;&lt;set $path_roommate to true&gt;&gt;
@@ -3954,12 +3955,14 @@ What&#39;d you and Sasha chat about in the living room?
 Cool, that&#39;s it for chapter 1. Do you wanna stop here and start playing the game at chaper 2, or do you want to skip chapter 2 as well?
 [[Play Chapter 2|Your Bedroom]]
 [[Skip Chapter 2]]</tw-passagedata><tw-passagedata pid="216" name="Skip Chapter 2" tags="" position="838,148" size="100,100">Okay. Same deal here, tell me what you want:
-
+&lt;&lt;set $ending_points = 0&gt;&gt;
 Did you and Holly stick together after the concert?
-&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; true &lt;&lt;set $ending_points += 6&gt;&gt; &gt;&gt; We sure did! How could I have said no?
-&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; false &lt;&lt;set $ending_points -= 4&gt;&gt; &gt;&gt; Nope. Left her behind and went on my way.
+&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; true, &quot;$ending_points&quot; += 6&gt;&gt; We sure did! How could I have said no?
+&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; false &quot;$ending_points&quot; -= 4&gt;&gt; Nope. Left her behind and went on my way.
 
 &lt;&lt;continuelink &quot;Click me to continue&quot;&gt;&gt;
+
+Ending points are &lt;&lt;print $ending_points&gt;&gt;
 
 &lt;&lt;if $holly_festival_stayed is true&gt;&gt;
 	&lt;&lt;set $festival_games_completed to true&gt;&gt;
@@ -3972,7 +3975,7 @@ Did you and Holly stick together after the concert?
 
 Blah blah play chapter 3 or skip it?
 [[Play Chapter 3|Your Bedroom Post Festival]]
-[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="986,139" size="100,100">You know the drill. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
+[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="986,139" size="100,100">You know the rules, and so do I. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
 &lt;&lt;if $holly_romance_festival is true&gt;&gt;
 	If you got Holly&#39;s number in chapter 2, what&#39;d you decide to do?
 	&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; true&gt;&gt; Set up another date!
@@ -4018,29 +4021,29 @@ What&#39;d you decide to do with your finances?
 	Okay, sure. Understandable. Here&#39;s a couple more choices for you go through:
 	
 	Did you ask Holly about her previous roommate?
-	&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; true &lt;&lt;set $ending_points += 6&gt;&gt; &gt;&gt; Sure did!
+	&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; true, &quot;$ending_points&quot; += 6&gt;&gt; Sure did!
 	&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; false&gt;&gt; Nope, didn&#39;t feel like it.
 	
 	Did you ask Holly about why she dropped out of college?
-	&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; true &lt;&lt;set $ending_points += 2&gt;&gt; &gt;&gt; Yup, we talked all about it!
+	&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; true &lt;&lt;set $ending_points += 2&gt;&gt;&gt;&gt; Yup, we talked all about it!
 	
 	&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; false &lt;&lt;set $ending_points -= 2&gt;&gt;&gt;&gt; No, never even crossed my mind.
 	
 	Overall, how well did you treat Holly during the date? Basically, what ending did you get?
 	
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending friends&quot; &lt;&lt;set $ending_points += 2&gt;&gt; &gt;&gt; We didn&#39;t really get along but thankfully still parted as friends.
+	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending friends&quot; &lt;&lt;set $ending_points += 2&gt;&gt;&gt;&gt; We didn&#39;t really get along but thankfully still parted as friends.
 
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending cutoff&quot; &lt;&lt;set $ending_points -= 4&gt;&gt; &gt;&gt; We didn&#39;t get along and ended up mutually parting ways.
+	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending cutoff&quot; &lt;&lt;set $ending_points -= 4&gt;&gt;&gt;&gt; We didn&#39;t get along and ended up mutually parting ways.
 
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;normal ending&quot; &lt;&lt;set $ending_points += 4&gt;&gt; &gt;&gt; We got along well enough. Asked a few questions, got to know her a bit more. Overall a pretty average date.
+	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;normal ending&quot; &lt;&lt;set $ending_points += 4&gt;&gt;&gt;&gt; We got along well enough. Asked a few questions, got to know her a bit more. Overall a pretty average date.
 
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;good ending normal&quot; &lt;&lt;set $ending_points += 6&gt;&gt; &gt;&gt; We got along pretty good. Got into some deep conversations, learned a lot more her. Overall a pretty good date.
+	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;good ending normal&quot; &lt;&lt;set $ending_points += 6&gt;&gt;&gt;&gt; We got along pretty good. Got into some deep conversations, learned a lot more her. Overall a pretty good date.
 
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;true ending&quot; &lt;&lt;set $ending_points += 8&gt;&gt; &gt;&gt; We got along great. We talked a lot about what she&#39;s been up to, about her time in college, all sorts of things. Truly, it was a great date.
+	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;true ending&quot; &lt;&lt;set $ending_points += 8&gt;&gt;&gt;&gt; We got along great. We talked a lot about what she&#39;s been up to, about her time in college, all sorts of things. Truly, it was a great date.
 
 	&lt;&lt;if $$valery_dating is true&gt;&gt;
 	
-		&lt;&lt;radiobutton &quot;holly_date_ending&quot; &quot;cheat ending&quot; &lt;&lt;set $ending_points -= 12&gt;&gt; &gt;&gt; I was honest with her about my relationship with Valery. It cost me my relationship with her but at least I was honest.
+		&lt;&lt;radiobutton &quot;holly_date_ending&quot; &quot;cheat ending&quot; &lt;&lt;set $ending_points -= 12&gt;&gt;&gt;&gt; I was honest with her about my relationship with Valery. It cost me my relationship with her but at least I was honest.
 	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $holly_date_completed to true&gt;&gt;
