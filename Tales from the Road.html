@@ -116,6 +116,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 body {
   background-color: #19181A;
 }
+
 #ui-bar {
   background-color:#19181A;
   border-style: solid;
@@ -145,6 +146,16 @@ body {
     max-width: 70%;
     height: auto;
     margin: 0 auto;
+}
+
+.chapter_title {
+  font-size: 32px;
+}
+.chapter_body {
+  font-size: 24px;
+}
+.chapter_header {
+  text-align: center;
 }
 /*! <<replacelink>> macro set for SugarCube 2.x */
 .revision-span-in {
@@ -363,11 +374,9 @@ Setting.addRange("masterVolume", {
         });
     });
 }());</script><tw-passagedata pid="1" name="Great Days" tags="" position="404,162" size="100,200">&lt;&lt;nobr&gt;&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;span style = &quot;font-size: 32px&quot;&gt;
+&lt;div class = &quot;chapter_header&quot;&gt;
+&lt;span class = chapter_title&gt;
 Character Options
-&lt;/span&gt;
-&lt;span style = &quot;font-size: 24px&quot;&gt;
 &lt;/span&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
@@ -400,12 +409,11 @@ Your name is $name. You are $gender and you are a $race. Is this correct?
 [[No|Great Days]]</tw-passagedata><tw-passagedata pid="3" name="Your Bedroom" tags="" position="408,547" size="100,100">&lt;&lt;if $sasha_living_room_talked is not true&gt;&gt; 
     &lt;&lt;if visited(&quot;Your Bedroom&quot;) is 1&gt;&gt;
     &lt;&lt;nobr&gt;&gt;
-    /* Fix this with CSS styling */
-    &lt;div style=&quot;text-align: center&quot;&gt;
-        &lt;span style = &quot;font-size: 32px&quot;&gt;
+    &lt;div class = &quot;chapter_header&quot;&gt;
+        &lt;span class = &quot;chapter_title&quot;&gt;
             Chapter 1&lt;br&gt;
         &lt;/span&gt;
-        &lt;span style = &quot;font-size: 24px&quot;&gt;
+        &lt;span class = &quot;chapter_body&quot;&gt;
             Going Nowhere
         &lt;/span&gt;
     &lt;/div&gt;
@@ -429,16 +437,15 @@ You might also check out your [[computer over at the desk.|Computer]]
 
 &lt;&lt;elseif $sasha_living_room_talked is true&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;span style = &quot;font-size: 32px&quot;&gt;
-Chapter 2&lt;br&gt;
-&lt;/span&gt;
-&lt;span style = &quot;font-size: 24px&quot;&gt;
-The Festival
-&lt;/span&gt;
+&lt;div class = &quot;chapter_header&quot;&gt;
+	&lt;span class = &quot;chapter_title&quot;&gt;
+	Chapter 2&lt;br&gt;
+	&lt;/span&gt;
+	&lt;span class = &quot;chapter_body&quot;&gt;
+	The Festival
+	&lt;/span&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
-FIX this
 The next day you wake up around your usual time of 11 AM. While lying in bed, you roll over towards your night stand, grabbing your phone to see there&#39;s a notification stating that the yearly Lake Festival is going on today. You feel like Sasha might have mentioned that last night but you&#39;re quiet not sure. Either way it might be worth checking out, you&#39;ve gone to it every other year you&#39;ve lived here, so why stop now?
 
 &lt;&lt;continuelink &quot;Get out of bed&quot;&gt;&gt;
@@ -450,7 +457,7 @@ You see the door to the hallway in front of you, and the door to the bathroom to
 You decide to go towards the [[Hallway]], [[Bathroom]], or use your [[Computer]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Hallway" tags="" position="411,699" size="100,100">You enter the upstairs hallway of your house. Dated light brown carpet lines the floor, and light blue paint clings to the walls. The door to your bedroom is directly behind you, the door to Sasha&#39;s bedroom is to the front left of you, with Jacob&#39;s bedroom door being up and to the right. There&#39;s also the stairs leading downstairs over to your right.
 
-You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Jacob&#39;s Bedroom]], [[The Downstairs|Downstairs]].</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom; it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
+You head towards &lt;&lt;if $festival_completed is not true&gt;&gt;[[Your Bedroom]], &lt;&lt;elseif $festival_completed is true&gt;&gt; [[Your Bedroom,|Player Bedroom]]&lt;&lt;endif&gt;&gt; [[Sasha&#39;s Bedroom]], [[Jacob&#39;s Bedroom]], [[Downstairs]].</tw-passagedata><tw-passagedata pid="5" name="Bathroom" tags="" position="547,545" size="100,100">You enter the bathroom; it seems to contain the usual collection of bathroom related items. Just don&#39;t do too much digging in the drawers...
 
 You showered last night so there&#39;s no reason to do so right now.
 
@@ -1260,13 +1267,13 @@ You head with Holly out to the [[parking lot|Festival Ending Holly]]
 
 You and Holly head towards the [[little bit of the festival you haven&#39;t checked out yet.|Festival East Path]]
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Your Bedroom Post Festival" tags="" position="404,2634" size="100,100">&lt;&lt;nobr&gt;&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;span style = &quot;font-size: 32px&quot;&gt;
-Chapter 3&lt;br&gt;
-&lt;/span&gt;
-&lt;span style = &quot;font-size: 24px&quot;&gt;
-Amity
-&lt;/span&gt;
+&lt;div class =&quot;chapter_header&quot;&gt;
+	&lt;span class = &quot;chapter_title&quot;&gt;
+	Chapter 3&lt;br&gt;
+	&lt;/span&gt;
+	&lt;span class = &quot;chapter_body&quot;&gt;
+	Amity
+	&lt;/span&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 
@@ -3312,13 +3319,13 @@ Now to just let your passengers know what&#39;s going on and it&#39;ll simply be
 
 [[&quot;&#39;I mean, I get why you did it. But personally, I&#39;d still go for the path with a higher risk and higher reward. Anyway, let&#39;s talk about something else.&#39;&quot;|Holly Questions Hub]]
 </tw-passagedata><tw-passagedata pid="185" name="Chapter 4 Start" tags="" position="1340,5459" size="100,100">&lt;&lt;nobr&gt;&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;span style = &quot;font-size: 32px&quot;&gt;
-Chapter 4&lt;br&gt;
-&lt;/span&gt;
-&lt;span style = &quot;font-size: 24px&quot;&gt;
-On The Road to Chicago
-&lt;/span&gt;
+&lt;div class=&quot;chapter_header&quot;&gt;
+	&lt;span class = &quot;chapter_title&quot;&gt;
+		Chapter 4&lt;br&gt;
+	&lt;/span&gt;
+	&lt;span class = &quot;chapter_body&quot;&gt;
+		On The Road to Chicago
+	&lt;/span&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 
@@ -3933,7 +3940,7 @@ You can also follow [[my itch.io account|https://iforgotmybrain.itch.io/]] to ge
 
 One last thing. If you liked the art, consider checking out the person that made it, [[Kasscabel.|https://twitter.com/_kasscabel]] I know she has open commissions [[here|https://www.fiverr.com/kasscabel]] if that’s something you’d be interested in. Same with the music, there’s too many artists to list here but I’ve got a full list of them on the [[main itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] Maybe check them out as well.
 
-That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="215" name="Chapter 1 Skip" tags="" position="694.6666666666666,148" size="100,100">&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
+That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="215" name="Chapter 1 Skip" tags="" position="694,148" size="100,100">&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
 &lt;&lt;set $jacob_talked_1 to true&gt;&gt;
 
 Alright, tell me what you&#39;re looking for and we&#39;ll get you put in the right place. Probably.
@@ -3975,7 +3982,7 @@ Ending points are &lt;&lt;print $ending_points&gt;&gt;
 
 Blah blah play chapter 3 or skip it?
 [[Play Chapter 3|Your Bedroom Post Festival]]
-[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="986,139" size="100,100">You know the rules, and so do I. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
+[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="981,154" size="100,100">You know the rules, and so do I. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
 &lt;&lt;if $holly_romance_festival is true&gt;&gt;
 	If you got Holly&#39;s number in chapter 2, what&#39;d you decide to do?
 	&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; true&gt;&gt; Set up another date!
