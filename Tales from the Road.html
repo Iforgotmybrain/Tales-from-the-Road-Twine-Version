@@ -668,28 +668,40 @@ You tell her that now you just do some freelance work here and there. It helps k
 &lt;&lt;set $cafe_completed to true&gt;&gt;
 &lt;&lt;set $ending_points += 2&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-You say goodbye to Holly and decide to [[head home for the day after grabbing your food.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="17" name="Sycamore Park" tags="" position="902,1084" size="100,100">You arrive at Sycamore Lakeview Park after a short walk down the street. You’ve never been to this park despite it being close to home. You were always preoccupied by something else, or just didn&#39;t feel like going.
+You say goodbye to Holly and decide to [[head home for the day after grabbing your food.|Your Bedroom]]</tw-passagedata><tw-passagedata pid="17" name="Sycamore Park" tags="" position="902,1084" size="100,100">You arrive at Sycamore Lakeview Park after a short walk down the street. Despite this park&#39;s proximity to your house, you&#39;ve only ever ventured over here once or twice in the past few years.
 
-The park itself is pretty nice, it features various walking paths and is situated right on the lake, giving it some fantastic views. Most of the paths go through heavily wooded areas, providing amble shade and making it so you can stay relatively comfortable while walking.
+The park itself is quite nice. The entrance having a large paved path that goes throughout the main front area of the park. Pavillions and shelter houses are abundant throughout this area, and there&#39;s even a kid&#39;s playground a little further back.  The walking paths at the park are nice as well. With one branching off to the east and another to the west. And to top it all off the whole park is located just off the lake which means both paths can end up offering some fantastic views when you&#39;re not surrounded by shady trees.
 
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-
-You’re here and ready to make the most it. As you enter the park you see two separate walking paths you&#39;d like to take. One to the west, the other to the east. Which one will you take first?
-
-&lt;&lt;if $path_lake is not true&gt;&gt; [[West Path]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $path_roommate is not true&gt;&gt; [[East Path]] &lt;&lt;endif&gt;&gt; &lt;&lt;if $path_lake is true&gt;&gt; &lt;&lt;set $park_completed to true&gt;&gt; [[Head back home for the day|Your Bedroom]] &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="West Path" tags="" position="839,1233" size="100,100">You head down the west path and start your walk. 
+&lt;&lt;continuelink &quot;Now it&#39;s just a matter of deciding which one you want to walk through first…&quot;&gt;&gt; Now it&#39;s just a matter of deciding which one you want to walk through first… Both are of about equal length, and given the time right now, you should be able to walk both of them before the Sunsets. If you so desire, of course.
+You decide to go and walk…
+[[Down the east path|East Path]]
+[[Down the west path|West Path]]
+&lt;&lt;if $park_completed is true&gt;&gt;
+[[Home|Your Bedroom]]
+&lt;&lt;endif&gt;&gt;
+</tw-passagedata><tw-passagedata pid="18" name="West Path" tags="" position="839,1233" size="100,100">You head down the west path and start your walk. 
 &lt;&lt;set $path_lake to true&gt;&gt;
-After walking for 15 minutes you come across a familiar sight, the Great Sycamore Lake. Hence the park’s name. You can see the Sun starting to set over the lake, with the sky starting to turn an orange color with the Sun being reflected off the water.
+&lt;&lt;set $park_completed to true&gt;&gt;
+Walking along the path for 15 minutes brings upon a familiar sight, the Great Sycamore Lake. Looking out at the horizon you can see the Sun starting to set over the lake. The sky an orange-red hue with the Sun&#39;s rays reflecting off the lake. 
 
-Not wanting to miss such a beautiful scene, You decide to sit down at a bench overlooking the lake and take a moment to just take everything in.
+Not wanting to miss such a beautiful scene, You decide to sit down at a bench overlooking the lake, taking moment to just revel in this fantastic scene.
 
 &lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-While sitting down you decide to reflect a bit on your life. Recently you’ve been having some trouble finding purpose in your life. Your current career brings in money, sure, but you just don&#39;t find it very fulfilling. It was fun at first but almost a year into living this kind of life and you’re finding yourself uncertain and a bit depressed. You feel like you lack purpose and direction, your freelance style of work lacks a direct career path. You just hop from job to job.
+Having a seat on the bench, and with not much else going through your mind, you decide to reflect a bit on the events you&#39;ve gone through in the last couple of years. The uncertainty that you&#39;ve dealt with from graduation to now… You&#39;ve never really had a strong grasp on where you want to be, this is true. But ever since you finished college, it&#39;s just been getting worse and worse.
 
-There are a few things you’ve thought of to try and remedy this issue. Including doing volunteer work, getting a part time job doing something you actually enjoy, or even taking on the dating scene again. One recent thing that’s come to mind is a cross-country road trip. While the road trip itself wouldn’t permanently fix your lack of passion, you could end up discovering something that reinvigorates you.
+&lt;&lt;continuelink &quot;Perhaps this shouldn&#39;t be a surprise.&quot;&gt;&gt;Perhaps this shouldn&#39;t be a surprise. You&#39;ve spent quite literally your entire life hitting the books, and then all of a sudden that just stops, and you&#39;re expected to completely change to &#39;work&#39; mode? It&#39;s a drastic change in many ways, even more so for those like you, the ones that wander from thing to thing hoping to find something that sticks.
 
-It’s an interesting idea, but that’s all it is for right now. An idea.
-&lt;&lt;continuelink &quot;Continue&quot;&gt;&gt;
-You decide to get up and continue your walk, you feel pretty good after reflecting on your recent issues. You soon find yourself back near the [[park entrance.|Sycamore Park]]</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
+You graduate from college and get a job right of the gate, &quot;This is fantastic!&quot; is what you initially thought, &quot;All my hard work is finally paying off. Now I&#39;ll be getting paid for my time and it&#39;ll be less work than college&quot;. In retrospect, that wasn&#39;t completely untrue. Well, at least the &quot;getting paid for my work&quot; part wasn&#39;t.
+
+&lt;&lt;continuelink &quot;Less work though… what a silly thought that was.&quot;&gt;&gt;Less work though… what a silly thought that was. Perhaps you wouldn&#39;t be putting in the same amount of hours as you did in college studying. But the actual difficulty of work can hardly be measured in just hours alone, as you found out. Strict deadlines and a hostile environment will make anything more stressful then it needs to be.
+Your naivety lead you down a dead-end, and without even a year under your belt, you quit your first job after graduation. That was almost a year ago at this point, as you recall how you quit in August of that year.
+
+Now, where are you now? A freelance worker hopping from job to job. No idea what you want your life to be. And the only reason you can sustain this empty lifestyle is because you&#39;ve found an extended family in Sasha and Jacob, who so graciously stick by your side despite the implications on their own careers.
+
+&lt;&lt;continuelink &quot;And what ideas and hopes do you have for the future?&quot;&gt;&gt;And what ideas and hopes do you have for the future? You have no career ambitions. The only thing you&#39;ve actually given any thought to is a cross-country road trip. In an attempt to rekindle some kind of longing for life, or perhaps to just get a new view on things. Is it a bad idea? Not necessarily. But it&#39;s hard to imagine that such a simple thing could give you this new &#39;lease on life&#39; that you desire, at least, not on its own.
+
+It&#39;s a lot to take in, reflections on your life in the past 2 years, that is. Perhaps that&#39;s enough for now. Sitting here any longer might lead you to walking these paths by moonlight instead of what little sunlight is left. [[Best to get up and continue your walk through the park.|Sycamore Park]]
+</tw-passagedata><tw-passagedata pid="19" name="East Path" tags="" position="966,1233" size="100,100">/* Are either of these paths needed for the overall story? Or are they just filler? */
 
 you head down the path to the east. This path is slightly shorter than the other one, as it doesn&#39;t go past the lake. 
 
