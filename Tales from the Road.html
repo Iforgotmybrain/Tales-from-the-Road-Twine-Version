@@ -3914,19 +3914,35 @@ Fair enough, you think. You’re not overly familiar with the Chicago area eithe
 
 Standing nearby to the Polk train stop means you have quite a few options for checking out the city. You’re basically limited by how far the L and your feet will take you.
 
-[[But checking out the city is a tale for another time...|Temp Ending]]</tw-passagedata><tw-passagedata pid="213" name="Temp Ending" tags="" position="2620,6053" size="100,100">Hi! You&#39;ve reached the current end of Tales from the Road. Right now you&#39;re about halfway through chapter 4. Next up will be exploring the Chicago area alongside Sasha, as you likely just saw. I&#39;m already &quot;hard at work&quot; writing up the last half of chapter 4. Been a lot of fun to write so far. Will that translate it to being fun for you to read/play? I hope so. Kind of my whole goal, here.
+[[But checking out the city is a tale for another time...|Temp Ending]]</tw-passagedata><tw-passagedata pid="213" name="Temp Ending" tags="" position="2823.3333333333335,5946.333333333333" size="100,100">Hi! You&#39;ve reached the end of chapter 4 and thus the current end of Tales from the Road. The next chapter, chapter 5, will have you and Jacob exploring a state park in Wisconsin. I don&#39;t expect chapter 5 to be quite as long as chapter 4 was. Mainly because there won&#39;t be as much to do in the state park. But I&#39;d still expect chapter 5 to hit an easy 15k words, with all the car dialogue and stuff like that. I&#39;ve actually already written one scene for chapter 5 and it is a quite a hard hitter, imo. Gonna be taking on some more serious topics as the story progresses and this scene will definitely show that.
 
-As per usual I recommend hitting the back button in the top left corner of the sidebar and saving on the page you were on last. Once/if I release the next update you //should// be able to load that save and continue without any problems. If you want you can also export your save data to a txt file to make sure your saves don’t get deleted by clearing your browser data. Since saves are stored on your browser.
+As per usual I recommend hitting the back button in the top left corner of the sidebar and saving on the page you were on last. Once/if I release the next update you //should// be able to load that save and continue without any problems. If you want, you can also export your save data to a separate file to make sure your saves don’t get deleted by clearing your browser data. Since saves are stored on your browser.
 
-Also, thanks for playing! If you enjoyed the game, feel free to leave a rating on the [[Itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] There should be an option to leave a star rating with an optional comment on the top right of that page.
+Also, thanks for playing! If you enjoyed the game, feel free to leave a rating on the [[Itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] There should be an option to leave a star rating with an optional comment in the top right corner of that page.
 
-You can also follow [[my itch.io account|https://iforgotmybrain.itch.io/]] to get notified when I update the game or when I post a devlog. As well as [[follow my Twitter account|https://twitter.com/iforgotmybrain]] to get a peak at what I might be working on for Tales, or to just see what silly stuff might be on my mind.
+You can also follow [[my itch.io account|https://iforgotmybrain.itch.io/]] to get notified when I update the game or when I post a devlog. Or even [[follow my Twitter account|https://twitter.com/iforgotmybrain]] to get a peek at what I might be working on for Tales, or to just see what silly stuff might be on my mind.
 
 One last thing. If you liked the art, consider checking out the person that made it, [[Kasscabel.|https://twitter.com/_kasscabel]] I know she has open commissions [[here|https://www.fiverr.com/kasscabel]] if that’s something you’d be interested in. Same with the music, there’s too many artists to list here but I’ve got a full list of them on the [[main itch.io page.|https://iforgotmybrain.itch.io/tales-from-the-road]] Maybe check them out as well.
 
-That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!</tw-passagedata><tw-passagedata pid="214" name="Untitled Passage" tags="" position="2626,6218" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="215" name="Skip Chapter 1" tags="" position="592.3333333333333,180.83333333333337" size="100,100">&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
+That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!
+</tw-passagedata><tw-passagedata pid="214" name="Chicago start" tags="" position="2616,6188" size="100,100">After a short and uneventful train ride, you and Sasha have arrived at “The Loop”, or just downtown Chicago.
+
+After a quick exit from The L station you find yourselves standing on North Wells street. A whole world of opportunity awaits you. A whole world of opportunity that you’ll only have the day to experience. 
+
+You are standing on North Wells Street in downtown Chicago near the Washington/Wells L stop. Thinking over the various places to stop, you decide that your first destination will be...
+
+[[Southwest towards the Sears Tower|Sears Tower Start]]
+[[East towards the Millennium Park|MIllennium Park Start]]
+[[The Museum of Science and Industry|Museum Start]]</tw-passagedata><tw-passagedata pid="215" name="Skip Chapter 1" tags="" position="592,180" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;div class = &quot;chapter_header&quot;&gt;
+&lt;span class = chapter_title&gt;
+The Skip Menu
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;&lt;set $sasha_talked_1 to true&gt;&gt;
 &lt;&lt;set $jacob_talked_1 to true&gt;&gt;
 &lt;&lt;set $ending_points to 0&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 
 Alright, tell me what you&#39;re looking for and we&#39;ll get you put in the right place. Probably.
 
@@ -3935,8 +3951,8 @@ Let&#39;s start with chapter 1. Here&#39;s a list of the most important stuff yo
 Did you talk to Holly at the cafe?
 &lt;&lt;set $cafe_completed to true&gt;&gt;
 
-&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; true &gt;&gt; Sure did!
-&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; false &gt;&gt; Nope. Holly who?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; true &gt;&gt; Sure did!&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$cafe_holly_talked&quot; false &gt;&gt; Nope. Holly who?&lt;/label&gt;
 &lt;&lt;continuelink &quot;Click to Continue&quot;&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $cafe_holly_talked == true&gt;&gt;
@@ -3950,11 +3966,11 @@ Did you talk to Holly at the cafe?
 
 Cool, that&#39;s it for chapter 1. Do you wanna stop here and start playing the game at chaper 2, or do you want to skip chapter 2 as well?
 [[Play Chapter 2|Your Bedroom]]
-[[Skip Chapter 2]]</tw-passagedata><tw-passagedata pid="216" name="Skip Chapter 2" tags="" position="752.3333333333334,174.1666666666667" size="100,100">Okay. Same deal here, tell me what you want:
+[[Skip Chapter 2]]</tw-passagedata><tw-passagedata pid="216" name="Skip Chapter 2" tags="" position="752,174" size="100,100">Okay. Same deal here, tell me what you want:
 
 Did you and Holly stick together after the concert?
-&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; true &gt;&gt; We sure did! How could I have said no?
-&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; false &gt;&gt; Nope. Left her behind and went on my way.
+&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; true &gt;&gt; We sure did! How could I have said no?&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_festival_stayed&quot; false &gt;&gt; Nope. Left her behind and went on my way.&lt;/label&gt;
 
 &lt;&lt;continuelink &quot;Click me to continue&quot;&gt;&gt;
 
@@ -3962,34 +3978,30 @@ Did you and Holly stick together after the concert?
 	&lt;&lt;set $festival_games_completed to true&gt;&gt;
 	&lt;&lt;set $ending_points += 6&gt;&gt;
 	Did you get Holly&#39;s number at the end of the night?
-	&lt;&lt;radiobutton &quot;$holly_romance_festival&quot; true&gt;&gt; Yup! I&#39;ll have to hit her about setting up a date sometime.
-	&lt;&lt;radiobutton &quot;$holly_romance_festival&quot; false, &quot;$holly_no_romance_festival&quot; true&gt;&gt;  No. We parted ways as friends. I didn&#39;t really feel like pursuing her romantically.
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_romance_festival&quot; true&gt;&gt; Yup! I&#39;ll have to hit her about setting up a date sometime.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_romance_festival&quot; false, &quot;$holly_no_romance_festival&quot; true&gt;&gt;  No. We parted ways as friends. I didn&#39;t really feel like pursuing a relationship with her.&lt;/label&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;set $ending_points -= 4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-Ending points are $ending_points
-
-	
 &lt;&lt;set $festival_completed to true&gt;&gt;
 
 Blah blah play chapter 3 or skip it?
 [[Play Chapter 3|Your Bedroom Post Festival]]
-[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="905.6666666666667,164.16666666666674" size="100,100">You know the rules, and so do I. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
+[[Skip Chapter 3]]</tw-passagedata><tw-passagedata pid="217" name="Skip Chapter 3" tags="" position="905,164" size="100,100">You know the rules, and so do I. There&#39;s a lot of choices to be made in this chapter. Hope you&#39;re ready.
 &lt;&lt;if $holly_romance_festival is true&gt;&gt;
 	If you got Holly&#39;s number in chapter 2, what&#39;d you decide to do?
-	&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; true&gt;&gt; Set up another date!
-	&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; false&gt;&gt; Go our seperate ways.
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; true&gt;&gt; Set up another date!&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_text_date_setup&quot; false&gt;&gt; Go our seperate ways.&lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 
 Did you go on a walk and say hello to Valery?
-&lt;&lt;radiobutton &quot;$valery_walk_talked&quot; true&gt;&gt; Yes! How could I not?
-&lt;&lt;radiobutton &quot;$valery_walk_talked&quot; false&gt;&gt; No, that guy looked like a loser.
+&lt;label&gt;&lt;&lt;radiobutton &quot;$valery_walk_talked&quot; true&gt;&gt; Yes! How could I not?&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$valery_walk_talked&quot; false&gt;&gt; No, that guy looked like a loser.&lt;/label&gt;
 &lt;&lt;set $walk_completed to true&gt;&gt;
 
 What&#39;d you decide to do with your finances?
-&lt;&lt;radiobutton &quot;$road_trip_funding_cash_out&quot; false, &quot;$money&quot; 10000&gt;&gt; Just went with what I had.
-&lt;&lt;radiobutton &quot;$road_trip_funding_cash_out&quot; true, &quot;$money&quot; 20000&gt;&gt; Sold some stocks and went all in
+&lt;label&gt;&lt;&lt;radiobutton &quot;$road_trip_funding_cash_out&quot; false, &quot;$money&quot; 10000&gt;&gt; Just went with what I had.&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$road_trip_funding_cash_out&quot; true, &quot;$money&quot; 20000&gt;&gt; Sold some stocks and went all in&lt;/label&gt;
 
 &lt;&lt;set $road_trip_funding_completed to true&gt;&gt;
 
@@ -4003,9 +4015,9 @@ What&#39;d you decide to do with your finances?
 &lt;&lt;/nobr&gt;&gt;
 &lt;&lt;if $valery_walk_talked is true&gt;&gt;
 	Since you met Valery, did you decide to go get lunch with him?
-	&lt;&lt;radiobutton &quot;$valery_date&quot; true &gt;&gt; Sure did! Seems like a nice guy.
-	&lt;&lt;radiobutton &quot;$valery_date&quot; false &gt;&gt; No way. I barely know the guy, why would I go get lunch with him?
-	&lt;&lt;radiobutton &quot;$valery_date&quot; false&gt;&gt; I didn&#39;t even go over to his house and check in.
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$valery_date&quot; true &gt;&gt; Sure did! Seems like a nice guy.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$valery_date&quot; false &gt;&gt; No way. I barely know the guy, why would I go get lunch with him?&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$valery_date&quot; false&gt;&gt; I didn&#39;t even go over to his house and check in.&lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;continuelink &quot;Click me, do it. Click me.&quot;&gt;&gt;
 
@@ -4020,7 +4032,7 @@ What&#39;d you decide to do with your finances?
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;continuelink &quot;Click me when you&#39;re done with Valery&#39;s date options&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;Click me again&quot;&gt;&gt;
 
 &lt;&lt;if $holly_text_date_setup is true&gt;&gt;
 	What about Holly? Do you want to play through her date scene?
@@ -4030,18 +4042,17 @@ What&#39;d you decide to do with your finances?
 	Okay, sure. Understandable. Here&#39;s a couple more choices for you go through:
 	
 	Did you ask Holly about her previous roommate?
-	&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; true&gt;&gt; Sure did!
-	&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; false&gt;&gt; Nope, didn&#39;t feel like it.
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; true&gt;&gt; Sure did!&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_living_detailed&quot; false&gt;&gt; Nope, didn&#39;t feel like it.&lt;/label&gt;
 	&lt;&lt;if $holly_living_detailed is true&gt;&gt;
 		&lt;&lt;set $ending_points += 6&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 	
 	Did you ask Holly about why she dropped out of college?
-	&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; true&gt;&gt; Yup, we talked all about it!
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; true&gt;&gt; Yup, we talked all about it!&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; false &gt;&gt; No, never even crossed my mind.&lt;/label&gt;
 	
-	&lt;&lt;radiobutton &quot;$holly_question_art_plans_2&quot; false &gt;&gt; No, never even crossed my mind.
-	
-	&lt;&lt;if $holly_question_art_plans_2 is ture&gt;&gt;
+	&lt;&lt;if $holly_question_art_plans_2 is true&gt;&gt;
 		&lt;&lt;set $ending_points += 2&gt;&gt;
 	&lt;&lt;else&gt;&gt;
 		&lt;&lt;set $ending_points -= 2&gt;&gt;
@@ -4049,19 +4060,15 @@ What&#39;d you decide to do with your finances?
 	
 	Overall, how well did you treat Holly during the date? Basically, what ending did you get?
 	
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending friends&quot; &gt;&gt; We didn&#39;t really get along but thankfully still parted as friends.
-
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending cutoff&quot; &gt;&gt; We didn&#39;t get along and ended up mutually parting ways.
-
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;normal ending&quot; &gt;&gt; We got along well enough. Asked a few questions, got to know her a bit more. Overall a pretty average date.
-
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;good ending normal&quot; &gt;&gt; We got along pretty good. Got into some deep conversations, learned a lot more her. Overall a pretty good date.
-
-	&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;true ending&quot; &gt;&gt; We got along great. We talked a lot about what she&#39;s been up to, about her time in college, all sorts of things. Truly, it was a great date.
-
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending friends&quot; &gt;&gt; We didn&#39;t really get along but thankfully still parted as friends.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;bad ending cutoff&quot; &gt;&gt; We didn&#39;t get along and ended up mutually parting ways.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;normal ending&quot; &gt;&gt; We got along well enough. Asked a few questions, got to know her a bit more. Overall a pretty average date.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;good ending normal&quot; &gt;&gt; We got along pretty good. Got into some deep conversations, learned a lot more her. Overall a pretty good date.&lt;/label&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$holly_date_ending&quot; &quot;true ending&quot; &gt;&gt; We got along great. We talked a lot about what she&#39;s been up to, about her time in college, all sorts of things. Truly, it was a great date.&lt;/label&gt;	
+	&lt;&lt;nobr&gt;&gt;
 	&lt;&lt;if $$valery_dating is true&gt;&gt;
 	
-		&lt;&lt;radiobutton &quot;holly_date_ending&quot; &quot;cheat ending&quot; &lt;&lt;set $ending_points -= 12&gt;&gt;&gt;&gt; I was honest with her about my relationship with Valery. It cost me my relationship with her but at least I was honest.
+		&lt;label&gt;&lt;&lt;radiobutton &quot;holly_date_ending&quot; &quot;cheat ending&quot; &lt;&lt;set $ending_points -= 12&gt;&gt;&gt;&gt; I was honest with her about my relationship with Valery. It cost me my relationship with her but at least I was honest.&lt;/label&gt;
 	&lt;&lt;/if&gt;&gt;
 	
 	&lt;&lt;if $holly_date_ending == &quot;cheat ending&quot;&gt;&gt;
@@ -4071,7 +4078,7 @@ What&#39;d you decide to do with your finances?
 	&lt;&lt;/if&gt;&gt;
 
 	&lt;&lt;set $holly_date_completed to true&gt;&gt;
-	
+	&lt;&lt;/nobr&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;continuelink &quot;Click me when you&#39;re done&quot;&gt;&gt;
@@ -4079,7 +4086,286 @@ What&#39;d you decide to do with your finances?
 Alright, well, that was the last choice. Do you want to play through chapter 4 or skip it as well? There aren&#39;t any major choices to be had in chapter 4 thus far so you&#39;ll just be taken to the end of the game.
 
 [[Play chapter 4|Chapter 3 Road Trip Planning Passengers]]
-[[Skip Chapter 4&gt;&gt; </tw-passagedata></tw-storydata>
+[[Skip Chapter 4&gt;&gt; </tw-passagedata><tw-passagedata pid="218" name="Sears Tower Start" tags="" position="2466,6354.666666666667" size="100,100">“The Sears Tower? Sure, why not? Pretty quintessential Chicago. You mention the city that’s probably the first thing someone thinks of,” Sasha says.
+
+“You’ve got the maps app setup on your phone so lead the way, $name.”
+
+&lt;&lt;continuelink &quot;A short 10 minute walk later and you arrive at entrance of the towering Sears Tower.&quot;&gt;&gt;A short 10 minute walk later and you arrive at entrance of the towering Sears Tower. Or rather, the Willis Tower, as it’s named now. Although nobody actually calls it that.
+
+“When did they even change the name to the Willis Tower? Around the time Sears started going under, I’m guessing?”
+
+“Some bougie broker company bought the naming rights and nobody even cares. We’re still calling it by the name of a defunct retail store. That’s gotta piss off the Willis Company.”
+
+That is a bit of an entertaining thought. Perhaps not everything can be forced to change with the exchange of cash, not yet anyway.
+
+[[“Let’s head in, shall we?|Sears Tower Lobby]] Check out this observation deck everyone talks about.”</tw-passagedata><tw-passagedata pid="219" name="MIllennium Park Start" tags="" position="2616,6354.666666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="220" name="Museum Start" tags="" position="2766,6354.666666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="221" name="Sears Tower Lobby" tags="" position="2312.6666666666665,6361.333333333334" size="100,100">Stepping into the Sears Tower with Sasha you’re greeted with a grand lobby of sorts. Various other fast food restaurants can be seen to the right at a food court, and an escalator taking you up to the next level is over to the front and left. 
+
+The lobby itself has a modern, yet gothic aesthetic to it. Black metal beams clash with clear windows. Fake plants adorn the lower ceilings with a white tile floor contrasting against the prominent appearance of black throughout this lobby. Even the railings are painted black in here. Perhaps the designers for this lobby took the well-known ‘Stones song a bit too seriously.
+
+“Wow, it’s like someone took a look at me and said ‘I want my lobby to look like her. Like a black German Shepard. Just make it all black’. Interesting choice, and I think it works well enough. Some more color might have been nice but I mean, this is just a 1,000+ foot tower of concrete. Can’t expect too much,” Sasha says.
+
+Evaluating your next steps, you decide to…
+[[Head up to the next lobby level on the escalator.|Sears Tower Second Floor]]
+
+[[Step outside and go somewhere else.|Chicago Travel]]</tw-passagedata><tw-passagedata pid="222" name="Sears Tower Second Floor" tags="" position="2187.6666666666665,6368.000000000001" size="100,100">You head up to the second level of the building which offers a similar aesthetic to that of the first There does seem to be a food court across the way, as well as yet another escalator that’ll take you to the third and final level of this lobby.
+
+You decide to…
+[[Head back down to the first level.|Sears Tower Lobby]]
+[[Head up to the third level of the lobby.|Sears Tower Third Floor]]
+[[Check out the nearby food court.|Sears Tower Food Court]]
+</tw-passagedata><tw-passagedata pid="223" name="Chicago Travel" tags="" position="2311,6154.666666666667" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="224" name="Sears Tower Third Floor" tags="" position="2052.6666666666665,6361.333333333334" size="100,100">Taking the final escalator to the third level brings you to a scene that is very similar to the previous two. The main differences being the lack of a food court up here. Instead you get a long hallway leading to a booth where you can pay to enter the observation tower.
+
+Looking around you decide the best course of action is…
+
+[[Checking out the observation tower|Observation Tower Start]]
+[[Heading back down to the second level|Sears Tower Second Floor]]</tw-passagedata><tw-passagedata pid="225" name="Sears Tower Food Court" tags="" position="2192.6666666666665,6501.333333333334" size="100,100">Hearing your stomach rumble you think now could be an opportune time to grab something to eat. 
+
+You mention this to Sasha, looking over to your left and asking her if she&#39;d be interested in grabbing something to eat before heading to the observation deck.
+
+&quot;Sure, I&#39;m a tad hungry myself. Not a bad idea to get something to eat before continuing our adventure.&quot;
+
+Having gotten Sasha&#39;s agreement, both of you walk over to the nearby food court and start the great debate of where to eat.
+
+&lt;&lt;continuelink&quot;&#39;6 different places to pick from… I was hoping they would&#39;ve kept it simple, but no, guess we&#39;ll be spending 10 minutes deciding where to eat.&#39;&quot;&gt;&gt;&#39;6 different places to pick from… I was hoping they would&#39;ve kept it simple, but no, guess we&#39;ll be spending 10 minutes deciding where to eat.&#39; You think to yourself after seeing the many selections the Sears Tower food court offers.
+
+Sasha turns her head towards you, &quot;So, what were you thinking? We&#39;ve got a handful of choices – burgers, coffee, chicken. What do you want? Give me some feedback so we can decide.&quot;
+
+You hear Sasha, but you don&#39;t turn your head. Looking onward at the food court; you know that when it comes to picking a place to eat, you&#39;ll never be able to win. The other person will always have some specific restaurant in mind, but for some reason, they will never actually mention that restaurant out loud. So you&#39;ll be left playing a guessing game until you finally figure out where they want to eat.
+
+There&#39;s no point in going back and forth here, you&#39;re just going to tell Sasha which fast food joint you want to eat at. In hopes of ending the shenanigans right here, and right now.
+
+&#39;Sasha, I think we should eat at…
+[[….’Miss Moovelous’ Burger Stand&#39;|FC Burger]]
+[[…’Taco Gato.&#39;|FC Taco]]
+[[….Charlie’s Crazy Chicken&#39;|FC Chicken]]</tw-passagedata><tw-passagedata pid="226" name="Observation Tower Start" tags="" position="1905.9999999999998,6364.666666666668" size="100,100">Well, no time like the present to check out the observation deck. 
+
+You and Sasha walk over to the ticket booth to procure your admission into the upper level of the tower. The slender rabbit working the booth asks, “How many people you need tickets for?”
+
+&lt;&lt;continuelink&quot;‘Two,’ you reply.&quot;&gt;&gt;‘Two,’ you reply.
+
+“Okay, with tax that will be… $52. If you want you can get all day access for an extra $50. Can come back here at night if you want, have to say, the city does look quite stunning with the Sun down,” the cashier says, trying to upsell you on a fancier ticket.
+
+&lt;&lt;continuelink&quot;‘We’ll just take the regular tickets, please,’ you tell the rabbit before handing them your credit card.&quot;&gt;&gt;‘We’ll just take the regular tickets, please,’ you tell the rabbit before handing them your credit card.&quot;
+
+“Alright, fair enough. Just let me swipe this real quick… And you’re good to go. Here’s your tickets. Have a nice day.”
+&lt;&lt;set $money -= 52&gt;&gt;
+You thank the rabbit and grab your tickets. $52 has been deducted from your bank account.
+
+Having acquired your admission to the observation deck - or rather, the “Skydeck”, as it seems to be properly called, you and Sasha head towards the elevator. Which is down a hall over to the right of the ticket booth.
+
+Walking down the hall, you can see it’s littered with historical and current photos of the tower. Behind the photos is a blue colored wall, a change from the black that dominated the lobby area. Your feet standing on white tiles as you continue marching towards the elevator.
+
+Among the photos is a handful of plaques providing some written history of the Sears Tower. Plaques that neither you or Sasha are interested in. Reading is for nerds, after all. And if there’s one thing you and Sasha most certainly aren’t, it’s nerds.
+
+“They sure put a lot of effort into something 99% of people won’t even look at,” Sasha says, commenting on the informational plaques as she walks beside you. The two of you dawning closer and closer to the elevator.
+
+&lt;&lt;continuelink &quot;Approaching the elevator,&quot;&gt;&gt;Approaching the elevator, you see a man standing right beside the doors. A tall panther with striking blue eyes dressed in a uniform representing the “Willis” Tower stands at the ready, just waiting for patrons to hand him their tickets.
+
+Walking towards him, &lt;&lt;continuelink &quot;you grab the tickets from your pocket and hand them to him.&quot;&gt;&gt;&quot;you grab the tickets from your pocket and hand them to him.&quot;
+
+He rips the stubs and hands you back the rest of the ticket before hitting the elevator button and telling you to, “Enjoy the Skydeck.”
+
+Offering the panther a quick thanks, you wait patiently for the elevator to arrive from it’s one-hundred and three floor descent.
+
+Many minutes of waiting later and the elevator finally makes its way to the third floor. [[Now for the ascent.|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="227" name="FC Burger" tags="" position="2042.6666666666665,6651.333333333334" size="100,100">&quot;Mmm, been a while since I went to a fast food burger place, so sure, that sounds good.&quot;
+
+Wait, did you just hear… an agreement? An agreement on where to eat? An agreement on where to eat that didn&#39;t involve any arguing?
+You can hardly believe it. Sasha agreed to eat at the first fast food joint you suggested. What a remarkable turn of events!
+
+You turn your head to Sasha, who’s still standing over to your left, uttering the words &#39;Alright, cool. Shall we get in line?&#39; before extending your arm forward and offering Sasha to lead the way.
+
+[[&quot;We shall. On wards, toward our feast.&quot;|FC Dialogue]]
+</tw-passagedata><tw-passagedata pid="228" name="FC Taco" tags="" position="2192.6666666666665,6651.333333333334" size="100,100">&quot;Yeah, that sounds pretty good. Always down for some tacos.&quot;
+
+Wait, did you just hear… an agreement? An agreement on where to eat? An agreement on where to eat that didn&#39;t involve any arguing?
+You can hardly believe it. Sasha agreed to eat at the first fast food joint you suggested. What a remarkable turn of events!
+
+You turn your head to Sasha, who’s still standing over to your left, uttering the words &#39;Alright, cool. Shall we get in line?&#39; before extending your arm forward and offering Sasha to lead the way.
+
+[[&quot;We shall. On wards, toward our feast.&quot;|FC Dialogue]]</tw-passagedata><tw-passagedata pid="229" name="FC Chicken" tags="" position="2342.6666666666665,6651.333333333334" size="100,100">&quot;Hmm, that does sound good… sure, chicken&#39;s fine.&quot;
+
+Wait, did you just hear… an agreement? An agreement on where to eat? An agreement on where to eat that didn&#39;t involve any arguing?
+You can hardly believe it. Sasha agreed to eat at the first fast food joint you suggested. What a remarkable turn of events!
+
+You turn your head to Sasha, who’s still standing over to your left, uttering the words &#39;Alright, cool. Shall we get in line?&#39; before extending your arm forward and offering Sasha to lead the way.
+
+[[&quot;We shall. On wards, toward our feast.&quot;|FC Dialogue]]</tw-passagedata><tw-passagedata pid="230" name="FC Dialogue" tags="" position="2189.333333333333,6808" size="100,100">A short wait in line and the both of you emerge from the store front, bags of food and drinks in-hand. Suggesting a place to sit, you point towards a table near to the left of where you are and ask Sasha if that would work.
+
+&quot;Of course, it&#39;s a place to sit and eat lunch, so long as we aren&#39;t sitting on the floor I&#39;m not going to complain,&quot; she says with a bepuzzled look on her face.
+
+You and Sasha walk over to the table, pulling out the no-back, wooden chairs and having seat before placing your food and drink on the small black table now in-front of you.
+
+&quot;This is a quirky design choice for dining chairs and a table. Reminds me of those chairs they put in Olscamp Hall our Junior year. The ones no one ever used because they were basically just a wooden circle on some stilts.&quot;
+
+She&#39;s not wrong. Though you feel these chairs have a slight edge to the one’s that were in Olscamp. These chairs at least have some &#39;ergonomic&#39; contours, making them more comfortable to sit on than the flat chairs in Olscamp.
+
+With everything on the table, the food opening commences. Packets of sauce are torn open, food wrappers ripped, and straw paper rolled into little balls. 
+
+&lt;&lt;continuelink &quot;Once everything is sorted and unpacked Sasha brings up another college memory,&quot;&gt;&gt;Once everything is sorted and unpacked Sasha brings up another college memory, &quot;This is just like how we met, $name. The two of us sitting in a food court on the worst chairs imaginable.&quot;
+&quot;Now that I’m thinking of it… what dining hall did we even meet in? Wasn&#39;t it the old East Hall dining building? I think it was because it had that weird beige tile and the red paint. Smelt like a flooded basement too, feel like that&#39;s the main reason they tore it down our senior year.&quot;
+
+&lt;&lt;continuelink &quot;&#39;And it had the bathrooms that locked from the inside, too. They were pretty popular with certain demographics to say the least.&#39;&quot;&gt;&gt;&#39;And it had the bathrooms that locked from the inside, too. They were pretty popular with certain demographics to say the least.&#39;
+
+&quot;Oh yeah. Everything from hotboxing to sex in the bathrooms. Feel like maybe that contributed to the building being torn down as well.&quot;
+&quot;Of course I just heard about that stuff from friends. You know how it is.&quot;
+
+&lt;&lt;continuelink &quot;&#39;I can believe you with the latter, not sure about the former.&#39;&quot;&gt;&gt;&#39;I can believe you with the latter, not sure about the former.&#39;
+
+&quot;Ahh, I&#39;ve never enjoyed smoking, be it weed or tobacco. Tried cigarettes in my down time between high school and college and hated &#39;em. They smell dreadful and destroy your fur. No way I&#39;m going to ruin this beautiful mane of fur I have by smoking,&quot; she says while pointing her right hand towards herself.
+
+&quot;And weed, well, I told you about my first-time smoking it. Not a great experience. It just makes me anxious; I don&#39;t see the appeal.&quot;
+
+&quot;Also, yeah, someone with no sexual attraction has no desire to bang in the bathrooms, go figure,” Sasha says while shrugging her shoulders, drink in-hand.
+
+
+&lt;&lt;continuelink &quot;&#39;Anyway,&#39; you stop and have a drink before continuing, &#39;that was far from the only building with that smell. You think they could&#39;ve used our tuition money to fix the leaky roofs all the old buildings had.&#39;&quot;&gt;&gt;&#39;Anyway,&#39; you stop and have a drink before continuing, &#39;that was far from the only building with that smell. You think they could&#39;ve used our tuition money to fix the leaky roofs all the old buildings had.&#39;
+
+&quot;Hmph I wish. It feels like every time we went into Olscamp another roof panel was leaking. And that was far from the worst building. Poor fine art kids had a glorified hut as their building, full of mold, buckets picking up water down every hall. It was bad,&quot; she says before taking a break to take a bite from her meal.
+
+&quot;And you sure could tell which majors and programs the university prioritized. Business kids got a brand-new building because they didn&#39;t like the 30-year old palace they had. Meanwhile the Geology department was stuck with 70-year old Orton Hall and its non-functioning air conditioning.&quot;
+
+&lt;&lt;continuelink &quot;&#39;Don&#39;t forget Pickens&#39; Hall. 50-year old dorms with no A/C and that horrible green carpet from the 90s.&#39;&quot;&gt;&gt;&#39;Don&#39;t forget Pickens&#39; Hall. 50-year old dorms with no A/C and that horrible green carpet from the 90s.&#39;
+
+&quot;Oh god don&#39;t remind me of that disaster of interior design. The carpet looked like damn golf turf! And it had that horrible metal furniture as well… glad I never had to live there.&quot;
+
+Munching and talking away you find that your meal is dawning towards an end. The only thing left to finish being your drink, which is just a couple sips away from being empty. Sasha seems to be done as well, the slurping from her now empty drink making that apparent.
+
+&quot;Shall we leave the scene, $name? Continue our quest to scour the land of Chicago?&quot;
+
+&#39;I think we shall, Sasha,&#39; you reply. Grabbing your trash, tossing into the trash bins before heading to the [[2nd floor of the Sears Tower|Sears Tower Second Floor]] with Sasha.</tw-passagedata><tw-passagedata pid="231" name="Observation Tower Lobby" tags="" position="1762.6666666666665,6371.333333333335" size="100,100">After a surprisingly lengthy travel and wait time, you’ve finally arrived at the Skydeck.
+
+Looking around it would seem this whole area is a square loop of sorts. No matter what way you go you’ll end up right back here. The whole area is quite similar in aesthetic to the hallway you just came from. The walls facing towards the building are painted the same dark blue color as the hallway, though the floor is a gray carpet instead of being white tile. And of course the walls facing out are nothing but glass, offering a full view of the windy city.
+
+Your next course of action will be moving…
+[[North|OBT North]]
+[[West|OBT West]]
+[[East|OBT East]]
+[[South|OBT Exit]]
+
+</tw-passagedata><tw-passagedata pid="232" name="OBT North" tags="" position="1530.9999999999998,6518.000000000002" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="233" name="OBT West" tags="" position="1687.6666666666665,6521.333333333335" size="100,100">Heading towards the westerly section of the Skydeck offers a setting that, surprise surprise, is quite identical to what you’ve already seen. The scenery remains the same with the only thing differing being the people over in this section. Looking around you can see a family of 4 standing by the glass. The two young kids in the family pressing their faces against the glass to try and see down.
+
+Sitting on one of the benches you can also see a group of 3 friends looking at something on their phones. Probably pictures they’ve taken throughout the day.
+
+With not much on offer here, you decide to take your next course of action. Heading towards…
+[[The southern section of the Skydeck|OBT South]]
+[[The northern section where you started.|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="234" name="OBT East" tags="" position="1837.6666666666665,6521.333333333335" size="100,100">Walking over to the east side of the Skydeck you can see a set of benches against the inner wall, with a set of chairs closer to the glass windows. You also see a few sets of in-place metal binoculars facing the windows that are oh-so popular at vantage points such as this.
+
+&lt;&lt;if $robert_talked is not true&gt;&gt;
+Sitting in one of the chairs adjacent to the windows is a slim kangaroo, he’s dressed in beige chino pants with a polo shirt and seems to be motioning for you to walk over to him.
+&lt;&lt;/if&gt;&gt;
+
+Thinking it through, you decide to head…
+[[Back towards the elevator|Observation Tower Lobby]]
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $robert_talked is not true&gt;&gt;
+[[Towards the kangaroo waving you down|OBT East Robert]]
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+[[Further to the east bring you to the back of the Skydeck|OBT South]]</tw-passagedata><tw-passagedata pid="235" name="OBT Exit" tags="" position="1987.6666666666665,6521.333333333335" size="100,100">&lt;&lt;if $OBT_main is not true&gt;&gt;
+	“Uh, $name, we just got here. Why would we leave already? We haven’t even got to check out the ledges yet. Let’s go check that out and go from there,” Sasha says, commenting on your decision to head back towards the elevator.
+	Snapping out of it, you agree with Sasha and [[decide on your next course of action...|Observation Tower Lobby]]
+&lt;&lt;else&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="236" name="OBT South" tags="" position="1614.3333333333333,6388.000000000002" size="100,100">Walking further towards the south of this “Skydeck” offers scenery that is as expected. It looks essentially the same as the other areas you’ve been to. The only thing differing from the past areas being a mural on the south wall, showcasing the Chicago skyline.
+
+Looking around you can see an elderly man sitting on one of the benches that are abundant here. You also see who you assume to be his equally elderly wife reading one of the informational plaques on the wall.
+ 
+With nothing else to speak of here, you decide to move on to…
+
+[[The east section of the Skydeck|OBT East]]
+[[The west section of the Skydeck|OBT West]]</tw-passagedata><tw-passagedata pid="237" name="OBT East Robert" tags="" position="1837.6666666666665,6671.333333333335" size="100,100">The man sitting in the chair seems quite interested in talking with you, deciding to oblige him, you walk over to where he’s sitting. It doesn’t take him long to get straight to the point.
+
+“Center Street Cafe, huh? Isn’t that place on Koligan’s Island?” he says while pointing to your shirt.
+
+&lt;&lt;continuelink &quot;‘Yes,’ you reply, before asking him how he knows that.&quot;&gt;&gt;‘Yes,’ you reply, before asking him how he knows that.
+
+“Ah, well, I’ve been there a couple times myself. Pretty popular tourist destination, yeah? Just like this here Sears Tower. I’m assuming that’s why you two are here, tourists and all that.”
+
+“Tourists… I suppose we are, yes. And what are you?” Sasha says to the kangaroo.
+
+“Me? I live here in Chicago. And I’m just checking this place out, do it every month, bit of a routine at this point.”
+
+“Bleh, nothing much changes here so I don’t know why I even bother. Turns out nothing much changes at a popular tourist stop. Surprising, right?”
+
+“Anyway, I’m Robert. Nice to meet you two.” He says while extending his paw out to you for a shake.
+
+&lt;&lt;continuelink &quot;You shake his paw and introduce yourself as ‘$name’.&quot;&gt;&gt; You shake his paw and introduce yourself as ‘$name’. He follows suit with a pawshake to Sasha, Sasha looking sideways towards you while doing so.
+
+“So, you two live out of state, I’m assuming? Given the shirt and all, feel like that would be the most logical conclusion here.”
+
+Nodding your head to indicate that you are, in fact, from of out state, you look towards Sasha with a puzzled look. Unsure if you should give this person the full explanation as to why you decided to come here.
+
+Sasha gives you a face that you can only interpret as “Whatever you do, do //not// make this interaction longer than it needs to be.”
+
+&lt;&lt;continuelink &quot;Taking the hint, you tell Robert that you and Sasha are just stopping by Chicago for a few days, seeing the sights, checking out some pizza places, the usual stuff.&quot;&gt;&gt;Taking the hint, you tell Robert that you and Sasha are just stopping by Chicago for a few days, seeing the sights, checking out some pizza places, the usual stuff.
+
+“No kidding?” he says in a surprised tone that you can obviously tell is fake. “Hell, I could show you guys around if you want. Know all the good places to stop, best restaurants, all that shit you tourists love. ‘Course I wouldn’t take a day or two out of my life just to guide you and your girlfriend all around town out of the kindness of my own heart. Man’s gotta make a living, gotta have some cash for that of service, right?”
+
+&lt;&lt;continuelink &quot;‘And there it is,’ you think to yourself.&quot;&gt;&gt;‘And there it is,’ you think to yourself. The point you were waiting for, the attempt to coerce some silly tourist out of their money in exchange for some half-assed tour of the city.
+
+Not only that, but looking over to Sasha, you get the feeling she isn’t too pleased by this man calling her your girlfriend.
+
+[[‘No thanks. We’re good. Already have a whole list of places we want to check out, we’re good, really.’|OBT East Robert 1]]
+
+[[‘I know what you’re getting at. I’m not going to hate on the hustle but I’m not interested.’|OBT East Robert 2]]
+
+[[‘Hmm, no, I don’t think so. I know what you’re about and I’m not buying. Not like I’d to want give away my money to someone like you anyway.’|OBT East Robert 3]]
+
+</tw-passagedata><tw-passagedata pid="238" name="OBT East Robert 1" tags="" position="1687.6666666666665,6821.333333333335" size="100,100">//‘No thanks. We’re good. Already have a whole list of places we want to check out.’//
+
+“Yeah you say that now but we’ll see how you’re feeling later today when you’re wandering the streets on your own. It’s all right, we all make mistakes. Here’s a card, change your mind just call me, we can work something out,” the kangaroo says before handing you a beige card with his full name and phone number on it.
+
+It reads:
+“Robert Fowl”
+Phone Number: 773-289-1003
+
+“Keep me in mind, man. I’m available.” He says before leaving the area, heading over towards the elevator from what you can tell.
+&lt;&lt;set $robert_talked to true&gt;&gt; 
+
+“What a character,” Sasha states as she shakes her head, continuing shortly after, “I knew we were in for something interesting when he waved you over. I was expecting either incomprehensible ramblings or an attempt to sell us something. I think we got a bit of both.”
+
+“And what was up with him thinking we were dating? Always makes me mad when people assume shit like that. Just because two people are hanging out doesn’t mean they’re dating!”
+
+&lt;&lt;continuelink &quot;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.&quot;&gt;&gt;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.
+
+
+“You’re right. Maybe we can talk about it in the car sometime with Jacob. No reason to waste our time thinking about it here,” she says [[as you both step back from the chair.|OBT East]]
+
+
+</tw-passagedata><tw-passagedata pid="239" name="OBT East Robert 2" tags="" position="1837.6666666666665,6821.333333333335" size="100,100">//‘I know what you’re getting at. I’m not going to hate on the hustle but we’re not interested.’//
+
+“Alright, suit yourselves. I get it. If you change your mind though, hit me up here,” the kangaroo says as he hands you beige card with his full name and phone number on it.
+
+It reads:
+“Robert Fowl”
+Phone Number: 773-289-1003
+
+“Just send me a call, tell me where you’re at and I’ll be there.” He says before leaving the area, heading towards the elevator from what you can tell.
+&lt;&lt;set $robert_talked to true&gt;&gt; 
+
+“What a character,” Sasha states as she shakes her head, continuing shortly after, “I knew we were in for something interesting when he waved you over. I was expecting either incomprehensible ramblings or an attempt to sell us something. I think we got a bit of both.”
+
+“And what was up with him thinking we were dating? Always makes me mad when people assume shit like that. Just because two people are hanging out doesn’t mean they’re dating!”
+
+&lt;&lt;continuelink &quot;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.&quot;&gt;&gt;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.
+
+
+“You’re right. Maybe we can talk about it in the car sometime with Jacob. No reason to waste our time thinking about it here,” she says [[as you both step back from the chair.|OBT East]]
+</tw-passagedata><tw-passagedata pid="240" name="OBT East Robert 3" tags="" position="1987.6666666666665,6821.333333333335" size="100,100">//‘Hmm, no, I don’t think so. I know what you’re about and we’re not buying. Not like I’d want to give away my money to someone like you anyway.’//
+
+“Yeah, of course you know what I’m about. Whatever. I can tell you’re not going to be worth my time so I’m out of here. You and your girlfriend have fun,” he says before pushing you out of the way and heading over to the elevator.
+
+&lt;&lt;set $robert_talked to true&gt;&gt; 
+
+“What a character,” Sasha states as she shakes her head, continuing shortly after, “I knew we were in for something interesting when he waved you over. I was expecting either incomprehensible ramblings or an attempt to sell us something. I think we got a bit of both.”
+
+“And what was up with him thinking we were dating? Always makes me mad when people assume shit like that. Just because two people are hanging out doesn’t mean they’re dating!”
+
+&lt;&lt;continuelink &quot;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.&quot;&gt;&gt;‘Just the way it is. Societal constructs and all that. I could talk about it all day but I think we have some more interesting things to do instead,’ you say while hinting towards checking out the ledge.
+
+
+“You’re right. Maybe we can talk about it in the car sometime with Jacob. No reason to waste our time thinking about it here,” she says [[as you both step back from the chair.|OBT East]]</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:i,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e);if("function"==typeof e.clone)return e.clone(!0);if(e.nodeType&&"function"==typeof e.cloneNode)return e.cloneNode(!0);var r=void 0;return e instanceof Array?r=new Array(e.length):e instanceof Date?r=new Date(e.getTime()):e instanceof Map?(r=new Map,e.forEach(function(e,n){return r.set(n,t(e))})):e instanceof RegExp?r=new RegExp(e):e instanceof Set?(r=new Set,e.forEach(function(e){return r.add(t(e))})):r=Object.create(Object.getPrototypeOf(e)),Object.keys(e).forEach(function(n){return r[n]=t(e[n])}),r}function r(e){
