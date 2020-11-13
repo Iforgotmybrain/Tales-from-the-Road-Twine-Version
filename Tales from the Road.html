@@ -3927,6 +3927,7 @@ One last thing. If you liked the art, consider checking out the person that made
 That is all for now my friend. Cheers, Adios, and thanks again for playing to the (current) end!
 </tw-passagedata><tw-passagedata pid="214" name="Chicago Start" tags="" position="2616,6188" size="100,100">&lt;&lt;set $race to &quot;Wolf&quot;&gt;&gt;
 &lt;&lt;set $name to &quot;Kars&quot;&gt;&gt;
+&lt;&lt;set $holly_dating to true&gt;&gt;
 PLACEHOLDER VARS ABOVE DON&#39;T FORGET
 After a short and uneventful train ride, you and Sasha have arrived at “The Loop”, or just downtown Chicago.
 
@@ -4100,7 +4101,7 @@ Alright, well, that was the last choice. Do you want to play through chapter 4 o
 
 “When did they even change the name to the Willis Tower? Around the time Sears started going under, I’m guessing?”
 
-“Some bougie broker company bought the naming rights and nobody even cares. We’re still calling it by the name of a defunct retail store. That’s gotta piss off the Willis Company.”
+“Funny, some bougie broker company bought the naming rights and nobody even cares. We’re still calling it by the name of a defunct retail store. That’s gotta piss off the Willis Company.”
 
 That is a bit of an entertaining thought. Perhaps not everything can be forced to change with the exchange of cash, not yet anyway.
 
@@ -4166,7 +4167,7 @@ Looking around you decide the best course of action is…
 
 [[Checking out the observation tower|Observation Tower Start]]
 [[Heading back down to the second level|Sears Tower Second Floor]]</tw-passagedata><tw-passagedata pid="225" name="Sears Tower Food Court" tags="" position="2192,6501" size="100,100">Hearing your stomach rumble you think now could be an opportune time to grab something to eat. 
-/* Bit wordy placeholder */
+
 You mention this to Sasha, looking over to your left and asking her if she&#39;d be interested in grabbing something to eat before heading to the observation deck.
 
 &quot;Sure, I&#39;m a tad hungry myself. Not a bad idea to get something to eat before continuing our adventure.&quot;
@@ -4242,7 +4243,7 @@ You turn your head to Sasha, who’s still standing over to your left, uttering 
 
 You and Sasha walk over to the table, pulling out the no-back, wooden chairs and having seat before placing your food and drink on the small black table now in front of you.
 
-&quot;This is a quirky design choice for dining chairs and a table. Reminds me of those chairs they put in Olscamp Hall our Junior year. The ones no one ever used because they were basically just a wooden circle on some stilts.&quot;
+Sasha, sitting across from you, remarks on the design of the chairs, &quot;This is a quirky design choice for dining chairs and a table. Reminds me of those chairs they put in Olscamp Hall our Junior year. The ones no one ever used because they were basically just a wooden circle on some stilts.&quot;
 
 She&#39;s not wrong. Though you feel these chairs have a slight edge to the one’s that were in Olscamp. These chairs at least have some &#39;ergonomic&#39; contours, making them more comfortable to sit on than the flat chairs in Olscamp.
 
@@ -4284,11 +4285,12 @@ Munching and talking away you find that your meal is dawning towards an end. The
 Looking around it would seem this whole area is a square loop of sorts. No matter what way you go you’ll end up right back here. The whole area is quite similar in aesthetic to the hallway you just came from. The walls facing towards the building are painted the same dark blue color as the hallway, though the floor is a gray carpet instead of being white tile. And of course the walls facing out are nothing but glass, offering a full view of the windy city.
 
 Your next course of action will be moving…
-/* Rewrite these */
-[[North|OBT North]]
-[[West|OBT West]]
-[[East|OBT East]]
-[[South|OBT Exit]]
+&lt;&lt;if $tower_completed is not true&gt;&gt;
+[[North towards the glass ledge|OBT North]]
+&lt;&lt;/if&gt;&gt;
+[[To the west section of the observation deck|OBT West]]
+[[Over to the east side of the observation deck|OBT East]]
+[[Into the elevator|OBT Exit]]
 
 </tw-passagedata><tw-passagedata pid="232" name="OBT North" tags="" position="1534,6521" size="100,100">To the north is “the ledge”. As the name suggests this is a glass ledge that extends past the Sears Tower, allowing people to seemingly defy gravity and look straight down at what’s below. Without falling, of course
 
@@ -4299,8 +4301,6 @@ Walking over to the line for one of the ledges, you’re surprised to see that i
 “Have you ever done something like this? Go up in a skyscraper or whatever?” Sasha says, turning her head to look at you
 
 [[‘Only one other time, in New York. Went up in the Empire State and they had an observation deck for tourists that was similar to this.’|OBT North 1]]
-
-[[‘Can’t say I have. This is a first.’|OBT North 2]]
 </tw-passagedata><tw-passagedata pid="233" name="OBT West" tags="" position="1683,6517" size="100,100">Heading towards the westerly section of the Skydeck offers a setting that, surprise surprise, is quite identical to what you’ve already seen. The scenery remains the same with the only thing differing being the people over in this section. Looking around you can see a family of 4 standing by the glass. The two young kids in the family pressing their faces against the glass to try and see down.
 
 Sitting on one of the benches you can also see a group of 3 friends looking at something on their phones. Probably pictures they’ve taken throughout the day.
@@ -4325,10 +4325,10 @@ Thinking it through, you decide to head…
 	Snapping out of it, you agree with Sasha and [[decide on your next course of action...|Observation Tower Lobby]]
 &lt;&lt;else&gt;&gt;
 &quot;Ready to head out, $name?&quot;
-[[&#39;Yep, think we&#39;ve seen just about everything there is to see. Let&#39;s move on to the next thing|OBT North Transfer]]
+[[&#39;Yep, think we&#39;ve seen just about everything there is to see. Let&#39;s move on to the next thing&#39;|OBT North Transfer]]
 
 [[&#39;Actually, let me check out one more thing real quick&#39;|Observation Tower Lobby]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="236" name="OBT South" tags="" position="1603.6666666666667,6378" size="100,100">Walking further towards the south of this “Skydeck” offers scenery that is as expected. It looks essentially the same as the other areas you’ve been to. The only thing differing from the past areas being a mural on the south wall, showcasing the Chicago skyline.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="236" name="OBT South" tags="" position="1603,6378" size="100,100">Walking further towards the south of this “Skydeck” offers scenery that is as expected. It looks essentially the same as the other areas you’ve been to. The only thing differing from the past areas being a mural on the south wall, showcasing the Chicago skyline.
 
 Looking around you can see an elderly man sitting on one of the benches that are abundant here. You also see who you assume to be his equally elderly wife reading one of the informational plaques on the wall.
  
@@ -4455,7 +4455,7 @@ You’re still a fair distance away from the pavilion area that the art installa
 &quot;We&#39;ve already seen everything there is to see down this path. No point in going back to look at that silly art sphere thing.&quot;
 
 You agree with Sasha, [[heading back to the entrance of the park|Millennium Park Hub]] to work out your next steps.
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="245" name="MPC North" tags="" position="2602,6804" size="100,100">Walking straight ahead brings you the central pavilion. The pavilion where all manner of performances are put on from live music to orchestras to movies. As is the case today, they’re showing various movies. The theme today, at least according to a post you read online earlier, is super hero movies. A favorite of Sasha’s.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="245" name="MPC North" tags="" position="2602,6804" size="100,100">Walking straight ahead brings you to the central pavilion. The pavilion where all manner of performances are put on from live music to orchestras to movies. As is the case today, they’re showing various movies. The theme today, at least according to a post you read online earlier, is super hero movies. A favorite of Sasha’s.
 
 &lt;&lt;continuelink &quot;‘Hey Sasha, they’re showing super hero movies at the pavilion, any interest in checking that out?’&quot;&gt;&gt;‘Hey Sasha, they’re showing super hero movies at the pavilion, any interest in checking that out?’ You remark to her, as she seems to be unaware of the movie showings.
 
@@ -4499,7 +4499,7 @@ Huddles of people are gathered underneath the beans arched middle; anywhere ther
 
 “Not so much with the physical design of whatever it is they’re making, it’s the meanings they put into them,” she says while holding her chin with her paw, “I can’t work my brain like they do and see this giant metallic object as anything but a huge shiny bean.”
 
-“I mean, I don’t make sculptures or paint but I do make music. It’s a different field of art and all that but it’s considered an art nevertheless. I suppose the mindset for creating music and the mindset for creating sculptures such as this are just too different. It’s like two different fields of science, almost. Like, obviously as someone very well-versed in the matter of rocks I’m not going to understand biological processes on the same level as a biologist.”
+“I mean, I don’t make sculptures or paint but I do make music. It’s a different field of art and all that but it’s considered an art nevertheless. I suppose the mindset for creating music and the mindset for creating sculptures such as this are just too different. It’s like two different fields of science, almost. Obviously, as someone very well-versed in the matter of rocks I’m not going to understand biological processes on the same level as a biologist.”
 
 “But at the same time the basic principles of science don’t change too dramatically from field to field. As we share the same basic ideas of how the scientific process works. Much like how a musician and an artist, such as the person who created this bean, share the same basic principles of how art comes to be. It just that the process, both design and thought-wise, can differ.”
 
@@ -4663,7 +4663,6 @@ Sasha joins the conversation, “An art critic, huh? How well known of an art cr
 
 “I see. Well, all the best.” Daniel says as he turns his head back to the sphere and continues his pondering.
 
-PLACEHOLDER Could do some extra stuff here
 &lt;&lt;set $art_critic_talked to true&gt;&gt;
 [[You and Sasha walk back to the path you came from and examine your next steps.|Millennium Park Hub]]</tw-passagedata><tw-passagedata pid="255" name="Museum Start 2" tags="" position="2766,6504" size="100,100">Getting off the bus, you and Sasha step foot on the grounds of the Museum of Science and Industry. A grand building built from stone — if it weren’t for all the landscaping and abundant space you’d think you were standing in front of a building in D.C.
 
@@ -4774,7 +4773,7 @@ Sasha, who was walking over to your left, managed to avoid running into the same
 
 &lt;&lt;continuelink &quot;The Dad sighs,&quot;&gt;&gt;The Dad sighs, “Fine. Go on your way, son. We’re done here,” he says with bated breath. His wife putting her arm on his shoulder as they walk away from the scene of the crime.
 	
-Seeing that the family has left, Sasha walks over to you from a few feet away. Her right hand over her mouth as she tries to stop from laughing in the museum.
+Seeing that the family has left, Sasha walks over to you from a few feet away. Her right hand over her mouth as she tries to stop herself from laughing.
 
 &lt;&lt;continuelink &#39;&quot;I am so sorry $name, but that was hilarious.&quot;&#39;&gt;&gt;“I am so sorry $name, but that was hilarious. Terrible, but hilarious,” she says, her voice cracking as she holds back her laughter.
 
@@ -4784,7 +4783,8 @@ Seeing that the family has left, Sasha walks over to you from a few feet away. H
 
 You and Sasha continue your walk through the museum while conversing. Sasha standing to your left as she continues to talk, “Oh, let me tell you, dogs are the absolute worst. And I say that as a dog. A dog who grew up in a dog family, surrounded by other families of dogs and other posh animal types.” 
 &lt;&lt;if $race is &quot;Wolf&quot;&gt;&gt;
-&lt;&lt;continuelink &quot;‘As a wolf I feel like I’m missing out on something. I know we’re closely related by genetics, Sasha, but obviously you’ve had a different experience growing up.’&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;‘As a wolf I feel like I’m missing out on something. I know we’re closely related by genetics, Sasha, but obviously you’ve had a different experience growing up.’&quot;&gt;&gt;‘As a wolf I feel like I’m missing out on something. I know we’re closely related by genetics, Sasha, but obviously you’ve had a different experience growing up.’
+
 “Yeah, I mean, there’s definitely posh, rich wolves. But they tend to act different than the rich dogs, you know? That’s probably the difference. Dogs just have that stereotype. They have that snobby, ‘I’m better than you’ kind of attitude.”
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;continuelink &quot;‘So that family reminds you of yours?’&quot;&gt;&gt;‘So that family reminds you of yours?’
@@ -4838,7 +4838,7 @@ Rolling her eyes, Sasha responds, “$name, please, you said yourself just a bit
 [[‘Perhaps this plays into your ‘luck’ that I wast talking about earlier.’|Sasha Museum Dialogue MPC]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;continuelink &quot;‘Looks like we’re getting close to the end of this section, Sasha.’ The exit for this section looming ahead, bringing you back to the rotunda you started at.&quot;&gt;&gt;‘Looks like we’re getting close to the end of this section, Sasha,&#39; You say as you see the exit for this section looming ahead, bringing you back to the rotunda you started at.&quot;
+&lt;&lt;continuelink &quot;‘Looks like we’re getting close to the end of this section, Sasha.’ The exit for this section looming ahead, bringing you back to the rotunda you started at.&quot;&gt;&gt;‘Looks like we’re getting close to the end of this section, Sasha,&#39; You say as you see the exit for this section looming ahead, bringing you back to the rotunda you started at.
 &lt;&lt;set $museum_completed to true&gt;&gt;
 “It would seem so. Well, guess we can [[evaluate our next steps, then?”|Museum Lobby]]</tw-passagedata><tw-passagedata pid="260" name="Sasha Museum Dialogue 1" tags="" position="3217,7390" size="100,100">//‘Do you hold any resentment towards your parents for not helping you out with college?’//
 
@@ -4858,7 +4858,7 @@ Rolling her eyes, Sasha responds, “$name, please, you said yourself just a bit
 
 “Plus, despite my laziness during that gap year, I do think it allowed me to think about and explore some things that I wouldn’t have been able to otherwise. Mostly related to my future and career. And it kept me from becoming the same kind of ugly that my parents are, the kind of ugly you just saw, which is also nice.”
 
-[[Ask her about something else|Sasha Museum Dialogue]]</tw-passagedata><tw-passagedata pid="263" name="Sasha Museum Dialogue 4" tags="" position="3236,6990" size="100,100">‘Did you find out about being ace during your gap year as well?’
+[[Ask her about something else|Sasha Museum Dialogue]]</tw-passagedata><tw-passagedata pid="263" name="Sasha Museum Dialogue 4" tags="" position="3236,6990" size="100,100">//‘Did you find out about being ace during your gap year as well?’//
 
 “Kind of? I didn’t really come to terms with my sexuality until my 2nd year in college. But I was starting to question things around that time. Started to realize that sexual attraction is, in fact, not an uncommon emotion for most people. And that most people aren’t repulsed by the thought of sex. That sure was something.”
 
@@ -4894,7 +4894,7 @@ She seems a bit taken back by this comment, replying back, “Hmm? What makes yo
 
 &lt;&lt;continuelink &quot;‘You’re right. I… don’t really know where I was going with that thought. Probably should have just kept it to myself.’&quot;&gt;&gt;‘You’re right. I… don’t really know where I was going with that thought. Probably should have just kept it to myself.’
 
-“Don’t worry about it. With you bringing that conversation up though, I have to wonder, did you take my advice to heart?”
+“Don’t worry about it. With you bringing that conversation up though... I have to wonder, did you take my advice to heart?”
 
 &lt;&lt;continuelink &quot;‘Kind of. Maybe not in the way you were expecting.’&quot;&gt;&gt;‘Kind of. Maybe not in the way you were expecting.’
 
@@ -4915,11 +4915,11 @@ Smiling, you thank Sasha for the support. Giving you some reassurance that you d
 
 Nodding your head, you turn your eyes towards the projector screen, watching the opening credits of the movie.  
 
-[[Some time later|MPC End]]</tw-passagedata><tw-passagedata pid="266" name="Chapter 4 Ending" tags="" position="3215,6465" size="100,100">Hopping off the L train, you stand in front of the parking garage where this expedition began. Jacob’s car parked somewhere on the 6th floor of this 10 floor building. With nothing left to do, you and Sasha make your way back to the car. Unsure if Jacob &lt;&lt;if $holly_dating is true or $valery_dating is true&gt;&gt;and co.&lt;&lt;/if&gt;&gt; will be there or not. You have a spare key to the car so Sasha and you will be able to get into the regardless of rather Jacob makes it back on time.
+[[Some time later|MPC End]]</tw-passagedata><tw-passagedata pid="266" name="Chapter 4 Ending" tags="" position="3215,6465" size="100,100">Hopping off the L train, you&#39;re standing in front of the parking garage where this expedition began. Jacob’s car parked somewhere on the 6th floor of this 10 floor building. With nothing left to do, you and Sasha make your way back to the car, usure if Jacob &lt;&lt;if $holly_dating is true or $valery_dating is true&gt;&gt;and co.&lt;&lt;/if&gt;&gt; will be there or not. You have a spare key to the car so Sasha and you&#39;ll be able to get into the car regardless.
 
 An uneventful trek to the 6th floor of the dingy concrete parking garage. Walking to Jacob’s car shows you that, unsurprisingly, Jacob did not make it back on time. Oh well, he should show up soon enough. Bus was probably just running late or something, you think.
 
-&lt;If $holly_dating is true or $valery_dating is true&gt;&gt;
+&lt;&lt;if $holly_dating is true or $valery_dating is true&gt;&gt;
 
 Indeed, someone arrives to the car about 10 minutes after you and Sasha. Though it’s not the person you were expecting, as you see &lt;&lt;if $holly_dating is true&gt;&gt; Holly’s &lt;&lt;elseif $valery_dating is true&gt;&gt; Valery&#39;s &lt;&lt;/if&gt;&gt; face as they open the door and take their seat across from you.
 
@@ -4930,7 +4930,7 @@ Indeed, someone arrives to the car about 10 minutes after you and Sasha. Though 
 “Hey $name. Jacob’s a bit behind schedule, I’m guessing. Kind of easy to tell, it being a quarter past 5, and him not being in the driver’s seat. Good thinking to have a spare key in case something like this happened.”
 &lt;&lt;/if&gt;&gt;
 
-Some small talk is shared while you all wait for Jacob to arrive. Finally, at 5:45, &lt;&lt;continuelink &quot;you look out the window to see him approaching the car.&quot;&gt;&gt;you look out the window to see him approaching the car.
+Some small talk is shared while you wait for Jacob to arrive. Finally, at 5:45, &lt;&lt;continuelink &quot;you look out the window to see him approaching the car.&quot;&gt;&gt;you look out the window to see him approaching the car.
 
 Opening the front driver’s door, Jacob enters the car and promptly apologizes for his lateness, “Well, 45 minutes late. Not great, not terrible. Sorry about that.”
 
@@ -5001,18 +5001,7 @@ There&#39;s only one thing to do, and that&#39;s [[enter the park|Millennium Par
 
 “What about living in one of these cities, though? I mean like, these huge cities. Dallas, L.A, any place like that. They’re nice to visit but I don’t know. Could you see yourself living here?”
 
-[[‘Maybe in the right situation, right job offer, who knows. But I don’t think I’d move to a big city just unprovoked, for no reason.’|OBT North 3.1]]
-
-[[‘I certainly wouldn’t be apposed to it. But, probably wouldn’t be the smartest move to live in a big, expensive city given my current career situation.’|OBT North 3.2]]
-
-[[‘It’s definitely something I’d like to do before I end up 6 feet under. Even if it’s just for a year, I think it’d be interesting.’|OBT North 3.3]]
-
-[[‘Not in this lifetime I couldn’t. Cost of living is too high, they’re noisy, too many people. Just too much of a ‘disconnected’ experience, if you know what I mean.’|OBT North 3.4]]</tw-passagedata><tw-passagedata pid="272" name="OBT North 2" tags="" position="1609,6671" size="100,100">//‘Can’t say I have. This is a first.’//
-
-“Same for me. They didn’t have anything like this back in Oregon. And obviously the same applies to our home state.”
-
-“I don’t know. Do you think you could ever see yourself living in a city like this? Big place like Chicago, Dallas, L.A, any of those real big cities?”
-</tw-passagedata><tw-passagedata pid="273" name="OBT North 3.1" tags="" position="1272,6744" size="100,100">//‘Maybe in the right situation, right job offer, who knows. But I don’t think I’d move to a big city just unprovoked, for no reason.’//
+[[‘Maybe in the right situation, right job offer, who knows. But I don’t think I’d move to a big city just unprovoked, for no reason.’|OBT North 3.1]]</tw-passagedata><tw-passagedata pid="272" name="OBT North 3.1" tags="" position="1272,6744" size="100,100">//‘Maybe in the right situation, right job offer, who knows. But I don’t think I’d move to a big city just unprovoked, for no reason.’//
 
 “Yeah, I could see that.” Sasha says, pausing for a moment before speaking up again, “Honestly, just up and moving to any place without a solid reason is asking for trouble. Especially so when you’re moving to a place with such a high cost of living like a big city.”
 
@@ -5024,29 +5013,9 @@ There&#39;s only one thing to do, and that&#39;s [[enter the park|Millennium Par
 
 &lt;&lt;continuelink &quot;&#39;I don&#39;t know, Sasha. I feel like I shouldn&#39;t have brought it up. Just forget about it.&#39;&quot;&gt;&gt;&#39;I don&#39;t know, Sasha. I feel like I shouldn&#39;t have brought it up. Just forget about it.&#39;
 
-[[&quot;No, you definitely should have brought it up. Come on, let&#39;s talk about it.&quot;|OBT North Talk Start]]
-
-&lt;&lt;continuelink&quot;&#39;No, no. I was just venting. Don&#39;t worry about it. We&#39;re almost next in-line anyway.&#39;&quot;&gt;&gt;&#39;No, no. I was just venting. Don&#39;t worry about it. We&#39;re almost next in-line anyway.&#39;
-
 &quot;Are you sure? It&#39;s really no problem. We can just get back in line when we&#39;re done talking.”
 
-[[&#39;I mean, I guess we can talk about it for a minute. If you insist...&#39;|OBT North Talk Start]]
-
-&lt;&lt;continuelink &quot;&#39;It&#39;s fine. Don&#39;t worry about it.&#39;&quot;&gt;&gt;&#39;It&#39;s fine. Don&#39;t worry about it.&#39;
-
-&quot;Mmm. But I do worry. Especially when you tell me not to worry about it; because I know how you are.&quot;
-
-&quot;But fine. I&#39;m not some CIA agent with a truth serum; I can&#39;t make you talk. Even if I know it would be to your benefit…&quot;
-
-PLACEHOLDER</tw-passagedata><tw-passagedata pid="274" name="OBT North 3.2" tags="" position="1451,7050" size="100,100">//‘I certainly wouldn’t be apposed to it. But, probably wouldn’t be the smartest move to live in a big, expensive city given my current career situation.’//
-
-“Yeah, I get that.” Sasha says, pausing for a moment before speaking up again, “Honestly just up and moving to any place without a solid plan is asking for trouble. Especially so when you’re moving to a place with such a high cost of living like a big city.”
-</tw-passagedata><tw-passagedata pid="275" name="OBT North 3.3" tags="" position="1633,6961" size="100,100">//‘It’s definitely something I’d like to do before I end up 6 feet under. Even if it’s just for a year, I think it’d be interesting.’//
-
-“Right? Doesn’t even have to be for a year, I think just living in one for a few months would be cool too. There’s just so many opportunities and experiences in places like this that we simply don’t have back in our little city.”</tw-passagedata><tw-passagedata pid="276" name="OBT North 3.4" tags="" position="1513,6930" size="100,100">//‘Not in this lifetime I couldn’t. Cost of living is too high, they’re noisy, too many people. Just too much of a ‘disconnected’ experience, if you know what I mean.’//
-
-“I can see that, definitely. So many people live here that you’ll probably never see the same person twice. Which can be a good thing and a bad thing, just depends on how you see it.”
-</tw-passagedata><tw-passagedata pid="277" name="OBT North Talk Start" tags="" position="1259,6571" size="100,100">You and Sasha exit the line and head over to one of the lonely benches secluded over in the westerly section of the Skydeck.
+[[&#39;I mean, I guess we can talk about it for a minute. If you insist...&#39;|OBT North Talk Start]]</tw-passagedata><tw-passagedata pid="273" name="OBT North Talk Start" tags="" position="1259,6571" size="100,100">You and Sasha exit the line and head over to one of the lonely benches secluded over in the westerly section of the Skydeck.
 
 Sitting down, you and Sasha continue where you left off, &quot;So you don&#39;t know what the hell you&#39;re doing, huh? Well, I&#39;d say welcome to the club but it&#39;s pretty obvious you&#39;re hurting a bit more than most of us.&quot;
 
@@ -5072,13 +5041,11 @@ Sitting down, you and Sasha continue where you left off, &quot;So you don&#39;t 
 
 “Oh $name. What have you gotten yourself into?” Sasha says with a sigh. 
 
-‘I don’t know Sasha. I think I just lack ambition. Or at least lack the same ambition everyone else seems to have.’ (stuff)
-
-&lt;&lt;continuelink &quot;‘I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’&quot;&gt;&gt;‘I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’&quot;&gt;&gt;‘I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’&quot;&gt;&gt;‘I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’
+&lt;&lt;continuelink &quot;‘I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’&quot;&gt;&gt;I don’t have that same killer instinct to better myself, I’ve never felt it and I don’t think I ever will.’
 
 “What are you talking about?”
 
-&lt;&lt;continuelink &quot;‘Ambition, the desire to improve, to achieve a set goal, whatever you want to call it.’&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;‘Ambition, the desire to improve, to achieve a set goal, whatever you want to call it.’&quot;&gt;&gt;‘Ambition, the desire to improve, to achieve a set goal, whatever you want to call it.’
 
 “No, no I get that. I mean, what are you talking about? What are you saying? No ambition? $name, you and I both know that’s not true and this whole trip you planned is proof of that.”
 
@@ -5091,7 +5058,7 @@ Taking a moment to reflect as you face towards the ground, you respond:
 
 [[‘You’re right, Sasha.’|OBT North Talk 1]]
 [[‘What makes you so certain in your assumption, Sasha?’|OBT North Talk 2]]
- </tw-passagedata><tw-passagedata pid="278" name="OBT North Talk 1" tags="" position="1194,6431" size="100,100">//‘You’re right, Sasha.’//
+ </tw-passagedata><tw-passagedata pid="274" name="OBT North Talk 1" tags="" position="1194,6431" size="100,100">//‘You’re right, Sasha.’//
 
 “And why do you think that is, $name? What’s driven you go to through all these things?”
 
@@ -5122,26 +5089,40 @@ What she’s saying makes sense. Perhaps she’s on to something, you think.
 “You good now? Ready to move on with our windy city sightseeing?” Sasha asks you before standing up.
 
 You nod your head and get up with her before heading [[back to the ledge.|OBT North End]]
-</tw-passagedata><tw-passagedata pid="279" name="OBT North Talk 2" tags="" position="1340,6454" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="280" name="OBT North End" tags="" position="1431.6666666666667,6340.666666666667" size="100,100">&lt;&lt;set $tower_completed to true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="275" name="OBT North Talk 2" tags="" position="1340,6454" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="276" name="OBT North End" tags="" position="1431,6340" size="100,100">&lt;&lt;set $tower_completed to true&gt;&gt;
+Finishing your talk with Sasha, you head back over towards the glass ledge. Having to wait in a line similar to before, it doesn’t take all of 5 minutes to get to the front of the line.
+
+You and Sasha step out of line and over to the ledge. Both of you stepping onto the compact compartment of glass residing over the towering skyscraper. Looking down, you see the hundreds of windows dotted on the side of the Sears Tower. Directly below you is a sidewalk full of people, from this high up, they’re as indiscernible as a colony of ants. The illusion of this ledge gives you a a sense of vertigo; you become lightheaded and feel an unsettling “drop” in your stomach. As if your body expects you to fall through the glass floor and plunge hundreds of feet to the ground.
+
+It all seems a bit much for Sasha, who after looking down decides to step off the ledge and back onto solid ground.
+
+You spend a few more seconds standing on the ledge, taking the sights in &lt;&lt;continuelink &quot;before following in Sasha’s footsteps.&quot;&gt;&gt;before following in Sasha’s footsteps.
+
+“Well, that’s one thing to check off the bucket list. What’d you think, $name?”
+
+&lt;&lt;continuelink &quot;‘Like I expected. Interesting but nothing that crazy.&#39;&quot;&gt;&gt;‘Like I expected. Interesting but nothing that crazy.&#39;
+
+“Yeah, it’s about what I expected too. Glad I did it but whew, made me feel like I was about to hit the drop on a roller coaster. Didn’t appreciate that.”
+
 “Anyway, are we done here or is there something else you wanted to check out?”
 
 [[‘I think we’re ready to move on to the next thing.’|OBT North Transfer]]
 
 &lt;&lt;continuelink&quot;‘Hold on, there’s still some stuff I wanna check out.’&quot;&gt;&gt;‘Hold on, there’s still some stuff I wanna check out.’
 
-[[“Sure, I’m right behind you.”|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="281" name="OBT North Transfer" tags="" position="1543.3333333333335,6233.999999999999" size="100,100">“Awesome, and that would be…?”
-
-&lt;&lt;if $MPC_completed is true and $museum_completed is true&gt;&gt;
+[[“Sure, I’m right behind you.”|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="277" name="OBT North Transfer" tags="" position="1808,6174.666666666667" size="100,100">&lt;&lt;if $MPC_completed is true and $museum_completed is true&gt;&gt;
 
 	Having now finished all three of the places on your itinerary, it seems your day in Chicago is at an end. It being around 4:30 PM right now, that should give you just enough time to get back to the parking garage to meet up with Jacob.
 
-You mention this to Sasha, who nods her head before saying, [[“Alright, lead the way”|Chapter 4 Ending]]
+You mention this to Sasha, who nods her head before saying, [[“Alright, lead the way back.”|Chapter 4 Ending]]
 
 &lt;&lt;else&gt;&gt;
+	“Awesome, and that would be…?”
 
 	Checking the itinerary, you decide the next stop is…
 	&lt;&lt;if $MPC_completed is not true&gt;&gt;
 		[[MIllennium Park|Millennium Park Start]]
+	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;if $museum_completed is not true&gt;&gt;
 		[[The Museum of Science and Industry|Museum Start]]
 	&lt;&lt;/if&gt;&gt;
