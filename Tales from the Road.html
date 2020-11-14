@@ -4294,14 +4294,17 @@ Munching and talking away you find that your meal is dawning towards an end. The
 Looking around it would seem this whole area is a square loop of sorts. No matter what way you go you’ll end up right back here. The whole area is quite similar in aesthetic to the hallway you just came from. The walls facing towards the building are painted the same dark blue color as the hallway, though the floor is a gray carpet instead of being white tile. And of course the walls facing out are nothing but glass, offering a full view of the windy city.
 
 Your next course of action will be moving…
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $tower_completed is not true&gt;&gt;
 [[North towards the glass ledge|OBT North]]
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 [[To the west section of the observation deck|OBT West]]
 [[Over to the east side of the observation deck|OBT East]]
 [[Into the elevator|OBT Exit]]
 
-</tw-passagedata><tw-passagedata pid="232" name="OBT North" tags="" position="1534,6521" size="100,100">//Author&#39;s note: Sorry about this, I hate doing author&#39;s notes. But I feel like mentioning that I&#39;m not very happy with this scene. I feel like I could&#39;ve done this topic a lot more justice and put out something a lot more refined. Alas, this scene has gone through 4 rewrites up to this point so I&#39;m just saying &#39;screw it&#39; and leaving it as is. Sorry if it&#39;s bad or &quot;cringe&quot;. Maybe someday I&#39;ll come back and rewrite it a 5th time.//
+</tw-passagedata><tw-passagedata pid="232" name="OBT North" tags="" position="1534,6521" size="100,100">//Author&#39;s note: Sorry about this, I hate doing author&#39;s notes. But I feel like mentioning that I&#39;m not very happy with this scene. I feel like I could&#39;ve done this topic a lot more justice and put out something a lot more refined. Alas, this scene has gone through 4 rewrites up to this point so I&#39;m just saying &#39;screw it&#39; and leaving it as is. Sorry if it&#39;s bad or &quot;cringe&quot;. Maybe someday I&#39;ll come back and rewrite it a 5th time 
+- Jack//
 
 To the north is “the ledge”. As the name suggests this is a glass ledge that extends past the Sears Tower, allowing people to seemingly defy gravity and look straight down at what’s below. Without falling, of course
 
@@ -4733,10 +4736,9 @@ Stepping into the main lobby you’re greeted by a rotunda of sorts. A single le
 The exhibits and showcases of the museum are held in these three different sections. They go chronologically, from the industrial revolution, to the 20th century, to modern times.
 
 Talking it over with Sasha, you decide it only makes sense to tackle them in this same order. Which means checking out the [[industrial revolution section first.|IR Section]]
-&lt;&lt;else&gt;&gt;
 
-	&lt;&lt;if $MPC_ending is true and $tower_ending is true&gt;&gt;
-		Heading back to the main lobby of the museum, you and Sasha ponder your next steps. Taking your phone out of your pocket and looking at the time you realize that it’s already 4 PM, only a half an hour before you’re supposed to meet up back at the parking garage.
+&lt;&lt;elseif $MPC_completed is true and $tower_completed is true&gt;&gt;
+	Heading back to the main lobby of the museum, you and Sasha ponder your next steps. Taking your phone out of your pocket and looking at the time you realize that it’s already 4 PM, only a half an hour before you’re supposed to meet up back at the parking garage.
 
 Mentioning this to Sasha, you tell her that it would seem the trip to the museum is going to have to be cut short. Les you end up being late.
 
@@ -4745,7 +4747,7 @@ She raises her eyebrows, “Oh, good catch $name! I haven’t even looked at the
 Coming to an agreement, you and Sasha head out of the museum, grabbing the next bus to downtown Chicago.
 
 Coming to an agreement, you and Sasha head out of the museum, grabbing the next bus to downtown Chicago. Eventually taking a train [[back to the stop you began at.|Chapter 4 Ending]]
-	&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;
 	Heading back to the main lobby of the museum, you and Sasha ponder your next steps. Taking your phone out of your pocket and looking at the time you realize that it’s already 2 PM. Giving you only around 2 more hours to check out the rest of Chicago. While you haven’t seen all the museum has to offer, it’d probably be best to leave here early and check out the other things that Chicago has to offer.
 
 Mentioning this to Sasha,  you tell her that it would seem the trip to the museum is going to have to be cut short. Or else you risk not being to able to check out your other stops in Chicago.
@@ -4753,15 +4755,14 @@ Mentioning this to Sasha,  you tell her that it would seem the trip to the museu
 “Honestly $name, I’m fine that. I wasn’t really feeling this museum anyway. Aside from that whole conundrum you had, of course,” she says with a smile.
 
 Having gotten an agreement, you and Sasha head out of the museum, grabbing the next bus to… 
-	&lt;&lt;nobr&gt;&gt;
-	&lt;&lt;if $tower_completed is not true&gt;&gt;
-		[[The Sears Tower|Sears Tower Museum Start]]
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $MPC_completed is not true&gt;&gt;&lt;br&gt;
-		[[Millennium Park|Millennium Park Museum Start]]
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;/nobr&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+		&lt;&lt;nobr&gt;&gt;
+		&lt;&lt;if $tower_completed is not true&gt;&gt;
+			[[The Sears Tower|Sears Tower Museum Start]]
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;if $MPC_completed is not true&gt;&gt;&lt;br&gt;
+			[[Millennium Park|Millennium Park Museum Start]]
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/nobr&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="258" name="IR Section" tags="" position="2912,6807" size="100,100">As the name suggests, this section of the museum covers the industrial revolution. Makes sense, considering there wouldn’t be much of an “industry” without it. It has exhibits detailing the rapid technological advances in the mid 18th century to the mid 19th century. From the first steam-driven engines to the first steam locomotive.
 
 Walking through the industrial revolution section, &lt;&lt;continuelink &quot;your eyes wander&quot;&gt;&gt;your eyes wander, staring at one of the exhibits in the distance trying to discern what it is. Staring so intensely, in fact, that you don’t see a small group of people directly in front of you. What happens next can only be described as a &#39;&#39;real&#39;&#39; (if not small) tragedy. A family of 4, a Mom and a Dad with two younger kids, bumped into by a wandering 20-something whose mind is as blank as the walls in their bedroom.
@@ -4833,10 +4834,7 @@ Rolling her eyes, Sasha responds, “$name, please, you said yourself just a bit
 
 “Obviously I took that gap year anyway. Didn’t do much for me financially but it did help me realize a few things about myself, some of my weaknesses, things I could improve on. Made me realize, hey, maybe I should try to be a little more careful, pay better attention to the stuff that’s going on around me.&quot;
 
-[[&#39;So...&#39;|Sasha Museum Dialogue]]
-
-
-</tw-passagedata><tw-passagedata pid="259" name="Sasha Museum Dialogue" tags="" position="2912,6957" size="100,100">//&#39;So...&#39;//
+[[&#39;So...&#39;|Sasha Museum Dialogue]]</tw-passagedata><tw-passagedata pid="259" name="Sasha Museum Dialogue" tags="" position="2912,6957" size="100,100">//&#39;So...&#39;//
 
 [[‘Do you hold any resentment towards your parents for not helping you out with college?’|Sasha Museum Dialogue 1]]
 
@@ -4931,11 +4929,10 @@ Nodding your head, you turn your eyes towards the projector screen, watching the
 An uneventful trek to the 6th floor of the dingy concrete parking garage. Walking to Jacob’s car shows you that, unsurprisingly, Jacob did not make it back on time. Oh well, he should show up soon enough. Bus was probably just running late or something, you think.
 
 &lt;&lt;if $holly_dating is true or $valery_dating is true&gt;&gt;
-
 Indeed, someone arrives to the car about 10 minutes after you and Sasha. Though it’s not the person you were expecting, as you see &lt;&lt;if $holly_dating is true&gt;&gt; Holly’s &lt;&lt;elseif $valery_dating is true&gt;&gt; Valery&#39;s &lt;&lt;/if&gt;&gt; face as they open the door and take their seat across from you.
-
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $holly_dating is true&gt;&gt;
-“Jacob’s running a bit late, huh? Good thing you guys had a backup plan to get in else we’d be waiting out in this dungeon of a parking garage.”
+“Jacob’s running a bit late, huh? Good thing you guys had a backup plan to get in, else we’d be waiting out in this dungeon of a parking garage.”
 
 &lt;&lt;elseif $valery_dating is true&gt;&gt;
 “Hey $name. Jacob’s a bit behind schedule, I’m guessing. Kind of easy to tell, it being a quarter past 5, and him not being in the driver’s seat. Good thinking to have a spare key in case something like this happened.”
@@ -4996,19 +4993,9 @@ There&#39;s only one thing to do, and that&#39;s [[enter the park|Millennium Par
 
 “Ohh. I’d love to go see New York sometime. When did you go there? I’m assuming sometime when you were younger.”
 
-&lt;&lt;continuelink &quot;‘Yeah, it was a while ago. Went with my family back when I was around 11? 12? Some age around there.’&quot;&gt;&gt;
+&lt;&lt;continuelink &quot;‘Yeah, it was a while ago. Went with my family back when I was around 11? 12? Some age around there.’&quot;&gt;&gt;‘Yeah, it was a while ago. Went with my family back when I was around 11? 12? Some age around there.’
 
 “Interesting! Surprised you never mentioned that before.”
-
-&lt;&lt;if $holly_dating is true&gt;&gt;
-	“Say, did you know Holly back then? You said you two were childhood friends.”
-
-&lt;&lt;continuelink &quot;‘I did,’ you exclaim. Telling Sasha you’ve known Holly since you were both 9.&quot;&gt;&gt;‘I did,’ you exclaim. Telling Sasha you’ve known Holly since you were both 9.
-
-“Wow, you really have known her for a while. Childhood friends, makes sense,” she says, nodding her head slightly. 
-
-“Man, I have so many questions about you and her, but I’ll save them for later. Give us something to talk about on the road.”
-&lt;&lt;/if&gt;&gt;
 
 “What about living in one of these cities, though? I mean like, these huge cities. Dallas, L.A, any place like that. They’re nice to visit but I don’t know. Could you see yourself living here?”
 
@@ -5100,7 +5087,14 @@ What she’s saying makes sense. Perhaps she’s on to something, you think.
 “You good now? Ready to move on with our windy city sightseeing?” Sasha asks you before standing up.
 
 You nod your head and get up with her before heading [[back to the ledge.|OBT North End]]
-</tw-passagedata><tw-passagedata pid="275" name="OBT North Talk 2" tags="" position="1340,6454" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="276" name="OBT North End" tags="" position="1431,6340" size="100,100">&lt;&lt;set $tower_completed to true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="275" name="OBT North Talk 2" tags="" position="1340,6454" size="100,100">//‘What makes you so certain in your observation, Sasha?’//
+
+“You mean besides all the years I’ve spent around you? You’ve never been overly ambitious or gun-ho about college, your job, or anything like that. When we were in college you hardly gave a damn about the actual classes. And when you told me you got that job at Spherion? Well, you certainly didn’t seem thrilled about it.”
+
+“So, it’s observation I’ve made, simple as that. I think it’s an accurate one, though. What do you say?”
+
+[[‘Maybe you’re right, Sasha’|OBT North Talk 1]]
+</tw-passagedata><tw-passagedata pid="276" name="OBT North End" tags="" position="1431,6340" size="100,100">&lt;&lt;set $tower_completed to true&gt;&gt;
 Finishing your talk with Sasha, you head back over towards the glass ledge. Having to wait in a line similar to before, it doesn’t take all of 5 minutes to get to the front of the line.
 
 You and Sasha step out of line and over to the ledge. Both of you stepping onto the compact compartment of glass residing over the towering skyscraper. Looking down, you see the hundreds of windows dotted on the side of the Sears Tower. Directly below you is a sidewalk full of people, from this high up, they’re as indiscernible as a colony of ants. The illusion of this ledge gives you a a sense of vertigo; you become lightheaded and feel an unsettling “drop” in your stomach. As if your body expects you to fall through the glass floor and plunge hundreds of feet to the ground.
@@ -5121,7 +5115,7 @@ You spend a few more seconds standing on the ledge, taking the sights in &lt;&lt
 
 &lt;&lt;continuelink&quot;‘Hold on, there’s still some stuff I wanna check out.’&quot;&gt;&gt;‘Hold on, there’s still some stuff I wanna check out.’
 
-[[“Sure, I’m right behind you.”|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="277" name="OBT North Transfer" tags="" position="1808,6174.666666666667" size="100,100">&lt;&lt;if $MPC_completed is true and $museum_completed is true&gt;&gt;
+[[“Sure, I’m right behind you.”|Observation Tower Lobby]]</tw-passagedata><tw-passagedata pid="277" name="OBT North Transfer" tags="" position="1808,6174" size="100,100">&lt;&lt;if $MPC_completed is true and $museum_completed is true&gt;&gt;
 
 	Having now finished all three of the places on your itinerary, it seems your day in Chicago is at an end. It being around 4:30 PM right now, that should give you just enough time to get back to the parking garage to meet up with Jacob.
 
@@ -5131,12 +5125,16 @@ You mention this to Sasha, who nods her head before saying, [[“Alright, lead t
 	“Awesome, and that would be…?”
 
 	Checking the itinerary, you decide the next stop is…
+	&lt;&lt;nobr&gt;&gt;
 	&lt;&lt;if $MPC_completed is not true&gt;&gt;
 		[[MIllennium Park|Millennium Park Start]]
 	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/nobr&gt;&gt;
+	&lt;&lt;nobr&gt;&gt;
 	&lt;&lt;if $museum_completed is not true&gt;&gt;
 		[[The Museum of Science and Industry|Museum Start]]
 	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/nobr&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
