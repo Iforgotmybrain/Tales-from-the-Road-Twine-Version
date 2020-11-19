@@ -1397,7 +1397,7 @@ You save the word document and shut down your computer before [[getting up from 
 &lt;&lt;else&gt;&gt;
 You log on to Pawbook but can&#39;t think of anything else to do.
 &lt;&lt;return&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Valery Walk" tags="" position="1140.3333333333333,415.6666666666667" size="100,100">After a day of working on your road trip itinerary you decide to get some fresh air and go on a walk around the neighborhood. It’s a beautiful day outside, the temperature is a refreshing 78 and there’s a slight breeze off the lake making this almost a perfect day.
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Valery Walk" tags="" position="1140,415" size="100,100">After a day of working on your road trip itinerary you decide to get some fresh air and go on a walk around the neighborhood. It’s a beautiful day outside, the temperature is a refreshing 78 and there’s a slight breeze off the lake making this almost a perfect day.
 
 Starting off your walk, you go your usual route. The road you take loops around, so it doesn’t really matter which way you take. The walk goes about how you expected, with nothing of note really happening, just the usual affair with you waving to the people you usually see walking a bout.
 
@@ -1412,7 +1412,7 @@ Although, there’s no guarantee that’s who he really is, and if he ended up j
 
 He’s approaching you, meaning you have to make a decision. You decide that it would be best to:
 &lt;&lt;choice [[Wave him down and say hi.|Valery Walk Dialogue]]&gt;&gt;
-&lt;&lt;choice [[Just ignore him and go on your way.|Valery Walk No Dialogue]]&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Valery Walk Dialogue" tags="" position="1062.3333333333333,234" size="100,100">You say fuck it, and decide to go over and say hi to who you presume to be your new neighbor. You figure that you aren’t really out anything if it ends up just being some guy off the street. You wave him down as you walk towards him. 
+&lt;&lt;choice [[Just ignore him and go on your way.|Valery Walk No Dialogue]]&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Valery Walk Dialogue" tags="" position="1062,234" size="100,100">You say fuck it, and decide to go over and say hi to who you presume to be your new neighbor. You figure that you aren’t really out anything if it ends up just being some guy off the street. You wave him down as you walk towards him. 
 
 This seems a bit odd in your mind, but if the roles were reversed you probably wouldn’t think too much of it.
 
@@ -1436,7 +1436,7 @@ Introducing yourself as $name to the hyena, he replies and says “I’m Valery,
 &lt;&lt;set $walk_completed to true&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 You tell Valery goodbye and [[head back to your house for the day.|Player Bedroom]]
-</tw-passagedata><tw-passagedata pid="44" name="Valery Walk No Dialogue" tags="" position="1265.6666666666667,256" size="100,100">You decide to just keep to yourself and leave him be. It would be a weird going over and bugging a stranger that’s just minding their own business.
+</tw-passagedata><tw-passagedata pid="44" name="Valery Walk No Dialogue" tags="" position="1265,256" size="100,100">You decide to just keep to yourself and leave him be. It would be a weird going over and bugging a stranger that’s just minding their own business.
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $valery_walk_talked to false&gt;&gt;
 &lt;&lt;set $walk_completed to true&gt;&gt;
@@ -3119,7 +3119,7 @@ As you leave Holly&#39;s warm embrace, she sneaks in a quick kiss on your cheek.
 &lt;&lt;set $ending_points +=4&gt;&gt;
 [[You head back to your car shortly after as well|Holly Date Transition]]
 
-</tw-passagedata><tw-passagedata pid="169" name="StoryMenu" tags="" position="517,23.666666666666668" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="Cafe Line" tags="" position="1295,975" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
+</tw-passagedata><tw-passagedata pid="169" name="StoryMenu" tags="" position="517,23" size="100,100">&lt;&lt;link &quot;Skip Song&quot;&gt;&gt;&lt;&lt;set $controls to true&gt;&gt;&lt;&lt;script&gt;&gt;setup.audioControls(); &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="Cafe Line" tags="" position="1295,975" size="100,100">You decide to just do your own thing and order some food. The line moves quick and before you know it’s your turn to order.
 
 You order your usual combo; a tuna wrap with a bag of chips and a drink. Not a bad deal for $4!
 &lt;&lt;continuelink &quot;Look for a table to sit at&quot;&gt;&gt;
@@ -3927,7 +3927,7 @@ One last thing. If you liked the art, consider checking out the person that made
 That is all for now my friend. Cheers, and thanks again for playing to the (current) end!
 </tw-passagedata><tw-passagedata pid="214" name="Chicago Start" tags="" position="2616,6188" size="100,100">&lt;&lt;set $race to &quot;Wolf&quot;&gt;&gt;
 &lt;&lt;set $name to &quot;Kars&quot;&gt;&gt;
-&lt;&lt;set $holly_dating to true&gt;&gt;
+&lt;&lt;set $valery_dating to true&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $money &lt; 10000&gt;&gt;
 	&lt;&lt;if $road_trip_funding_cash_out is true&gt;&gt;
@@ -3964,7 +3964,6 @@ It’s a short walk to Millennium Park, about 20 minutes on your feet. The walk 
 
 &lt;&lt;continuelink &quot;Looking down an alley way and peering up,&quot;&gt;&gt;Looking down an alley way and peering up, you can see a banner that’s about 4 stories high. There’s text on both the top and bottom of the banner, typed in some sort of blocky, red font. And in the middle is a stallion dressed in neon green cowboy attire. Complete with cowboy boots and fake leather chaps.
 
-LOOK AT THIS IDIOT DON&#39;T FORGET THE FORMATTING FOR THE TEXT AHHH PLACEHOLDER
 The top of the banner reads, “The Census Cowboy”, with the bottom reading “Wrangling Census forms all across Chicago! Find out how to complete your Census today at censuscowboywrangleschicago.gov”
 
 “That’s uh, one way to get people to fill out the Census, I guess,” Sasha says with a surprising look on her face. “I have to wonder… how many out of touch old people did this ‘Census Cowboy’ idea go through? I can just imagine some city board member going, ‘Our city&#39;s census participation is awful. We need to motivate people to fill it out, does anyone have any ideas?’. 
@@ -4821,13 +4820,8 @@ With Millennium Park taken care of, your next stop is…
 
 &quot;Already!? It feels like we just started!&quot; Sasha takes moment to look at the time on her phone, &quot;4(30?) PM... yeah I guess you&#39;re right. We&#39;ve been at this longer than I thought.&quot;
 
-<<<<<<< HEAD
-&quot;Well, we better make our way back to the car. [[Lead the way.|Chapter 4 Ending]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="268" name="Chicago Travel Tower" tags="" position="2312,6511" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="269" name="Sears Tower Museum Start" tags="" position="2467,6503" size="100,100">“The Sears Tower? Sure, why not? Pretty quintessential Chicago. You mention the city that’s probably the first thing someone thinks of,” Sasha says.
-=======
-&quot;Well, we better make our way back to the car. [[Lead the way, $name.&quot;|Chapter 4 Ending]]
+[[&quot;Well, we better make our way back to the car. Lead the way.&quot;|Chapter 4 Ending]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="265" name="Chicago Travel Tower" tags="" position="2312,6511" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="266" name="Sears Tower Museum Start" tags="" position="2467,6503" size="100,100">“The Sears Tower? Sure, why not? Pretty quintessential Chicago. You mention the city that’s probably the first thing someone thinks of,” Sasha says.
->>>>>>> 10ec9fae3f14ee6b4a28d757b7524b42921a6c94
 
 “You’ve got the maps app setup on your phone so lead the way, $name.”
 
